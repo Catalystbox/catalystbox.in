@@ -19,13 +19,12 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'DM Sans', sans-serif; background: var(--ink);
-  color: #E8E6DF; overflow-x: hidden; font-size: 16px; line-height: 1.6;
-}
-body::before {
-  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity: 0.35;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--ink);
+  color: #E8E6DF;
+  overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 /* ═══════════════════════════════════════════════
@@ -35,7 +34,8 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   display: flex; align-items: center; justify-content: space-between;
   padding: 18px 48px;
-  background: rgba(11,14,23,0.88); backdrop-filter: blur(18px);
+  background: rgba(11,14,23,0.92);
+  backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border);
 }
 .nav-logo {
@@ -62,16 +62,16 @@ nav {
 .nav-links button.nav-cta:hover { background: var(--amber-dim); }
 
 /* ═══════════════════════════════════════════════
-   PAGE SYSTEM
+   PAGE SYSTEM — hide all, show only .active
 ═══════════════════════════════════════════════ */
-.page { display: none; }
-.page.active { display: block; }
+.page { display: none !important; }
+.page.active { display: block !important; }
 
 /* ═══════════════════════════════════════════════
    SHARED UTILITIES
 ═══════════════════════════════════════════════ */
 .container { max-width: 1200px; margin: 0 auto; }
-section { padding: 100px 48px; position: relative; z-index: 1; }
+section { padding: 96px 48px; position: relative; z-index: 1; }
 
 .eyebrow {
   font-family: 'DM Mono', monospace; font-size: 0.68rem;
@@ -82,18 +82,16 @@ section { padding: 100px 48px; position: relative; z-index: 1; }
 
 h1 {
   font-family: 'Syne', sans-serif; font-weight: 800;
-  font-size: clamp(2.6rem, 5vw, 4rem); line-height: 1.06;
+  font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.08;
   letter-spacing: -0.03em; color: #fff; margin-bottom: 20px;
 }
 h1 span, h1 em { color: var(--teal-light); font-style: normal; }
-
 h2 {
   font-family: 'Syne', sans-serif; font-weight: 800;
-  font-size: clamp(1.9rem, 3.5vw, 2.9rem); line-height: 1.1;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.1;
   letter-spacing: -0.03em; color: #fff; margin-bottom: 14px;
 }
 h2 em { color: var(--teal-light); font-style: normal; }
-
 .section-sub {
   color: var(--muted); font-size: 1rem; font-weight: 300;
   max-width: 520px; line-height: 1.75;
@@ -106,7 +104,6 @@ h2 em { color: var(--teal-light); font-style: normal; }
   display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;
 }
 .btn-primary:hover { background: var(--amber-dim); transform: translateY(-1px); }
-
 .btn-ghost {
   background: transparent; color: #fff; font-family: 'DM Sans', sans-serif;
   font-weight: 500; font-size: 0.9rem; padding: 13px 26px; border-radius: 8px;
@@ -130,7 +127,7 @@ footer {
 .footer-tag  { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
 .footer-right { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--muted); text-align: right; }
 
-/* comp cards (shared by home + about) */
+/* comp cards */
 .components-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .comp-card {
   background: rgba(255,255,255,0.03); border: 1px solid var(--border);
@@ -153,6 +150,7 @@ footer {
 #hero {
   min-height: 100vh; display: flex; align-items: center;
   position: relative; padding: 120px 48px 80px; overflow: hidden;
+  background: var(--ink);
 }
 .hero-bg {
   position: absolute; inset: 0; pointer-events: none;
@@ -163,7 +161,7 @@ footer {
 }
 .hero-grid {
   position: absolute; inset: 0; pointer-events: none;
-  background-image: linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+  background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 .hero-content {
@@ -300,7 +298,7 @@ footer {
 /* ═══════════════════════════════════════════════
    PAGE 2 — ABOUT
 ═══════════════════════════════════════════════ */
-.page-hero { padding: 130px 48px 72px; position: relative; z-index: 1; }
+.page-hero { padding: 130px 48px 72px; position: relative; z-index: 1; background: var(--ink); }
 .about-hero-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 
 .hero-right { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 16px; }
@@ -309,7 +307,7 @@ footer {
 .hero-stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
 
 .mission-section { background: var(--slate); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 0; }
+.mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 .mission-left p { color: var(--muted); font-size: 0.95rem; font-weight: 300; line-height: 1.8; margin-bottom: 16px; }
 .mission-pillars { display: flex; flex-direction: column; gap: 12px; }
 .pillar { display: flex; gap: 16px; align-items: flex-start; padding: 18px 20px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); transition: border-color 0.2s; }
@@ -318,7 +316,7 @@ footer {
 .pillar h4 { font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
 .pillar p  { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
 
-.founder-section {}
+.founder-section { background: var(--ink); }
 .founder-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 18px; padding: 44px; display: flex; gap: 44px; align-items: flex-start; }
 .founder-avatar { width: 76px; height: 76px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), var(--amber)); display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 1.7rem; font-weight: 800; color: var(--ink); flex-shrink: 0; }
 .founder-body h3 { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 4px; letter-spacing: -0.02em; }
@@ -335,7 +333,7 @@ footer {
 .gov-card p  { font-size: 0.76rem; color: var(--muted); line-height: 1.55; }
 
 /* dashboard mock */
-.dashboard-section {}
+.dashboard-section { background: var(--ink); }
 .dash-wrap { background: #111520; border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.5); }
 .dash-topbar { background: #0D1018; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 14px 22px; display: flex; align-items: center; justify-content: space-between; }
 .dash-school-name { font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 700; color: #fff; }
@@ -386,8 +384,9 @@ footer {
 /* ═══════════════════════════════════════════════
    PAGE 3 — FAQS
 ═══════════════════════════════════════════════ */
-.faq-page-hero { padding: 130px 48px 60px; position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
-.faq-wrap { max-width: 1200px; margin: 0 auto; padding: 0 48px 90px; position: relative; z-index: 1; display: grid; grid-template-columns: 200px 1fr; gap: 56px; align-items: start; }
+.faq-page { background: var(--ink); }
+.faq-page-hero { padding: 130px 48px 60px; max-width: 1200px; margin: 0 auto; }
+.faq-wrap { max-width: 1200px; margin: 0 auto; padding: 0 48px 90px; display: grid; grid-template-columns: 200px 1fr; gap: 56px; align-items: start; position: relative; z-index: 1; }
 .faq-sidebar { position: sticky; top: 90px; }
 .faq-sidebar h3 { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
 .cat-list { list-style: none; display: flex; flex-direction: column; gap: 3px; }
@@ -417,8 +416,9 @@ footer {
 /* ═══════════════════════════════════════════════
    PAGE 4 — CONTACT
 ═══════════════════════════════════════════════ */
-.contact-page-wrap { max-width: 1200px; margin: 0 auto; padding: 130px 48px 90px; position: relative; z-index: 1; }
-.contact-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; margin-top: 0; }
+.contact-page { background: var(--ink); }
+.contact-page-wrap { max-width: 1200px; margin: 0 auto; padding: 130px 48px 90px; }
+.contact-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 56px; align-items: start; margin-top: 0; }
 .contact-info { display: flex; flex-direction: column; gap: 28px; }
 .contact-channel { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 14px; padding: 26px 22px; transition: border-color 0.2s; }
 .contact-channel:hover { border-color: rgba(232,160,32,0.25); }
@@ -437,32 +437,45 @@ footer {
 .tag-other  { background: rgba(255,255,255,0.06); color: #9CA3AF; }
 .reach-text { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
 .reach-text strong { color: #C8C5BE; display: block; margin-bottom: 2px; }
-.contact-form-wrap { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 36px; }
-.form-title    { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
-.form-subtitle { font-size: 0.82rem; color: var(--muted); margin-bottom: 28px; }
-.form-row   { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-.form-group label { font-size: 0.75rem; font-weight: 500; color: #B0ADA6; }
-.form-group input, .form-group select, .form-group textarea {
-  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px; padding: 11px 14px; color: #fff; font-family: 'DM Sans', sans-serif;
-  font-size: 0.88rem; outline: none; transition: border-color 0.2s; appearance: none; width: 100%;
+
+/* Contact form iframe wrap */
+.contact-form-wrap {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  overflow: hidden;
 }
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--teal-light); background: rgba(255,255,255,0.07); }
-.form-group input::placeholder, .form-group textarea::placeholder { color: var(--muted); }
-.form-group select { cursor: pointer; }
-.form-group select option { background: var(--slate); color: #fff; }
-.form-group textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
-.form-submit { width: 100%; background: var(--amber); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.92rem; padding: 14px 28px; border-radius: 8px; border: none; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 6px; }
-.form-submit:hover { background: var(--amber-dim); transform: translateY(-1px); }
-.form-note { font-size: 0.72rem; color: var(--muted); text-align: center; margin-top: 12px; line-height: 1.6; }
-.form-success { display: none; text-align: center; padding: 48px 20px; }
-.success-icon { font-size: 3rem; margin-bottom: 14px; }
-.form-success h3 { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-.form-success p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
+.form-title    { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.form-subtitle { font-size: 0.82rem; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
+.gform-iframe {
+  width: 100%;
+  min-height: 900px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  display: block;
+}
+
 .faq-nudge { margin-top: 48px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; padding: 26px 30px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 .faq-nudge p { color: var(--muted); font-size: 0.86rem; }
 .faq-nudge p strong { color: #C8C5BE; }
+
+/* Partner CTA strip */
+.partner-strip {
+  background: rgba(232,160,32,0.06);
+  border: 1px solid rgba(232,160,32,0.2);
+  border-radius: 12px;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+.partner-strip p { color: var(--muted); font-size: 0.86rem; line-height: 1.6; }
+.partner-strip p strong { color: #fff; display: block; margin-bottom: 4px; font-size: 0.95rem; }
 
 /* ═══════════════════════════════════════════════
    RESPONSIVE
@@ -489,13 +502,18 @@ footer {
   .founder-card { flex-direction: column; gap: 22px; }
   footer { flex-direction: column; gap: 16px; text-align: center; }
   .footer-right { text-align: center; }
-  .form-row { grid-template-columns: 1fr; }
+  .faq-page-hero { padding-top: 100px; }
+  .contact-form-wrap { padding: 20px 16px; }
+  .gform-iframe { min-height: 1100px; }
 }
 @media (max-width: 560px) {
   h1 { font-size: 2.1rem; }
   .components-grid { grid-template-columns: 1fr; }
   .flow-steps { grid-template-columns: 1fr; }
   .gov-grid { grid-template-columns: 1fr; }
+  .trust-inner { gap: 18px; }
+  .trust-sep { display: none; }
+  .partner-strip { flex-direction: column; align-items: flex-start; }
 }
 </style>
 </head>
@@ -511,7 +529,7 @@ footer {
     <li><button onclick="showPage('home')" id="nav-home" class="active">Home</button></li>
     <li><button onclick="showPage('about')" id="nav-about">About</button></li>
     <li><button onclick="showPage('faq')" id="nav-faq">FAQs</button></li>
-    <li><button onclick="showPage('contact')" id="nav-contact" class="nav-cta">Contact Us</button></li>
+    <li><button onclick="openContactForm()" id="nav-contact" class="nav-cta">Contact Us</button></li>
   </ul>
 </nav>
 
@@ -530,7 +548,7 @@ footer {
         <h1>The Central Nervous System of <span>Education Intelligence</span></h1>
         <p class="hero-desc">CatalystBox is a national feedback and intelligence infrastructure that makes student voice measurable, visible, and actionable — across schools, districts, states, and the nation.</p>
         <div class="hero-actions">
-          <button class="btn-primary" onclick="openForm()">Partner With Us →</button>
+          <button class="btn-primary" onclick="openPartnerForm()">Partner With Us →</button>
           <button class="btn-ghost" onclick="showPage('about')">Learn More</button>
         </div>
       </div>
@@ -628,7 +646,7 @@ footer {
   </section>
 
   <!-- How it works -->
-  <section id="flow" style="background:var(--ink);">
+  <section id="flow">
     <div class="container">
       <div class="eyebrow">How It Works</div>
       <h2>From Classroom to<br><em>National Intelligence</em></h2>
@@ -658,7 +676,7 @@ footer {
   </section>
 
   <!-- Roadmap -->
-  <section id="roadmap" style="background:var(--ink);">
+  <section id="roadmap">
     <div class="container">
       <div class="eyebrow">Scaling Strategy</div>
       <h2>Board by Board.<br>Until It's <em>National Infrastructure.</em></h2>
@@ -685,7 +703,7 @@ footer {
         <div class="comp-card fade-up d3"><span class="comp-num">AI · 03</span><span class="comp-icon">📚</span><h3>AI Homework Helper</h3><p>A safe, school-approved academic support tool that guides students through problems with hints and explanations, not just answers.</p></div>
         <div class="comp-card fade-up d1"><span class="comp-num">AI · 04</span><span class="comp-icon">🗓️</span><h3>AI Timetable Optimiser</h3><p>Automatically generate conflict-free, resource-optimised timetables — eliminating weeks of manual scheduling effort.</p></div>
         <div class="comp-card fade-up d2"><span class="comp-num">AI · 05</span><span class="comp-icon">🛡️</span><h3>AI Discipline Monitor</h3><p>Detect early behavioural patterns flagged anonymously through CatalystBox feedback and recommend timely, evidence-based interventions.</p></div>
-        <div class="comp-card fade-up d3" style="background:rgba(232,160,32,0.05);border-color:rgba(232,160,32,0.2);"><span class="comp-num" style="color:var(--amber);">PARTNER</span><span class="comp-icon">🤝</span><h3>Build Together</h3><p>Have a specific need? CatalystBox partners with schools and boards to co-develop custom AI solutions grounded in your own feedback data.</p><button class="btn-primary" style="margin-top:16px;font-size:0.8rem;padding:10px 18px;" onclick="openForm()">Talk to Us →</button></div>
+        <div class="comp-card fade-up d3" style="background:rgba(232,160,32,0.05);border-color:rgba(232,160,32,0.2);"><span class="comp-num" style="color:var(--amber);">PARTNER</span><span class="comp-icon">🤝</span><h3>Build Together</h3><p>Have a specific need? CatalystBox partners with schools and boards to co-develop custom AI solutions grounded in your own feedback data.</p><button class="btn-primary" style="margin-top:16px;font-size:0.8rem;padding:10px 18px;" onclick="openPartnerForm()">Talk to Us →</button></div>
       </div>
     </div>
   </section>
@@ -698,8 +716,8 @@ footer {
         <h2>Build the Future of<br><em>Indian Education</em></h2>
         <p>CatalystBox is not merely a startup — it is public digital infrastructure for education. Like Nielsen for media, like Glassdoor for workplaces, CatalystBox becomes the trusted voice of students across a nation.</p>
         <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-          <button class="btn-primary" onclick="openForm()">Partner With Us →</button>
-          <button class="btn-ghost" onclick="showPage('faq')">Read FAQs</button>
+          <button class="btn-primary" onclick="openPartnerForm()">Partner With Us →</button>
+          <button class="btn-ghost" onclick="openContactForm()">Contact Us</button>
         </div>
         <div class="cta-divider"></div>
         <div class="cta-founders">Founded by <strong>Yatesh Srivastava</strong> · <strong>Fresh Eye Foundation</strong><br><span style="font-size:0.75rem;margin-top:6px;display:block;">Aligned with NEP 2020 · Student Voice · Holistic Education · Data-Driven Policy</span></div>
@@ -782,7 +800,7 @@ footer {
     </div>
   </section>
 
-  <!-- Dashboard glimpse -->
+  <!-- Dashboard mock -->
   <section class="dashboard-section">
     <div class="container">
       <div class="eyebrow">School Dashboard</div>
@@ -850,8 +868,8 @@ footer {
         <div class="comp-alt-card"><div class="c-eye">COMPARABLE MODEL · WORKPLACE</div><h4>Glassdoor</h4><p>Glassdoor transformed workplace transparency by giving employees an anonymous, structured voice. It became the most trusted signal of organisational health. CatalystBox does this for schools — at national scale.</p></div>
       </div>
       <div style="display:flex;gap:16px;margin-top:44px;flex-wrap:wrap;">
-        <button class="btn-primary" onclick="openForm()">Partner With CatalystBox →</button>
-        <button class="btn-ghost" onclick="showPage('faq')">Read FAQs</button>
+        <button class="btn-primary" onclick="openPartnerForm()">Partner With CatalystBox →</button>
+        <button class="btn-ghost" onclick="openContactForm()">Contact Us</button>
       </div>
     </div>
   </section>
@@ -865,7 +883,7 @@ footer {
 <!-- ═══════════════════════════════════════════
      PAGE: FAQS
 ═══════════════════════════════════════════ -->
-<div class="page" id="page-faq">
+<div class="page faq-page" id="page-faq">
   <div class="faq-page-hero">
     <div class="eyebrow">Support</div>
     <h1>Frequently Asked <em>Questions</em></h1>
@@ -933,7 +951,7 @@ footer {
       <!-- PARTNERSHIP -->
       <div class="faq-section" id="cat-partnership">
         <div class="faq-section-title">Partnership</div>
-        <div class="faq-item open"><button class="faq-q" onclick="toggleFaq(this)">How does a school or board partner with CatalystBox?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>The simplest way is to reach out through our Contact page. We'll schedule a conversation to understand your context, walk you through what CatalystBox looks like for your institution, and outline next steps. For boards, we present a tailored proposal covering infrastructure deployment, onboarding, and ongoing support.</p><span class="faq-highlight">→ Start at our Contact page</span></div></div>
+        <div class="faq-item open"><button class="faq-q" onclick="toggleFaq(this)">How does a school or board partner with CatalystBox?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>The simplest way is to reach out through our Contact page or fill in our Partner With Us form. We'll schedule a conversation to understand your context, walk you through what CatalystBox looks like for your institution, and outline next steps.</p><span class="faq-highlight">→ Start at our Contact page</span></div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Does CatalystBox work with government schools?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Absolutely. CatalystBox is designed to serve all schools — government, aided, and private. Government schools, which often lack formal feedback mechanisms entirely, stand to benefit the most. CatalystBox can be deployed across an entire government board's school network through a single partnership agreement.</p></div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Who governs CatalystBox and ensures it stays neutral?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>CatalystBox maintains an independent advisory board comprising educators, psychologists, child safety specialists, and policy experts. This board oversees data governance and ethical guidelines — ensuring CatalystBox remains a neutral, credible infrastructure, not a commercial surveillance tool.</p></div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can NGOs or CSR foundations partner with CatalystBox?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Yes. NGOs, CSR foundations, and research institutions can partner with CatalystBox to access aggregated education intelligence reports, fund deployment in underserved school networks, or co-design impact measurement programs. Reach out to explore what a partnership might look like.</p></div></div>
@@ -944,7 +962,7 @@ footer {
   <div class="faq-cta-box">
     <div class="faq-cta-inner">
       <div><h3>Still have questions?</h3><p>Our team is happy to walk you through anything — whether you're a school principal, board official, NGO, or researcher.</p></div>
-      <button class="btn-primary" onclick="openForm()">Talk to Us →</button>
+      <button class="btn-primary" onclick="openContactForm()">Contact Us →</button>
     </div>
   </div>
 
@@ -957,43 +975,64 @@ footer {
 <!-- ═══════════════════════════════════════════
      PAGE: CONTACT
 ═══════════════════════════════════════════ -->
-<div class="page" id="page-contact">
+<div class="page contact-page" id="page-contact">
   <div class="contact-page-wrap">
     <div class="eyebrow">Get In Touch</div>
     <h1>Let's Build Something <em>That Matters</em></h1>
     <p style="color:var(--muted);font-size:1rem;font-weight:300;max-width:520px;line-height:1.75;margin:14px 0 44px;">Whether you're a school principal, board official, NGO, or researcher — we'd love to hear from you. Every conversation starts with a simple hello.</p>
 
     <div class="contact-layout">
+      <!-- Left col: info -->
       <div class="contact-info">
         <div>
           <div style="font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Direct Contact</div>
-          <div class="contact-channel"><span class="channel-icon">✉️</span><div class="channel-label">Email</div><a href="/cdn-cgi/l/email-protection#fa929f969695ba999b8e9b9683898e989582d49394" class="channel-value"><span class="__cf_email__" data-cfemail="177f727b7b7857747663767b6e646375786f397e79">[email&#160;protected]</span></a><p class="channel-desc">For all partnership enquiries, board proposals, and general questions. We respond within 48 hours.</p></div>
-          <div class="contact-channel" style="margin-top:10px;"><span class="channel-icon">🏢</span><div class="channel-label">Organisation</div><div class="channel-value" style="cursor:default;">Fresh Eye Foundation</div><p class="channel-desc">CatalystBox is a product of Fresh Eye Foundation, an independent organisation focused on building transparent, data-driven tools for India's education ecosystem.</p></div>
+          <div class="contact-channel">
+            <span class="channel-icon">✉️</span>
+            <div class="channel-label">Email</div>
+            <a href="/cdn-cgi/l/email-protection#b3dbd6dfdfdcf3d0d2c7d2dfcac0c7d1dccb9ddadd" class="channel-value"><span class="__cf_email__" data-cfemail="29414c454546694a485d4845505a5d4b4651074047">[email&#160;protected]</span></a>
+            <p class="channel-desc">For all partnership enquiries, board proposals, and general questions. We respond within 48 hours.</p>
+          </div>
+          <div class="contact-channel" style="margin-top:10px;">
+            <span class="channel-icon">🏢</span>
+            <div class="channel-label">Organisation</div>
+            <div class="channel-value" style="cursor:default;">Fresh Eye Foundation</div>
+            <p class="channel-desc">CatalystBox is a product of Fresh Eye Foundation, an independent organisation focused on building transparent, data-driven tools for India's education ecosystem.</p>
+          </div>
         </div>
+
+        <!-- Who should reach out -->
         <div>
           <div style="font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Who Should Reach Out</div>
           <div class="reach-list">
             <div class="reach-item"><span class="reach-tag tag-school">SCHOOL</span><div class="reach-text"><strong>School Principals & Administrators</strong>Want to bring CatalystBox to your school? Let's talk.</div></div>
             <div class="reach-item"><span class="reach-tag tag-board">BOARD</span><div class="reach-text"><strong>Education Boards & Officials</strong>Interested in a board-wide partnership? We'll put together a tailored proposal.</div></div>
-            <div class="reach-item"><span class="reach-tag tag-ngo">NGO / CSR</span><div class="reach-text"><strong>NGOs, Foundations & CSR Teams</strong>Looking to fund CatalystBox deployment or access education intelligence? We'd love to explore this.</div></div>
+            <div class="reach-item"><span class="reach-tag tag-ngo">NGO / CSR</span><div class="reach-text"><strong>NGOs, Foundations & CSR Teams</strong>Looking to fund CatalystBox deployment or access education intelligence?</div></div>
             <div class="reach-item"><span class="reach-tag tag-media">RESEARCH</span><div class="reach-text"><strong>Researchers & Academics</strong>Interested in anonymised education datasets? Reach out to discuss scope.</div></div>
             <div class="reach-item"><span class="reach-tag tag-other">OTHER</span><div class="reach-text"><strong>Media, Press & Others</strong>For press enquiries or any other reason — use the form and we'll get back to you.</div></div>
           </div>
         </div>
+
+        <!-- Partner with us strip -->
+        <div class="partner-strip">
+          <div>
+            <p><strong>Looking to partner with CatalystBox?</strong>Fill in our dedicated Partner With Us form and our team will reach out with a tailored proposal for your school or board.</p>
+          </div>
+          <button class="btn-primary" onclick="openPartnerForm()">Partner With Us →</button>
+        </div>
       </div>
 
+      <!-- Right col: Contact Us Google Form -->
       <div class="contact-form-wrap">
         <div class="form-title">Send Us a Message</div>
         <div class="form-subtitle">Fill in the form below — our team will get back to you within 48 hours on working days.</div>
         <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdQn30COlQGDSYYmZJWUd2nswekDJ2tTr13K8e3x-nJZPcP7Q/viewform?embedded=true"
-          width="100%"
-          height="1100"
+          class="gform-iframe"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdV6QmpIYF7dPeFuvmuuE317LbKTRfaZpQX37pGka8j-rTJ5Q/viewform?embedded=true"
           frameborder="0"
           marginheight="0"
           marginwidth="0"
-          style="border-radius:12px;margin-top:16px;background:transparent;"
           loading="lazy"
+          title="CatalystBox Contact Form"
         >Loading form…</iframe>
       </div>
     </div>
@@ -1012,11 +1051,16 @@ footer {
 
 <!-- ═══ SCRIPTS ═══ -->
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-/* ── FORM URL ── */
-var FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdQn30COlQGDSYYmZJWUd2nswekDJ2tTr13K8e3x-nJZPcP7Q/viewform";
+/* ── FORM URLS ── */
+var PARTNER_FORM_URL  = "https://docs.google.com/forms/d/e/1FAIpQLSdQn30COlQGDSYYmZJWUd2nswekDJ2tTr13K8e3x-nJZPcP7Q/viewform";
+var CONTACT_FORM_URL  = "https://docs.google.com/forms/d/e/1FAIpQLSdV6QmpIYF7dPeFuvmuuE317LbKTRfaZpQX37pGka8j-rTJ5Q/viewform";
 
-function openForm() {
-  window.open(FORM_URL, '_blank');
+function openPartnerForm() {
+  window.open(PARTNER_FORM_URL, '_blank');
+}
+
+function openContactForm() {
+  window.open(CONTACT_FORM_URL, '_blank');
 }
 
 /* ── PAGE SWITCHING ── */
@@ -1025,40 +1069,45 @@ function showPage(id) {
   document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
   document.getElementById('nav-' + id).classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: 'instant' });
 
   // Re-run fade-ups for the new page
   setTimeout(() => {
     document.querySelectorAll('#page-' + id + ' .fade-up').forEach(el => {
       el.classList.remove('visible');
     });
-    setTimeout(() => observeFadeUps(), 50);
+    setTimeout(() => observeFadeUps(), 60);
   }, 10);
 
-  // Re-trigger index bars if switching to home
   if (id === 'home') triggerBars();
 }
 
 /* ── FADE UP OBSERVER ── */
 function observeFadeUps() {
   const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.1 });
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
   document.querySelectorAll('.page.active .fade-up').forEach(el => obs.observe(el));
 }
 
 /* ── INDEX BARS ── */
 function triggerBars() {
-  const barObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.querySelectorAll('.index-bar-fill').forEach(f => { f.style.width = f.dataset.width + '%'; });
-        barObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.3 });
-  const idx = document.querySelector('#page-home #index');
-  if (idx) barObs.observe(idx);
+  setTimeout(() => {
+    const barObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.index-bar-fill').forEach(f => {
+            f.style.width = f.dataset.width + '%';
+          });
+          barObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    const idx = document.querySelector('#page-home #index');
+    if (idx) barObs.observe(idx);
+  }, 100);
 }
 
 /* ── FAQ ACCORDION ── */
@@ -1078,14 +1127,18 @@ function showCat(id, btn) {
   if (first) first.classList.add('open');
 }
 
-/* ── CONTACT FORM ── */
-function submitForm() {
-  const required = ['fname','lname','email','role','subject','message'];
-  let ok = true;
-  required.forEach(id => {
-    const el = document.getElementById(id);
-    if (!el.value.trim()) { el.style.borderColor = 'rgba(248,113,113,0.6)'; ok = false; }
-    else el.style.borderColor = '';
-  });
-  if (!ok) return;
-  document.getElementById
+/* ── INIT ── */
+(function() {
+  var pages = document.querySelectorAll('.page');
+  pages.forEach(function(p) { p.classList.remove('active'); });
+  var home = document.getElementById('page-home');
+  if (home) home.classList.add('active');
+})();
+
+document.addEventListener('DOMContentLoaded', function() {
+  observeFadeUps();
+  triggerBars();
+});
+</script>
+</body>
+</html>
