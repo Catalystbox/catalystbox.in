@@ -56,6 +56,28 @@ nav {
   display: flex; align-items: center; justify-content: center;
   font-size: 0.72rem; font-weight: 800; color: var(--ink); flex-shrink: 0;
 }
+
+/* ═══════════════════════════════════════════════
+   QR LOGO — nav & footer
+═══════════════════════════════════════════════ */
+#nav-qr, .footer-qr {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  overflow: hidden;
+  background: transparent;
+}
+#nav-qr   { width: 34px; height: 34px; }
+.footer-qr{ width: 32px; height: 32px; }
+#nav-qr canvas, #nav-qr svg,
+.footer-qr canvas, .footer-qr svg {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .nav-links { display: flex; gap: 8px; list-style: none; align-items: center; }
 .nav-links button {
   background: none; border: none; cursor: pointer; padding: 8px 16px;
@@ -446,7 +468,6 @@ footer {
 .reach-text { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
 .reach-text strong { color: #C8C5BE; display: block; margin-bottom: 2px; }
 
-/* Contact form iframe wrap */
 .contact-form-wrap {
   background: rgba(255,255,255,0.03);
   border: 1px solid var(--border);
@@ -469,7 +490,6 @@ footer {
 .faq-nudge p { color: var(--muted); font-size: 0.86rem; }
 .faq-nudge p strong { color: #C8C5BE; }
 
-/* Partner CTA strip */
 .partner-strip {
   background: rgba(232,160,32,0.06);
   border: 1px solid rgba(232,160,32,0.2);
@@ -530,7 +550,7 @@ footer {
 <!-- ═══ NAV ═══ -->
 <nav>
   <div class="nav-logo" onclick="showPage('home')">
-    <div class="logo-mark">CB</div>
+    <div id="nav-qr"></div>
     CatalystBox
   </div>
   <ul class="nav-links">
@@ -734,7 +754,7 @@ footer {
   </section>
 
   <footer>
-    <div style="display:flex;align-items:center;gap:12px;"><div class="logo-mark">CB</div><div><div class="footer-logo">CatalystBox</div><div class="footer-tag">National Education Intelligence Infrastructure</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px;"><div class="footer-qr"></div><div><div class="footer-logo">CatalystBox</div><div class="footer-tag">National Education Intelligence Infrastructure</div></div></div>
     <div class="footer-right"><div>Fresh Eye Foundation</div><div style="margin-top:4px;">© 2025 CatalystBox · All Rights Reserved</div></div>
   </footer>
 </div>
@@ -883,7 +903,7 @@ footer {
   </section>
 
   <footer>
-    <div style="display:flex;align-items:center;gap:12px;"><div class="logo-mark">CB</div><div><div class="footer-logo">CatalystBox</div><div class="footer-tag">National Education Intelligence Infrastructure</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px;"><div class="footer-qr"></div><div><div class="footer-logo">CatalystBox</div><div class="footer-tag">National Education Intelligence Infrastructure</div></div></div>
     <div class="footer-right"><div>Fresh Eye Foundation</div><div style="margin-top:4px;">© 2025 CatalystBox · All Rights Reserved</div></div>
   </footer>
 </div>
@@ -975,7 +995,7 @@ footer {
   </div>
 
   <footer>
-    <div style="display:flex;align-items:center;gap:12px;"><div class="logo-mark">CB</div><div><div class="footer-logo">CatalystBox</div><div class="footer-tag">National Education Intelligence Infrastructure</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px;"><div class="footer-qr"></div><div><div class="footer-logo">CatalystBox</div><div class="footer-tag">National Education Intelligence Infrastructure</div></div></div>
     <div class="footer-right"><div>Fresh Eye Foundation</div><div style="margin-top:4px;">© 2025 CatalystBox · All Rights Reserved</div></div>
   </footer>
 </div>
@@ -990,14 +1010,13 @@ footer {
     <p style="color:var(--muted);font-size:1rem;font-weight:300;max-width:520px;line-height:1.75;margin:14px 0 44px;">Whether you're a school principal, board official, NGO, or researcher — we'd love to hear from you. Every conversation starts with a simple hello.</p>
 
     <div class="contact-layout">
-      <!-- Left col: info -->
       <div class="contact-info">
         <div>
           <div style="font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Direct Contact</div>
           <div class="contact-channel">
             <span class="channel-icon">✉️</span>
             <div class="channel-label">Email</div>
-            <a href="/cdn-cgi/l/email-protection#b3dbd6dfdfdcf3d0d2c7d2dfcac0c7d1dccb9ddadd" class="channel-value"><span class="__cf_email__" data-cfemail="29414c454546694a485d4845505a5d4b4651074047">[email&#160;protected]</span></a>
+            <a href="mailto:hello@catalystbox.in" class="channel-value">hello@catalystbox.in</a>
             <p class="channel-desc">For all partnership enquiries, board proposals, and general questions. We respond within 48 hours.</p>
           </div>
           <div class="contact-channel" style="margin-top:10px;">
@@ -1008,7 +1027,6 @@ footer {
           </div>
         </div>
 
-        <!-- Who should reach out -->
         <div>
           <div style="font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Who Should Reach Out</div>
           <div class="reach-list">
@@ -1020,7 +1038,6 @@ footer {
           </div>
         </div>
 
-        <!-- Partner with us strip -->
         <div class="partner-strip">
           <div>
             <p><strong>Looking to partner with CatalystBox?</strong>Fill in our dedicated Partner With Us form and our team will reach out with a tailored proposal for your school or board.</p>
@@ -1029,7 +1046,6 @@ footer {
         </div>
       </div>
 
-      <!-- Right col: Contact Us Google Form -->
       <div class="contact-form-wrap">
         <div class="form-title">Send Us a Message</div>
         <div class="form-subtitle">Fill in the form below — our team will get back to you within 48 hours on working days.</div>
@@ -1052,24 +1068,19 @@ footer {
   </div>
 
   <footer>
-    <div style="display:flex;align-items:center;gap:12px;"><div class="logo-mark">CB</div><div><div class="footer-logo">CatalystBox</div><div class="footer-tag">National Education Intelligence Infrastructure</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px;"><div class="footer-qr"></div><div><div class="footer-logo">CatalystBox</div><div class="footer-tag">National Education Intelligence Infrastructure</div></div></div>
     <div class="footer-right"><div>Fresh Eye Foundation</div><div style="margin-top:4px;">© 2025 CatalystBox · All Rights Reserved</div></div>
   </footer>
 </div>
 
 <!-- ═══ SCRIPTS ═══ -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 /* ── FORM URLS ── */
 var PARTNER_FORM_URL  = "https://docs.google.com/forms/d/e/1FAIpQLSdQn30COlQGDSYYmZJWUd2nswekDJ2tTr13K8e3x-nJZPcP7Q/viewform";
 var CONTACT_FORM_URL  = "https://docs.google.com/forms/d/e/1FAIpQLSdV6QmpIYF7dPeFuvmuuE317LbKTRfaZpQX37pGka8j-rTJ5Q/viewform";
 
-function openPartnerForm() {
-  window.open(PARTNER_FORM_URL, '_blank');
-}
-
-function openContactForm() {
-  window.open(CONTACT_FORM_URL, '_blank');
-}
+function openPartnerForm() { window.open(PARTNER_FORM_URL, '_blank'); }
+function openContactForm()  { window.open(CONTACT_FORM_URL, '_blank'); }
 
 /* ── PAGE SWITCHING ── */
 function showPage(id) {
@@ -1078,15 +1089,10 @@ function showPage(id) {
   document.getElementById('page-' + id).classList.add('active');
   document.getElementById('nav-' + id).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'instant' });
-
-  // Re-run fade-ups for the new page
   setTimeout(() => {
-    document.querySelectorAll('#page-' + id + ' .fade-up').forEach(el => {
-      el.classList.remove('visible');
-    });
+    document.querySelectorAll('#page-' + id + ' .fade-up').forEach(el => el.classList.remove('visible'));
     setTimeout(() => observeFadeUps(), 60);
   }, 10);
-
   if (id === 'home') triggerBars();
 }
 
@@ -1106,9 +1112,7 @@ function triggerBars() {
     const barObs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          e.target.querySelectorAll('.index-bar-fill').forEach(f => {
-            f.style.width = f.dataset.width + '%';
-          });
+          e.target.querySelectorAll('.index-bar-fill').forEach(f => { f.style.width = f.dataset.width + '%'; });
           barObs.unobserve(e.target);
         }
       });
@@ -1137,8 +1141,7 @@ function showCat(id, btn) {
 
 /* ── INIT ── */
 (function() {
-  var pages = document.querySelectorAll('.page');
-  pages.forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   var home = document.getElementById('page-home');
   if (home) home.classList.add('active');
 })();
@@ -1147,6 +1150,39 @@ document.addEventListener('DOMContentLoaded', function() {
   observeFadeUps();
   triggerBars();
 });
+</script>
+
+<!-- ═══ QR LOGO — replaces CB in nav + all footers ═══ -->
+<script src="https://unpkg.com/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
+<script>
+(function() {
+  var QR_CFG = {
+    data: 'https://www.catalystbox.in/scan',
+    qrOptions: { errorCorrectionLevel: 'H' },
+    dotsOptions: { color: '#0B5C45', type: 'dots' },
+    backgroundOptions: { color: 'transparent' },
+    cornersSquareOptions: { color: '#E8922A', type: 'extra-rounded' },
+    cornersDotOptions:   { color: '#E8922A', type: 'dot' }
+  };
+
+  function mountQRs() {
+    // Nav — 60px render, scaled to 34px via CSS
+    var navEl = document.getElementById('nav-qr');
+    if (navEl) {
+      new QRCodeStyling(Object.assign({}, QR_CFG, { width: 60, height: 60, margin: 2 })).append(navEl);
+    }
+    // All footers — same render size, CSS scales to 32px
+    document.querySelectorAll('.footer-qr').forEach(function(el) {
+      new QRCodeStyling(Object.assign({}, QR_CFG, { width: 60, height: 60, margin: 2 })).append(el);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', mountQRs);
+  } else {
+    mountQRs();
+  }
+})();
 </script>
 </body>
 </html>
