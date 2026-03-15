@@ -107,6 +107,9 @@ h2 em { color: var(--teal-light); font-style: normal; }
   max-width: 520px; line-height: 1.75;
 }
 
+.pain-item strong { display: block; margin-bottom: 6px; }
+.pain-item span { display: block; }
+
 .btn-primary {
   background: var(--amber); color: var(--ink); font-family: 'DM Sans', sans-serif;
   font-weight: 600; font-size: 0.9rem; padding: 13px 26px; border-radius: 8px;
