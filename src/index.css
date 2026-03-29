@@ -1,0 +1,19 @@
+:root {
+  --teal: #0B5C45;
+  --teal-dim: #084a37;
+  --teal-light: #e6f2ee;
+  --amber: #E8922A;
+  --ink: #1a1a2e;
+  --ink-mid: #374151;
+  --ink-light: #6b7280;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --red: #dc2626;
+  --red-pale: #fef2f2;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--teal); color: var(--ink); }
+
