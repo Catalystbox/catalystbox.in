@@ -3,7 +3,6 @@ import { supabase } from './lib/supabase'
 import Login from './pages/Login'
 import BoardDashboard from './pages/BoardDashboard'
 import SchoolDashboard from './pages/SchoolDashboard'
-import ImpactDashboard from './pages/ImpactDashboard'  // ← ADDED
 import './index.css'
 
 export default function App() {
@@ -42,9 +41,6 @@ export default function App() {
     setLoading(false)
   }
 
-  // ← ADDED — only triggers if someone visits /impact, otherwise ignored
-  if (window.location.pathname === '/impact') return <ImpactDashboard />
-
   if (loading) return (
     <div style={{
       display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -73,3 +69,5 @@ export default function App() {
     </div>
   )
 }
+
+
