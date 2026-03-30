@@ -10,7 +10,8 @@ function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
-  document.getElementById('nav-' + id).classList.add('active');
+  var navBtn = document.getElementById('nav-' + id);
+  if (navBtn) navBtn.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'instant' });
   setTimeout(() => {
     document.querySelectorAll('#page-' + id + ' .fade-up').forEach(el => el.classList.remove('visible'));
