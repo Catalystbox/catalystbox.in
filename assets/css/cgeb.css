@@ -17,8 +17,8 @@
     --font-display: 'Syne', sans-serif;
     --font-body: 'DM Sans', sans-serif;
     --font-mono: 'DM Mono', monospace;
-    --max: 780px;
-    --wide: 1100px;
+    --max: 1200px;
+    --wide: 1200px;
     
     background: var(--dark);
     color: var(--text-primary);
