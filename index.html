@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="./assets/css/style.css" />
+<link rel="stylesheet" href="./assets/css/cgeb.css" />
 </head>
 <body class="light-mode">
 
@@ -28,6 +29,7 @@
   <ul class="nav-links">
     <li><button onclick="showPage('home')" id="nav-home" class="active">Home</button></li>
     <li><button onclick="showPage('solutions')" id="nav-solutions">Solutions</button></li>
+    <li><button onclick="showPage('cgeb')" id="nav-cgeb">Research</button></li>
     <li><button onclick="showPage('about')" id="nav-about">About</button></li>
     <li><button onclick="showPage('faq')" id="nav-faq">FAQs</button></li>
     <li><button onclick="toggleTheme()" id="theme-btn" style="padding:8px 12px; font-size:1.1rem; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center;">🌙</button></li>
@@ -1236,8 +1238,835 @@
 
 </div>
 
+<!-- ═══════════════════════════════════════════
+     PAGE: CGEB (Methodology)
+═══════════════════════════════════════════ -->
+<div class="page cgeb-page" id="page-cgeb">
+  <div id="progress-bar"></div>
+
+  <nav id="side-nav">
+    <div class="nav-dot active" data-target="cover"><span class="nav-dot-label">Cover</span></div>
+    <div class="nav-dot" data-target="abstract"><span class="nav-dot-label">Abstract</span></div>
+    <div class="nav-dot" data-target="problem"><span class="nav-dot-label">Problem</span></div>
+    <div class="nav-dot" data-target="framework"><span class="nav-dot-label">Framework</span></div>
+    <div class="nav-dot" data-target="parameters"><span class="nav-dot-label">Parameters</span></div>
+    <div class="nav-dot" data-target="methodology"><span class="nav-dot-label">Methodology</span></div>
+    <div class="nav-dot" data-target="scoring"><span class="nav-dot-label">Scoring</span></div>
+    <div class="nav-dot" data-target="privacy"><span class="nav-dot-label">Privacy</span></div>
+    <div class="nav-dot" data-target="applications"><span class="nav-dot-label">Applications</span></div>
+    <div class="nav-dot" data-target="limitations"><span class="nav-dot-label">Limitations</span></div>
+    <div class="nav-dot" data-target="about"><span class="nav-dot-label">About</span></div>
+  </nav>
+
+  <!-- ══════════════════ COVER ══════════════════ -->
+  <section class="cover" id="cover">
+    <div class="cover-grid"></div>
+    <div class="cover-glow"></div>
+    <div class="cover-glow-2"></div>
+
+    <div class="cover-inner">
+      <div class="cover-label">Methodology White Paper · Version 1.0</div>
+      <h1 class="cover-title">
+        The <span class="accent">CatalystBox</span><br/>
+        Global Education<br/>
+        <span class="accent-2">Benchmark</span>
+      </h1>
+      <p class="cover-subtitle">
+        A framework for measuring school experience<br/>
+        across student wellbeing, teaching effectiveness,<br/>
+        learning environment, parent engagement,<br/>and future readiness.
+      </p>
+      <div class="cover-meta">
+        <div class="meta-item">
+          <span class="meta-label">Published by</span>
+          <span class="meta-value">Fresh Eye Foundation</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Platform</span>
+          <span class="meta-value">CatalystBox</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Version</span>
+          <span class="meta-value">1.0 — April 2026</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Classification</span>
+          <span class="meta-value">Public — Open Access</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-scroll-hint">
+      <div class="scroll-line"></div>
+      <span class="scroll-text">Scroll to read</span>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ ABSTRACT + TOC ══════════════════ -->
+  <section class="section" id="abstract">
+    <div class="section-inner">
+
+      <div class="section-label">00 <span>—</span> Preface</div>
+
+      <div class="abstract-box reveal">
+        <p>
+          The CatalystBox Global Education Benchmark (CGEB) is an open methodology for measuring school experience — the lived, felt quality of education — across three stakeholder groups: students, teachers, and parents. Unlike existing assessment frameworks that measure academic outcomes through standardized tests, the CGEB captures experience, wellbeing, and institutional responsiveness in real time. This paper describes the conceptual basis of the benchmark, its five measurement parameters, the anonymous data collection methodology, the composite scoring engine, and the safeguards that protect participant privacy. The CGEB is designed for use across education systems globally, from government schools in low-income countries to international schools in high-income markets, using a single standardized measurement infrastructure.
+        </p>
+      </div>
+
+      <div class="toc reveal">
+        <div class="toc-title">Table of Contents</div>
+        <ol class="toc-list">
+          <li><a href="#problem"><span class="toc-num">01</span>The Problem: The Global Feedback Void<span class="toc-dots"></span></a></li>
+          <li><a href="#framework"><span class="toc-num">02</span>The CGEB Framework<span class="toc-dots"></span></a></li>
+          <li><a href="#parameters"><span class="toc-num">03</span>The Five Parameters<span class="toc-dots"></span></a></li>
+          <li><a href="#methodology"><span class="toc-num">04</span>Data Collection Methodology<span class="toc-dots"></span></a></li>
+          <li><a href="#scoring"><span class="toc-num">05</span>The Scoring Engine<span class="toc-dots"></span></a></li>
+          <li><a href="#ai"><span class="toc-num">06</span>AI & Sentiment Processing<span class="toc-dots"></span></a></li>
+          <li><a href="#privacy"><span class="toc-num">07</span>Privacy & Data Governance<span class="toc-dots"></span></a></li>
+          <li><a href="#applications"><span class="toc-num">08</span>Applications & Use Cases<span class="toc-dots"></span></a></li>
+          <li><a href="#limitations"><span class="toc-num">09</span>Limitations & Future Research<span class="toc-dots"></span></a></li>
+          <li><a href="#about"><span class="toc-num">10</span>About CatalystBox<span class="toc-dots"></span></a></li>
+        </ol>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ PROBLEM ══════════════════ -->
+  <section class="section" id="problem">
+    <div class="section-inner">
+
+      <div class="section-label reveal">01 <span>—</span> The Problem</div>
+      <h2 class="reveal">The Global<br/>Feedback Void</h2>
+
+      <p class="reveal">
+        Education systems worldwide are among the largest institutions humanity has ever built. India alone enrolls 250 million students. The United States spends over $800 billion annually on K-12 education. Indonesia's education ministry oversees 50 million learners. Yet across these systems — and virtually every other education system on Earth — there is a striking absence: <strong>no standardized infrastructure for capturing the real-time, anonymous experience of the people inside schools.</strong>
+      </p>
+
+      <div class="stat-row reveal">
+        <div class="stat-card">
+          <div class="stat-num">~2.5M</div>
+          <div class="stat-label">Formal schools operating globally with no standardized experience feedback</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num amber">1.7B</div>
+          <div class="stat-label">Students enrolled in those schools whose voices are structurally uncaptured</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">$6T</div>
+          <div class="stat-label">Annual global education expenditure with minimal ground-level experience data</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num amber">3 yrs</div>
+          <div class="stat-label">Typical cycle between PISA assessments — the most frequent major international measure</div>
+        </div>
+      </div>
+
+      <p class="reveal">
+        Existing measurement frameworks, including PISA (OECD), TIMSS, and national standardized examinations, measure what students <em>know</em> at a point in time. They do not measure what students <em>experience</em> continuously. They capture outcomes, not conditions.
+      </p>
+
+      <div class="pull-quote reveal">
+        <p>"Schools are not just knowledge factories. They are environments in which children spend 15,000 hours of their lives. The quality of that environment — as experienced by students, teachers, and parents — is invisible to the systems that govern it."</p>
+      </div>
+
+      <p class="reveal">
+        The consequences of this feedback void are measurable. Systemic problems — teacher disengagement, bullying cultures, inadequate infrastructure, academic pressure crises — persist undetected until they become crises. Policy reforms are designed without ground-level signal. Students who might raise early warning signs have no structured, safe, anonymous channel to do so.
+      </p>
+
+      <p class="reveal">
+        The CGEB is designed to close this gap. It provides education systems with a continuous, anonymous, AI-processed signal from the three groups most directly experiencing school quality: students, teachers, and parents.
+      </p>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ FRAMEWORK ══════════════════ -->
+  <section class="section" id="framework">
+    <div class="section-inner">
+
+      <div class="section-label reveal">02 <span>—</span> The Framework</div>
+      <h2 class="reveal">The CGEB<br/>Architecture</h2>
+
+      <p class="reveal">
+        The CatalystBox Global Education Benchmark is a <strong>composite index</strong> — a single numerical score between 0 and 100 that summarizes the overall quality of a school's experience environment. It is calculated from five weighted parameters, each capturing a distinct dimension of school life.
+      </p>
+
+      <p class="reveal">
+        The CGEB is distinct from academic performance indexes in three fundamental ways:
+      </p>
+
+      <div class="info-box reveal">
+        <h4>Three Defining Distinctions</h4>
+        <ul>
+          <li><strong>Experience-first, not outcome-first.</strong> The CGEB measures how school <em>feels</em> to its participants, not what students can demonstrate on a test.</li>
+          <li><strong>Three-stakeholder architecture.</strong> Student voice, teacher voice, and parent voice are weighted independently and combined — no single group's perspective dominates.</li>
+          <li><strong>Real-time and continuous.</strong> Data is collected year-round through always-available QR-based forms, not through periodic high-stakes assessments.</li>
+        </ul>
+      </div>
+
+      <p class="reveal">
+        The framework is curriculum-agnostic by design. It makes no assumptions about pedagogical approach, subject matter, or assessment type. A government school in rural Kenya and an IB World School in Singapore can both receive meaningful CGEB scores, and those scores are comparable because they measure the same underlying dimensions of experience.
+      </p>
+
+      <h3 class="reveal" style="margin-top:40px;">The Three Index Streams</h3>
+      <p class="reveal">
+        Before calculation of the composite CGEB score, responses are organized into three independent index streams reflecting each stakeholder group. These streams are valuable in their own right — a school may have a high SEI but a low TEI, signaling that students feel well-supported but teachers do not.
+      </p>
+
+      <div class="index-diagram reveal">
+        <div class="index-formula">
+          <div class="formula-term">
+            <div class="formula-val">SEI</div>
+            <div class="formula-lbl">Student Experience<br/>Index · 45%</div>
+          </div>
+          <div class="formula-op">+</div>
+          <div class="formula-term">
+            <div class="formula-val amber">TEI</div>
+            <div class="formula-lbl">Teacher Experience<br/>Index · 30%</div>
+          </div>
+          <div class="formula-op">+</div>
+          <div class="formula-term">
+            <div class="formula-val blue">PTI</div>
+            <div class="formula-lbl">Parent Engagement<br/>Index · 25%</div>
+          </div>
+          <div class="formula-op">=</div>
+          <div class="formula-term">
+            <div class="formula-val" style="color:var(--text-primary);font-size:36px;">CGEB</div>
+            <div class="formula-lbl">Composite Score<br/>0 – 100</div>
+          </div>
+        </div>
+
+        <p style="text-align:center;font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin:0;">
+          Student voice weighted highest (45%) · Scores normalized to 0–100 scale · Minimum response threshold required per stream
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ PARAMETERS ══════════════════ -->
+  <section class="section" id="parameters">
+    <div class="section-inner">
+
+      <div class="section-label reveal">03 <span>—</span> Measurement Parameters</div>
+      <h2 class="reveal">The Five<br/>Parameters</h2>
+
+      <p class="reveal">
+        The CGEB measures five dimensions of school experience, each weighted according to its contribution to holistic school quality. These parameters were derived from a synthesis of international education quality frameworks, including UNESCO's Education for All framework, the OECD's Education at a Glance indicators, the Sustainable Development Goal 4 targets, and empirical research on school climate and student wellbeing.
+      </p>
+
+      <div class="bar-chart reveal" id="bar-chart">
+        <div class="bar-row">
+          <div class="bar-label">Student Wellbeing</div>
+          <div class="bar-track"><div class="bar-fill p1" data-w="25"></div></div>
+          <div class="bar-pct">25%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Teaching Effectiveness</div>
+          <div class="bar-track"><div class="bar-fill p2" data-w="20"></div></div>
+          <div class="bar-pct">20%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Learning Environment</div>
+          <div class="bar-track"><div class="bar-fill p3" data-w="20"></div></div>
+          <div class="bar-pct">20%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Future Readiness</div>
+          <div class="bar-track"><div class="bar-fill p4" data-w="20"></div></div>
+          <div class="bar-pct">20%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Parent Engagement</div>
+          <div class="bar-track"><div class="bar-fill p5" data-w="15"></div></div>
+          <div class="bar-pct">15%</div>
+        </div>
+      </div>
+
+      <div class="param-grid reveal">
+
+        <div class="param-card p1">
+          <div class="param-num">01</div>
+          <div class="param-body">
+            <h3>Student Wellbeing</h3>
+            <p>Measures the physical, emotional, and social wellbeing of students within the school environment. Covers safety from bullying and harassment, mental health support, sense of belonging, equitable treatment, and freedom to express concerns without fear. This parameter receives the highest weight (25%) because student wellbeing is foundational to all other educational outcomes.</p>
+            <div class="tag-row" style="margin-top:12px;">
+              <span class="tag teal">Safety</span>
+              <span class="tag teal">Mental Health</span>
+              <span class="tag teal">Belonging</span>
+              <span class="tag teal">Anti-Bullying</span>
+              <span class="tag teal">Equity</span>
+            </div>
+          </div>
+          <div class="param-weight">25%</div>
+        </div>
+
+        <div class="param-card p2">
+          <div class="param-num">02</div>
+          <div class="param-body">
+            <h3>Teaching Effectiveness</h3>
+            <p>Captures the quality of instructional practice as experienced by students and observed by teachers themselves. Measures pedagogical quality, student engagement in lessons, feedback frequency, differentiation for diverse learners, and teacher-student relationships. Data is collected from both students (their experience of being taught) and teachers (their self-reported professional conditions).</p>
+            <div class="tag-row" style="margin-top:12px;">
+              <span class="tag amber">Pedagogy</span>
+              <span class="tag amber">Engagement</span>
+              <span class="tag amber">Feedback</span>
+              <span class="tag amber">Relationships</span>
+            </div>
+          </div>
+          <div class="param-weight">20%</div>
+        </div>
+
+        <div class="param-card p3">
+          <div class="param-num">03</div>
+          <div class="param-body">
+            <h3>Learning Environment</h3>
+            <p>Assesses the physical and institutional conditions in which learning occurs. Covers classroom infrastructure, access to learning materials, cleanliness and safety of facilities, digital access, library resources, and the broader institutional culture (inclusion, discipline fairness, institutional responsiveness to concerns). Not limited to physical infrastructure — also captures whether the school's systems support effective learning.</p>
+            <div class="tag-row" style="margin-top:12px;">
+              <span class="tag">Infrastructure</span>
+              <span class="tag">Digital Access</span>
+              <span class="tag">Inclusion</span>
+              <span class="tag">Resources</span>
+            </div>
+          </div>
+          <div class="param-weight">20%</div>
+        </div>
+
+        <div class="param-card p4">
+          <div class="param-num">04</div>
+          <div class="param-body">
+            <h3>Future Readiness</h3>
+            <p>Measures the degree to which the school prepares students for life beyond the classroom — including career guidance, critical thinking development, digital literacy, vocational exposure, and preparation for higher education. This parameter specifically addresses whether students feel equipped for the transitions that follow school, and whether teachers feel supported in delivering future-relevant learning.</p>
+            <div class="tag-row" style="margin-top:12px;">
+              <span class="tag">Career Guidance</span>
+              <span class="tag">Critical Thinking</span>
+              <span class="tag">Digital Literacy</span>
+              <span class="tag">Transitions</span>
+            </div>
+          </div>
+          <div class="param-weight">20%</div>
+        </div>
+
+        <div class="param-card p5">
+          <div class="param-num">05</div>
+          <div class="param-body">
+            <h3>Parent Engagement</h3>
+            <p>Captures the quality of the school-family relationship. Measures communication frequency and clarity, responsiveness of school leadership to parental concerns, inclusion of parents in school decisions, and parents' sense of trust in the institution. Parent feedback is treated as an independent data stream (PTI) reflecting the family's experience of the school as an institution, distinct from the child's in-school experience.</p>
+            <div class="tag-row" style="margin-top:12px;">
+              <span class="tag">Communication</span>
+              <span class="tag">Trust</span>
+              <span class="tag">Responsiveness</span>
+              <span class="tag">Inclusion</span>
+            </div>
+          </div>
+          <div class="param-weight">15%</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ METHODOLOGY ══════════════════ -->
+  <section class="section" id="methodology">
+    <div class="section-inner">
+
+      <div class="section-label reveal">04 <span>—</span> Data Collection</div>
+      <h2 class="reveal">The Methodology</h2>
+
+      <p class="reveal">
+        The CGEB is built on an anonymous, QR-code-based, mobile-first data collection methodology. The design reflects three non-negotiable constraints: <strong>anonymity</strong> must be absolute; <strong>accessibility</strong> must not require device installation or network infrastructure beyond a basic smartphone; <strong>universality</strong> must allow deployment in any school in any country without logistical complexity.
+      </p>
+
+      <h3 class="reveal">Collection Architecture</h3>
+
+      <table class="method-table reveal">
+        <thead>
+          <tr>
+            <th>Stakeholder</th>
+            <th>Access Method</th>
+            <th>Form Type</th>
+            <th>Frequency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Students (Cls 10 & 12)</td>
+            <td>QR code on school notice board or classroom poster</td>
+            <td>Structured + open text. Covers wellbeing, teaching, environment, future readiness.</td>
+            <td>Ongoing; minimum quarterly analysis cycles</td>
+          </tr>
+          <tr>
+            <td>Teachers</td>
+            <td>QR code on staffroom notice board or via school admin</td>
+            <td>Structured + open text. Covers professional conditions, support, and pedagogy confidence.</td>
+            <td>Ongoing; minimum quarterly</td>
+          </tr>
+          <tr>
+            <td>Parents / Guardians</td>
+            <td>QR code on school communications, report cards, or notice board</td>
+            <td>Structured + open text. Covers communication, trust, and child experience at home.</td>
+            <td>Ongoing; minimum semi-annual</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="reveal" style="margin-top:48px;">The Data Pipeline</h3>
+      <div class="process-list reveal">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>Response Submission</h3>
+            <p>Participant scans the school-specific QR code on a smartphone. No app download required. The form loads in the mobile browser. No login, no email, no name. School identity is encoded in the QR code itself — participants do not select a school manually.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>Raw Data Collection</h3>
+            <p>Responses are written to a secure database. Each response record includes: school identifier, stakeholder type, structured scale responses (Likert, multiple choice), open-text responses, and timestamp. No device fingerprint, no IP address, no personal identifier of any kind is stored.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>ETL Processing</h3>
+            <p>Raw responses are extracted, transformed, and loaded into the analytics pipeline. Structured responses are normalized to a 0–100 scale per item. Open-text responses are queued for AI sentiment analysis.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h3>AI Sentiment Analysis</h3>
+            <p>Open-text responses are processed by a large language model (LLM) to extract sentiment polarity, topic classification, and issue detection. The AI layer identifies signals such as bullying mentions, safety concerns, wellbeing deterioration, and positive practice patterns. No individual response is attributed to any person.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h3>CGEB Score Calculation</h3>
+            <p>Parameter scores are calculated from normalized structured responses. SEI, TEI, and PTI are computed from their respective stakeholder streams. The composite CGEB is calculated using the weighted formula. A minimum response threshold per stream is required before a score is published.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">6</div>
+          <div class="step-body">
+            <h3>Dashboard Publication</h3>
+            <p>Scores are published to the school dashboard, visible to authorized school administrators and principals. Benchmark comparisons (city, state, national, global) are displayed contextually. Individual response data is never displayed — only aggregated scores and trend lines.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ SCORING ══════════════════ -->
+  <section class="section" id="scoring">
+    <div class="section-inner">
+
+      <div class="section-label reveal">05 <span>—</span> The Scoring Engine</div>
+      <h2 class="reveal">Score Calculation<br/>& Benchmarking</h2>
+
+      <p class="reveal">
+        All CGEB scores are expressed on a normalized 0–100 scale where higher scores indicate a more positive experience environment. The scoring engine applies a hierarchical calculation: individual items → parameter scores → stream indexes → composite CGEB.
+      </p>
+
+      <h3 class="reveal">Normalization</h3>
+      <p class="reveal">
+        Structured items use Likert scales (typically 1–5 or 1–4). Each item is normalized to 0–100. For a 5-point scale, the formula is: <strong>Normalized Score = (Raw Response − 1) / (5 − 1) × 100</strong>. This ensures all items contribute equally regardless of original scale range.
+      </p>
+
+      <h3 class="reveal" style="margin-top:36px;">Minimum Response Thresholds</h3>
+      <p class="reveal">
+        To prevent statistically unreliable scores from being published, each index stream requires a minimum number of valid responses before a score is reported. Scores below threshold are shown as "Insufficient Data" in dashboards and excluded from benchmark comparisons. Thresholds are school-size-adjusted.
+      </p>
+
+      <table class="method-table reveal">
+        <thead>
+          <tr>
+            <th>Stream</th>
+            <th>Minimum Responses</th>
+            <th>Rationale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SEI (Student)</td>
+            <td>15 valid responses</td>
+            <td>Sufficient for statistical reliability at school level; equivalent to ~1 classroom</td>
+          </tr>
+          <tr>
+            <td>TEI (Teacher)</td>
+            <td>5 valid responses</td>
+            <td>Lower threshold reflects smaller teaching populations; protects anonymity in small schools</td>
+          </tr>
+          <tr>
+            <td>PTI (Parent)</td>
+            <td>10 valid responses</td>
+            <td>Balanced between reliability and the practical difficulty of parent engagement</td>
+          </tr>
+          <tr>
+            <td>CGEB (Composite)</td>
+            <td>All three streams must meet threshold</td>
+            <td>Composite score is only published when all streams are independently valid</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="reveal" style="margin-top:36px;">Benchmarking Tiers</h3>
+      <p class="reveal">
+        A CGEB score is most meaningful when contextualized. Each school's score is compared against four benchmark tiers, displayed on the school dashboard:
+      </p>
+
+      <div class="info-box amber-top reveal">
+        <h4>Benchmark Tiers</h4>
+        <ul>
+          <li><strong>School Historical:</strong> The school's own score trend over time — is it improving or declining?</li>
+          <li><strong>City/District Average:</strong> How does this school compare to peers in the same urban or district context?</li>
+          <li><strong>National Average:</strong> How does this school compare nationally, by board and school type?</li>
+          <li><strong>Global Average:</strong> Once sufficient international data exists, global comparison by income band and school type.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ AI ══════════════════ -->
+  <section class="section" id="ai">
+    <div class="section-inner">
+
+      <div class="section-label reveal">06 <span>—</span> Intelligence Layer</div>
+      <h2 class="reveal">AI &amp; Sentiment<br/>Processing</h2>
+
+      <p class="reveal">
+        The CGEB includes an AI-powered intelligence layer that processes open-text responses to extract signals that structured questions alone cannot capture. This layer detects issue patterns, sentiment trends, and emerging concerns — surfacing them for school administrators without exposing individual responses.
+      </p>
+
+      <h3 class="reveal">What the AI Layer Does</h3>
+      <table class="method-table reveal">
+        <thead>
+          <tr>
+            <th>Function</th>
+            <th>Description</th>
+            <th>Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sentiment Classification</td>
+            <td>Classifies each open-text response as positive, neutral, or negative; identifies emotional tone</td>
+            <td>Sentiment distribution per parameter per time period</td>
+          </tr>
+          <tr>
+            <td>Topic Extraction</td>
+            <td>Identifies the specific issues mentioned in responses (e.g., "homework pressure", "teacher favouritism", "dirty toilets")</td>
+            <td>Ranked list of most-mentioned issues per school</td>
+          </tr>
+          <tr>
+            <td>Issue Flagging</td>
+            <td>Detects high-severity signals including bullying mentions, safety concerns, mental health distress, and harassment language</td>
+            <td>Alert notifications to school dashboard (aggregated — never individual)</td>
+          </tr>
+          <tr>
+            <td>Trend Detection</td>
+            <td>Identifies statistically significant changes in sentiment or issue frequency over time</td>
+            <td>Trend alerts: "Mentions of academic pressure have increased 40% in the last 30 days"</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="pull-quote reveal">
+        <p>"The AI layer does not replace human judgment. It amplifies weak signals that would otherwise be invisible in aggregated data — giving school leaders the chance to act before a pattern becomes a crisis."</p>
+      </div>
+
+      <h3 class="reveal">What the AI Layer Does Not Do</h3>
+      <div class="info-box reveal">
+        <h4>Explicit Constraints</h4>
+        <ul>
+          <li>The AI never attempts to identify individual respondents from text content</li>
+          <li>Individual responses are never displayed in dashboards — only aggregated signals</li>
+          <li>The AI does not make decisions — it surfaces information for human review</li>
+          <li>Responses below the minimum threshold per school are excluded from AI processing</li>
+          <li>Responses flagged as potentially identifying (unusual detail that could narrow the respondent pool) are suppressed before output</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ PRIVACY ══════════════════ -->
+  <section class="section" id="privacy">
+    <div class="section-inner">
+
+      <div class="section-label reveal">07 <span>—</span> Privacy &amp; Governance</div>
+      <h2 class="reveal">Privacy by Design.<br/>Not by Policy.</h2>
+
+      <p class="reveal">
+        The CGEB's privacy framework rests on a single structural commitment: <strong>no personal data is collected</strong>. This is not a policy position that can be eroded. It is an architectural constraint built into the collection system.
+      </p>
+
+      <div class="stat-row reveal">
+        <div class="stat-card">
+          <div class="stat-num">0</div>
+          <div class="stat-label">Personal identifiers collected. No names, emails, student IDs, or device fingerprints.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">0</div>
+          <div class="stat-label">IP addresses stored. Location data is not collected at any point in the pipeline.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num amber">100%</div>
+          <div class="stat-label">Aggregated reporting. No individual response is ever displayed to any party.</div>
+        </div>
+      </div>
+
+      <h3 class="reveal" style="margin-top:40px;">Regulatory Alignment</h3>
+      <p class="reveal">
+        Because the CGEB collects no personal data by design, it is structurally outside the scope of most global data protection regulations. However, the platform is designed to align with the most stringent applicable standards:
+      </p>
+
+      <table class="method-table reveal">
+        <thead>
+          <tr><th>Regulation</th><th>Jurisdiction</th><th>CatalystBox Position</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GDPR</td>
+            <td>European Union / United Kingdom</td>
+            <td>Anonymous data is outside GDPR scope. No DPA agreement required for school deployments. Data processing is fully GDPR-aligned for any personally identifiable data used in account management.</td>
+          </tr>
+          <tr>
+            <td>FERPA</td>
+            <td>United States</td>
+            <td>CatalystBox is not a school system of record and does not collect education records as defined under FERPA. Not applicable.</td>
+          </tr>
+          <tr>
+            <td>COPPA</td>
+            <td>United States</td>
+            <td>Student forms target Classes 10 and 12 (ages 15–18). Forms include an age-gate confirmation. Under-13 collection is structurally prevented.</td>
+          </tr>
+          <tr>
+            <td>PDPA / POPIA / PIPL</td>
+            <td>Southeast Asia, South Africa, China</td>
+            <td>Anonymous collection means these regulations are largely non-applicable. Fully compliant with the data minimization principles embedded in each.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="reveal" style="margin-top:40px;">Governance Structure</h3>
+      <p class="reveal">
+        The CGEB is governed under the institutional framework of Fresh Eye Foundation, a registered not-for-profit organization (12A + 80G status, India). An independent advisory board — including educators, child protection specialists, data ethicists, and policy experts — provides external oversight of the methodology and its application.
+      </p>
+      <p class="reveal">
+        No school or government body may access individual-level response data under any circumstances. Data access is governed by a tiered permission model: school principals see their school's aggregated scores; board administrators see board-level aggregations; government partners see state or national aggregations only.
+      </p>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ APPLICATIONS ══════════════════ -->
+  <section class="section" id="applications">
+    <div class="section-inner">
+
+      <div class="section-label reveal">08 <span>—</span> Use Cases</div>
+      <h2 class="reveal">Applications &amp;<br/>Use Cases</h2>
+
+      <p class="reveal">
+        The CGEB is designed to serve multiple stakeholder groups at different levels of the education system. The same underlying data serves different purposes depending on the level of aggregation at which it is viewed.
+      </p>
+
+      <div class="info-box reveal">
+        <h4>For Schools</h4>
+        <ul>
+          <li>Identify specific, actionable areas for improvement before issues escalate to crises</li>
+          <li>Benchmark against peer schools in the city, district, and nationally</li>
+          <li>Demonstrate accountability and improvement trajectory to parents and boards</li>
+          <li>Satisfy quality assurance requirements with continuous, independent data</li>
+        </ul>
+      </div>
+
+      <div class="info-box amber-top reveal">
+        <h4>For Education Boards &amp; Ministries</h4>
+        <ul>
+          <li>Monitor school experience quality across thousands of schools simultaneously</li>
+          <li>Identify districts or school clusters showing systemic decline — and intervene early</li>
+          <li>Evaluate the impact of policy reforms using before-and-after CGEB tracking</li>
+          <li>Replace infrequent, expensive inspection cycles with continuous intelligence</li>
+        </ul>
+      </div>
+
+      <div class="info-box reveal">
+        <h4>For Development Finance &amp; Research</h4>
+        <ul>
+          <li>Monitor and evaluate education program outcomes using an independent, standardized measure</li>
+          <li>Provide evidence-based impact data for reporting to donors and funding bodies</li>
+          <li>Generate nationally representative datasets for academic research</li>
+          <li>Track progress toward SDG 4 indicators at country level</li>
+        </ul>
+      </div>
+
+      <div class="info-box amber-top reveal">
+        <h4>For Policymakers &amp; Think Tanks</h4>
+        <ul>
+          <li>Access the Annual Global School Experience Report for cross-country comparison</li>
+          <li>Commission custom analysis of anonymized datasets for policy research</li>
+          <li>Use CGEB trend data to justify and design education reform investments</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ LIMITATIONS ══════════════════ -->
+  <section class="section" id="limitations">
+    <div class="section-inner">
+
+      <div class="section-label reveal">09 <span>—</span> Limitations</div>
+      <h2 class="reveal">Limitations &amp;<br/>Future Research</h2>
+
+      <p class="reveal">
+        The CGEB is a first-generation instrument. Intellectual honesty requires frank acknowledgment of its current limitations. Each limitation identified below represents a research agenda for future versions of the framework.
+      </p>
+
+      <table class="method-table reveal">
+        <thead>
+          <tr><th>Limitation</th><th>Nature</th><th>Mitigation / Research Agenda</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Self-selection bias</td>
+            <td>Participants who choose to respond may not be representative of the full school population; students with stronger feelings (positive or negative) may be overrepresented</td>
+            <td>Response rate monitoring; comparison of respondent cohorts over time; future research on representativeness</td>
+          </tr>
+          <tr>
+            <td>Social desirability effects</td>
+            <td>Even with anonymity guarantees, some participants may respond in ways they believe are expected, particularly in cultures with high power distance</td>
+            <td>Form design to minimize leading questions; cultural adaptation of question framing; longitudinal comparison to detect systematic bias</td>
+          </tr>
+          <tr>
+            <td>Cross-cultural comparability</td>
+            <td>The meaning of concepts like "teacher effectiveness" or "belonging" may vary significantly across cultures; current parameter weights were developed in an Indian context</td>
+            <td>Active research program with partner universities in each deployment region; planned parameter localization in future versions</td>
+          </tr>
+          <tr>
+            <td>Gaming and manipulation</td>
+            <td>Schools could theoretically encourage positive responses or suppress negative ones; organized response campaigns could distort scores</td>
+            <td>Statistical anomaly detection (sudden score changes, unusual submission timing, device clustering); minimum observation period before score changes are reflected</td>
+          </tr>
+          <tr>
+            <td>Causal inference limits</td>
+            <td>CGEB scores are correlational; a high score does not prove causal school quality, and a low score does not identify the cause of poor experience</td>
+            <td>CGEB is positioned as a signal, not a verdict; qualitative follow-up is recommended when scores trigger concern; research partnerships to establish causal links</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="pull-quote reveal">
+        <p>"A measurement framework that acknowledges its own limits is more trustworthy than one that claims universal validity. The CGEB is a beginning, not an endpoint."</p>
+      </div>
+
+      <h3 class="reveal">Planned Version 2.0 Developments</h3>
+      <div class="tag-row reveal">
+        <span class="tag teal">15-language form engine</span>
+        <span class="tag teal">Offline-first response queuing</span>
+        <span class="tag amber">Cultural parameter calibration</span>
+        <span class="tag amber">Peer-reviewed methodology paper</span>
+        <span class="tag">University research partnerships</span>
+        <span class="tag">Longitudinal tracking cohorts</span>
+        <span class="tag teal">School improvement recommendation engine</span>
+        <span class="tag">SDG 4 indicator mapping</span>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ ABOUT ══════════════════ -->
+  <section class="section" id="about">
+    <div class="section-inner">
+
+      <div class="section-label reveal">10 <span>—</span> About</div>
+      <h2 class="reveal">About CatalystBox</h2>
+
+      <p class="reveal">
+        <strong>CatalystBox</strong> is India's national education feedback and intelligence platform — Initiative 01 of Fresh Eye Foundation. It is designed to make student voice measurable, visible, and actionable across schools, boards, districts, states, and the nation.
+      </p>
+      <p class="reveal">
+        CatalystBox combines anonymous feedback collection, AI-driven sentiment analysis, the CatalystBox Benchmark Index (CBI), and a school analytics dashboard to transform fragmented, informal feedback into structured education intelligence.
+      </p>
+      <p class="reveal">
+        The platform is built on a cross-subsidization model: fees from private institutions fund free access for government and rural schools, ensuring that quality improvement tools are not confined to well-resourced schools.
+      </p>
+
+      <div class="info-box reveal">
+        <h4>Fresh Eye Foundation</h4>
+        <ul>
+          <li>Registered NGO with 12A and 80G status (India)</li>
+          <li>Multi-domain civic mission: education, public health, civic governance, workforce intelligence</li>
+          <li>CatalystBox (education) is Initiative 01 of the Foundation's work</li>
+          <li>Contact: support@fresheyefoundation.com</li>
+        </ul>
+      </div>
+
+      <div class="cite reveal">
+        <strong>Cite this document:</strong><br/>
+        Fresh Eye Foundation. (2026). <em>The CatalystBox Global Education Benchmark: A Methodology White Paper.</em> Version 1.0. Lucknow, India: Fresh Eye Foundation / CatalystBox. Available at: catalystbox.in/research/cgeb
+      </div>
+
+      <p class="reveal" style="margin-top:32px;">
+        For partnership enquiries, research collaborations, government engagement, or pilot deployment discussions, please contact:
+      </p>
+
+      <div class="stat-row reveal" style="max-width:500px;">
+        <div class="stat-card">
+          <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Platform</div>
+          <div style="font-size:14px;color:var(--teal);">hello@catalystbox.in</div>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">catalystbox.in</div>
+        </div>
+        <div class="stat-card">
+          <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Foundation</div>
+          <div style="font-size:14px;color:var(--teal);">support@fresheyefoundation.com</div>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Fresh Eye Foundation</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ FOOTER ══════════════════ -->
+  <footer>
+    <div style="display:flex;align-items:center;gap:12px;"><div class="footer-qr"></div><div><div class="footer-logo">CatalystBox</div><div class="footer-tag">National Education Intelligence Infrastructure</div></div></div>
+    <div class="footer-right"><div>Fresh Eye Foundation</div><div style="margin-top:4px;">© 2025 CatalystBox · All Rights Reserved | <button onclick="showPage('privacy')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Privacy Policy</button> · <button onclick="showPage('governance')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Data Governance</button></div></div>
+  </footer>
+</div>
+
 <!-- ═══ SCRIPTS ═══ -->
 <script src="./assets/js/script.js"></script>
+<script src="./assets/js/cgeb.js"></script>
 
 <!-- ═══ QR LOGO — replaces CB in nav + all footers ═══ -->
 <script src="https://unpkg.com/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
