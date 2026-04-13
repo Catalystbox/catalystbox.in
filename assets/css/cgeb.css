@@ -237,5 +237,6 @@ body.light-mode #page-cgeb .abstract-box, body.light-mode #page-cgeb .toc, body.
 body.light-mode #page-cgeb .stat-card:hover, body.light-mode #page-cgeb .param-card:hover { background: #fff; }
 body.light-mode #page-cgeb .method-table th { background: #F8F9FA; border-color: rgba(0,0,0,0.1); color: #52525B; }
 body.light-mode #page-cgeb .method-table td { border-color: rgba(0,0,0,0.1); }
+body.light-mode #page-cgeb .method-table td:first-child { color: #18181B; }
 body.light-mode #page-cgeb .method-table tr:hover td { background: rgba(0,0,0,0.03); }
 body.light-mode #page-cgeb .tag { border-color: rgba(0,0,0,0.1); }
