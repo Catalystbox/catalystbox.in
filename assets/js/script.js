@@ -6,19 +6,35 @@ function openPartnerForm() { window.open(PARTNER_FORM_URL, '_blank'); }
 function openContactForm()  { window.open(CONTACT_FORM_URL, '_blank'); }
 
 /* ── PAGE SWITCHING ── */
-function showPage(id) {
+function showPage(id, pushHistory = true) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
   var navBtn = document.getElementById('nav-' + id);
   if (navBtn) navBtn.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'instant' });
+  
+  if (pushHistory) {
+    let route = id;
+    if (id === 'cgeb') route = 'research';
+    if (id === 'home') route = '';
+    window.history.pushState({ page: id }, '', '/' + route);
+  }
+
   setTimeout(() => {
     document.querySelectorAll('#page-' + id + ' .fade-up').forEach(el => el.classList.remove('visible'));
     setTimeout(() => observeFadeUps(), 60);
   }, 10);
   if (id === 'home') triggerBars();
 }
+
+window.addEventListener('popstate', function(e) {
+  if (e.state && e.state.page) {
+    showPage(e.state.page, false);
+  } else {
+    showPage('home', false);
+  }
+});
 
 /* ── FADE UP OBSERVER ── */
 function observeFadeUps() {
@@ -160,8 +176,22 @@ function initParallax() {
 /* ── INIT ── */
 (function() {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  var home = document.getElementById('page-home');
-  if (home) home.classList.add('active');
+  
+  let path = window.location.pathname.replace(/^\/+|\/+$/g, '');
+  let targetId = path || 'home';
+  if (targetId === 'research') targetId = 'cgeb';
+  
+  var initialPage = document.getElementById('page-' + targetId);
+  if (!initialPage) {
+    targetId = 'home';
+  }
+  
+  let route = targetId;
+  if (targetId === 'cgeb') route = 'research';
+  if (targetId === 'home') route = '';
+  window.history.replaceState({ page: targetId }, '', '/' + route);
+
+  showPage(targetId, false);
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
