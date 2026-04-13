@@ -17,6 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="./assets/css/style.css" />
 <link rel="stylesheet" href="./assets/css/cgeb.css" />
+<link rel="stylesheet" href="./assets/css/partnership.css" />
 </head>
 <body class="light-mode">
 
@@ -30,6 +31,7 @@
     <li><button onclick="showPage('home')" id="nav-home" class="active">Home</button></li>
     <li><button onclick="showPage('solutions')" id="nav-solutions">Solutions</button></li>
     <li><button onclick="showPage('cgeb')" id="nav-cgeb">Research</button></li>
+    <li><button onclick="showPage('partnership')" id="nav-partnership">Partnership</button></li>
     <li><button onclick="showPage('about')" id="nav-about">About</button></li>
     <li><button onclick="showPage('faq')" id="nav-faq">FAQs</button></li>
     <li><button onclick="toggleTheme()" id="theme-btn" style="padding:8px 12px; font-size:1.1rem; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center;">🌙</button></li>
@@ -2064,9 +2066,447 @@
   </footer>
 </div>
 
+<!-- ═══════════════════════════════════════════════
+     PAGE: PARTNERSHIP
+═══════════════════════════════════════════════ -->
+<div class="page partnership-page" id="page-partnership">
+  <!-- ── HERO ── -->
+  <div class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-orb-1"></div>
+    <div class="hero-orb-2"></div>
+
+    <div class="hero-tag">Global Partnership Programme</div>
+
+    <h1 class="hero-title">
+      Bring Student Voice<br/>
+      <span class="line-teal">to Your Country.</span>
+    </h1>
+
+    <p class="hero-sub">
+      CatalystBox is expanding globally. We're looking for governments, education boards, schools, NGOs, and research institutions who want to make anonymous, AI-driven school experience intelligence part of their education system.
+    </p>
+
+    <div class="hero-cta-row">
+      <a href="#express-interest" class="btn-primary">Express Interest →</a>
+      <a href="#" onclick="showPage('cgeb'); return false;" class="btn-ghost" style="padding:16px 28px; border-radius:100px; font-weight:600;">Read the Methodology</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="hstat-val">28,000+</div>
+        <div class="hstat-lbl">Schools in our India directory</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-val amber">3</div>
+        <div class="hstat-lbl">Stakeholder groups measured simultaneously</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-val">0</div>
+        <div class="hstat-lbl">Personal identifiers ever collected</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-val amber">150+</div>
+        <div class="hstat-lbl">Countries targeted in 10-year expansion plan</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── EXPANSION WAVES ── -->
+  <section class="wave-section" id="expansion">
+    <div class="inner">
+      <div class="section-tag reveal">Expansion Map</div>
+      <h2 class="reveal">Where We're Going.<br/>In What Order.</h2>
+      <p class="reveal" style="max-width:600px;">CatalystBox expands in five deliberate waves — sequenced by regulatory ease, digital infrastructure, and reform appetite. Each wave funds and validates the next.</p>
+
+      <div class="wave-grid">
+        <div class="wave-card reveal" data-wave="WAVE 1">
+          <div class="wave-status active">Active · 2026</div>
+          <h3>South Asia</h3>
+          <div class="wave-countries">India<br/>Bangladesh<br/>Nepal<br/>Sri Lanka</div>
+          <div class="wave-yr">01</div>
+        </div>
+        <div class="wave-card reveal d1" data-wave="WAVE 2">
+          <div class="wave-status soon">Deploying · 2027</div>
+          <h3>Southeast Asia</h3>
+          <div class="wave-countries">Indonesia<br/>Vietnam<br/>Philippines<br/>Thailand</div>
+          <div class="wave-yr">02</div>
+        </div>
+        <div class="wave-card reveal d2" data-wave="WAVE 3">
+          <div class="wave-status soon">Opening · 2028</div>
+          <h3>Middle East<br/>&amp; Africa</h3>
+          <div class="wave-countries">UAE · Saudi Arabia<br/>Kenya · Nigeria<br/>Rwanda</div>
+          <div class="wave-yr">03</div>
+        </div>
+        <div class="wave-card reveal d3" data-wave="WAVE 4">
+          <div class="wave-status future">Planned · 2029</div>
+          <h3>Anglophone<br/>West</h3>
+          <div class="wave-countries">United Kingdom<br/>Australia<br/>Canada</div>
+          <div class="wave-yr">04</div>
+        </div>
+        <div class="wave-card reveal d3" data-wave="WAVE 5">
+          <div class="wave-status future">Planned · 2030+</div>
+          <h3>USA &amp;<br/>Continental Europe</h3>
+          <div class="wave-countries">United States<br/>Germany · France<br/>Netherlands · Nordics</div>
+          <div class="wave-yr">05</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── PARTNER TYPES ── -->
+  <section id="partner-types">
+    <div class="inner">
+      <div class="section-tag reveal">Who We Work With</div>
+      <h2 class="reveal">Four Partnership<br/>Tracks.</h2>
+      <p class="reveal" style="max-width:600px;">CatalystBox has distinct partnership tracks for different institutions — each with a tailored deployment model, pricing, and support structure.</p>
+
+      <div class="partner-grid">
+        <div class="partner-card gov reveal">
+          <div class="partner-icon">🏛️</div>
+          <h3>Governments &amp; Ministries</h3>
+          <p>National or state education ministries looking to deploy CatalystBox as a country-wide school experience monitoring system. Includes a white-label government-branded version and a national ministry dashboard.</p>
+          <ul class="partner-gets">
+            <li>Ministry-branded deployment on your domain</li>
+            <li>National and district-level analytics dashboard</li>
+            <li>Policy-ready aggregated reports</li>
+            <li>Integration with existing school data systems</li>
+            <li>Country-specific data residency</li>
+            <li>Dedicated implementation support team</li>
+          </ul>
+        </div>
+        <div class="partner-card school reveal d1">
+          <div class="partner-icon">🏫</div>
+          <h3>Schools &amp; Education Boards</h3>
+          <p>Individual private schools, school chains, or curriculum boards (CBSE, IB, Cambridge, national boards) looking to bring the CatalystBox Benchmark to their institution or network.</p>
+          <ul class="partner-gets">
+            <li>School-specific dashboard with your branding</li>
+            <li>CGEB score with city, national &amp; global benchmarks</li>
+            <li>QR-based form deployment — no hardware required</li>
+            <li>AI-generated insights on sentiment and issues</li>
+            <li>Cross-subsidy model: premium schools fund free access for government schools</li>
+            <li>Annual CatalystBox Benchmark certification</li>
+          </ul>
+        </div>
+        <div class="partner-card ngo reveal">
+          <div class="partner-icon">🌍</div>
+          <h3>NGOs &amp; Development Finance</h3>
+          <p>International development organizations, foundations, and financing bodies (World Bank, UNICEF, ADB, bilateral donors) running education programs that require independent monitoring, evaluation, and impact measurement.</p>
+          <ul class="partner-gets">
+            <li>Grant-funded free deployment in low-income schools</li>
+            <li>Independent M&amp;E data using the CGEB framework</li>
+            <li>Donor-ready impact reports</li>
+            <li>Baseline and endline measurement for program evaluation</li>
+            <li>SDG 4 indicator alignment and reporting</li>
+            <li>Co-branding on impact publications</li>
+          </ul>
+        </div>
+        <div class="partner-card research reveal d1">
+          <div class="partner-icon">🔬</div>
+          <h3>Research Institutions</h3>
+          <p>Universities, think tanks, and policy research bodies looking to access anonymized school experience data for academic research, policy analysis, or global comparative studies.</p>
+          <ul class="partner-gets">
+            <li>Access to anonymized, aggregated CGEB datasets</li>
+            <li>Co-publication opportunities on the Annual Global School Experience Report</li>
+            <li>Custom data cuts by geography, school type, or parameter</li>
+            <li>Methodology collaboration and peer-review partnership</li>
+            <li>Academic licensing at research-friendly pricing</li>
+            <li>First-mover access to longitudinal data as the dataset grows</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── WHAT WE BRING ── -->
+  <section style="background:var(--dark-2);">
+    <div class="inner">
+      <div class="section-tag reveal">What CatalystBox Brings</div>
+      <h2 class="reveal">The Infrastructure.<br/>You Bring the Schools.</h2>
+      <p class="reveal" style="max-width:580px;">CatalystBox handles the entire technical, analytical, and AI layer. Your country or institution brings school access and local knowledge. We build the rest together.</p>
+
+      <div class="offer-grid">
+        <div class="offer-card reveal">
+          <div class="offer-num">01 — Deployment</div>
+          <h3>QR-Based, Zero Hardware</h3>
+          <p>No screens, no devices, no installations. School-specific QR codes printed on posters activate the platform instantly. Works on any smartphone on any network.</p>
+        </div>
+        <div class="offer-card reveal d1">
+          <div class="offer-num">02 — Intelligence</div>
+          <h3>AI Sentiment Engine</h3>
+          <p>Open-text responses are processed through a large language model to detect patterns, issues, and emerging signals — surfacing to dashboards without exposing individual responses.</p>
+        </div>
+        <div class="offer-card reveal d2">
+          <div class="offer-num">03 — Benchmark</div>
+          <h3>The CGEB Score</h3>
+          <p>Every participating school receives a composite CatalystBox Global Education Benchmark score across five parameters, comparable city-, nation-, and globally.</p>
+        </div>
+        <div class="offer-card reveal">
+          <div class="offer-num">04 — Privacy</div>
+          <h3>Zero PII by Design</h3>
+          <p>No personal identifiers are ever collected. The architecture makes anonymity structurally guaranteed — not policy-dependent. GDPR-aligned in every market.</p>
+        </div>
+        <div class="offer-card reveal d1">
+          <div class="offer-num">05 — Localization</div>
+          <h3>Multilingual Forms</h3>
+          <p>Forms are available in 15 languages and growing. Curriculum-agnostic design means the same instrument works across IB, Cambridge, national boards, and government curricula.</p>
+        </div>
+        <div class="offer-card reveal d2">
+          <div class="offer-num">06 — Reports</div>
+          <h3>Policy-Ready Intelligence</h3>
+          <p>Governments and donors receive aggregated, visualized reports ready for policy review and donor reporting — not raw data dumps that require further analysis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── QUOTE ── -->
+  <section class="quote-section">
+    <div class="quote-inner">
+      <span class="quote-mark">"</span>
+      <p class="quote-text">A billion children pass through school with their voices structurally uncaptured. CatalystBox exists to change that — one school at a time, one country at a time, until the whole world is listening.</p>
+      <div class="quote-attr">Yatesh Srivastava — Founder, CatalystBox &amp; Fresh Eye Foundation</div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── FAQ ── -->
+  <section id="partnership-faq">
+    <div class="inner mid">
+      <div class="section-tag reveal">Common Questions</div>
+      <h2 class="reveal">FAQ</h2>
+
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-q">
+            Does CatalystBox require any physical hardware installation?
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">No. CatalystBox uses QR codes printed on standard A4 or A3 posters placed on school notice boards, classrooms, or staffrooms. Any participant with a smartphone and basic internet access can scan and respond. No tablets, no screens, no infrastructure beyond a printed poster.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            How does anonymity work? Can schools identify respondents?
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">No personal data — no names, emails, student IDs, or device fingerprints — is collected at any point. Schools only ever see aggregated scores and trends, never individual responses. Responses below the minimum threshold per school are suppressed entirely. Anonymity is architectural, not policy-based — it cannot be overridden.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            Is CatalystBox compliant with GDPR and other data regulations?
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Because CatalystBox collects no personal data by design, it operates outside the scope of GDPR, FERPA, and most other data protection regulations. For markets that require data residency (Indonesia, Vietnam, Saudi Arabia, EU), we deploy country-specific cloud instances. Full regulatory analysis is provided as part of government partnership discussions.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            How is CatalystBox funded in low-income markets?
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">CatalystBox operates on a cross-subsidy model. Fees from private schools and government contracts in higher-income markets fund free access for government and rural schools in lower-income markets. We also work with development finance institutions (World Bank, ADB, UNICEF) who fund deployment as part of their education program monitoring and evaluation budgets.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            Can the platform be white-labelled for our government or institution?
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Yes. For government ministry partnerships, CatalystBox offers a fully white-labelled version with the ministry's branding, deployed on a government subdomain. The analytics and AI layer remain CatalystBox infrastructure. Schools see the ministry brand; ministry administrators see all school data; principals see only their school's data.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            How long does deployment take?
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">For individual schools, deployment is same-week — QR codes are generated within 48 hours of onboarding. For government-level deployments, timeline depends on localization, data residency, and government procurement requirements. Typical government implementation is 4–12 weeks from contract to first data collection.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── FORM ── -->
+  <section class="form-section" id="express-interest">
+    <div class="inner">
+      <div class="form-layout">
+        <div class="form-left">
+          <div class="section-tag reveal">Get Started</div>
+          <h2 class="reveal">Express<br/>Interest.</h2>
+          <p class="reveal">Tell us who you are and what you're looking to build. We'll respond within 48 hours with a tailored brief on how CatalystBox can work in your context.</p>
+
+          <div class="form-meta reveal">
+            <div class="form-meta-item">
+              <div class="form-meta-icon">⚡</div>
+              <div class="form-meta-body">
+                <strong>48-hour response</strong>
+                We review every enquiry and respond personally — not with an automated sequence.
+              </div>
+            </div>
+            <div class="form-meta-item">
+              <div class="form-meta-icon">🔒</div>
+              <div class="form-meta-body">
+                <strong>No commitment required</strong>
+                Expressing interest is the start of a conversation, not a contract.
+              </div>
+            </div>
+            <div class="form-meta-item">
+              <div class="form-meta-icon">🌐</div>
+              <div class="form-meta-body">
+                <strong>Country-specific guidance</strong>
+                Every response includes context on regulatory fit and deployment model for your market.
+              </div>
+            </div>
+            <div class="form-meta-item">
+              <div class="form-meta-icon">📄</div>
+              <div class="form-meta-body">
+                <strong>CGEB methodology included</strong>
+                All responses include a link to our full open-access methodology white paper.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-right" id="form-container">
+          <h3>Fill in your details and we'll be in touch.</h3>
+
+          <form id="partnership-form" onsubmit="handlePartnershipSubmit(event)">
+            <div class="field-row">
+              <div class="field">
+                <label for="pfname">First Name</label>
+                <input type="text" id="pfname" placeholder="Priya" required />
+              </div>
+              <div class="field">
+                <label for="plname">Last Name</label>
+                <input type="text" id="plname" placeholder="Sharma" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="pemail">Work Email</label>
+              <input type="email" id="pemail" placeholder="you@organization.org" required />
+            </div>
+
+            <div class="field">
+              <label for="porg">Organization Name</label>
+              <input type="text" id="porg" placeholder="Ministry of Education / School Name / NGO" required />
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="pcountry">Country</label>
+                <select id="pcountry" required>
+                  <option value="" disabled selected>Select country</option>
+                  <option>Bangladesh</option>
+                  <option>Nepal</option>
+                  <option>Sri Lanka</option>
+                  <option>Indonesia</option>
+                  <option>Vietnam</option>
+                  <option>Philippines</option>
+                  <option>Thailand</option>
+                  <option>Malaysia</option>
+                  <option>UAE</option>
+                  <option>Saudi Arabia</option>
+                  <option>Kenya</option>
+                  <option>Nigeria</option>
+                  <option>Rwanda</option>
+                  <option>South Africa</option>
+                  <option>United Kingdom</option>
+                  <option>Australia</option>
+                  <option>Canada</option>
+                  <option>United States</option>
+                  <option>Germany</option>
+                  <option>France</option>
+                  <option>Netherlands</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="pschools">Schools in scope</label>
+                <select id="pschools">
+                  <option value="" disabled selected>Approx. number</option>
+                  <option>1–5 schools</option>
+                  <option>6–25 schools</option>
+                  <option>26–100 schools</option>
+                  <option>101–500 schools</option>
+                  <option>500–5,000 schools</option>
+                  <option>5,000+ schools</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-bottom:18px;">
+              <span class="form-type-label">I represent</span>
+              <div class="type-grid">
+                <div>
+                  <input class="type-option" type="radio" name="ptype" id="t-gov" value="Government / Ministry" />
+                  <label class="type-label" for="t-gov">🏛️ Government / Ministry</label>
+                </div>
+                <div>
+                  <input class="type-option" type="radio" name="ptype" id="t-school" value="School / Board" />
+                  <label class="type-label" for="t-school">🏫 School / Board</label>
+                </div>
+                <div>
+                  <input class="type-option" type="radio" name="ptype" id="t-ngo" value="NGO / Development Finance" />
+                  <label class="type-label" for="t-ngo">🌍 NGO / Dev Finance</label>
+                </div>
+                <div>
+                  <input class="type-option" type="radio" name="ptype" id="t-research" value="Research Institution" />
+                  <label class="type-label" for="t-research">🔬 Research Institution</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="pmessage">What are you hoping to achieve? (optional)</label>
+              <textarea id="pmessage" placeholder="Tell us about your context — the number of schools, your key challenges, or what you've tried before..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" style="width:100%; border:none; padding:16px; font-weight:600; cursor:pointer;">Send Expression of Interest →</button>
+            <p class="form-note">Your enquiry goes directly to hello@catalystbox.in · We do not add you to mailing lists · No spam, ever.</p>
+          </form>
+
+          <div class="form-success" id="form-success-p">
+            <div class="success-icon">✓</div>
+            <h3>We've received your interest.</h3>
+            <p style="color:var(--text-secondary);font-size:14px;">Expect a personal response within 48 hours at the email you provided.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div style="display:flex;align-items:center;gap:12px;"><div class="footer-qr"></div><div><div class="footer-logo">CatalystBox</div><div class="footer-tag">National Education Intelligence Infrastructure</div></div></div>
+    <div class="footer-right"><div>Fresh Eye Foundation</div><div style="margin-top:4px;">© 2025 CatalystBox · All Rights Reserved | <button onclick="showPage('privacy')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Privacy Policy</button> · <button onclick="showPage('governance')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Data Governance</button></div></div>
+  </footer>
+</div>
+
 <!-- ═══ SCRIPTS ═══ -->
 <script src="./assets/js/script.js"></script>
 <script src="./assets/js/cgeb.js"></script>
+<script src="./assets/js/partnership.js"></script>
 
 <!-- ═══ QR LOGO — replaces CB in nav + all footers ═══ -->
 <script src="https://unpkg.com/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
