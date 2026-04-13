@@ -6,7 +6,9 @@ function openPartnerForm() { window.open(PARTNER_FORM_URL, '_blank'); }
 function openContactForm()  { window.open(CONTACT_FORM_URL, '_blank'); }
 
 /* ── PAGE SWITCHING ── */
-function showPage(id, pushHistory = true) {
+function showPage(id, pushHistory) {
+  if (pushHistory === undefined) pushHistory = true;
+
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
@@ -18,7 +20,11 @@ function showPage(id, pushHistory = true) {
     let route = id;
     if (id === 'cgeb') route = 'research';
     if (id === 'home') route = '';
-    window.history.pushState({ page: id }, '', '/' + route);
+    try {
+      window.history.pushState({ page: id }, '', '/' + route);
+    } catch (e) {
+      console.warn("History API failed:", e);
+    }
   }
 
   setTimeout(() => {
@@ -189,7 +195,12 @@ function initParallax() {
   let route = targetId;
   if (targetId === 'cgeb') route = 'research';
   if (targetId === 'home') route = '';
-  window.history.replaceState({ page: targetId }, '', '/' + route);
+  
+  try {
+    window.history.replaceState({ page: targetId }, '', '/' + route);
+  } catch (e) {
+    console.warn("History API replace failed:", e);
+  }
 
   showPage(targetId, false);
 })();
