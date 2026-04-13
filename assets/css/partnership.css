@@ -210,7 +210,7 @@
 }
 
 /* ── WAVE MAP ── */
-#page-partnership .wave-section { background: var(--dark-2); }
+#page-partnership .wave-section, #page-partnership .bring-section { background: var(--dark-2); }
 
 #page-partnership .wave-grid {
     display: grid;
@@ -547,7 +547,8 @@ body.light-mode #page-partnership {
 }
 body.light-mode #page-partnership::before { opacity: 0.1; }
 body.light-mode #page-partnership .wave-section,
-body.light-mode #page-partnership .form-section { background: #F8F9FA; border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05); }
+body.light-mode #page-partnership .form-section,
+body.light-mode #page-partnership .bring-section { background: #F8F9FA; border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05); }
 body.light-mode #page-partnership .wave-card,
 body.light-mode #page-partnership .partner-card,
 body.light-mode #page-partnership .offer-card,
