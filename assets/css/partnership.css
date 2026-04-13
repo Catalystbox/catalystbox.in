@@ -583,3 +583,5 @@ body.light-mode #page-partnership .type-label { border-color: rgba(0,0,0,0.15); 
 body.light-mode #page-partnership .field input,
 body.light-mode #page-partnership .field select,
 body.light-mode #page-partnership .field textarea { color: #18181B; }
+
+body.light-mode #page-partnership .field select option { background: #ffffff; color: #18181B; }

@@ -30,6 +30,7 @@ window.handlePartnershipSubmit = function(e) {
   e.preventDefault();
   const form = document.getElementById('partnership-form');
   const success = document.getElementById('form-success-p');
+  const submitBtn = form.querySelector('.submit-btn');
 
   const ptypeInput = document.querySelector('#page-partnership input[name="ptype"]:checked');
 
@@ -37,29 +38,33 @@ window.handlePartnershipSubmit = function(e) {
   const data = {
     name: document.getElementById('pfname').value + ' ' + document.getElementById('plname').value,
     email: document.getElementById('pemail').value,
-    org: document.getElementById('porg').value,
+    organization: document.getElementById('porg').value,
     country: document.getElementById('pcountry').value,
     schools: document.getElementById('pschools').value,
     type: ptypeInput ? ptypeInput.value : 'Not specified',
-    message: document.getElementById('pmessage').value
+    message: document.getElementById('pmessage').value,
+    _subject: `New Partnership Request: ${document.getElementById('porg').value}`
   };
 
-  // Build mailto link
-  const subject = encodeURIComponent(`CatalystBox Global Partnership Interest — ${data.org} (${data.country})`);
-  const body = encodeURIComponent(
-    `New partnership expression of interest:\n\n` +
-    `Name: ${data.name}\n` +
-    `Email: ${data.email}\n` +
-    `Organisation: ${data.org}\n` +
-    `Country: ${data.country}\n` +
-    `Schools in scope: ${data.schools}\n` +
-    `Partner type: ${data.type}\n\n` +
-    `Message:\n${data.message}`
-  );
+  submitBtn.innerText = "Sending...";
+  submitBtn.disabled = true;
 
-  window.location.href = `mailto:hello@catalystbox.in?subject=${subject}&body=${body}`;
-
-  // Show success state
-  form.style.display = 'none';
-  success.style.display = 'block';
+  fetch("https://formsubmit.co/ajax/hello@catalystbox.in", {
+      method: "POST",
+      headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+      },
+      body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(data => {
+      form.style.display = 'none';
+      success.style.display = 'block';
+  })
+  .catch(error => {
+      alert("There was an error sending your request. Please try again.");
+      submitBtn.innerText = "Send Expression of Interest →";
+      submitBtn.disabled = false;
+  });
 }
