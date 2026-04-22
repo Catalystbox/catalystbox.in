@@ -61,6 +61,11 @@ window.handlePartnershipSubmit = function(e) {
   .then(data => {
       form.style.display = 'none';
       success.style.display = 'block';
+      
+      // Trigger Google Ads conversion tracking
+      if (typeof window.gtag_report_conversion === 'function') {
+        window.gtag_report_conversion();
+      }
   })
   .catch(error => {
       alert("There was an error sending your request. Please try again.");

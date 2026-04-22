@@ -2,11 +2,33 @@
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-77B1T6FC23"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18091626608"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+
+  gtag('config', 'AW-18091626608');
+</script>
+<!-- Event snippet for Submit lead form conversion page -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18091626608/yn3pCOasopwcEPCg4bJD',
+      'value': 1.0,
+      'currency': 'INR',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+<script>
+  // Google Analytics Property
   gtag('config', 'G-77B1T6FC23');
 </script>
 <meta charset="UTF-8" />
