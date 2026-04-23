@@ -54,6 +54,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // TOC click
+  const tocLinks = document.querySelectorAll('#page-cgeb .toc-list a');
+  tocLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        const offset = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: offset, behavior: 'smooth' });
+      }
+    });
+  });
+
   // Bar chart animation
   const barChart = document.getElementById('bar-chart');
   const barObserver = new IntersectionObserver((entries) => {

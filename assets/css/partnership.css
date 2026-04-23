@@ -580,6 +580,7 @@ body.light-mode #page-partnership .hero-sub,
 body.light-mode #page-partnership .partner-gets li,
 body.light-mode #page-partnership .form-meta-body,
 body.light-mode #page-partnership .faq-a-inner { color: #3F3F46; }
+body.light-mode #page-partnership .form-meta-body strong { color: #18181B; }
 body.light-mode #page-partnership .type-label { border-color: rgba(0,0,0,0.15); color: #3F3F46; }
 body.light-mode #page-partnership .field input,
 body.light-mode #page-partnership .field select,
