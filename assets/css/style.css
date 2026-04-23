@@ -268,6 +268,16 @@ body.light-mode .cta-divider { background: rgba(0,0,0,0.1); }
 }
 .fab:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(232, 160, 32, 0.5); }
 .fab-icon { font-size: 1.2rem; }
+.fab-wa {
+  position: fixed; bottom: 32px; left: 32px; z-index: 999;
+  background: #25D366; color: #fff;
+  width: 54px; height: 54px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.fab-wa:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(37, 211, 102, 0.45); }
+.fab-wa svg { width: 28px; height: 28px; fill: currentColor; }
 
 /* ═══════════════════════════════════════════════
    DASHBOARD
@@ -398,6 +408,8 @@ a.channel-value:hover { color: var(--amber); }
   .components-grid, .mission-pillars, .gov-grid, .comparable-grid { grid-template-columns: 1fr; }
   .dash-scores { grid-template-columns: repeat(2,1fr); }
   .fab { bottom: 20px; right: 20px; padding: 12px 18px; }
+  .fab-wa { bottom: 20px; left: 20px; width: 48px; height: 48px; }
+  .fab-wa svg { width: 24px; height: 24px; }
   .faq-cta-inner, .faq-nudge { flex-direction: column; text-align: center; gap: 24px; }
   .gform-iframe { height: 1000px; }
 }
