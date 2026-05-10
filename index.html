@@ -40,6 +40,7 @@ function gtag_report_conversion(url) {
 <link rel="stylesheet" href="/assets/css/style.css?v=1.1" />
 <link rel="stylesheet" href="/assets/css/cgeb.css?v=1.1" />
 <link rel="stylesheet" href="/assets/css/partnership.css?v=1.1" />
+<link rel="stylesheet" href="/assets/css/pricing.css?v=1.1" />
 </head>
 <body class="light-mode">
 
@@ -54,6 +55,7 @@ function gtag_report_conversion(url) {
     <li><button onclick="showPage('solutions')" id="nav-solutions">Solutions</button></li>
     <li><button onclick="showPage('cgeb')" id="nav-cgeb">Research</button></li>
     <li><button onclick="showPage('partnership')" id="nav-partnership">Partnership</button></li>
+    <li><button onclick="showPage('pricing')" id="nav-pricing">Pricing</button></li>
     <li><button onclick="showPage('about')" id="nav-about">About</button></li>
     <li><button onclick="showPage('faq')" id="nav-faq">FAQs</button></li>
     <li><button onclick="toggleTheme()" id="theme-btn" style="padding:8px 12px; font-size:1.1rem; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center;">🌙</button></li>
@@ -265,6 +267,382 @@ function gtag_report_conversion(url) {
         <div class="comp-card fade-up d1"><span class="comp-num">AI · 04</span><span class="comp-icon">🗓️</span><h3>AI Timetable Optimiser</h3><p>Automatically generate conflict-free, resource-optimised timetables — eliminating weeks of manual scheduling effort.</p></div>
         <div class="comp-card fade-up d2"><span class="comp-num">AI · 05</span><span class="comp-icon">🛡️</span><h3>AI Discipline Monitor</h3><p>Detect early behavioural patterns flagged anonymously through CatalystBox feedback and recommend timely, evidence-based interventions.</p></div>
         <div class="comp-card fade-up d3" style="background:rgba(232,160,32,0.05);border-color:rgba(232,160,32,0.2);"><span class="comp-num" style="color:var(--amber);">PARTNER</span><span class="comp-icon">🤝</span><h3>Build Together</h3><p>Have a specific need? CatalystBox partners with schools and boards to co-develop custom AI solutions grounded in your own feedback data.</p><button class="btn-primary" style="margin-top:16px;font-size:0.8rem;padding:10px 18px;" onclick="openPartnerForm()">Talk to Us →</button></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><div class="footer-qr"></div><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">National Education Intelligence Infrastructure</div></div></div>
+    
+    <a href="https://www.startupindia.gov.in/" target="_blank" rel="noopener noreferrer" class="startup-badge" title="Registered with Startup India (DIPP)" style="background: #fff; padding: 4px 10px; border-radius: 4px; border: none; text-decoration: none;">
+      <img src="assets/startup-india.png" alt="Startup India Recognized" style="height: 22px; width: auto; display: block;" />
+    </a>
+
+    <div class="footer-right" style="text-align:center;"><div>Fresh Eye Foundation</div><div style="margin-top:4px;">© 2025 CatalystBox · All Rights Reserved | <button onclick="showPage('privacy')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Privacy Policy</button> · <button onclick="showPage('governance')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Data Governance</button></div></div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: PRICING
+═══════════════════════════════════════════ -->
+<div class="page" id="page-pricing">
+  <!-- HERO -->
+  <section class="pricing-hero">
+    <div class="container">
+      <h1>School intelligence,<br /><em>priced for impact.</em></h1>
+      <p>A two-layer model — a board license gets schools into the system, a dashboard subscription unlocks deeper intelligence.</p>
+      <div class="hero-model-note">
+        <div class="dot"></div>
+        <div><strong>Free for govt schools</strong> via Samagra Shiksha · <strong>₹20–₹200</strong> per student/yr for private school boards</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW THE MODEL WORKS -->
+  <div class="model-strip">
+    <div class="container">
+      <div class="model-grid">
+        <div class="model-card">
+          <div class="mc-num">1</div>
+          <h3>Board signs up</h3>
+          <p>A state board, CBSE, or CISCE licenses CatalystBox at ₹20–₹200 per student per year. This covers all affiliated schools automatically.</p>
+        </div>
+        <div class="model-arrow">→</div>
+        <div class="model-card">
+          <div class="mc-num">2</div>
+          <h3>Every school gets Core</h3>
+          <p>All affiliated schools receive the free Core dashboard — a CBI score, three-index breakdown, and national percentile. No action needed from the school.</p>
+        </div>
+        <div class="model-arrow">→</div>
+        <div class="model-card">
+          <div class="mc-num">3</div>
+          <h3>Schools upgrade for more</h3>
+          <p>Schools that want trends, benchmarking, AI action plans, or chain-level reporting subscribe to Gold, Platinum, or Diamond — directly, any time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOARD LICENSE -->
+  <section id="board-license">
+    <div class="container">
+      <div class="pricing-section-label"><span>Layer 1 — Board License</span></div>
+      <h2 class="section-title">Priced per student, collected by the board</h2>
+      <p class="section-sub">Schools pay nothing directly. The board adds CatalystBox to its affiliation fee and remits — the same way it handles all per-school charges today.</p>
+
+      <div class="board-grid">
+        <div class="board-card cbse">
+          <div class="board-tag">CBSE</div>
+          <div class="board-price">₹150 <sub>/ student / yr</sub></div>
+          <p class="board-desc">= ₹12.50 per student per month. Less than the cost of one photocopied question paper.</p>
+          <p class="board-schools"><strong>~29,000 schools</strong> · ~65 lakh Class 10 & 12 students</p>
+          <div class="board-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="#5DCAA5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+            Collected via CBSE annual affiliation fee. Schools see no separate invoice.
+          </div>
+        </div>
+
+        <div class="board-card cisce">
+          <div class="board-tag">CISCE (ICSE / ISC)</div>
+          <div class="board-price">₹200 <sub>/ student / yr</sub></div>
+          <p class="board-desc">= ₹16.67 per month. Less than a single mock exam paper per student per year.</p>
+          <p class="board-schools"><strong>~2,750 schools</strong> · ~6.5 lakh Class 10 & 12 students</p>
+          <div class="board-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="#5DCAA5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+            Collected at ICSE/ISC school registration renewal. Full network coverage from day one.
+          </div>
+        </div>
+
+        <div class="board-card state">
+          <div class="board-tag">State Board — Private</div>
+          <div class="board-price">₹80 <sub>/ student / yr</sub></div>
+          <p class="board-desc">= ₹6.67 per month. Applicable to private schools across all 30 state secondary boards.</p>
+          <p class="board-schools"><strong>~50,000 schools</strong> · ~5 crore students in SSC & HSC</p>
+          <div class="board-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="#5DCAA5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+            Routed through state affiliation renewal or integrated into board annual levy.
+          </div>
+        </div>
+
+        <div class="board-card govt">
+          <div class="board-tag">Government Schools</div>
+          <div class="board-price">₹20 <sub>/ student / yr</sub></div>
+          <p class="board-desc">= ₹1.67 per month. Less than the cost of printing one government circular per student.</p>
+          <p class="board-schools"><strong>~2.2 lakh schools</strong> · ~2 crore Class 10 & 12 students</p>
+          <div class="board-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="#5DCAA5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+            Year 1 pilot: free. Funded from Year 2 via Samagra Shiksha Component 3, PM SHRI, or CSR partners. Schools always pay nothing.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD TIERS -->
+  <section id="dashboard" style="background: var(--slate); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="pricing-section-label"><span>Layer 2 — School Dashboard</span></div>
+      <h2 class="section-title">From snapshot to deep intelligence</h2>
+      <p class="section-sub">Every board-licensed school gets Core automatically. Upgrading unlocks progressively deeper layers — from trends and benchmarking to AI action plans and chain-level control.</p>
+
+      <div class="tiers-grid">
+        <!-- CORE -->
+        <div class="tier-card">
+          <span class="tier-badge core">Included free</span>
+          <div class="tier-name">Core</div>
+          <div class="tier-price">₹0 <sub>/ school / yr</sub></div>
+          <div class="tier-mo">Bundled with every board license</div>
+          <p class="tier-desc">A read-only annual snapshot. Designed to show enough to make the school want more.</p>
+          <ul class="feat-list">
+            <li><span class="fi"><span class="fi-yes"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> CGEB composite score — current year</li>
+            <li><span class="fi"><span class="fi-yes"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> SEI / TEI / PTI breakdown bar</li>
+            <li><span class="fi"><span class="fi-yes"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> National percentile rank (read-only)</li>
+            <li><span class="fi"><span class="fi-yes"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> QR code deployment (1 cycle per year)</li>
+            <li><span class="fi"><span class="fi-yes"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Single feedback cycle per academic year</li>
+            <li><span class="fi"><span class="fi-no">—</span></span><span style="color:var(--muted)">No historical data or trends</span></li>
+            <li><span class="fi"><span class="fi-no">—</span></span><span style="color:var(--muted)">No peer benchmarking</span></li>
+          </ul>
+          <a href="mailto:hello@catalystbox.in" class="tier-cta">Included with board license</a>
+        </div>
+
+        <!-- GOLD -->
+        <div class="tier-card">
+          <span class="tier-badge gold">Gold</span>
+          <div class="tier-name">Gold</div>
+          <div class="tier-price">₹28,000 <sub>/ school / yr</sub></div>
+          <div class="tier-mo">₹2,333 / month · ₹233 / class per month</div>
+          <p class="tier-desc">Full analytics suite for principals who want to understand their school's trajectory and act on it.</p>
+          <ul class="feat-list">
+            <li><span class="fi"><span class="fi-gold"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> 3-year historical trend — all indices</li>
+            <li><span class="fi"><span class="fi-gold"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> City + state peer benchmarking</li>
+            <li><span class="fi"><span class="fi-gold"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Class & section drill-down view</li>
+            <li><span class="fi"><span class="fi-gold"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Issue heatmaps — stress, safety, disengagement</li>
+            <li><span class="fi"><span class="fi-gold"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Stakeholder split view (students / teachers / parents)</li>
+            <li><span class="fi"><span class="fi-gold"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Annual PDF summary report</li>
+            <li><span class="fi"><span class="fi-gold"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Unlimited feedback cycles per year</li>
+            <li><span class="fi"><span class="fi-gold"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Email alerts on significant score changes</li>
+          </ul>
+          <a href="mailto:hello@catalystbox.in?subject=Gold Dashboard — School Inquiry" class="tier-cta">Get Gold</a>
+        </div>
+
+        <!-- PLATINUM -->
+        <div class="tier-card featured">
+          <div class="tier-pop-badge">Best seller</div>
+          <span class="tier-badge plat">Platinum</span>
+          <div class="tier-name">Platinum</div>
+          <div class="tier-price">₹65,000 <sub>/ school / yr</sub></div>
+          <div class="tier-mo">₹5,417 / month · AI-powered + parent portal</div>
+          <p class="tier-desc">AI consultant layer for school managements that want to market quality, not just measure it.</p>
+          <ul class="feat-list">
+            <li><span class="fi"><span class="fi-plat"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> National cross-board benchmarking</li>
+            <li><span class="fi"><span class="fi-plat"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Gemini AI narrative action plans per flagged issue</li>
+            <li><span class="fi"><span class="fi-plat"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Parent-facing quality score card (shareable URL)</li>
+            <li><span class="fi"><span class="fi-plat"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Teacher-level anonymised feedback analysis</li>
+            <li><span class="fi"><span class="fi-plat"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Custom survey builder (up to 5 questions)</li>
+            <li><span class="fi"><span class="fi-plat"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Custom-branded PDF reports (school logo)</li>
+            <li><span class="fi"><span class="fi-plat"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Quarterly strategy review calls</li>
+            <li><span class="fi"><span class="fi-plat"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> 5-year longitudinal data archive</li>
+          </ul>
+          <a href="mailto:hello@catalystbox.in?subject=Platinum Dashboard — School Inquiry" class="tier-cta primary">Get Platinum</a>
+        </div>
+
+        <!-- DIAMOND -->
+        <div class="tier-card">
+          <span class="tier-badge diam">Diamond</span>
+          <div class="tier-name">Diamond</div>
+          <div class="tier-price">₹1,20,000 <sub>/ school / yr</sub></div>
+          <div class="tier-mo">₹10,000 / month · Enterprise for school chains</div>
+          <p class="tier-desc">For school groups and chains — one contract, multiple campuses, full system ownership and integration.</p>
+          <ul class="feat-list">
+            <li><span class="fi"><span class="fi-diam"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Multi-campus unified dashboard (up to 10 schools)</li>
+            <li><span class="fi"><span class="fi-diam"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> ERP / SIS API integration</li>
+            <li><span class="fi"><span class="fi-diam"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Dedicated named account manager</li>
+            <li><span class="fi"><span class="fi-diam"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Custom CGEB parameter weightage override</li>
+            <li><span class="fi"><span class="fi-diam"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> White-label parent portal (school-branded URL)</li>
+            <li><span class="fi"><span class="fi-diam"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Chain-level aggregate reporting across campuses</li>
+            <li><span class="fi"><span class="fi-diam"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Priority support — 4-hour SLA</li>
+            <li><span class="fi"><span class="fi-diam"><svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2,6 5,9 10,3"/></svg></span></span> Annual in-person strategy session at school</li>
+          </ul>
+          <a href="mailto:hello@catalystbox.in?subject=Diamond Dashboard — Chain / Group Inquiry" class="tier-cta">Talk to us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE COMPARISON TABLE -->
+  <section id="features">
+    <div class="container">
+      <div class="pricing-section-label"><span>Full feature comparison</span></div>
+      <h2 class="section-title">One feature, one tier</h2>
+      <p class="section-sub">No feature lives in two tiers. Every upgrade unlocks a completely new layer of capability.</p>
+
+      <div class="feat-table-wrap">
+        <table class="feat-table">
+          <thead>
+            <tr>
+              <th style="width:40%">Feature</th>
+              <th><span style="background:rgba(255,255,255,0.06);color:var(--muted);padding:3px 10px;border-radius:20px;font-size:10px;letter-spacing:.04em;font-weight:600;text-transform:uppercase">Core</span></th>
+              <th><span style="background:rgba(232,160,32,0.15);color:var(--amber);padding:3px 10px;border-radius:20px;font-size:10px;letter-spacing:.04em;font-weight:600;text-transform:uppercase">Gold</span></th>
+              <th><span style="background:rgba(139,92,246,0.15);color:#C4B5FD;padding:3px 10px;border-radius:20px;font-size:10px;letter-spacing:.04em;font-weight:600;text-transform:uppercase">Platinum</span></th>
+              <th><span style="background:rgba(26,173,167,0.15);color:var(--teal-light);padding:3px 10px;border-radius:20px;font-size:10px;letter-spacing:.04em;font-weight:600;text-transform:uppercase">Diamond</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="group-row"><td colspan="5">Core snapshot</td></tr>
+            <tr><td>CGEB composite score (current year)</td><td><span class="check-dot core"></span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>SEI / TEI / PTI breakdown bar</td><td><span class="check-dot core"></span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>National percentile rank</td><td><span class="check-dot core"></span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>QR code generation & deployment</td><td><span class="check-dot core"></span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>Single feedback cycle per year</td><td><span class="check-dot core"></span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td></tr>
+
+            <tr class="group-row"><td colspan="5">Analytics & benchmarking</td></tr>
+            <tr><td>3-year historical trend (all indices)</td><td><span class="dash-cell">—</span></td><td><span class="check-dot gold"></span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>City + state peer benchmarking</td><td><span class="dash-cell">—</span></td><td><span class="check-dot gold"></span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>Class & section drill-down</td><td><span class="dash-cell">—</span></td><td><span class="check-dot gold"></span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>Issue heatmaps (stress, safety, disengagement)</td><td><span class="dash-cell">—</span></td><td><span class="check-dot gold"></span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>Stakeholder split view</td><td><span class="dash-cell">—</span></td><td><span class="check-dot gold"></span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>Annual PDF summary report</td><td><span class="dash-cell">—</span></td><td><span class="check-dot gold"></span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>Unlimited feedback cycles</td><td><span class="dash-cell">—</span></td><td><span class="check-dot gold"></span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>Email alerts on score changes</td><td><span class="dash-cell">—</span></td><td><span class="check-dot gold"></span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td></tr>
+
+            <tr class="group-row"><td colspan="5">AI intelligence & parent engagement</td></tr>
+            <tr><td>National cross-board benchmarking</td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="check-dot plat"></span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>Gemini AI narrative action plans</td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="check-dot plat"></span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>Parent-facing quality score card (URL)</td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="check-dot plat"></span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>Teacher-level anonymised feedback view</td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="check-dot plat"></span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>Custom survey builder (5 questions)</td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="check-dot plat"></span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>Custom-branded PDF reports</td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="check-dot plat"></span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>Quarterly strategy review calls</td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="check-dot plat"></span></td><td><span class="dash-cell">—</span></td></tr>
+            <tr><td>5-year longitudinal archive</td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="check-dot plat"></span></td><td><span class="dash-cell">—</span></td></tr>
+
+            <tr class="group-row"><td colspan="5">Enterprise & chain management</td></tr>
+            <tr><td>Multi-campus unified dashboard (up to 10)</td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="check-dot diam"></span></td></tr>
+            <tr><td>ERP / SIS API integration</td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="check-dot diam"></span></td></tr>
+            <tr><td>Dedicated named account manager</td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="check-dot diam"></span></td></tr>
+            <tr><td>Custom CGEB parameter weightage</td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="check-dot diam"></span></td></tr>
+            <tr><td>White-label parent portal</td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="check-dot diam"></span></td></tr>
+            <tr><td>Chain-level aggregate reporting</td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="check-dot diam"></span></td></tr>
+            <tr><td>Priority support — 4-hour SLA</td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="check-dot diam"></span></td></tr>
+            <tr><td>Annual in-person strategy session</td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="dash-cell">—</span></td><td><span class="check-dot diam"></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO SHOULD PICK WHAT -->
+  <section style="padding-top:0">
+    <div class="container">
+      <div class="pricing-section-label"><span>Which tier is right for you?</span></div>
+      <h2 class="section-title">Built for your specific context</h2>
+      <div class="goals-grid">
+        <div class="goal-card g-gold">
+          <div class="goal-tier-name">Gold</div>
+          <p class="goal-desc">For ambitious private schools focused on continuous improvement and local market positioning.</p>
+          <div class="goal-list-title">Perfect for</div>
+          <ul class="goal-list">
+            <li>
+              <div class="gl-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+              <p><strong>Benchmarking</strong> Compare against city competitors.</p>
+            </li>
+            <li>
+              <div class="gl-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+              <p><strong>Accreditation Prep</strong> Ready-made trend reports for NAAC / inspections.</p>
+            </li>
+            <li>
+              <div class="gl-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+              <p><strong>Proactive Admin</strong> Prevent escalations by addressing heatmaps early.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="goal-card g-plat">
+          <div class="goal-tier-name">Platinum</div>
+          <p class="goal-desc">For premium schools and institutions aiming for national-level excellence and parent trust.</p>
+          <div class="goal-list-title">Perfect for</div>
+          <ul class="goal-list">
+            <li>
+              <div class="gl-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+              <p><strong>Admissions Signal</strong> Share verified quality score cards with parents.</p>
+            </li>
+            <li>
+              <div class="gl-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+              <p><strong>PM SHRI & CoE</strong> AI narrative reports formatted for documentation.</p>
+            </li>
+            <li>
+              <div class="gl-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+              <p><strong>Custom Strategy</strong> Quarterly review calls with CatalystBox advisors.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="goal-card g-diam">
+          <div class="goal-tier-name">Diamond</div>
+          <p class="goal-desc">For large school groups needing centralized governance, API data flow, and brand consistency.</p>
+          <div class="goal-list-title">Perfect for</div>
+          <ul class="goal-list">
+            <li>
+              <div class="gl-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+              <p><strong>Multi-Campus Mgmt</strong> One master view for 10+ campuses.</p>
+            </li>
+            <li>
+              <div class="gl-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+              <p><strong>ERP Integration</strong> Direct API sync with your existing SIS/ERP.</p>
+            </li>
+            <li>
+              <div class="gl-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+              <p><strong>White-Labeling</strong> Custom-branded parent portal under your domain.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="pricing-faq" style="border-top: 1px solid var(--border); padding-bottom: 40px; background: var(--slate);">
+    <div class="container">
+      <div class="pricing-section-label"><span>Common questions</span></div>
+      <h2 class="section-title">Frequently asked</h2>
+
+      <div class="faq-list faq-section active" style="margin-top: 40px; max-width: 760px;">
+        <div class="faq-item open">
+          <button class="faq-q" onclick="toggleFaq(this)">Does our school need to pay anything if the board already has a CatalystBox license?<span class="faq-chevron">▼</span></button>
+          <div class="faq-a"><p>No. The board license covers all affiliated schools and includes the Core dashboard for every school at no direct cost to the school. The Gold, Platinum, and Diamond tiers are optional upgrades that schools pay for directly if they want deeper intelligence. The board-to-school financial flow is entirely through the board's affiliation mechanism — schools never see a separate CatalystBox invoice for the Core tier.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Our board hasn't joined yet. Can our school subscribe directly?<span class="faq-chevron">▼</span></button>
+          <div class="faq-a"><p>Yes, for IB schools and some state board private schools. IB schools can onboard directly without central board approval. For CBSE and state board schools, we recommend waiting for board adoption so your school gets the full platform (including QR deployment and CGEB scoring) rather than a standalone dashboard. Contact us and we'll tell you the fastest path for your specific board situation.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">How is student anonymity protected? Can we identify individual students?<span class="faq-chevron">▼</span></button>
+          <div class="faq-a"><p>No — and this is a design principle, not just a policy. No student name, Aadhaar number, roll number, device ID, or session token is ever collected. The only identifier attached to a response is the school's board-issued affiliation code — which the board already knows. Individual responses are never exported from the system. Only aggregate indices (CBI, SEI, TEI, PTI) and heatmaps leave the processing layer. This architecture is DPDP Act 2023 compliant and applies to every tier including Diamond.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">What is the CGEB and how is it calculated?<span class="faq-chevron">▼</span></button>
+          <div class="faq-a"><p>CGEB stands for CatalystBox Global Education Benchmark — the composite school quality score. It is weighted across three index streams: SEI (Student Experience Index, 45%), TEI (Teacher Experience Index, 30%), and PTI (Parent Engagement Index, 25%). Each stream covers five parameters: Student Wellbeing (25%), Teaching Effectiveness (20%), Learning Environment (20%), Future Readiness (20%), and Parent Engagement (15%). A school's CGEB is only published once a minimum response threshold is met — preventing statistical noise from small sample sizes. Full methodology is available at catalystbox.in/research/cgeb.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Can government schools afford this? Who pays?<span class="faq-chevron">▼</span></button>
+          <div class="faq-a"><p>Government schools never pay from their own budget. The Year 1 pilot is entirely free — funded by Fresh Eye Foundation. From Year 2, the ₹20/student/year fee is routed through Samagra Shiksha (Component 3 — school quality improvement activities), PM SHRI scheme documentation budgets, or CSR partners with education mandates. Fresh Eye Foundation holds 12A and 80G certification, making donations CSR-eligible under Section 135 of the Companies Act. The school's only commitment is permission to operate and a list of UDISE codes.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Is there a free trial before committing to a paid tier?<span class="faq-chevron">▼</span></button>
+          <div class="faq-a"><p>Yes. Every board-licensed school gets the Core dashboard free indefinitely — this is not a trial, it's the permanent free tier. For schools that want to evaluate Platinum before committing, we offer a 30-day Platinum preview after your first full feedback cycle completes, so you see AI action plans and the parent score card based on real data from your school. Contact hello@catalystbox.in to request access.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding-top: 0; padding-bottom: 80px; background: var(--slate);">
+    <div class="container">
+      <div class="pricing-cta-band">
+        <h2>Ready to hear your school?</h2>
+        <p>Whether you're a board, a school principal, or a government department — let's talk about what CatalystBox can do for you.</p>
+        <div class="pricing-cta-buttons">
+          <a href="mailto:hello@catalystbox.in?subject=CatalystBox Pricing Enquiry" class="btn-primary" style="text-decoration:none;">Write to us</a>
+          <button class="btn-ghost" onclick="showPage('solutions')">Explore AI Solutions →</button>
+          <button class="btn-ghost" onclick="showPage('cgeb')" style="border-color:transparent;background:rgba(255,255,255,0.05);">Read methodology</button>
+        </div>
       </div>
     </div>
   </section>
