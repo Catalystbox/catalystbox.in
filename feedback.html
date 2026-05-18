@@ -635,53 +635,96 @@ function showThankyou() {
 }
 
 function playChime() {
-
   try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    
+    // Master filter for warmth
+    const masterFilter = ctx.createBiquadFilter();
+    masterFilter.type = 'lowpass';
+    masterFilter.frequency.value = 2500;
+    masterFilter.connect(ctx.destination);
+    
+    // Ethereal delay (echo) for a floating feeling
+    const delayNode = ctx.createDelay();
+    delayNode.delayTime.value = 0.35; // 350ms echo
+    const feedback = ctx.createGain();
+    feedback.gain.value = 0.35; // gentle feedback loop
+    delayNode.connect(feedback);
+    feedback.connect(delayNode);
+    delayNode.connect(masterFilter);
+    
+    const masterGain = ctx.createGain();
+    masterGain.gain.value = 0.7;
+    masterGain.connect(masterFilter);
+    masterGain.connect(delayNode); // Send dry signal to delay
 
-    const ctx   = new (window.AudioContext || window.webkitAudioContext)();
-
+    // F Lydian Sweep (Fmaj13#11 vibe) - feels like a magical sunrise
     const notes = [
-
-      { freq: 523.25, delay: 0,    dur: 1.2 },
-
-      { freq: 659.25, delay: 0.18, dur: 1.1 },
-
-      { freq: 783.99, delay: 0.36, dur: 1.4 },
-
-      { freq: 1046.5, delay: 0.58, dur: 1.8 },
-
+      { freq: 349.23, delay: 0.0,   dur: 3.5 }, // F4 (Root)
+      { freq: 440.00, delay: 0.07,  dur: 3.5 }, // A4
+      { freq: 523.25, delay: 0.14,  dur: 3.5 }, // C5
+      { freq: 659.25, delay: 0.21,  dur: 3.5 }, // E5
+      { freq: 783.99, delay: 0.28,  dur: 3.5 }, // G5
+      { freq: 987.77, delay: 0.40,  dur: 4.5 }  // B5 (Lydian color, rings out)
     ];
 
     notes.forEach(({ freq, delay, dur }) => {
-
-      const osc  = ctx.createOscillator();
-
-      const gain = ctx.createGain();
-
-      const now  = ctx.currentTime + delay + 0.05;
-
-      osc.type = 'sine';
-
-      osc.frequency.setValueAtTime(freq, now);
-
-      gain.gain.setValueAtTime(0, now);
-
-      gain.gain.linearRampToValueAtTime(0.18, now + 0.02);
-
-      gain.gain.exponentialRampToValueAtTime(0.001, now + dur);
-
-      osc.connect(gain);
-
-      gain.connect(ctx.destination);
-
-      osc.start(now);
-
-      osc.stop(now + dur + 0.05);
-
+      const now = ctx.currentTime + delay + 0.05;
+      
+      // Oscillator 1: Sine (Warm body)
+      const osc1 = ctx.createOscillator();
+      osc1.type = 'sine';
+      osc1.frequency.setValueAtTime(freq, now);
+      
+      // Oscillator 2: Triangle (Glassy shimmer, slightly detuned)
+      const osc2 = ctx.createOscillator();
+      osc2.type = 'triangle';
+      osc2.frequency.setValueAtTime(freq * 1.002, now); // 0.2% detune for chorusing
+      
+      // Oscillator 3: Sine (Octave up sparkle)
+      const osc3 = ctx.createOscillator();
+      osc3.type = 'sine';
+      osc3.frequency.setValueAtTime(freq * 2, now);
+      
+      // Body Gain Envelope
+      const oscGain = ctx.createGain();
+      oscGain.gain.setValueAtTime(0, now);
+      oscGain.gain.linearRampToValueAtTime(0.12, now + 0.02); // Sharp attack
+      oscGain.gain.exponentialRampToValueAtTime(0.001, now + dur); // Long smooth decay
+      
+      // Sparkle Gain Envelope (quicker decay, quieter)
+      const sparkleGain = ctx.createGain();
+      sparkleGain.gain.setValueAtTime(0, now);
+      sparkleGain.gain.linearRampToValueAtTime(0.04, now + 0.02);
+      sparkleGain.gain.exponentialRampToValueAtTime(0.001, now + (dur * 0.6));
+      
+      // Note Filter (Pluck effect)
+      const noteFilter = ctx.createBiquadFilter();
+      noteFilter.type = 'lowpass';
+      noteFilter.frequency.setValueAtTime(3500, now); // Opens up bright
+      noteFilter.frequency.exponentialRampToValueAtTime(400, now + 0.8); // Closes down warm
+      
+      // Routing
+      osc1.connect(oscGain);
+      osc2.connect(oscGain);
+      osc3.connect(sparkleGain);
+      
+      oscGain.connect(noteFilter);
+      sparkleGain.connect(noteFilter);
+      noteFilter.connect(masterGain);
+      
+      // Start/Stop
+      osc1.start(now);
+      osc2.start(now);
+      osc3.start(now);
+      
+      osc1.stop(now + dur + 0.1);
+      osc2.stop(now + dur + 0.1);
+      osc3.stop(now + dur + 0.1);
     });
-
-  } catch(e) {}
-
+  } catch(e) {
+    console.error("Audio API error:", e);
+  }
 }
 
 const canvas = document.getElementById('particles');
