@@ -589,29 +589,23 @@ const messages = [
 ];
 
 let submitted = false;
+let loadCount = 0;
 
 const iframe  = document.getElementById('gform-iframe');
-
 const bar     = document.getElementById('detect-bar');
 
 iframe.addEventListener('load', () => {
-
   if (submitted) return;
+  loadCount++;
 
-  if (iframe.dataset.loaded) {
-
+  if (loadCount === 1) {
+    bar.textContent = 'Form loaded · Please select your role and click Next';
+  } else if (loadCount === 2) {
+    bar.textContent = 'Form loaded · Please answer the questions and click Submit';
+  } else if (loadCount >= 3) {
     submitted = true;
-
     showThankyou();
-
-  } else {
-
-    iframe.dataset.loaded = 'true';
-
-    bar.textContent = 'Form loaded · Ready to detect submission';
-
   }
-
 });
 
 function showThankyou() {
