@@ -637,76 +637,68 @@ function showThankyou() {
 function playChime() {
   try {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const now = ctx.currentTime;
     
-    // Master volume and gentle compressor to glue it together
+    // Gentle compressor to glue the sound together
     const comp = ctx.createDynamicsCompressor();
-    comp.threshold.value = -12;
-    comp.ratio.value = 4;
     comp.connect(ctx.destination);
     
+    // Ethereal Reverb/Echo for the "serene pool" effect
+    const delay = ctx.createDelay();
+    delay.delayTime.value = 0.2; // 200ms echo
+    const feedback = ctx.createGain();
+    feedback.gain.value = 0.25; // light feedback
+    const filter = ctx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.value = 1200; // Muffled, warm echoes
+    
+    delay.connect(feedback);
+    feedback.connect(delay);
+    delay.connect(filter);
+    filter.connect(comp);
+    
+    // Master gain for the drop
     const masterGain = ctx.createGain();
-    masterGain.gain.value = 0.8;
-    masterGain.connect(comp);
+    masterGain.gain.value = 1.0;
+    masterGain.connect(comp); // Dry signal
+    masterGain.connect(delay); // Send to echo
 
-    // Premium Crystal Ping: Very fast upward sequence (E5, B5, E6)
-    const notes = [
-      { freq: 659.25, delay: 0.00, dur: 0.6 }, // E5
-      { freq: 987.77, delay: 0.05, dur: 0.8 }, // B5
-      { freq: 1318.51, delay: 0.10, dur: 1.5 } // E6 (Rings out)
-    ];
+    // 1. The main water body (Sine wave sweeping UP in pitch)
+    const bodyOsc = ctx.createOscillator();
+    bodyOsc.type = 'sine';
+    // The classic droplet sweep: starts low-mid, sweeps up fast
+    bodyOsc.frequency.setValueAtTime(350, now);
+    bodyOsc.frequency.exponentialRampToValueAtTime(1200, now + 0.08);
+    
+    const bodyGain = ctx.createGain();
+    bodyGain.gain.setValueAtTime(0, now);
+    bodyGain.gain.linearRampToValueAtTime(1, now + 0.01); // Instant attack
+    bodyGain.gain.exponentialRampToValueAtTime(0.001, now + 0.15); // Fast decay
+    
+    bodyOsc.connect(bodyGain);
+    bodyGain.connect(masterGain);
+    
+    // 2. The surface tension transient (Tiny click at the exact moment of impact)
+    const clickOsc = ctx.createOscillator();
+    clickOsc.type = 'sine';
+    clickOsc.frequency.setValueAtTime(2500, now);
+    clickOsc.frequency.exponentialRampToValueAtTime(4500, now + 0.01);
+    
+    const clickGain = ctx.createGain();
+    clickGain.gain.setValueAtTime(0, now);
+    clickGain.gain.linearRampToValueAtTime(0.3, now + 0.002);
+    clickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.02); // 20ms duration
+    
+    clickOsc.connect(clickGain);
+    clickGain.connect(masterGain);
 
-    notes.forEach(({ freq, delay, dur }) => {
-      const now = ctx.currentTime + delay + 0.02;
-      
-      // --- CARRIER (The main tone) ---
-      const carrier = ctx.createOscillator();
-      carrier.type = 'sine';
-      carrier.frequency.setValueAtTime(freq, now);
-      
-      // --- MODULATOR (Creates the metallic/glassy harmonics via FM synthesis) ---
-      const modulator = ctx.createOscillator();
-      modulator.type = 'sine';
-      // Ratio of 2.71 creates a classic inharmonic bell overtone
-      modulator.frequency.setValueAtTime(freq * 2.71, now);
-      
-      // Modulator Envelope (Controls how "metallic" the strike is)
-      const modGain = ctx.createGain();
-      modGain.gain.setValueAtTime(freq * 2.5, now); // Sharp metallic attack
-      modGain.gain.exponentialRampToValueAtTime(1, now + (dur * 0.2)); // Fades quickly to pure sine
-      
-      modulator.connect(modGain);
-      modGain.connect(carrier.frequency); // FM Synthesis routing!
-      
-      // --- MAIN ENVELOPE (Volume of the bell) ---
-      const envGain = ctx.createGain();
-      envGain.gain.setValueAtTime(0, now);
-      envGain.gain.linearRampToValueAtTime(0.5, now + 0.01); // Instant strike
-      envGain.gain.exponentialRampToValueAtTime(0.001, now + dur); // Smooth, fast decay
-      
-      carrier.connect(envGain);
-      envGain.connect(masterGain);
-      
-      // Add a tiny bit of "shimmer" with a very high frequency sine
-      const shimmer = ctx.createOscillator();
-      shimmer.type = 'sine';
-      shimmer.frequency.setValueAtTime(freq * 4, now);
-      const shimmerGain = ctx.createGain();
-      shimmerGain.gain.setValueAtTime(0, now);
-      shimmerGain.gain.linearRampToValueAtTime(0.08, now + 0.01);
-      shimmerGain.gain.exponentialRampToValueAtTime(0.001, now + (dur * 0.4));
-      
-      shimmer.connect(shimmerGain);
-      shimmerGain.connect(masterGain);
-
-      // Start everything
-      carrier.start(now);
-      modulator.start(now);
-      shimmer.start(now);
-      
-      carrier.stop(now + dur + 0.1);
-      modulator.stop(now + dur + 0.1);
-      shimmer.stop(now + dur + 0.1);
-    });
+    // Play the drop
+    bodyOsc.start(now);
+    clickOsc.start(now);
+    
+    bodyOsc.stop(now + 0.2);
+    clickOsc.stop(now + 0.05);
+    
   } catch(e) {
     console.error("Audio API error:", e);
   }
