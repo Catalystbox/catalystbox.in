@@ -24,6 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Prevent form submission when pressing Enter key in input fields
+  const pForm = document.getElementById('partnership-form');
+  if (pForm) {
+    pForm.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA' && e.target.tagName !== 'BUTTON') {
+        e.preventDefault();
+      }
+    });
+  }
 });
 
 window.handlePartnershipSubmit = function(e) {
@@ -33,6 +43,7 @@ window.handlePartnershipSubmit = function(e) {
   const submitBtn = form.querySelector('.submit-btn');
 
   const ptypeInput = document.querySelector('#page-partnership input[name="ptype"]:checked');
+
 
   // Collect data
   const data = {
