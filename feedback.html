@@ -639,34 +639,53 @@ function playChime() {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
     const now = ctx.currentTime;
     
+    // Gentle compressor for a polished sound
+    const comp = ctx.createDynamicsCompressor();
+    comp.connect(ctx.destination);
+    
+    // Deep, cavernous echo for a premium, spacious feel
+    const delay = ctx.createDelay();
+    delay.delayTime.value = 0.3; // 300ms echo (slower, larger space)
+    const feedback = ctx.createGain();
+    feedback.gain.value = 0.35; // slightly longer, lush tail
+    const filter = ctx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.value = 800; // Very warm, muffled echoes
+    
+    delay.connect(feedback);
+    feedback.connect(delay);
+    delay.connect(filter);
+    filter.connect(comp);
+    
     // Master gain
     const masterGain = ctx.createGain();
     masterGain.gain.value = 1.0;
-    masterGain.connect(ctx.destination);
+    masterGain.connect(comp); // Dry signal
+    masterGain.connect(delay); // Send to echo
 
-    // The single, pure water drop (No Echo)
+    // The pure water drop
     const bodyOsc = ctx.createOscillator();
     bodyOsc.type = 'sine';
     
     // Slower, deeper pitch sweep for a "heavy, slow drop"
     bodyOsc.frequency.setValueAtTime(200, now); // Starts deeper
-    bodyOsc.frequency.exponentialRampToValueAtTime(800, now + 0.18); // Even slower sweep (180ms)
+    bodyOsc.frequency.exponentialRampToValueAtTime(800, now + 0.15); // Sweep (150ms)
     
     const bodyGain = ctx.createGain();
     bodyGain.gain.setValueAtTime(0, now);
     
     // Soft attack to ensure pure tone
-    bodyGain.gain.linearRampToValueAtTime(1, now + 0.02); 
+    bodyGain.gain.linearRampToValueAtTime(1, now + 0.015); 
     
-    // Long, smooth decay to make it feel premium without needing an echo (400ms tail)
-    bodyGain.gain.exponentialRampToValueAtTime(0.001, now + 0.4); 
+    // Smooth decay (250ms) so the echoes have space to ring out clearly
+    bodyGain.gain.exponentialRampToValueAtTime(0.001, now + 0.25); 
     
     bodyOsc.connect(bodyGain);
     bodyGain.connect(masterGain);
     
-    // Play the slow, pure drop
+    // Play the drop
     bodyOsc.start(now);
-    bodyOsc.stop(now + 0.5);
+    bodyOsc.stop(now + 0.35);
     
   } catch(e) {
     console.error("Audio API error:", e);
