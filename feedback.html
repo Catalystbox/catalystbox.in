@@ -639,65 +639,51 @@ function playChime() {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
     const now = ctx.currentTime;
     
-    // Gentle compressor to glue the sound together
+    // Gentle compressor for a polished sound
     const comp = ctx.createDynamicsCompressor();
     comp.connect(ctx.destination);
     
-    // Ethereal Reverb/Echo for the "serene pool" effect
+    // Deep, cavernous echo for a premium, spacious feel
     const delay = ctx.createDelay();
-    delay.delayTime.value = 0.2; // 200ms echo
+    delay.delayTime.value = 0.3; // 300ms echo (slower, larger space)
     const feedback = ctx.createGain();
-    feedback.gain.value = 0.25; // light feedback
+    feedback.gain.value = 0.35; // slightly longer, lush tail
     const filter = ctx.createBiquadFilter();
     filter.type = 'lowpass';
-    filter.frequency.value = 1200; // Muffled, warm echoes
+    filter.frequency.value = 800; // Very warm, muffled echoes
     
     delay.connect(feedback);
     feedback.connect(delay);
     delay.connect(filter);
     filter.connect(comp);
     
-    // Master gain for the drop
+    // Master gain
     const masterGain = ctx.createGain();
     masterGain.gain.value = 1.0;
     masterGain.connect(comp); // Dry signal
     masterGain.connect(delay); // Send to echo
 
-    // 1. The main water body (Sine wave sweeping UP in pitch)
+    // The single, pure water drop
     const bodyOsc = ctx.createOscillator();
     bodyOsc.type = 'sine';
-    // The classic droplet sweep: starts low-mid, sweeps up fast
-    bodyOsc.frequency.setValueAtTime(350, now);
-    bodyOsc.frequency.exponentialRampToValueAtTime(1200, now + 0.08);
+    
+    // Slower, deeper pitch sweep for a "heavy, slow drop"
+    bodyOsc.frequency.setValueAtTime(200, now); // Starts deeper (heavy drop)
+    bodyOsc.frequency.exponentialRampToValueAtTime(800, now + 0.15); // Slower sweep (150ms)
     
     const bodyGain = ctx.createGain();
     bodyGain.gain.setValueAtTime(0, now);
-    bodyGain.gain.linearRampToValueAtTime(1, now + 0.01); // Instant attack
-    bodyGain.gain.exponentialRampToValueAtTime(0.001, now + 0.15); // Fast decay
+    // Slightly softer attack to remove harsh clicks, ensuring pure tone
+    bodyGain.gain.linearRampToValueAtTime(1, now + 0.015); 
+    // Longer, smoother decay for an expensive feel (250ms)
+    bodyGain.gain.exponentialRampToValueAtTime(0.001, now + 0.25); 
     
     bodyOsc.connect(bodyGain);
     bodyGain.connect(masterGain);
     
-    // 2. The surface tension transient (Tiny click at the exact moment of impact)
-    const clickOsc = ctx.createOscillator();
-    clickOsc.type = 'sine';
-    clickOsc.frequency.setValueAtTime(2500, now);
-    clickOsc.frequency.exponentialRampToValueAtTime(4500, now + 0.01);
-    
-    const clickGain = ctx.createGain();
-    clickGain.gain.setValueAtTime(0, now);
-    clickGain.gain.linearRampToValueAtTime(0.3, now + 0.002);
-    clickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.02); // 20ms duration
-    
-    clickOsc.connect(clickGain);
-    clickGain.connect(masterGain);
-
-    // Play the drop
+    // Play the slow, pure drop
     bodyOsc.start(now);
-    clickOsc.start(now);
-    
-    bodyOsc.stop(now + 0.2);
-    clickOsc.stop(now + 0.05);
+    bodyOsc.stop(now + 0.35);
     
   } catch(e) {
     console.error("Audio API error:", e);
