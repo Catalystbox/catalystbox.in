@@ -367,8 +367,8 @@
   .model-grid { grid-template-columns: 1fr; padding: 0; }
   .model-arrow { transform: rotate(90deg); margin: 10px 0; }
   .pricing-cta-band { padding: 40px 24px; }
-  .feat-table th:nth-child(2),
-  .feat-table td:nth-child(2) { display: none; }
+  .feat-table-wrap { -webkit-overflow-scrolling: touch; padding-bottom: 16px; }
+  .feat-table { min-width: 600px; }
   .pricing-hero { padding: 120px 24px 60px; }
 }
 

@@ -204,15 +204,18 @@
 
 @media (max-width: 900px) {
     #page-cgeb #side-nav { display: none !important; }
-    #page-cgeb .param-card { grid-template-columns: 1fr auto; }
+    #page-cgeb .param-card { grid-template-columns: 1fr; gap: 12px; }
     #page-cgeb .param-num { display: none; }
+    #page-cgeb .param-weight { text-align: left; }
     #page-cgeb .cover-meta { gap: 28px; }
     #page-cgeb .section { padding: 70px 24px; }
+    #page-cgeb .method-table { display: block; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
 }
 @media (max-width: 600px) {
     #page-cgeb .cover { padding: 80px 24px; }
     #page-cgeb .index-formula { gap: 10px; }
-    #page-cgeb .formula-val { font-size: 20px; }
+    #page-cgeb .formula-val { font-size: 16px; }
+    #page-cgeb .formula-val-main { font-size: 24px; }
     #page-cgeb .bar-row { grid-template-columns: 120px 1fr 40px; }
     #page-cgeb .bar-label { font-size: 11px; }
 }

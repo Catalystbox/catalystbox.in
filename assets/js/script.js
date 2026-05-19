@@ -1,3 +1,9 @@
+/* ── MOBILE MENU ── */
+function toggleMobileMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  if (navLinks) navLinks.classList.toggle('active');
+}
+
 /* ── FORM URLS ── */
 var PARTNER_FORM_URL  = "https://docs.google.com/forms/d/e/1FAIpQLSdQn30COlQGDSYYmZJWUd2nswekDJ2tTr13K8e3x-nJZPcP7Q/viewform";
 var CONTACT_FORM_URL  = "https://docs.google.com/forms/d/e/1FAIpQLSdV6QmpIYF7dPeFuvmuuE317LbKTRfaZpQX37pGka8j-rTJ5Q/viewform";
@@ -14,6 +20,12 @@ function showPage(id, pushHistory) {
   document.getElementById('page-' + id).classList.add('active');
   var navBtn = document.getElementById('nav-' + id);
   if (navBtn) navBtn.classList.add('active');
+  
+  const navLinks = document.querySelector('.nav-links');
+  if (navLinks && navLinks.classList.contains('active')) {
+    navLinks.classList.remove('active');
+  }
+
   window.scrollTo({ top: 0, behavior: 'instant' });
   
   if (pushHistory) {

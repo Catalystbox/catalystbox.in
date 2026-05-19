@@ -70,6 +70,11 @@ nav {
 .nav-links button.nav-cta {
   background: var(--amber); color: var(--ink) !important; font-weight: 600;
 }
+.mobile-menu-btn {
+  display: none; background: transparent; border: none; color: #fff; cursor: pointer;
+}
+
+html { scroll-padding-top: 100px; }
 
 /* ═══════════════════════════════════════════════
    PAGE SYSTEM
@@ -410,7 +415,7 @@ a.channel-value:hover { color: var(--amber); }
 .faq-nudge strong { color: #fff; }
 
 @media (max-width: 900px) {
-  .hero-content, .index-layout, .revenue-grid, .faq-wrap, .contact-layout, .mission-grid, .about-hero-grid, .founder-card { grid-template-columns: 1fr; }
+  .hero-content, .index-layout, .revenue-grid, .faq-wrap, .contact-layout, .mission-grid, .about-hero-grid, .founder-card, .problem-grid { grid-template-columns: 1fr; }
   .components-grid, .mission-pillars, .gov-grid, .comparable-grid { grid-template-columns: 1fr; }
   .dash-scores { grid-template-columns: repeat(2,1fr); }
   .fab { bottom: 20px; right: 20px; padding: 12px 18px; }
@@ -418,6 +423,32 @@ a.channel-value:hover { color: var(--amber); }
   .fab-wa svg { width: 24px; height: 24px; }
   .faq-cta-inner, .faq-nudge { flex-direction: column; text-align: center; gap: 24px; }
   .gform-iframe { height: 1000px; }
+  
+  /* Mobile Menu */
+  .mobile-menu-btn { display: flex; }
+  .nav-links {
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(11,14,23,0.98);
+    backdrop-filter: blur(18px); border-bottom: 1px solid var(--border);
+    flex-direction: column; padding: 20px; gap: 16px;
+    display: none;
+  }
+  .nav-links.active { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links button { width: 100%; text-align: center; padding: 12px; font-size: 1rem; }
+  
+  body.light-mode .nav-links { background: rgba(255,255,255,0.98); }
+  body.light-mode .mobile-menu-btn { color: #18181B; }
+
+  /* Sections adjustments */
+  section { padding: 80px 24px; }
+  .trust-inner { gap: 20px; }
+  .index-bar-item { grid-template-columns: 1fr; gap: 8px; }
+  .phase { grid-template-columns: 1fr; gap: 16px; }
+  .phase-line { display: none; }
+  footer { flex-direction: column; gap: 24px; text-align: center; padding: 48px 24px 96px 24px; }
+  .footer-right { text-align: center; }
+  .trust-sep { display: none; }
 }
 @media (max-width: 560px) {
   .dash-scores { grid-template-columns: 1fr; }
