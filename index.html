@@ -42,6 +42,7 @@ function gtag_report_conversion(url) {
 <link rel="stylesheet" href="/assets/css/partnership.css?v=1.1" />
 <link rel="stylesheet" href="/assets/css/pricing.css?v=1.1" />
 <link rel="stylesheet" href="/assets/css/careers.css?v=1.1" />
+<link rel="stylesheet" href="/assets/css/higher-education.css?v=1.1" />
 </head>
 <body class="light-mode">
 
@@ -64,6 +65,7 @@ function gtag_report_conversion(url) {
     <li><button onclick="showPage('cgeb')" id="nav-cgeb">Research</button></li>
     <li><button onclick="showPage('partnership')" id="nav-partnership">Partnership</button></li>
     <li><button onclick="showPage('pricing')" id="nav-pricing">Pricing</button></li>
+    <li><button onclick="showPage('higher-education')" id="nav-higher-education" style="position:relative; margin-right:15px;">Higher Ed <span style="position:absolute; top:-2px; right:-20px; background:var(--amber); color:var(--ink); font-family:'DM Mono',monospace; font-size:7px; padding:2px 4px; border-radius:3px; font-weight:700; line-height:1; letter-spacing:0.05em;">NEW</span></button></li>
     <li><button onclick="showPage('about')" id="nav-about">About</button></li>
     <li><button onclick="showPage('faq')" id="nav-faq">FAQs</button></li>
     <li><button onclick="showPage('careers')" id="nav-careers">Careers</button></li>
@@ -92,9 +94,9 @@ function gtag_report_conversion(url) {
         </div>
       </div>
       <div class="hero-stats fade-up d2">
-        <div class="stat-card"><div class="stat-icon amber">🏫</div><div><div class="stat-num">1.5M</div><div class="stat-label">Schools across India</div></div><div class="stat-badge">MARKET</div></div>
-        <div class="stat-card"><div class="stat-icon teal">👩‍🎓</div><div><div class="stat-num">250M</div><div class="stat-label">Students to empower</div></div><div class="stat-badge">REACH</div></div>
-        <div class="stat-card"><div class="stat-icon blue">📊</div><div><div class="stat-num">0</div><div class="stat-label">Structured feedback systems today</div></div><div class="stat-badge">THE GAP</div></div>
+        <div class="stat-card"><div class="stat-icon amber">🏫</div><div><div class="stat-num">1.56M+</div><div class="stat-label">Schools &amp; Colleges across India</div></div><div class="stat-badge">MARKET</div></div>
+        <div class="stat-card"><div class="stat-icon teal">👩‍🎓</div><div><div class="stat-num">290M+</div><div class="stat-label">Students to empower (K-12 &amp; HE)</div></div><div class="stat-badge">REACH</div></div>
+        <div class="stat-card"><div class="stat-icon blue">📊</div><div><div class="stat-num">0</div><div class="stat-label">Standardised feedback systems</div></div><div class="stat-badge">THE GAP</div></div>
       </div>
     </div>
   </section>
@@ -221,6 +223,27 @@ function gtag_report_conversion(url) {
         <div class="phase fade-up d3"><div class="phase-label">Phase 3</div><div class="phase-line"><div class="phase-dot"></div><div class="phase-connector"></div></div><div class="phase-content"><h3>State-Level Intelligence</h3><p>Become the authoritative source of education intelligence at state level. Deploy AI tools across partner schools. Onboard research partners and institutional buyers.</p><span class="phase-tag">STATE · AI TOOLS · RESEARCH</span></div></div>
         <div class="phase fade-up d4"><div class="phase-label">Phase 4</div><div class="phase-line"><div class="phase-dot"></div><div class="phase-connector"></div></div><div class="phase-content"><h3>Embedded in Annual Board Fees</h3><p>CatalystBox becomes a standard line item in annual board fees — creating universal adoption, stable recurring funding, and a self-reinforcing data network.</p><span class="phase-tag">EMBEDDED · RECURRING</span></div></div>
         <div class="phase fade-up d5"><div class="phase-label">Phase 5</div><div class="phase-line"><div class="phase-dot"></div></div><div class="phase-content"><h3>National Infrastructure</h3><p>Nationwide adoption across all major education boards. CatalystBox becomes the central nervous system of education feedback in India — then expands globally.</p><span class="phase-tag">NATIONAL · GLOBAL</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Initiative 02 -->
+  <section id="home-higher-ed" style="background: var(--slate); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="eyebrow">Higher Education</div>
+      <h2>Extending to <em>Higher Education</em></h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 32px;">
+        <div>
+          <p class="section-sub" style="margin-bottom: 24px; max-width: 100%;">We are extending our anonymous, AI-powered feedback infrastructure beyond K–12 to India's colleges and universities. Student, faculty, alumni, and recruiter voice are synthesized into the CatalystBox Higher Education Benchmark (CHEB).</p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <button class="btn-primary" onclick="showPage('higher-education')">Explore Higher Education →</button>
+          </div>
+        </div>
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 32px;">
+          <h4 style="font-family: 'Syne', sans-serif; font-size: 1.15rem; margin-bottom: 8px; color: #fff;">Inaugural Cohort 2027</h4>
+          <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">Institutions joining the first cohort co-shape the CHEB framework and receive the first full assessment cycle at zero cost.</p>
+          <button class="btn-ghost" onclick="showPage('higher-education'); setTimeout(() => { document.getElementById('express-interest').scrollIntoView({ behavior: 'smooth' }); }, 150);" style="font-size: 0.8rem; padding: 10px 18px;">Express Interest</button>
+        </div>
       </div>
     </div>
   </section>
@@ -3224,6 +3247,579 @@ function gtag_report_conversion(url) {
       </div>
     </div>
   </footer>
+
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: HIGHER EDUCATION
+     ═══════════════════════════════════════════ -->
+<div class="page" id="page-higher-education">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <h1>The Next Layer of <em>Education Intelligence</em>.</h1>
+  <p class="hero-sub">CatalystBox is extending its anonymous, AI-powered feedback infrastructure beyond K–12 — to India's colleges and universities. Real voice from students, faculty, alumni, and recruiters, synthesised into the CatalystBox Higher Education Benchmark (CHEB).</p>
+
+  <div class="hero-cta">
+    <a href="#express-interest" class="btn btn-primary btn-lg">Express Interest →</a>
+    <a href="#framework" class="btn btn-outline btn-lg">Read the Framework</a>
+  </div>
+
+  <div class="status-banner">
+    <div class="icon">🚧</div>
+    <div class="txt">
+      <div class="lbl">Status · June 2026</div>
+      <h3>Methodology preview · First cohort opening 2027</h3>
+      <p>The CatalystBox K–12 platform is live. Higher Education is in active design. Institutions joining the first cohort co-shape the framework and receive the inaugural CHEB cycle at no cost.</p>
+    </div>
+  </div>
+
+  <div class="stat-strip">
+    <div class="stat">
+      <span class="stat-cat">Reach</span>
+      <div class="stat-icon">🏛️</div>
+      <div class="stat-v">58k+</div>
+      <div class="stat-l">Colleges across India</div>
+    </div>
+    <div class="stat">
+      <span class="stat-cat">Scale</span>
+      <div class="stat-icon">🎓</div>
+      <div class="stat-v">1,200+</div>
+      <div class="stat-l">Universities</div>
+    </div>
+    <div class="stat">
+      <span class="stat-cat">Voice</span>
+      <div class="stat-icon">👥</div>
+      <div class="stat-v">4.3<small>Cr</small></div>
+      <div class="stat-l">Enrolled students</div>
+    </div>
+    <div class="stat">
+      <span class="stat-cat">The Gap</span>
+      <div class="stat-icon">📊</div>
+      <div class="stat-v">0</div>
+      <div class="stat-l">Standardised feedback systems</div>
+    </div>
+  </div>
+
+  <div class="privacy-bar">
+    <span>🔒 100% Anonymous Feedback</span>
+    <span>🪪 No Login Required</span>
+    <span>🧬 Zero Personal Identifiers</span>
+    <span>🔐 Aggregated Reporting Only</span>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="sec">
+  <span class="sec-tag">The Problem</span>
+  <h2>India's Higher Education System Runs on <em>Self-Report</em>.</h2>
+  <p class="sec-sub">NAAC, NIRF, and accreditation frameworks measure what institutions <em>say</em> about themselves — through infrastructure data, faculty CVs, and self-submitted assessment reports. The voice that matters most — the students inside the system, the alumni who lived it, the faculty who teach it, the recruiters who hire from it — has no structured, anonymous channel into the rankings that shape institutional decisions.</p>
+
+  <div class="problem-grid">
+    <div class="problem-card">
+      <h4>Self-Reported, Infrastructure-Heavy Rankings</h4>
+      <p>Existing accreditation frameworks rely on institutional self-submission. Student lived experience, faculty working conditions, and actual outcome quality go largely uncaptured in the official record.</p>
+    </div>
+    <div class="problem-card">
+      <h4>No Independent Student Voice Layer</h4>
+      <p>A student bullied by a department, harassed by a professor, or coping with mental health pressure has no anonymous, structured way to surface that signal at scale — not to the institution, not to the regulator.</p>
+    </div>
+    <div class="problem-card">
+      <h4>Outcome Claims Without Outcome Data</h4>
+      <p>Placement brochures speak louder than placement reality. Average package figures are reported without comparable methodology, and alumni one or three years out — the most honest voice — are never systematically polled.</p>
+    </div>
+    <div class="problem-card">
+      <h4>NEP 2020 Mandate, No Instrument</h4>
+      <p>The National Education Policy explicitly calls for student feedback in the National Higher Education Qualifications Framework — but does not specify an instrument. The gap between mandate and infrastructure is wide open.</p>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    "An Indian student spends four to seven years inside higher education — and leaves it without ever being asked, anonymously and at scale, what that experience was actually like. Across 58,000 institutions, there is no standardised mechanism to listen."
+  </div>
+</section>
+
+<!-- ============ FRAMEWORK ============ -->
+<section class="sec" id="framework">
+  <span class="sec-tag">The Framework</span>
+  <h2>Introducing the <em>CHEB</em> — CatalystBox Higher Education Benchmark.</h2>
+  <p class="sec-sub">CHEB extends the CGEB methodology — already deployed across India's K–12 directory — into higher education. Same architectural principles: anonymous QR-based capture, AI sentiment processing, composite scoring. Adapted for the realities of college and university life: alumni outcomes matter, recruiter voice is structured signal, parent voice fades, faculty voice gains weight.</p>
+
+  <div class="stream-flow">
+    <div class="stream-box">
+      <div class="code">SEI</div>
+      <div class="name">Student Experience<br>Index</div>
+      <div class="wt">50%</div>
+    </div>
+    <div class="op">+</div>
+    <div class="stream-box">
+      <div class="code">FEI</div>
+      <div class="name">Faculty Experience<br>Index</div>
+      <div class="wt">25%</div>
+    </div>
+    <div class="op">+</div>
+    <div class="stream-box">
+      <div class="code">AOI</div>
+      <div class="name">Alumni Outcome<br>Index</div>
+      <div class="wt">15%</div>
+    </div>
+    <div class="op">=</div>
+    <div class="stream-box final">
+      <div class="code">CHEB</div>
+      <div class="name">Composite<br>Score</div>
+      <div class="wt">0 – 100</div>
+    </div>
+  </div>
+  <div class="framework-note">Recruiter Confidence Index (ECI) contributes a fourth signal at 10% weight, captured annually <span class="sep">·</span> Minimum response threshold required per stream <span class="sep">·</span> Score is suppressed if any stream is statistically thin</div>
+</section>
+
+<!-- ============ PARAMETERS ============ -->
+<section class="sec">
+  <span class="sec-tag">Measurement Dimensions</span>
+  <h2>Six Dimensions. <em>Calibrated for Higher Education.</em></h2>
+  <p class="sec-sub">Where CGEB measures student wellbeing, teaching effectiveness, learning environment, future readiness, and parent engagement — CHEB rebalances. Parent engagement fades; alumni outcomes and infrastructure inclusion emerge. Each dimension is computed independently and weighted into the composite.</p>
+
+  <div class="param-grid">
+    <div class="param-card">
+      <div class="param-head">
+        <span class="param-num">01</span>
+        <span class="param-icon">🎓</span>
+      </div>
+      <h3>Student Experience</h3>
+      <p>Wellbeing, mentorship access, campus life, mental health support, grievance redressal, sense of belonging.</p>
+      <div class="param-tags">
+        <span class="param-tag">Wellbeing</span><span class="param-tag">Mentorship</span><span class="param-tag">Belonging</span>
+      </div>
+      <div class="param-weight">25<small>%</small></div>
+    </div>
+
+    <div class="param-card">
+      <div class="param-head">
+        <span class="param-num">02</span>
+        <span class="param-icon">📚</span>
+      </div>
+      <h3>Academic Quality</h3>
+      <p>Teaching effectiveness, curriculum currency, research exposure, assessment fairness, intellectual rigour.</p>
+      <div class="param-tags">
+        <span class="param-tag">Teaching</span><span class="param-tag">Curriculum</span><span class="param-tag">Assessment</span>
+      </div>
+      <div class="param-weight">25<small>%</small></div>
+    </div>
+
+    <div class="param-card">
+      <div class="param-head">
+        <span class="param-num">03</span>
+        <span class="param-icon">🚀</span>
+      </div>
+      <h3>Outcomes &amp; Readiness</h3>
+      <p>Placement quality, internship pipelines, skill-job alignment, higher-study transitions, real career outcomes.</p>
+      <div class="param-tags">
+        <span class="param-tag">Placements</span><span class="param-tag">Internships</span><span class="param-tag">Transitions</span>
+      </div>
+      <div class="param-weight">20<small>%</small></div>
+    </div>
+
+    <div class="param-card">
+      <div class="param-head">
+        <span class="param-num">04</span>
+        <span class="param-icon">👩‍🏫</span>
+      </div>
+      <h3>Faculty Voice</h3>
+      <p>Workload, autonomy, research support, administrative climate, retention signals — the voice rarely captured.</p>
+      <div class="param-tags">
+        <span class="param-tag">Workload</span><span class="param-tag">Autonomy</span><span class="param-tag">Climate</span>
+      </div>
+      <div class="param-weight">15<small>%</small></div>
+    </div>
+
+    <div class="param-card">
+      <div class="param-head">
+        <span class="param-num">05</span>
+        <span class="param-icon">🌱</span>
+      </div>
+      <h3>Alumni Signal</h3>
+      <p>1-year and 3-year-out feedback on actual career outcomes versus institutional promises. The honesty test.</p>
+      <div class="param-tags">
+        <span class="param-tag">1-yr Out</span><span class="param-tag">3-yr Out</span><span class="param-tag">Outcome Truth</span>
+      </div>
+      <div class="param-weight">10<small>%</small></div>
+    </div>
+
+    <div class="param-card">
+      <div class="param-head">
+        <span class="param-num">06</span>
+        <span class="param-icon">🏗️</span>
+      </div>
+      <h3>Infrastructure &amp; Inclusion</h3>
+      <p>Accessibility, hostel safety, gender / caste / disability inclusion, library and lab access, digital readiness.</p>
+      <div class="param-tags">
+        <span class="param-tag">Accessibility</span><span class="param-tag">Safety</span><span class="param-tag">Inclusion</span>
+      </div>
+      <div class="param-weight">5<small>%</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DASHBOARD MOCK ============ -->
+<section class="sec">
+  <span class="sec-tag">What Institutions Will See</span>
+  <h2>One Dashboard. <em>Every Layer of Voice.</em></h2>
+  <p class="sec-sub">A sample CHEB institutional dashboard — student, faculty, alumni, and recruiter signal synthesised into a composite score, benchmarked against city, state, and national averages, with department-level drill-down and AI-flagged signals.</p>
+
+  <div class="dash-wrap">
+    <span class="syn-tag">ILLUSTRATIVE</span>
+    <div class="dash-head">
+      <div class="dash-id">
+        <div class="dash-logo">XY</div>
+        <div>
+          <h4>Sample Engineering University</h4>
+          <p>Academic Year 2026–27 · Department of CSE</p>
+        </div>
+      </div>
+      <div class="dash-live"><span class="d"></span>LIVE</div>
+    </div>
+
+    <div class="dash-cheb">
+      <div class="dash-cheb-score">82.4<small>/100</small></div>
+      <div class="dash-cheb-info">
+        <div class="lbl">CatalystBox Higher Education Benchmark</div>
+        <h5>Top 14% nationally · Top 6% in state</h5>
+        <p>Composite of 4,128 anonymous responses across student, faculty, alumni, and recruiter voice over the last cycle.</p>
+      </div>
+    </div>
+
+    <div class="dash-grid">
+      <div class="dash-card">
+        <div class="dash-card-l">Student Experience</div>
+        <div class="dash-card-v" style="color:var(--amber)">84</div>
+        <div class="dash-bar"><div class="dash-bar-fill" style="width:84%"></div></div>
+        <div class="dash-card-delta">↑ +3 this cycle</div>
+      </div>
+      <div class="dash-card">
+        <div class="dash-card-l">Academic Quality</div>
+        <div class="dash-card-v">86</div>
+        <div class="dash-bar"><div class="dash-bar-fill" style="width:86%"></div></div>
+        <div class="dash-card-delta">↑ +2 this cycle</div>
+      </div>
+      <div class="dash-card">
+        <div class="dash-card-l">Outcomes &amp; Readiness</div>
+        <div class="dash-card-v">79</div>
+        <div class="dash-bar"><div class="dash-bar-fill" style="width:79%"></div></div>
+        <div class="dash-card-delta">→ Stable</div>
+      </div>
+      <div class="dash-card">
+        <div class="dash-card-l">Faculty Voice</div>
+        <div class="dash-card-v" style="color:var(--amber)">72</div>
+        <div class="dash-bar"><div class="dash-bar-fill" style="width:72%"></div></div>
+        <div class="dash-card-delta">⚠ Monitor — workload signals</div>
+      </div>
+      <div class="dash-card">
+        <div class="dash-card-l">Alumni Signal</div>
+        <div class="dash-card-v">81</div>
+        <div class="dash-bar"><div class="dash-bar-fill" style="width:81%"></div></div>
+        <div class="dash-card-delta">↑ +4 over 3yr cohort</div>
+      </div>
+      <div class="dash-card">
+        <div class="dash-card-l">Infrastructure &amp; Inclusion</div>
+        <div class="dash-card-v">74</div>
+        <div class="dash-bar"><div class="dash-bar-fill" style="width:74%"></div></div>
+        <div class="dash-card-delta">→ Stable</div>
+      </div>
+    </div>
+
+    <div class="dash-compare">
+      <div class="dash-comp-cell">
+        <div class="lbl">vs. City Average</div>
+        <div class="row"><span class="v">82.4</span><span class="d">+4.8 ↑</span></div>
+      </div>
+      <div class="dash-comp-cell">
+        <div class="lbl">vs. State Average</div>
+        <div class="row"><span class="v">82.4</span><span class="d">+7.1 ↑</span></div>
+      </div>
+      <div class="dash-comp-cell">
+        <div class="lbl">vs. National Average</div>
+        <div class="row"><span class="v">82.4</span><span class="d">+9.3 ↑</span></div>
+      </div>
+    </div>
+
+    <div class="dash-syn">Sample Dashboard · Data is Illustrative Only · CHEB scoring engine in active design</div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="sec">
+  <span class="sec-tag">How It Works</span>
+  <h2>From Campus to <em>National Intelligence</em>.</h2>
+  <p class="sec-sub">Same five-step pipeline that powers CGEB — adapted for the cadence and structure of higher education. Semester-end student cycles, annual faculty cycles, post-graduation alumni cycles, annual recruiter cycles.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h4>Scan QR Code</h4>
+      <p>Posters at department notice boards, hostel common areas, and alumni emails. No app, no login.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h4>Select &amp; Submit</h4>
+      <p>Pick role — student, faculty, alumni, recruiter. Rate dimensions. Submit anonymously in any language.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h4>AI Processing</h4>
+      <p>NLP sentiment analysis surfaces patterns: workload signals, mentorship gaps, placement disconnects, harassment mentions.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h4>Institution Dashboard</h4>
+      <p>Department-level CHEB score, dimension breakdown, benchmark against city / state / national peers.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <h4>Policy &amp; Accreditation</h4>
+      <p>Aggregated, anonymised intelligence available to UGC, NAAC, NIRF, and policy partners — as evidence layer for accreditation reform.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO IT'S FOR ============ -->
+<section class="sec">
+  <span class="sec-tag">Who It's For</span>
+  <h2>Four Partnership Tracks. <em>One Methodology.</em></h2>
+  <p class="sec-sub">CHEB is designed to scale across India's full higher education spectrum — from premier institutions to tier-2 private colleges, from autonomous research universities to large state-board affiliated networks.</p>
+
+  <div class="who-grid">
+    <div class="who-card">
+      <div class="who-icon">🏛️</div>
+      <h3>Private Engineering &amp; Management Colleges</h3>
+      <div class="sub">Wedge 01 · 2027 Cohort</div>
+      <p>Tier-2 and tier-3 private institutions that fight for ranking position and want continuous, independent feedback to inform accreditation prep and parent-facing positioning.</p>
+      <ul>
+        <li>Annual CHEB score with public publication option</li>
+        <li>NAAC / NIRF readiness mapping</li>
+        <li>Department-level drill-down dashboards</li>
+        <li>Inaugural cohort: zero cost for first full cycle</li>
+      </ul>
+    </div>
+
+    <div class="who-card">
+      <div class="who-icon">🎓</div>
+      <h3>State Universities &amp; Affiliated Colleges</h3>
+      <div class="sub">Wedge 02 · 2027–28</div>
+      <p>State universities and their affiliated college networks — deployment funded through CSR partnerships, giving institutions and their colleges the full CHEB layer at no direct cost.</p>
+      <ul>
+        <li>Multi-campus aggregate view</li>
+        <li>Affiliated college benchmarking</li>
+        <li>State-level intelligence report</li>
+        <li>CSR-funded deployment model</li>
+      </ul>
+    </div>
+
+    <div class="who-card">
+      <div class="who-icon">🔬</div>
+      <h3>Autonomous &amp; Deemed Universities</h3>
+      <div class="sub">Wedge 03 · 2028</div>
+      <p>Institutions with sophisticated quality cultures — NAAC re-accredited, NIRF top-100 ambitions — that want continuous internal audit infrastructure rather than periodic external review.</p>
+      <ul>
+        <li>Continuous accreditation evidence layer</li>
+        <li>Custom dimension weighting</li>
+        <li>Quarterly governance review</li>
+        <li>API access to anonymised aggregate data</li>
+      </ul>
+    </div>
+
+    <div class="who-card">
+      <div class="who-icon">🏆</div>
+      <h3>Central Institutions · IITs · IIMs · IISERs</h3>
+      <div class="sub">Wedge 04 · 2029+</div>
+      <p>India's flagship institutions. Approached only after CHEB has been validated across 50+ institutions and a published longitudinal report — not as a first move, but as a logical next layer.</p>
+      <ul>
+        <li>National-level benchmark contribution</li>
+        <li>UGC-aligned methodology</li>
+        <li>Defer until methodology fully proven</li>
+        <li>Express interest now, deploy later</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROADMAP ============ -->
+<section class="sec">
+  <span class="sec-tag">Roadmap</span>
+  <h2>Five Phases. <em>School Proof First, Then Higher Ed.</em></h2>
+  <p class="sec-sub">The sequence matters. CHEB inherits credibility from CGEB only after CGEB has produced real, validated school data. Reversing the order would weaken both.</p>
+
+  <div class="phases">
+    <div class="phase">
+      <div class="phase-tag">Phase 00 · 2026</div>
+      <h4>Prove the K–12 Layer</h4>
+      <p>Onboard real CBSE / CISCE schools. Generate first non-synthetic CGEB dataset. Validate methodology. Publish first ground-truth report.</p>
+      <div class="phase-meta">PRE-CONDITION</div>
+    </div>
+    <div class="phase">
+      <div class="phase-tag">Phase 01 · Q1 2027</div>
+      <h4>CHEB Framework Design</h4>
+      <p>Recruit academic advisors. Publish CHEB methodology white paper. Adapt Supabase schema for higher-ed entities. Open expressions of interest.</p>
+      <div class="phase-meta">METHODOLOGY</div>
+    </div>
+    <div class="phase">
+      <div class="phase-tag">Phase 02 · 2027</div>
+      <h4>Private College Wedge</h4>
+      <p>First cohort of 10 private engineering &amp; management colleges across UP, MP, Rajasthan, Karnataka. Full inaugural CHEB cycle.</p>
+      <div class="phase-meta">WEDGE 01</div>
+    </div>
+    <div class="phase">
+      <div class="phase-tag">Phase 03 · 2027–28</div>
+      <h4>State University + CSR</h4>
+      <p>One state university partnership funded by CSR partner. Multi-campus rollout across 20+ affiliated colleges. First cross-institutional dataset.</p>
+      <div class="phase-meta">WEDGE 02</div>
+    </div>
+    <div class="phase">
+      <div class="phase-tag">Phase 04 · 2028+</div>
+      <h4>Premium &amp; Policy</h4>
+      <p>Autonomous &amp; deemed universities at scale. UGC engagement. Annual India Higher Education Experience Report. National policy layer activated.</p>
+      <div class="phase-meta">WEDGE 03 &amp; 04</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY NOW ============ -->
+<section class="sec">
+  <span class="sec-tag">Why It Matters Now</span>
+  <h2>Three Reasons This Is the <em>Right Moment</em>.</h2>
+
+  <div class="why-grid">
+    <div>
+      <p style="font-size:16px;color:var(--ink-dim);line-height:1.65">NEP 2020 mandates feedback infrastructure that does not yet exist in implementable form. NAAC is openly searching for continuous-signal mechanisms to replace periodic review. And a generation of students who grew up with Glassdoor and AmbitionBox now expects the institutions they pay to be answerable to the voice of the people inside them.</p>
+      <p style="font-size:16px;color:var(--ink-dim);line-height:1.65;margin-top:18px">CatalystBox already has the architecture, the methodology, the data pipeline, and the privacy model. CHEB is the natural next extension — not a separate product, but a calibrated layer of the same intelligence system.</p>
+    </div>
+    <div class="why-points">
+      <div class="why-point">
+        <div class="why-point-num">01</div>
+        <div>
+          <h4>Policy Tailwind</h4>
+          <p>NEP 2020 explicitly calls for student feedback in higher education accountability — no current platform fills this gap structurally.</p>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-point-num">02</div>
+        <div>
+          <h4>Methodology Inherits Credibility</h4>
+          <p>CHEB extends CGEB's validated framework. Institutions trust a methodology that's already deployed at scale, not a brand-new instrument.</p>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-point-num">03</div>
+        <div>
+          <h4>Anonymous Voice as a Generational Expectation</h4>
+          <p>The students entering higher education in 2027 will expect the institutions they attend to listen — anonymously, structurally, at scale.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPRESS INTEREST ============ -->
+<section class="sec" id="express-interest">
+  <div class="interest">
+    <div class="interest-grid">
+      <div class="interest-left">
+        <span class="sec-tag">Express Interest</span>
+        <h2>Join the <em>First Cohort</em>.</h2>
+        <p>If you represent a college, university, or higher education board — register your interest now. Inaugural cohort institutions co-shape the CHEB framework, receive the first full cycle at no cost, and become the founding contributors to India's first independent higher education benchmark.</p>
+
+        <div class="interest-perks">
+          <div class="interest-perk">
+            <strong>48-hour response</strong>
+            We review every enquiry personally and respond within two business days.
+          </div>
+          <div class="interest-perk">
+            <strong>No commitment required</strong>
+            Expressing interest is the start of a conversation, not a contract.
+          </div>
+          <div class="interest-perk">
+            <strong>Free inaugural cycle</strong>
+            First-cohort institutions receive the first full CHEB cycle at no cost.
+          </div>
+          <div class="interest-perk">
+            <strong>Methodology co-design</strong>
+            First-cohort institutions are credited contributors in the CHEB methodology paper.
+          </div>
+        </div>
+      </div>
+
+      <form class="interest-form" onsubmit="event.preventDefault(); alert('Thanks — your expression of interest has been received. We will respond within 48 hours at hello@catalystbox.in.'); this.reset();">
+        <div class="form-row two">
+          <label>Your name</label>
+          <input type="text" placeholder="First name" required>
+          <input type="text" placeholder="Last name" required>
+        </div>
+        <div class="form-row">
+          <label>Work email</label>
+          <input type="email" placeholder="you@institution.edu.in" required>
+        </div>
+        <div class="form-row">
+          <label>Institution</label>
+          <input type="text" placeholder="College or University name" required>
+        </div>
+        <div class="form-row two">
+          <label>Type &amp; Role</label>
+          <select required>
+            <option value="">Institution type…</option>
+            <option>Private Engineering / Management College</option>
+            <option>State University</option>
+            <option>Autonomous / Deemed University</option>
+            <option>Central University / IIT / IIM / IISER</option>
+            <option>Higher Education Board / Council</option>
+            <option>Other</option>
+          </select>
+          <select required>
+            <option value="">Your role…</option>
+            <option>Chancellor / Vice Chancellor</option>
+            <option>Dean / Principal / Director</option>
+            <option>Registrar / Administrator</option>
+            <option>Head of Department</option>
+            <option>Faculty Member</option>
+            <option>Placement / Career Officer</option>
+            <option>Student Representative</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>How can we help you? (Optional)</label>
+          <textarea placeholder="Tell us about your institution, goals, or timeline…" rows="4"></textarea>
+        </div>
+        <div class="form-foot">
+          <span class="note">🔒 Your details are safe with us. We never spam.</span>
+          <button type="submit" class="btn btn-primary">Submit Expression of Interest →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;">
+    <div class="footer-qr"></div>
+    <div style="text-align:left;">
+      <div class="footer-logo">CatalystBox</div>
+      <div class="footer-tag">National Education Intelligence Infrastructure</div>
+    </div>
+  </div>
+  
+  <a href="https://www.startupindia.gov.in/" target="_blank" rel="noopener noreferrer" class="startup-badge" title="Registered with Startup India (DIPP)" style="background: #fff; padding: 4px 10px; border-radius: 4px; border: none; text-decoration: none;">
+    <img src="assets/startup-india.png" alt="Startup India Recognized" style="height: 22px; width: auto; display: block;" />
+  </a>
+
+  <div class="footer-right" style="text-align:center;">
+    <div>Fresh Eye Foundation</div>
+    <div style="margin-top:4px;">
+      © 2025 CatalystBox · All Rights Reserved | 
+      <button onclick="showPage('privacy')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Privacy Policy</button> · 
+      <button onclick="showPage('governance')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Data Governance</button>
+    </div>
+  </div>
+</footer>
 
 </div>
 
