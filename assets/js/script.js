@@ -221,4 +221,81 @@ document.addEventListener('DOMContentLoaded', function() {
   observeFadeUps();
   triggerBars();
   initParallax();
+
+  // Prevent form submission when pressing Enter key in input fields for colleges form
+  const cForm = document.getElementById('colleges-form');
+  if (cForm) {
+    cForm.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA' && e.target.tagName !== 'BUTTON') {
+        e.preventDefault();
+      }
+    });
+  }
+
+  // Smooth scroll for Higher Education page anchor links
+  const heLinks = document.querySelectorAll('#page-higher-education a[href^="#"]');
+  heLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        const offset = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: offset, behavior: 'smooth' });
+      }
+    });
+  });
 });
+
+/* ── HIGHER EDUCATION HELPER FUNCTIONS ── */
+window.scrollToHigherEdForm = function() {
+  showPage('higher-education');
+  setTimeout(() => {
+    const target = document.getElementById('he-express-interest');
+    if (target) {
+      const offset = target.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+    }
+  }, 150);
+};
+
+window.handleCollegesSubmit = function(e) {
+  e.preventDefault();
+  const form = document.getElementById('colleges-form');
+  const success = document.getElementById('form-success-he');
+  const submitBtn = form.querySelector('.btn-submit');
+
+  // Collect data
+  const data = {
+    name: document.getElementById('he-fname').value + ' ' + document.getElementById('he-lname').value,
+    email: document.getElementById('he-email').value,
+    institution: document.getElementById('he-inst').value,
+    type: document.getElementById('he-type').value,
+    role: document.getElementById('he-role').value,
+    message: document.getElementById('he-message').value,
+    _subject: `New Higher Ed Expression of Interest: ${document.getElementById('he-inst').value}`
+  };
+
+  submitBtn.innerText = "Sending...";
+  submitBtn.disabled = true;
+
+  fetch("https://formsubmit.co/ajax/hello@catalystbox.in", {
+      method: "POST",
+      headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+      },
+      body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(data => {
+      form.style.display = 'none';
+      success.style.display = 'block';
+  })
+  .catch(error => {
+      alert("There was an error sending your request. Please try again.");
+      submitBtn.innerText = "Submit Expression of Interest →";
+      submitBtn.disabled = false;
+  });
+};
+

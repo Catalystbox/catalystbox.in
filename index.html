@@ -242,7 +242,7 @@ function gtag_report_conversion(url) {
         <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 32px;">
           <h4 style="font-family: 'Syne', sans-serif; font-size: 1.15rem; margin-bottom: 8px; color: #fff;">Inaugural Cohort 2027</h4>
           <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">Institutions joining the first cohort co-shape the CHEB framework and receive the first full assessment cycle at zero cost.</p>
-          <button class="btn-ghost" onclick="showPage('higher-education'); setTimeout(() => { document.getElementById('express-interest').scrollIntoView({ behavior: 'smooth' }); }, 150);" style="font-size: 0.8rem; padding: 10px 18px;">Express Interest</button>
+          <button class="btn-ghost" onclick="scrollToHigherEdForm()" style="font-size: 0.8rem; padding: 10px 18px;">Express Interest</button>
         </div>
       </div>
     </div>
@@ -3261,8 +3261,8 @@ function gtag_report_conversion(url) {
   <p class="hero-sub">CatalystBox is extending its anonymous, AI-powered feedback infrastructure beyond K–12 — to India's colleges and universities. Real voice from students, faculty, alumni, and recruiters, synthesised into the CatalystBox Higher Education Benchmark (CHEB).</p>
 
   <div class="hero-cta">
-    <a href="#express-interest" class="btn btn-primary btn-lg">Express Interest →</a>
-    <a href="#framework" class="btn btn-outline btn-lg">Read the Framework</a>
+    <a href="#he-express-interest" class="btn btn-primary btn-lg">Express Interest →</a>
+    <a href="#he-framework" class="btn btn-outline btn-lg">Read the Framework</a>
   </div>
 
   <div class="status-banner">
@@ -3340,7 +3340,7 @@ function gtag_report_conversion(url) {
 </section>
 
 <!-- ============ FRAMEWORK ============ -->
-<section class="sec" id="framework">
+<section class="sec" id="he-framework">
   <span class="sec-tag">The Framework</span>
   <h2>Introducing the <em>CHEB</em> — CatalystBox Higher Education Benchmark.</h2>
   <p class="sec-sub">CHEB extends the CGEB methodology — already deployed across India's K–12 directory — into higher education. Same architectural principles: anonymous QR-based capture, AI sentiment processing, composite scoring. Adapted for the realities of college and university life: alumni outcomes matter, recruiter voice is structured signal, parent voice fades, faculty voice gains weight.</p>
@@ -3719,7 +3719,7 @@ function gtag_report_conversion(url) {
 </section>
 
 <!-- ============ EXPRESS INTEREST ============ -->
-<section class="sec" id="express-interest">
+<section class="sec" id="he-express-interest">
   <div class="interest">
     <div class="interest-grid">
       <div class="interest-left">
@@ -3747,23 +3747,23 @@ function gtag_report_conversion(url) {
         </div>
       </div>
 
-      <form class="interest-form" onsubmit="event.preventDefault(); alert('Thanks — your expression of interest has been received. We will respond within 48 hours at hello@catalystbox.in.'); this.reset();">
+      <form class="interest-form" id="colleges-form" onsubmit="handleCollegesSubmit(event)">
         <div class="form-row two">
           <label>Your name</label>
-          <input type="text" placeholder="First name" required>
-          <input type="text" placeholder="Last name" required>
+          <input type="text" id="he-fname" placeholder="First name" required>
+          <input type="text" id="he-lname" placeholder="Last name" required>
         </div>
         <div class="form-row">
           <label>Work email</label>
-          <input type="email" placeholder="you@institution.edu.in" required>
+          <input type="email" id="he-email" placeholder="you@institution.edu.in" required>
         </div>
         <div class="form-row">
           <label>Institution</label>
-          <input type="text" placeholder="College or University name" required>
+          <input type="text" id="he-inst" placeholder="College or University name" required>
         </div>
         <div class="form-row two">
           <label>Type &amp; Role</label>
-          <select required>
+          <select id="he-type" required>
             <option value="">Institution type…</option>
             <option>Private Engineering / Management College</option>
             <option>State University</option>
@@ -3772,7 +3772,7 @@ function gtag_report_conversion(url) {
             <option>Higher Education Board / Council</option>
             <option>Other</option>
           </select>
-          <select required>
+          <select id="he-role" required>
             <option value="">Your role…</option>
             <option>Chancellor / Vice Chancellor</option>
             <option>Dean / Principal / Director</option>
@@ -3786,13 +3786,19 @@ function gtag_report_conversion(url) {
         </div>
         <div class="form-row">
           <label>How can we help you? (Optional)</label>
-          <textarea placeholder="Tell us about your institution, goals, or timeline…" rows="4"></textarea>
+          <textarea id="he-message" placeholder="Tell us about your institution, goals, or timeline…" rows="4"></textarea>
         </div>
         <div class="form-foot">
           <span class="note">🔒 Your details are safe with us. We never spam.</span>
-          <button type="submit" class="btn btn-primary">Submit Expression of Interest →</button>
+          <button type="submit" class="btn btn-primary btn-submit">Submit Expression of Interest →</button>
         </div>
       </form>
+
+      <div class="form-success" id="form-success-he" style="display:none; text-align:center;">
+        <div class="success-icon" style="width:48px; height:48px; background:var(--teal); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-size:20px; font-weight:bold;">✓</div>
+        <h3 style="color:#fff;">We've received your interest.</h3>
+        <p style="color:var(--ink-dim); font-size:14px; margin-top:8px;">Expect a personal response within 48 hours at the email you provided.</p>
+      </div>
     </div>
   </div>
 </section>
