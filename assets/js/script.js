@@ -1,3 +1,56 @@
+/* ── FEATURE TOGGLES ── */
+var CONFIG = {
+  enableSolutions: false, // Set to true to activate the Solutions page
+  enableCareers: false    // Set to true to activate the Careers page
+};
+
+/* ── PAGE VISIBILITY CONFIG APPLIER ── */
+function applyPageVisibilityConfig() {
+  if (!CONFIG.enableSolutions) {
+    const navBtn = document.getElementById('nav-solutions');
+    if (navBtn) {
+      const parentLi = navBtn.closest('li');
+      if (parentLi) parentLi.style.display = 'none';
+      else navBtn.style.display = 'none';
+    }
+    document.querySelectorAll("button[onclick*='solutions'], a[onclick*='solutions']").forEach(el => {
+      el.style.display = 'none';
+    });
+  } else {
+    const navBtn = document.getElementById('nav-solutions');
+    if (navBtn) {
+      const parentLi = navBtn.closest('li');
+      if (parentLi) parentLi.style.display = '';
+      else navBtn.style.display = '';
+    }
+    document.querySelectorAll("button[onclick*='solutions'], a[onclick*='solutions']").forEach(el => {
+      el.style.display = '';
+    });
+  }
+
+  if (!CONFIG.enableCareers) {
+    const navBtn = document.getElementById('nav-careers');
+    if (navBtn) {
+      const parentLi = navBtn.closest('li');
+      if (parentLi) parentLi.style.display = 'none';
+      else navBtn.style.display = 'none';
+    }
+    document.querySelectorAll("button[onclick*='careers'], a[onclick*='careers']").forEach(el => {
+      el.style.display = 'none';
+    });
+  } else {
+    const navBtn = document.getElementById('nav-careers');
+    if (navBtn) {
+      const parentLi = navBtn.closest('li');
+      if (parentLi) parentLi.style.display = '';
+      else navBtn.style.display = '';
+    }
+    document.querySelectorAll("button[onclick*='careers'], a[onclick*='careers']").forEach(el => {
+      el.style.display = '';
+    });
+  }
+}
+
 /* ── MOBILE MENU ── */
 function toggleMobileMenu() {
   const navLinks = document.querySelector('.nav-links');
@@ -14,6 +67,16 @@ function openContactForm()  { window.open(CONTACT_FORM_URL, '_blank'); }
 /* ── PAGE SWITCHING ── */
 function showPage(id, pushHistory) {
   if (pushHistory === undefined) pushHistory = true;
+
+  // Intercept and redirect if page is disabled
+  if (id === 'solutions' && !CONFIG.enableSolutions) {
+    showPage('home', pushHistory);
+    return;
+  }
+  if (id === 'careers' && !CONFIG.enableCareers) {
+    showPage('home', pushHistory);
+    return;
+  }
 
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
@@ -193,12 +256,23 @@ function initParallax() {
 
 /* ── INIT ── */
 (function() {
+  // Apply page visibility configuration
+  applyPageVisibilityConfig();
+
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   
   let path = window.location.pathname.replace(/^\/+|\/+$/g, '');
   let targetId = path || 'home';
   if (targetId === 'research') targetId = 'cgeb';
   
+  // Route fallback if page is disabled
+  if (targetId === 'solutions' && !CONFIG.enableSolutions) {
+    targetId = 'home';
+  }
+  if (targetId === 'careers' && !CONFIG.enableCareers) {
+    targetId = 'home';
+  }
+
   var initialPage = document.getElementById('page-' + targetId);
   if (!initialPage) {
     targetId = 'home';
@@ -218,6 +292,7 @@ function initParallax() {
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
+  applyPageVisibilityConfig();
   observeFadeUps();
   triggerBars();
   initParallax();

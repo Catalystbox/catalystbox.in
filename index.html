@@ -61,14 +61,14 @@ function gtag_report_conversion(url) {
   </button>
   <ul class="nav-links">
     <li><button onclick="showPage('home')" id="nav-home" class="active">Home</button></li>
-    <li><button onclick="showPage('solutions')" id="nav-solutions">Solutions</button></li>
+    <li style="display: none;"><button onclick="showPage('solutions')" id="nav-solutions">Solutions</button></li>
     <li><button onclick="showPage('cgeb')" id="nav-cgeb">Research</button></li>
     <li><button onclick="showPage('partnership')" id="nav-partnership">Partnership</button></li>
     <li><button onclick="showPage('pricing')" id="nav-pricing">Pricing</button></li>
     <li><button onclick="showPage('higher-education')" id="nav-higher-education" style="position:relative; margin-right:15px;">Higher Ed <span style="position:absolute; top:-2px; right:-20px; background:var(--amber); color:var(--ink); font-family:'DM Mono',monospace; font-size:7px; padding:2px 4px; border-radius:3px; font-weight:700; line-height:1; letter-spacing:0.05em;">NEW</span></button></li>
     <li><button onclick="showPage('about')" id="nav-about">About</button></li>
     <li><button onclick="showPage('faq')" id="nav-faq">FAQs</button></li>
-    <li><button onclick="showPage('careers')" id="nav-careers">Careers</button></li>
+    <li style="display: none;"><button onclick="showPage('careers')" id="nav-careers">Careers</button></li>
     <li><button onclick="toggleTheme()" id="theme-btn" style="padding:8px 12px; font-size:1.1rem; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center;">🌙</button></li>
     <li><button onclick="openContactForm()" id="nav-contact" class="nav-cta">Contact Us</button></li>
   </ul>
@@ -702,7 +702,7 @@ function gtag_report_conversion(url) {
         <p>Whether you're a board, a school principal, or a government department — let's talk about what CatalystBox can do for you.</p>
         <div class="pricing-cta-buttons">
           <button class="btn-primary" onclick="openPartnerForm()">Partner With Us</button>
-          <button class="btn-ghost" onclick="showPage('solutions')">Explore AI Solutions →</button>
+          <button class="btn-ghost" onclick="showPage('solutions')" style="display: none;">Explore AI Solutions →</button>
           <button class="btn-ghost" onclick="showPage('cgeb')" style="border-color:transparent;background:rgba(255,255,255,0.05);">Read methodology</button>
         </div>
       </div>
@@ -3830,7 +3830,7 @@ function gtag_report_conversion(url) {
 </div>
 
 <!-- ═══ SCRIPTS ═══ -->
-<script src="/assets/js/script.js?v=1.1"></script>
+<script src="/assets/js/script.js?v=1.2"></script>
 <script src="/assets/js/cgeb.js?v=1.1"></script>
 <script src="/assets/js/partnership.js?v=1.1"></script>
 
