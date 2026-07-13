@@ -1,7 +1,8 @@
 /* ── FEATURE TOGGLES ── */
 var CONFIG = {
   enableSolutions: false, // Set to true to activate the Solutions page
-  enableCareers: false    // Set to true to activate the Careers page
+  enableCareers: false,   // Set to true to activate the Careers page
+  enablePricing: false    // Set to true to activate the Pricing page
 };
 
 /* ── PAGE VISIBILITY CONFIG APPLIER ── */
@@ -49,6 +50,28 @@ function applyPageVisibilityConfig() {
       el.style.display = '';
     });
   }
+
+  if (!CONFIG.enablePricing) {
+    const navBtn = document.getElementById('nav-pricing');
+    if (navBtn) {
+      const parentLi = navBtn.closest('li');
+      if (parentLi) parentLi.style.display = 'none';
+      else navBtn.style.display = 'none';
+    }
+    document.querySelectorAll("button[onclick*='pricing'], a[onclick*='pricing']").forEach(el => {
+      el.style.display = 'none';
+    });
+  } else {
+    const navBtn = document.getElementById('nav-pricing');
+    if (navBtn) {
+      const parentLi = navBtn.closest('li');
+      if (parentLi) parentLi.style.display = '';
+      else navBtn.style.display = '';
+    }
+    document.querySelectorAll("button[onclick*='pricing'], a[onclick*='pricing']").forEach(el => {
+      el.style.display = '';
+    });
+  }
 }
 
 /* ── MOBILE MENU ── */
@@ -75,6 +98,18 @@ function showPage(id, pushHistory) {
   }
   if (id === 'careers' && !CONFIG.enableCareers) {
     showPage('home', pushHistory);
+    return;
+  }
+  if (id === 'pricing' && !CONFIG.enablePricing) {
+    showPage('home', pushHistory);
+    return;
+  }
+  if (id === 'faq') {
+    showPage('about', pushHistory);
+    setTimeout(() => {
+      const el = document.getElementById('about-faqs');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
     return;
   }
 
@@ -272,6 +307,15 @@ function initParallax() {
   if (targetId === 'careers' && !CONFIG.enableCareers) {
     targetId = 'home';
   }
+  if (targetId === 'pricing' && !CONFIG.enablePricing) {
+    targetId = 'home';
+  }
+  
+  let shouldScrollToFaq = false;
+  if (targetId === 'faq') {
+    targetId = 'about';
+    shouldScrollToFaq = true;
+  }
 
   var initialPage = document.getElementById('page-' + targetId);
   if (!initialPage) {
@@ -289,6 +333,12 @@ function initParallax() {
   }
 
   showPage(targetId, false);
+  if (shouldScrollToFaq) {
+    setTimeout(() => {
+      const el = document.getElementById('about-faqs');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 200);
+  }
 })();
 
 document.addEventListener('DOMContentLoaded', function() {

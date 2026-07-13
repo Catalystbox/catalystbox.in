@@ -770,19 +770,6 @@ function gtag_report_conversion(url) {
     </div>
   </section>
 
-  <section class="governance-section">
-    <div class="container">
-      <div class="eyebrow">Governance</div>
-      <h2>Independent. <em>Credible. Neutral.</em></h2>
-      <p class="section-sub">CatalystBox is governed by an independent advisory board to ensure it remains trustworthy infrastructure — never a tool for surveillance, politics, or commercial exploitation.</p>
-      <div class="gov-grid">
-        <div class="gov-card"><span class="gov-icon">🎓</span><h4>Educators</h4><p>Experienced school leaders who ensure the platform reflects classroom realities.</p></div>
-        <div class="gov-card"><span class="gov-icon">🧠</span><h4>Psychologists</h4><p>Child and adolescent psychologists who guide safe, ethical feedback design.</p></div>
-        <div class="gov-card"><span class="gov-icon">📜</span><h4>Policy Experts</h4><p>Education policy specialists who connect insights to actionable reforms.</p></div>
-        <div class="gov-card"><span class="gov-icon">🛡️</span><h4>Child Safety Specialists</h4><p>Advocates who ensure anonymity, data protection, and student safety.</p></div>
-      </div>
-    </div>
-  </section>
 
   <!-- Dashboard mock -->
   <section class="dashboard-section" id="platform">
@@ -868,18 +855,90 @@ function gtag_report_conversion(url) {
     </div>
   </section>
 
-  <section class="comparable-section">
+
+  <!-- FAQ section merged into About page -->
+  <section class="faq-section-about" id="about-faqs" style="border-top: 1px solid var(--border); padding: 80px 0 40px; background: var(--slate);">
     <div class="container">
-      <div class="eyebrow">Vision</div>
-      <h2>A Model That Has <em>Worked Before</em></h2>
-      <p class="section-sub">CatalystBox follows the blueprint of institutions that became indispensable by making invisible things measurable.</p>
-      <div class="comparable-grid">
-        <div class="comp-alt-card"><div class="c-eye">COMPARABLE MODEL · MEDIA</div><h4>Nielsen</h4><p>Nielsen became indispensable to the media industry by creating neutral, trusted audience measurement infrastructure. Before Nielsen, media decisions were made on intuition. CatalystBox does the same for education.</p></div>
-        <div class="comp-alt-card"><div class="c-eye">COMPARABLE MODEL · WORKPLACE</div><h4>Glassdoor</h4><p>Glassdoor transformed workplace transparency by giving employees an anonymous, structured voice. It became the most trusted signal of organisational health. CatalystBox does this for schools — at national scale.</p></div>
+      <div style="text-align: center; margin-bottom: 50px;">
+        <div class="eyebrow">Support</div>
+        <h2 style="font-family:'Syne',sans-serif; font-size:2.8rem; font-weight:800; color:#fff; margin-bottom:16px;">Frequently Asked <em>Questions</em></h2>
+        <p style="color:var(--muted);font-size:1.1rem;font-weight:300;max-width:600px;line-height:1.75;margin:12px auto 0;">Everything schools, boards, and partners commonly ask about CatalystBox — answered honestly and clearly.</p>
       </div>
-      <div style="display:flex;gap:16px;margin-top:44px;flex-wrap:wrap;">
-        <button class="btn-primary" onclick="openPartnerForm()">Partner With CatalystBox →</button>
-        <button class="btn-ghost" onclick="openContactForm()">Contact Us</button>
+
+      <div class="faq-wrap" style="padding-top: 0; padding-bottom: 0;">
+        <div class="faq-sidebar">
+          <h3>Categories</h3>
+          <ul class="cat-list">
+            <li><button class="active" onclick="showCat('general',this)">General</button></li>
+            <li><button onclick="showCat('privacy',this)">Privacy & Safety</button></li>
+            <li><button onclick="showCat('feedback',this)">Feedback System</button></li>
+            <li><button onclick="showCat('dashboard',this)">Dashboard & Data</button></li>
+            <li><button onclick="showCat('ai',this)">AI Solutions</button></li>
+            <li><button onclick="showCat('partnership',this)">Partnership</button></li>
+          </ul>
+        </div>
+
+        <div class="faq-content">
+          <!-- GENERAL -->
+          <div class="faq-section active" id="cat-general">
+            <div class="faq-section-title">General Questions</div>
+            <div class="faq-item open"><button class="faq-q" onclick="toggleFaq(this)">What is CatalystBox?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>CatalystBox is a national education feedback and intelligence infrastructure built for India. It gives students, teachers, and parents a safe, anonymous channel to share their experiences — and turns that feedback into structured insights for schools, education boards, and policymakers.</p><p>Think of it as the central nervous system of education feedback — making student voice measurable, visible, and actionable at every level.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Who is CatalystBox built for?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>CatalystBox serves the entire education ecosystem. Students, teachers, and parents are the primary voices. School administrators and education boards use the analytics dashboards. Policymakers, NGOs, researchers, and CSR foundations use the intelligence reports to make informed decisions.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is CatalystBox aligned with NEP 2020?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Yes. CatalystBox directly supports NEP 2020 principles — including student voice, holistic education, mental health focus, and data-driven policy making. It provides the feedback infrastructure that NEP 2020's vision requires but which currently does not exist in a structured form.</p><span class="faq-highlight">✓ NEP 2020 Aligned</span></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do schools need special hardware or software?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>No special hardware is required. CatalystBox works through QR codes and mobile web — students simply scan a code and submit feedback on any smartphone. School administrators access dashboards through a standard web browser. No app downloads, no installations.</p></div></div>
+          </div>
+
+          <!-- PRIVACY -->
+          <div class="faq-section" id="cat-privacy">
+            <div class="faq-section-title">Privacy & Safety</div>
+            <div class="faq-item open"><button class="faq-q" onclick="toggleFaq(this)">Is feedback truly anonymous? How can we be sure?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Yes — completely. CatalystBox is designed from the ground up for anonymity. No login is required, no personal identifiers are collected, and responses are not linked to any device in a way that can identify an individual. Only aggregated, anonymised data is ever shown in dashboards.</p><p>Even school administrators cannot trace a response back to a specific student, teacher, or parent. This is a structural guarantee, not a policy promise.</p><span class="faq-highlight">🔒 No Personal Identifiers Collected</span></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What data does CatalystBox actually store?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>CatalystBox stores anonymised feedback responses, the school identifier, the feedback category, and timestamps for trend analysis. It does not store names, phone numbers, email addresses, photos, or any information that could identify a respondent.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Could feedback be misused to target specific students?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>This is architecturally prevented. Individual responses are never surfaced in dashboards — schools only see aggregate scores and trends. There is no way for administrators, teachers, or anyone else to associate a specific response with a specific person.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is student data shared with third parties?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Never. Individual or identifiable data is not shared with any third party. Aggregated, anonymised insights may be made available to researchers and policy institutes — but these contain no information traceable back to any individual.</p></div></div>
+          </div>
+
+          <!-- FEEDBACK -->
+          <div class="faq-section" id="cat-feedback">
+            <div class="faq-section-title">Feedback System</div>
+            <div class="faq-item open"><button class="faq-q" onclick="toggleFaq(this)">How do students submit feedback?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Each school receives a unique QR code. Students scan it with any smartphone — no app needed — and are taken to a simple, mobile-friendly form. They select a feedback category, answer a few questions, and submit anonymously. The entire process takes under two minutes.</p><span class="faq-highlight">📱 Any Smartphone · No App · Multilingual</span></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What kinds of issues can students report?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>CatalystBox covers bullying and harassment, teaching quality, mental health and academic pressure, infrastructure and facilities, general school environment, and parent engagement. Schools can also request additional categories specific to their context.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can parents and teachers also submit feedback?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Yes. CatalystBox is designed for the entire school community. Parents have forms focused on communication and transparency. Teachers can share professional feedback about working conditions and resources. All responses remain equally anonymous.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How does CatalystBox prevent spam or fake responses?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Each school has a unique QR code and submission token. The system uses IP clustering and device-level signals to limit duplicates and detect anomalous patterns. The AI layer also flags statistically unusual spikes for review — ensuring data integrity without compromising anonymity.</p></div></div>
+          </div>
+
+          <!-- DASHBOARD -->
+          <div class="faq-section" id="cat-dashboard">
+            <div class="faq-section-title">Dashboard & Data</div>
+            <div class="faq-item open"><button class="faq-q" onclick="toggleFaq(this)">What does a school's dashboard show?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Each school receives a live analytics dashboard showing their CatalystBox Score, student happiness index, teaching quality rating, bullying incident trends, infrastructure complaints, and academic pressure indicators — all benchmarked against city, state, and national averages.</p><span class="faq-highlight">📊 Live · Benchmarked · Actionable</span></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the CatalystBox Benchmark?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>The CatalystBox Benchmark is a composite school performance score built structurally from three core indices: Student Engagement (SEI), Teacher Effectiveness (TEI), and Parent/Peer Trust (PTI). It allows schools to track core improvement dimensions internally and compare systematically.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How frequently is data updated?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>CatalystBox feedback and reporting are designed around the academic cycle. Dashboard metrics and AI-flagged alerts are aggregated and processed annually to provide comprehensive, systemic insights aligned with the school year. School administrators and boards receive their structured intelligence reports on a yearly cadence.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can our board access data across multiple schools?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Yes. Education boards have access to an aggregated board-level view showing performance trends across all affiliated schools. This gives boards powerful ground-level intelligence for policy decisions and targeted interventions.</p></div></div>
+          </div>
+
+          <!-- AI -->
+          <div class="faq-section" id="cat-ai">
+            <div class="faq-section-title">AI Solutions</div>
+            <div class="faq-item open"><button class="faq-q" onclick="toggleFaq(this)">What AI tools does CatalystBox offer schools?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>CatalystBox offers a growing suite of AI tools purpose-built for schools: an AI Attendance Predictor, AI Lesson Plan Generator, AI Homework Helper, AI Timetable Optimiser, and an AI Discipline Monitor that uses feedback patterns to recommend early interventions.</p><p>Schools can also partner with us to co-develop custom AI tools based on their specific needs and their own data.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are the AI tools separate from the feedback system?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>The AI tools are a separate layer that schools can opt into. The feedback and intelligence platform is the core of CatalystBox. AI tools are offered as an additional partnership for schools that want to go further — using CatalystBox insights to actively improve operations.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do schools need technical expertise to use AI tools?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>No. CatalystBox handles implementation, training, and ongoing support. School staff interact with simple, intuitive interfaces designed for educators — not engineers. Our team works closely with each school to ensure smooth onboarding.</p><span class="faq-highlight">✓ Full Implementation Support Included</span></div></div>
+          </div>
+
+          <!-- PARTNERSHIP -->
+          <div class="faq-section" id="cat-partnership">
+            <div class="faq-section-title">Partnership</div>
+            <div class="faq-item open"><button class="faq-q" onclick="toggleFaq(this)">How does a school or board partner with CatalystBox?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>The simplest way is to reach out through our Contact page or fill in our Partner With Us form. We'll schedule a conversation to understand your context, walk you through what CatalystBox looks like for your institution, and outline next steps.</p><span class="faq-highlight">→ Start at our Contact page</span></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Does CatalystBox work with government schools?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Absolutely. CatalystBox is designed to serve all schools — government, aided, and private. Government schools, which often lack formal feedback mechanisms entirely, stand to benefit the most. CatalystBox can be deployed across an entire government board's school network through a single partnership agreement.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Who governs CatalystBox and ensures it stays neutral?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>CatalystBox maintains an independent advisory board comprising educators, psychologists, child safety specialists, and policy experts. This board oversees data governance and ethical guidelines — ensuring CatalystBox remains a neutral, credible infrastructure, not a commercial surveillance tool.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can NGOs or CSR foundations partner with CatalystBox?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Yes. NGOs, CSR foundations, and research institutions can partner with CatalystBox to access aggregated education intelligence reports, fund deployment in underserved school networks, or co-design impact measurement programs. Reach out to explore what a partnership might look like.</p></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-cta-box" style="margin-top: 60px; border-top: none; border-bottom: none; background: transparent; padding: 0;">
+        <div class="faq-cta-inner">
+          <div><h3>Still have questions?</h3><p>Our team is happy to walk you through anything — whether you're a school principal, board official, NGO, or researcher.</p></div>
+          <button class="btn-primary" onclick="openContactForm()">Contact Us →</button>
+        </div>
       </div>
     </div>
   </section>
@@ -895,102 +954,7 @@ function gtag_report_conversion(url) {
   </footer>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     PAGE: FAQS
-═══════════════════════════════════════════ -->
-<div class="page faq-page" id="page-faq">
-  <div class="faq-page-hero">
-    <div class="eyebrow">Support</div>
-    <h1>Frequently Asked <em>Questions</em></h1>
-    <p style="color:var(--muted);font-size:1rem;font-weight:300;max-width:500px;line-height:1.75;margin-top:12px;">Everything schools, boards, and partners commonly ask about CatalystBox — answered honestly and clearly.</p>
-  </div>
 
-  <div class="faq-wrap">
-    <div class="faq-sidebar">
-      <h3>Categories</h3>
-      <ul class="cat-list">
-        <li><button class="active" onclick="showCat('general',this)">General</button></li>
-        <li><button onclick="showCat('privacy',this)">Privacy & Safety</button></li>
-        <li><button onclick="showCat('feedback',this)">Feedback System</button></li>
-        <li><button onclick="showCat('dashboard',this)">Dashboard & Data</button></li>
-        <li><button onclick="showCat('ai',this)">AI Solutions</button></li>
-        <li><button onclick="showCat('partnership',this)">Partnership</button></li>
-      </ul>
-    </div>
-
-    <div class="faq-content">
-      <!-- GENERAL -->
-      <div class="faq-section active" id="cat-general">
-        <div class="faq-section-title">General Questions</div>
-        <div class="faq-item open"><button class="faq-q" onclick="toggleFaq(this)">What is CatalystBox?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>CatalystBox is a national education feedback and intelligence infrastructure built for India. It gives students, teachers, and parents a safe, anonymous channel to share their experiences — and turns that feedback into structured insights for schools, education boards, and policymakers.</p><p>Think of it as the central nervous system of education feedback — making student voice measurable, visible, and actionable at every level.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Who is CatalystBox built for?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>CatalystBox serves the entire education ecosystem. Students, teachers, and parents are the primary voices. School administrators and education boards use the analytics dashboards. Policymakers, NGOs, researchers, and CSR foundations use the intelligence reports to make informed decisions.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is CatalystBox aligned with NEP 2020?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Yes. CatalystBox directly supports NEP 2020 principles — including student voice, holistic education, mental health focus, and data-driven policy making. It provides the feedback infrastructure that NEP 2020's vision requires but which currently does not exist in a structured form.</p><span class="faq-highlight">✓ NEP 2020 Aligned</span></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do schools need special hardware or software?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>No special hardware is required. CatalystBox works through QR codes and mobile web — students simply scan a code and submit feedback on any smartphone. School administrators access dashboards through a standard web browser. No app downloads, no installations.</p></div></div>
-      </div>
-
-      <!-- PRIVACY -->
-      <div class="faq-section" id="cat-privacy">
-        <div class="faq-section-title">Privacy & Safety</div>
-        <div class="faq-item open"><button class="faq-q" onclick="toggleFaq(this)">Is feedback truly anonymous? How can we be sure?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Yes — completely. CatalystBox is designed from the ground up for anonymity. No login is required, no personal identifiers are collected, and responses are not linked to any device in a way that can identify an individual. Only aggregated, anonymised data is ever shown in dashboards.</p><p>Even school administrators cannot trace a response back to a specific student, teacher, or parent. This is a structural guarantee, not a policy promise.</p><span class="faq-highlight">🔒 No Personal Identifiers Collected</span></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What data does CatalystBox actually store?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>CatalystBox stores anonymised feedback responses, the school identifier, the feedback category, and timestamps for trend analysis. It does not store names, phone numbers, email addresses, photos, or any information that could identify a respondent.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Could feedback be misused to target specific students?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>This is architecturally prevented. Individual responses are never surfaced in dashboards — schools only see aggregate scores and trends. There is no way for administrators, teachers, or anyone else to associate a specific response with a specific person.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is student data shared with third parties?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Never. Individual or identifiable data is not shared with any third party. Aggregated, anonymised insights may be made available to researchers and policy institutes — but these contain no information traceable back to any individual.</p></div></div>
-      </div>
-
-      <!-- FEEDBACK -->
-      <div class="faq-section" id="cat-feedback">
-        <div class="faq-section-title">Feedback System</div>
-        <div class="faq-item open"><button class="faq-q" onclick="toggleFaq(this)">How do students submit feedback?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Each school receives a unique QR code. Students scan it with any smartphone — no app needed — and are taken to a simple, mobile-friendly form. They select a feedback category, answer a few questions, and submit anonymously. The entire process takes under two minutes.</p><span class="faq-highlight">📱 Any Smartphone · No App · Multilingual</span></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What kinds of issues can students report?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>CatalystBox covers bullying and harassment, teaching quality, mental health and academic pressure, infrastructure and facilities, general school environment, and parent engagement. Schools can also request additional categories specific to their context.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can parents and teachers also submit feedback?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Yes. CatalystBox is designed for the entire school community. Parents have forms focused on communication and transparency. Teachers can share professional feedback about working conditions and resources. All responses remain equally anonymous.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How does CatalystBox prevent spam or fake responses?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Each school has a unique QR code and submission token. The system uses IP clustering and device-level signals to limit duplicates and detect anomalous patterns. The AI layer also flags statistically unusual spikes for review — ensuring data integrity without compromising anonymity.</p></div></div>
-      </div>
-
-      <!-- DASHBOARD -->
-      <div class="faq-section" id="cat-dashboard">
-        <div class="faq-section-title">Dashboard & Data</div>
-        <div class="faq-item open"><button class="faq-q" onclick="toggleFaq(this)">What does a school's dashboard show?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Each school receives a live analytics dashboard showing their CatalystBox Score, student happiness index, teaching quality rating, bullying incident trends, infrastructure complaints, and academic pressure indicators — all benchmarked against city, state, and national averages.</p><span class="faq-highlight">📊 Live · Benchmarked · Actionable</span></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the CatalystBox Benchmark?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>The CatalystBox Benchmark is a composite school performance score built structurally from three core indices: Student Engagement (SEI), Teacher Effectiveness (TEI), and Parent/Peer Trust (PTI). It allows schools to track core improvement dimensions internally and compare systematically.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How frequently is data updated?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>CatalystBox feedback and reporting are designed around the academic cycle. Dashboard metrics and AI-flagged alerts are aggregated and processed annually to provide comprehensive, systemic insights aligned with the school year. School administrators and boards receive their structured intelligence reports on a yearly cadence.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can our board access data across multiple schools?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Yes. Education boards have access to an aggregated board-level view showing performance trends across all affiliated schools. This gives boards powerful ground-level intelligence for policy decisions and targeted interventions.</p></div></div>
-      </div>
-
-      <!-- AI -->
-      <div class="faq-section" id="cat-ai">
-        <div class="faq-section-title">AI Solutions</div>
-        <div class="faq-item open"><button class="faq-q" onclick="toggleFaq(this)">What AI tools does CatalystBox offer schools?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>CatalystBox offers a growing suite of AI tools purpose-built for schools: an AI Attendance Predictor, AI Lesson Plan Generator, AI Homework Helper, AI Timetable Optimiser, and an AI Discipline Monitor that uses feedback patterns to recommend early interventions.</p><p>Schools can also partner with us to co-develop custom AI tools based on their specific needs and their own data.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are the AI tools separate from the feedback system?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>The AI tools are a separate layer that schools can opt into. The feedback and intelligence platform is the core of CatalystBox. AI tools are offered as an additional partnership for schools that want to go further — using CatalystBox insights to actively improve operations.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do schools need technical expertise to use AI tools?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>No. CatalystBox handles implementation, training, and ongoing support. School staff interact with simple, intuitive interfaces designed for educators — not engineers. Our team works closely with each school to ensure smooth onboarding.</p><span class="faq-highlight">✓ Full Implementation Support Included</span></div></div>
-      </div>
-
-      <!-- PARTNERSHIP -->
-      <div class="faq-section" id="cat-partnership">
-        <div class="faq-section-title">Partnership</div>
-        <div class="faq-item open"><button class="faq-q" onclick="toggleFaq(this)">How does a school or board partner with CatalystBox?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>The simplest way is to reach out through our Contact page or fill in our Partner With Us form. We'll schedule a conversation to understand your context, walk you through what CatalystBox looks like for your institution, and outline next steps.</p><span class="faq-highlight">→ Start at our Contact page</span></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Does CatalystBox work with government schools?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Absolutely. CatalystBox is designed to serve all schools — government, aided, and private. Government schools, which often lack formal feedback mechanisms entirely, stand to benefit the most. CatalystBox can be deployed across an entire government board's school network through a single partnership agreement.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Who governs CatalystBox and ensures it stays neutral?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>CatalystBox maintains an independent advisory board comprising educators, psychologists, child safety specialists, and policy experts. This board oversees data governance and ethical guidelines — ensuring CatalystBox remains a neutral, credible infrastructure, not a commercial surveillance tool.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can NGOs or CSR foundations partner with CatalystBox?<span class="faq-chevron">▼</span></button><div class="faq-a"><p>Yes. NGOs, CSR foundations, and research institutions can partner with CatalystBox to access aggregated education intelligence reports, fund deployment in underserved school networks, or co-design impact measurement programs. Reach out to explore what a partnership might look like.</p></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="faq-cta-box">
-    <div class="faq-cta-inner">
-      <div><h3>Still have questions?</h3><p>Our team is happy to walk you through anything — whether you're a school principal, board official, NGO, or researcher.</p></div>
-      <button class="btn-primary" onclick="openContactForm()">Contact Us →</button>
-    </div>
-  </div>
-
-  <footer>
-    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><div class="footer-qr"></div><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">National Education Intelligence Infrastructure</div></div></div>
-    
-    <a href="https://www.startupindia.gov.in/" target="_blank" rel="noopener noreferrer" class="startup-badge" title="Registered with Startup India (DIPP)" style="background: #fff; padding: 4px 10px; border-radius: 4px; border: none; text-decoration: none;">
-      <img src="assets/startup-india.png" alt="Startup India Recognized" style="height: 22px; width: auto; display: block;" />
-    </a>
-
-    <div class="footer-right" style="text-align:center;"><div>Fresh Eye Foundation</div><div style="margin-top:4px;">© 2025 CatalystBox · All Rights Reserved | <button onclick="showPage('privacy')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Privacy Policy</button> · <button onclick="showPage('governance')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Data Governance</button></div></div>
-  </footer>
-</div>
 
 <!-- ═══════════════════════════════════════════
      PAGE: CONTACT
