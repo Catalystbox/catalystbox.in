@@ -423,8 +423,10 @@ a.channel-value:hover { color: var(--amber); }
   .fab-wa svg { width: 24px; height: 24px; }
   .faq-cta-inner, .faq-nudge { flex-direction: column; text-align: center; gap: 24px; }
   .gform-iframe { height: 1000px; }
-  
-  /* Mobile Menu */
+}
+
+/* Mobile Menu Responsiveness */
+@media (max-width: 1200px) {
   .mobile-menu-btn { display: flex; }
   .nav-links {
     position: absolute; top: 100%; left: 0; right: 0;
@@ -439,7 +441,9 @@ a.channel-value:hover { color: var(--amber); }
   
   body.light-mode .nav-links { background: rgba(255,255,255,0.98); }
   body.light-mode .mobile-menu-btn { color: #18181B; }
+}
 
+@media (max-width: 900px) {
   /* Sections adjustments */
   section { padding: 80px 24px; }
   .trust-inner { gap: 20px; }
