@@ -36,7 +36,7 @@ function gtag_report_conversion(url) {
 <title>CatalystBox — National Education Intelligence Infrastructure</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/css/style.css?v=1.1" />
 <link rel="stylesheet" href="/assets/css/cgeb.css?v=1.1" />
 <link rel="stylesheet" href="/assets/css/partnership.css?v=1.1" />
@@ -960,14 +960,7 @@ function gtag_report_conversion(url) {
      PAGE: THINKMAP
 ═══════════════════════════════════════════ -->
 <div class="page" id="page-thinkmap">
-  <div style="padding: 160px 48px; text-align: center; background: var(--slate); border-bottom: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; min-height: 60vh; justify-content: center;">
-    <div class="eyebrow" style="color: var(--amber); font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 16px;">Coming Soon</div>
-    <h1 style="font-family: 'Syne', sans-serif; font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 16px; line-height: 1.2;">Think<em>Map</em></h1>
-    <p style="color: var(--muted); font-size: 1.1rem; font-weight: 300; max-width: 600px; line-height: 1.75; margin-top: 12px; margin-bottom: 32px;">We are currently designing and building ThinkMap. Stay tuned for updates on what this page will offer!</p>
-    <div>
-      <button class="btn-primary" onclick="showPage('home')">Back to Home</button>
-    </div>
-  </div>
+  <div id="thinkmap-root"></div>
 </div>
 
 
@@ -3813,6 +3806,7 @@ function gtag_report_conversion(url) {
 <script src="/assets/js/script.js?v=1.2"></script>
 <script src="/assets/js/cgeb.js?v=1.1"></script>
 <script src="/assets/js/partnership.js?v=1.1"></script>
+<script src="/assets/js/thinkmap.bundle.js" defer></script>
 
 <!-- ═══ QR LOGO — replaces CB in nav + all footers ═══ -->
 <script src="https://unpkg.com/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>

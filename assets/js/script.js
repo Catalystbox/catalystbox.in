@@ -113,11 +113,26 @@ function showPage(id, pushHistory) {
     return;
   }
 
+  // Handle thinkmap sub-routing container matching
+  let pageElementId = id;
+  let isThinkMap = id === 'thinkmap' || id.startsWith('thinkmap/');
+  if (isThinkMap) {
+    pageElementId = 'thinkmap';
+  }
+
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
-  document.getElementById('page-' + id).classList.add('active');
-  var navBtn = document.getElementById('nav-' + id);
-  if (navBtn) navBtn.classList.add('active');
+  
+  const targetPageEl = document.getElementById('page-' + pageElementId);
+  if (targetPageEl) {
+    targetPageEl.classList.add('active');
+  }
+
+  // Highlight active nav button
+  var navBtn = document.getElementById(isThinkMap ? 'nav-thinkmap' : 'nav-' + id);
+  if (navBtn) {
+    navBtn.classList.add('active');
+  }
   
   const navLinks = document.querySelector('.nav-links');
   if (navLinks && navLinks.classList.contains('active')) {
@@ -131,14 +146,14 @@ function showPage(id, pushHistory) {
     if (id === 'cgeb') route = 'research';
     if (id === 'home') route = '';
     try {
-      window.history.pushState({ page: id }, '', '/' + route);
+      window.history.pushState({ page: isThinkMap ? 'thinkmap' : id }, '', '/' + route);
     } catch (e) {
       console.warn("History API failed:", e);
     }
   }
 
   setTimeout(() => {
-    document.querySelectorAll('#page-' + id + ' .fade-up').forEach(el => el.classList.remove('visible'));
+    document.querySelectorAll('#page-' + pageElementId + ' .fade-up').forEach(el => el.classList.remove('visible'));
     setTimeout(() => observeFadeUps(), 60);
   }, 10);
   if (id === 'home') triggerBars();
@@ -146,7 +161,12 @@ function showPage(id, pushHistory) {
 
 window.addEventListener('popstate', function(e) {
   if (e.state && e.state.page) {
-    showPage(e.state.page, false);
+    if (e.state.page === 'thinkmap') {
+      let path = window.location.pathname.replace(/^\/+|\/+$/g, '');
+      showPage(path, false);
+    } else {
+      showPage(e.state.page, false);
+    }
   } else {
     showPage('home', false);
   }
@@ -317,22 +337,29 @@ function initParallax() {
     shouldScrollToFaq = true;
   }
 
-  var initialPage = document.getElementById('page-' + targetId);
+  // Handle thinkmap routes on load
+  let isThinkMap = targetId === 'thinkmap' || targetId.startsWith('thinkmap/');
+  let resolvedTargetId = isThinkMap ? 'thinkmap' : targetId;
+
+  var initialPage = document.getElementById('page-' + resolvedTargetId);
   if (!initialPage) {
     targetId = 'home';
+    resolvedTargetId = 'home';
+    isThinkMap = false;
   }
   
   let route = targetId;
   if (targetId === 'cgeb') route = 'research';
   if (targetId === 'home') route = '';
+  if (isThinkMap) route = path; // preserve subpath
   
   try {
-    window.history.replaceState({ page: targetId }, '', '/' + route);
+    window.history.replaceState({ page: isThinkMap ? 'thinkmap' : resolvedTargetId }, '', '/' + route);
   } catch (e) {
     console.warn("History API replace failed:", e);
   }
 
-  showPage(targetId, false);
+  showPage(isThinkMap ? path : resolvedTargetId, false);
   if (shouldScrollToFaq) {
     setTimeout(() => {
       const el = document.getElementById('about-faqs');

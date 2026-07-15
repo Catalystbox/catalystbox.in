@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podium Guide — CatalystBox ThinkMap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0a0d14;
+      --blue: #4a7fb5;
+      --parch: #f5f1e8;
+      --paper: #fbfaf6;
+      --line: #e4dccb;
+      --tx-soft: #3a4250;
+      --tx-mut: #6b7280;
+    }
+    body {
+      background: var(--parch);
+      color: var(--ink);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 10px 30px -15px rgba(10,13,20,0.1);
+    }
+    .eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin: 0 0 16px;
+      color: var(--ink);
+    }
+    h1 em {
+      font-style: italic;
+      font-weight: 700;
+      color: var(--blue);
+    }
+    p {
+      font-size: 16px;
+      color: var(--tx-soft);
+      line-height: 1.6;
+      margin: 0 auto 32px;
+      max-width: 480px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      background: var(--ink);
+      border: 1px solid var(--ink);
+      border-radius: 10px;
+      padding: 12px 24px;
+      text-decoration: none;
+      transition: all 0.15s;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: var(--blue);
+      border-color: var(--blue);
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="eyebrow">ThinkMap · Decision Guides</div>
+    <h1>Podium <em>Guide</em></h1>
+    <p>We are currently wrapping up the detailed step-by-step decision guide on sports career planning, mapping developmental odds, and evaluating long-term financial trade-offs. Check back shortly!</p>
+    <a href="/thinkmap" class="btn">
+      ← Back to ThinkMap
+    </a>
+  </div>
+</body>
+</html>

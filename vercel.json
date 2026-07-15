@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "source": "/thinkmap/guides/:name", "destination": "/ThinkMap/guides/:name/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
