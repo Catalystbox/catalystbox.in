@@ -773,6 +773,37 @@ body .tm-wrap {
   --tx-mut: #52525B;
   background: var(--parch) !important;
   color: var(--tx) !important;
+
+  /* Full screen width/height overrides */
+  max-width: 100% !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 120px 48px 60px !important; /* Clears fixed navbar, matches other page sections */
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Inner calculator wrapper overrides */
+body .tm-wrap .wrap {
+  max-width: 1400px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 !important; /* Outer padding is handled by .tm-wrap */
+}
+
+/* Deskop Grid layouts for the landing page cards (better utilization of screen width) */
+@media (min-width: 1024px) {
+  body .tm-wrap .tm-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  body .tm-wrap .tm-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
 }
 
 /* Specific component overrides for dark mode */
