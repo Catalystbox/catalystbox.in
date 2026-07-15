@@ -756,7 +756,7 @@ body.light-mode .toc-contact { background: #F8F9FA; border-color: rgba(0,0,0,0.1
    THINKMAP DARK/LIGHT MODE CUSTOM INTEGRATION
 ═══════════════════════════════════════════════ */
 /* Default (Dark Mode) overrides for ThinkMap container */
-body .tm-wrap {
+body:not(.light-mode) .tm-wrap {
   --ink: #FFFFFF;
   --ink-3: #1C2033;
   --teal: #1AADA7;
@@ -786,79 +786,188 @@ body .tm-wrap {
 }
 
 /* Inner calculator wrapper overrides */
-body .tm-wrap .wrap {
+body:not(.light-mode) .tm-wrap .wrap {
   max-width: 1400px !important;
   width: 100% !important;
   margin: 0 auto !important;
   padding: 0 !important; /* Outer padding is handled by .tm-wrap */
+  background: var(--parch) !important;
+  color: var(--tx) !important;
 }
 
 /* Deskop Grid layouts for the landing page cards (better utilization of screen width) */
 @media (min-width: 1024px) {
-  body .tm-wrap .tm-grid {
+  body:not(.light-mode) .tm-wrap .tm-grid {
     grid-template-columns: repeat(3, 1fr) !important;
   }
 }
 
 @media (min-width: 1440px) {
-  body .tm-wrap .tm-grid {
+  body:not(.light-mode) .tm-wrap .tm-grid {
     grid-template-columns: repeat(4, 1fr) !important;
   }
 }
 
 /* Specific component overrides for dark mode */
-body .tm-wrap .tm-card,
-body .tm-wrap .card,
-body .tm-wrap .setup-card,
-body .tm-wrap .result-card,
-body .tm-wrap .mc-card,
-body .tm-wrap .param-row,
-body .tm-wrap .factor-card,
-body .tm-wrap .rec-card,
-body .tm-wrap .comp-card {
+body:not(.light-mode) .tm-wrap .tm-card,
+body:not(.light-mode) .tm-wrap .card,
+body:not(.light-mode) .tm-wrap .setup-card,
+body:not(.light-mode) .tm-wrap .result-card,
+body:not(.light-mode) .tm-wrap .mc-card,
+body:not(.light-mode) .tm-wrap .param-row,
+body:not(.light-mode) .tm-wrap .factor-card,
+body:not(.light-mode) .tm-wrap .rec-card,
+body:not(.light-mode) .tm-wrap .comp-card,
+body:not(.light-mode) .tm-wrap .pcard,
+body:not(.light-mode) .tm-wrap .browser,
+body:not(.light-mode) .tm-wrap .sec,
+body:not(.light-mode) .tm-wrap .ctrl-inner {
   background: var(--paper) !important;
   border-color: var(--line) !important;
   color: var(--tx) !important;
 }
 
-body .tm-wrap .tm-blurb,
-body .tm-wrap p,
-body .tm-wrap .desc,
-body .tm-wrap .label,
-body .tm-wrap .val-desc,
-body .tm-wrap .tm-disc,
-body .tm-wrap .help-text {
+body:not(.light-mode) .tm-wrap .tm-blurb,
+body:not(.light-mode) .tm-wrap p,
+body:not(.light-mode) .tm-wrap .desc,
+body:not(.light-mode) .tm-wrap .label,
+body:not(.light-mode) .tm-wrap .val-desc,
+body:not(.light-mode) .tm-wrap .tm-disc,
+body:not(.light-mode) .tm-wrap .help-text,
+body:not(.light-mode) .tm-wrap .eyebrow,
+body:not(.light-mode) .tm-wrap .sub,
+body:not(.light-mode) .tm-wrap .lede,
+body:not(.light-mode) .tm-wrap .fld-l,
+body:not(.light-mode) .tm-wrap .fld-h,
+body:not(.light-mode) .tm-wrap .sec-tt i,
+body:not(.light-mode) .tm-wrap .h2h-top b i,
+body:not(.light-mode) .tm-wrap .pstat i,
+body:not(.light-mode) .tm-wrap .exp-l,
+body:not(.light-mode) .tm-wrap .st-sub,
+body:not(.light-mode) .tm-wrap .browser-t,
+body:not(.light-mode) .tm-wrap .hero-l {
   color: var(--tx-soft) !important;
 }
 
-body .tm-wrap h1,
-body .tm-wrap h2,
-body .tm-wrap h3,
-body .tm-wrap h4,
-body .tm-wrap strong,
-body .tm-wrap b {
+body:not(.light-mode) .tm-wrap h1,
+body:not(.light-mode) .tm-wrap h2,
+body:not(.light-mode) .tm-wrap h3,
+body:not(.light-mode) .tm-wrap h4,
+body:not(.light-mode) .tm-wrap strong,
+body:not(.light-mode) .tm-wrap b,
+body:not(.light-mode) .tm-wrap .pstat b,
+body:not(.light-mode) .tm-wrap .sec-tt b,
+body:not(.light-mode) .tm-wrap .v-tag {
   color: #FFFFFF !important;
 }
 
-body .tm-wrap input,
-body .tm-wrap select,
-body .tm-wrap textarea {
+body:not(.light-mode) .tm-wrap input,
+body:not(.light-mode) .tm-wrap select,
+body:not(.light-mode) .tm-wrap textarea,
+body:not(.light-mode) .tm-wrap .pname {
   background: rgba(255, 255, 255, 0.03) !important;
   border-color: var(--line) !important;
   color: #FFFFFF !important;
 }
 
-body .tm-wrap input:focus,
-body .tm-wrap select:focus,
-body .tm-wrap textarea:focus {
+body:not(.light-mode) .tm-wrap input:focus,
+body:not(.light-mode) .tm-wrap select:focus,
+body:not(.light-mode) .tm-wrap textarea:focus,
+body:not(.light-mode) .tm-wrap .pname:focus {
   border-color: var(--amber) !important;
   outline: none;
 }
 
-body .tm-wrap .tm-ethic {
+body:not(.light-mode) .tm-wrap .tm-ethic {
   background: rgba(26,173,167,0.05) !important;
   border-color: rgba(26,173,167,0.2) !important;
   color: var(--tx-soft) !important;
+}
+
+/* Calculator specific overrides for dark mode */
+body:not(.light-mode) .tm-wrap .result {
+  background: #06080E !important;
+  color: #E8E6DF !important;
+  border: 1px solid rgba(255,255,255,0.05) !important;
+  box-shadow: 0 24px 50px -28px rgba(0,0,0,0.8) !important;
+}
+
+body:not(.light-mode) .tm-wrap .vchip,
+body:not(.light-mode) .tm-wrap .as-b,
+body:not(.light-mode) .tm-wrap .lchip,
+body:not(.light-mode) .tm-wrap .tick,
+body:not(.light-mode) .tm-wrap .vt,
+body:not(.light-mode) .tm-wrap .cursel,
+body:not(.light-mode) .tm-wrap .psel,
+body:not(.light-mode) .tm-wrap .stg {
+  background: #10151d !important;
+  color: #bbc3cc !important;
+  border-color: #2a313d !important;
+}
+
+body:not(.light-mode) .tm-wrap .vchip:hover,
+body:not(.light-mode) .tm-wrap .as-b:hover,
+body:not(.light-mode) .tm-wrap .lchip:hover,
+body:not(.light-mode) .tm-wrap .tick:hover,
+body:not(.light-mode) .tm-wrap .vt:hover,
+body:not(.light-mode) .tm-wrap .cursel:hover,
+body:not(.light-mode) .tm-wrap .psel:hover,
+body:not(.light-mode) .tm-wrap .stg:hover {
+  border-color: var(--teal-line) !important;
+  color: #ffffff !important;
+}
+
+body:not(.light-mode) .tm-wrap .on,
+body:not(.light-mode) .tm-wrap .vt.on,
+body:not(.light-mode) .tm-wrap .stg.on {
+  background: rgba(52, 199, 154, 0.1) !important;
+  border-color: var(--teal-line) !important;
+  color: var(--teal-line) !important;
+}
+
+body:not(.light-mode) .tm-wrap .vchip.selA {
+  border-color: #34c79a !important;
+  color: #34c79a !important;
+  background: rgba(52, 199, 154, 0.1) !important;
+}
+
+body:not(.light-mode) .tm-wrap .vchip.selB {
+  border-color: #f0a04b !important;
+  color: #f0a04b !important;
+  background: rgba(240, 160, 75, 0.1) !important;
+}
+
+body:not(.light-mode) .tm-wrap .prob-warn {
+  background: rgba(232, 146, 42, 0.1) !important;
+  color: var(--amber) !important;
+  border-color: rgba(232, 146, 42, 0.2) !important;
+}
+
+body:not(.light-mode) .tm-wrap .brand {
+  color: var(--teal-line) !important;
+}
+
+body:not(.light-mode) .tm-wrap .dot {
+  background: var(--amber) !important;
+  box-shadow: 0 0 0 3px rgba(232, 160, 32, 0.18) !important;
+}
+
+body:not(.light-mode) .tm-wrap .browser-h {
+  background: var(--paper) !important;
+}
+
+body:not(.light-mode) .tm-wrap .v-icn {
+  background: #1c2033 !important;
+  color: var(--amber) !important;
+}
+
+body:not(.light-mode) .tm-wrap .recharts-cartesian-grid-horizontal line,
+body:not(.light-mode) .tm-wrap .recharts-cartesian-grid-vertical line {
+  stroke: rgba(255, 255, 255, 0.08) !important;
+}
+
+body:not(.light-mode) .tm-wrap .recharts-text {
+  fill: var(--tx-soft) !important;
 }
 
 /* Light Mode overrides - restored back to original warm parchment/editorial theme */
@@ -879,6 +988,25 @@ body.light-mode .tm-wrap {
   --tx-mut: #6b7280;
   background: var(--parch) !important;
   color: var(--tx) !important;
+
+  /* Full screen width/height overrides */
+  max-width: 100% !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 120px 48px 60px !important; /* Clears fixed navbar, matches other page sections */
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+body.light-mode .tm-wrap .wrap {
+  max-width: 1400px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background: var(--parch) !important;
+  color: var(--tx) !important;
 }
 
 body.light-mode .tm-wrap .tm-card,
@@ -889,7 +1017,11 @@ body.light-mode .tm-wrap .mc-card,
 body.light-mode .tm-wrap .param-row,
 body.light-mode .tm-wrap .factor-card,
 body.light-mode .tm-wrap .rec-card,
-body.light-mode .tm-wrap .comp-card {
+body.light-mode .tm-wrap .comp-card,
+body.light-mode .tm-wrap .pcard,
+body.light-mode .tm-wrap .browser,
+body.light-mode .tm-wrap .sec,
+body.light-mode .tm-wrap .ctrl-inner {
   background: var(--paper) !important;
   border-color: var(--line) !important;
   color: var(--tx) !important;
