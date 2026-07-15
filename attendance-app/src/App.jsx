@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { supabase } from './supabase'
 
 // Prevents session hijacking when creating new users
@@ -237,9 +237,8 @@ const SuperAdminPortal = ({ profile }) => {
   const [err, setErr] = useState('')
   const [success, setSuccess] = useState('')
 
-  useEffect(() => { loadSchools() }, [])
 
-  const loadSchools = async () => {
+  async function loadSchools() {
     setLoading(true)
     const [sch, adm] = await Promise.all([
       supabase.from('schools').select('*').order('created_at', { ascending: false }),
@@ -249,6 +248,9 @@ const SuperAdminPortal = ({ profile }) => {
     setAdmins(adm.data || [])
     setLoading(false)
   }
+
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  useEffect(() => { loadSchools() }, [])
 
   const updateAdmin = async () => {
     if (!editAdmin) return
@@ -469,7 +471,7 @@ const SuperAdminPortal = ({ profile }) => {
 }
 
 // ─── ADMIN PORTAL ─────────────────────────────────────────────
-const AdminPortal = ({ profile, school }) => {
+const AdminPortal = ({ school }) => {
   const [tab, setTab] = useState('setup')
   const [classes, setClasses] = useState([])
   const [teachers, setTeachers] = useState([])
@@ -487,10 +489,11 @@ const AdminPortal = ({ profile, school }) => {
   const [saving, setSaving] = useState(false)
   const [editItem, setEditItem] = useState(null)
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { loadAll() }, [])
-  useEffect(() => { if (classes.length && !selClass) setSelClass(classes[0]) }, [classes])
+  useEffect(() => { if (classes.length && !selClass) setSelClass(classes[0]) }, [classes, selClass])
 
-  const loadAll = async () => {
+  async function loadAll() {
     setLoading(true)
     const [cls, tch, stu, prin] = await Promise.all([
       supabase.from('classes').select('*').eq('school_id', school.id).order('name'),
@@ -609,7 +612,7 @@ const AdminPortal = ({ profile, school }) => {
     }
 
     // Build student rows
-    const rows = parsed.map((r, i) => {
+    const rows = parsed.map((r) => {
       const cn = r.grade ? `${r.grade}${r.section}` : null
       const classId = cn ? classMap[cn] : (selClass?.id || null)
       return { school_id: school.id, class_id: classId, name: r.name, roll_no: r.roll }
@@ -637,7 +640,7 @@ const AdminPortal = ({ profile, school }) => {
       const { data, error } = await supabase.auth.signUp({ email, password })
       _blockAuthChange = false
       if (error) continue
-      await supabase.from('profiles').insert([{ id: data.user.id, school_id: school.id, name, email, role: 'teacher' }])
+      await supabase.from('profiles').insert([{ id: data.user.id, school_id: school.id, name, email, role: 'teacher', subject: subject || null }])
       created++
     }
     setSuccess(`${created} teacher(s) created!`)
@@ -984,24 +987,27 @@ const TeacherPortal = ({ profile, school }) => {
   const [loading, setLoading] = useState(true)
   const [ai, setAi] = useState({ loading: false, text: '' })
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { loadClasses() }, [])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { if (selClass) loadStudents() }, [selClass])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { if (selClass) loadAttendance() }, [selClass, date])
-  useEffect(() => { if (myClasses.length && !selClass) setSelClass(myClasses[0]) }, [myClasses])
+  useEffect(() => { if (myClasses.length && !selClass) setSelClass(myClasses[0]) }, [myClasses, selClass])
 
-  const loadClasses = async () => {
+  async function loadClasses() {
     const { data } = await supabase.from('teacher_classes').select('*, classes(*)').eq('teacher_id', profile.id)
     setMyClasses((data || []).map(tc => ({ ...tc.classes, subject: tc.subject })))
     setLoading(false)
   }
 
-  const loadStudents = async () => {
+  async function loadStudents() {
     if (!selClass) return
     const { data } = await supabase.from('students').select('*').eq('class_id', selClass.id).order('roll_no')
     setStudents(data || [])
   }
 
-  const loadAttendance = async () => {
+  async function loadAttendance() {
     if (!selClass) return
     const { data } = await supabase.from('attendance').select('*').eq('class_id', selClass.id).eq('date', date)
     setAttendance(data || [])
@@ -1223,7 +1229,7 @@ const ReportsView = ({ classId, schoolId, students }) => {
       setLoading(false)
     }
     load()
-  }, [classId])
+  }, [classId, schoolId])
 
   if (loading) return <div style={{ display: 'flex', justifyContent: 'center', padding: 40 }}><Spinner /></div>
 
@@ -1266,16 +1272,17 @@ const ReportsView = ({ classId, schoolId, students }) => {
 }
 
 // ─── PRINCIPAL PORTAL ─────────────────────────────────────────
-const PrincipalPortal = ({ profile, school }) => {
+const PrincipalPortal = ({ school }) => {
   const [tab, setTab] = useState('overview')
   const [classes, setClasses] = useState([])
   const [summaries, setSummaries] = useState([])
   const [loading, setLoading] = useState(true)
   const [ai, setAi] = useState({ loading: false, text: '' })
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { loadAll() }, [])
 
-  const loadAll = async () => {
+  async function loadAll() {
     setLoading(true)
     const [cls, sum] = await Promise.all([
       supabase.from('classes').select('*').eq('school_id', school.id).order('name'),
@@ -1446,6 +1453,18 @@ export default function App() {
   const [profileLoading, setProfileLoading] = useState(false)
   const [appTab, setAppTab] = useState('dashboard')
 
+
+  async function loadProfile(userId) {
+    setProfileLoading(true)
+    const { data: prof } = await supabase.from('profiles').select('*').eq('id', userId).single()
+    setProfile(prof || null)
+    if (prof?.school_id) {
+      const { data: sch } = await supabase.from('schools').select('*').eq('id', prof.school_id).single()
+      setSchool(sch)
+    }
+    setProfileLoading(false)
+  }
+
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session)
@@ -1459,17 +1478,6 @@ export default function App() {
     })
     return () => subscription.unsubscribe()
   }, [])
-
-  const loadProfile = async (userId) => {
-    setProfileLoading(true)
-    const { data: prof } = await supabase.from('profiles').select('*').eq('id', userId).single()
-    setProfile(prof || null)
-    if (prof?.school_id) {
-      const { data: sch } = await supabase.from('schools').select('*').eq('id', prof.school_id).single()
-      setSchool(sch)
-    }
-    setProfileLoading(false)
-  }
 
   const handleLogout = () => supabase.auth.signOut()
 
