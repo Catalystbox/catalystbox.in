@@ -751,3 +751,148 @@ body.light-mode .toc-contact { background: #F8F9FA; border-color: rgba(0,0,0,0.1
   .plain-grid, .access-card, .ret-row, .rights-grid { grid-template-columns: 1fr; }
   .doc-hero { padding: 120px 48px 60px; }
 }
+
+/* ═══════════════════════════════════════════════
+   THINKMAP DARK/LIGHT MODE CUSTOM INTEGRATION
+═══════════════════════════════════════════════ */
+/* Default (Dark Mode) overrides for ThinkMap container */
+body .tm-wrap {
+  --ink: #FFFFFF;
+  --ink-3: #1C2033;
+  --teal: #1AADA7;
+  --teal-line: #1AADA7;
+  --teal-tint: rgba(26,173,167,0.1);
+  --amber: #E8A020;
+  --clay: #C47F10;
+  --amber-tint: rgba(232,160,32,0.1);
+  --parch: #0B0E17;       /* dark background matching main site */
+  --paper: #1C2033;       /* dark card background */
+  --line: rgba(255,255,255,0.08);
+  --tx: #E8E6DF;          /* light warm text */
+  --tx-soft: #7A7E92;     /* muted text */
+  --tx-mut: #52525B;
+  background: var(--parch) !important;
+  color: var(--tx) !important;
+}
+
+/* Specific component overrides for dark mode */
+body .tm-wrap .tm-card,
+body .tm-wrap .card,
+body .tm-wrap .setup-card,
+body .tm-wrap .result-card,
+body .tm-wrap .mc-card,
+body .tm-wrap .param-row,
+body .tm-wrap .factor-card,
+body .tm-wrap .rec-card,
+body .tm-wrap .comp-card {
+  background: var(--paper) !important;
+  border-color: var(--line) !important;
+  color: var(--tx) !important;
+}
+
+body .tm-wrap .tm-blurb,
+body .tm-wrap p,
+body .tm-wrap .desc,
+body .tm-wrap .label,
+body .tm-wrap .val-desc,
+body .tm-wrap .tm-disc,
+body .tm-wrap .help-text {
+  color: var(--tx-soft) !important;
+}
+
+body .tm-wrap h1,
+body .tm-wrap h2,
+body .tm-wrap h3,
+body .tm-wrap h4,
+body .tm-wrap strong,
+body .tm-wrap b {
+  color: #FFFFFF !important;
+}
+
+body .tm-wrap input,
+body .tm-wrap select,
+body .tm-wrap textarea {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: var(--line) !important;
+  color: #FFFFFF !important;
+}
+
+body .tm-wrap input:focus,
+body .tm-wrap select:focus,
+body .tm-wrap textarea:focus {
+  border-color: var(--amber) !important;
+  outline: none;
+}
+
+body .tm-wrap .tm-ethic {
+  background: rgba(26,173,167,0.05) !important;
+  border-color: rgba(26,173,167,0.2) !important;
+  color: var(--tx-soft) !important;
+}
+
+/* Light Mode overrides - restored back to original warm parchment/editorial theme */
+body.light-mode .tm-wrap {
+  --ink: #0a0d14;
+  --ink-3: #11161f;
+  --teal: #0B5C45;
+  --teal-line: #34c79a;
+  --teal-tint: #e7efe9;
+  --amber: #E8922A;
+  --clay: #c2691f;
+  --amber-tint: #f8ead6;
+  --parch: #f5f1e8;       /* light warm parchment background */
+  --paper: #fbfaf6;       /* light paper card background */
+  --line: #e4dccb;
+  --tx: #0a0d14;          /* dark ink text */
+  --tx-soft: #3a4250;
+  --tx-mut: #6b7280;
+  background: var(--parch) !important;
+  color: var(--tx) !important;
+}
+
+body.light-mode .tm-wrap .tm-card,
+body.light-mode .tm-wrap .card,
+body.light-mode .tm-wrap .setup-card,
+body.light-mode .tm-wrap .result-card,
+body.light-mode .tm-wrap .mc-card,
+body.light-mode .tm-wrap .param-row,
+body.light-mode .tm-wrap .factor-card,
+body.light-mode .tm-wrap .rec-card,
+body.light-mode .tm-wrap .comp-card {
+  background: var(--paper) !important;
+  border-color: var(--line) !important;
+  color: var(--tx) !important;
+}
+
+body.light-mode .tm-wrap .tm-blurb,
+body.light-mode .tm-wrap p,
+body.light-mode .tm-wrap .desc,
+body.light-mode .tm-wrap .label,
+body.light-mode .tm-wrap .val-desc,
+body.light-mode .tm-wrap .tm-disc,
+body.light-mode .tm-wrap .help-text {
+  color: var(--tx-soft) !important;
+}
+
+body.light-mode .tm-wrap h1,
+body.light-mode .tm-wrap h2,
+body.light-mode .tm-wrap h3,
+body.light-mode .tm-wrap h4,
+body.light-mode .tm-wrap strong,
+body.light-mode .tm-wrap b {
+  color: var(--ink) !important;
+}
+
+body.light-mode .tm-wrap input,
+body.light-mode .tm-wrap select,
+body.light-mode .tm-wrap textarea {
+  background: #ffffff !important;
+  border-color: var(--line) !important;
+  color: var(--ink) !important;
+}
+
+body.light-mode .tm-wrap .tm-ethic {
+  background: var(--teal-tint) !important;
+  border-color: #a9d3c2 !important;
+  color: var(--tx-soft) !important;
+}

@@ -55,17 +55,17 @@ function ThinkMapApp() {
 
   // Client-side router logic
   if (path === "thinkmap/education-roi") {
-    return <EducationRoi />;
+    return <div className="tm-wrap"><EducationRoi /></div>;
   } else if (path === "thinkmap/margin") {
-    return <Margin />;
+    return <div className="tm-wrap"><Margin /></div>;
   } else if (path === "thinkmap/podium-india") {
-    return <PodiumIndia />;
+    return <div className="tm-wrap"><PodiumIndia /></div>;
   } else if (path === "thinkmap/podium-global") {
-    return <PodiumGlobal />;
+    return <div className="tm-wrap"><PodiumGlobal /></div>;
   } else if (path === "thinkmap/exam-compass-india") {
-    return <ExamCompassIndia />;
+    return <div className="tm-wrap"><ExamCompassIndia /></div>;
   } else if (path === "thinkmap/exam-compass-world") {
-    return <ExamCompassWorld />;
+    return <div className="tm-wrap"><ExamCompassWorld /></div>;
   } else {
     return <ThinkMap />;
   }
