@@ -318,6 +318,7 @@ function Num({label,k,s,set,prefix,suffix,step=1000,hint,min=0}){
   );
 }
 function Slider({label,k,s,set,min=0,max=10,step=1,left,right,accent="teal",suffix=""}){
+  const pc=((s[k]-min)/(max-min))*100;
   return(
     <label className="sld">
       <span className="sld-top">
@@ -325,8 +326,9 @@ function Slider({label,k,s,set,min=0,max=10,step=1,left,right,accent="teal",suff
         <span className={"sld-v "+accent}>{s[k]}{suffix}</span>
       </span>
       <input className={"range "+accent} type="range" min={min} max={max} step={step} value={s[k]}
+        aria-label={label} aria-valuetext={`${s[k]}${suffix}`}
         onChange={e=>set(k,parseFloat(e.target.value))}
-        style={{"--p":((s[k]-min)/(max-min))*100+"%"}}/>
+        style={{"--p":pc+"%"}}/>
       {(left||right)&&<span className="sld-ends"><i>{left}</i><i>{right}</i></span>}
     </label>
   );
@@ -1038,4 +1040,83 @@ const CSS=`
 .disc{color:#7e8896;font-size:11px}
 .sign{display:flex;align-items:center;gap:8px;font-size:11px;color:#7e8896;margin-top:6px;border-top:1px solid #1e2530;padding-top:12px}
 .sign .dot{box-shadow:0 0 0 3px rgba(232,146,42,.15)}
+
+/* ThinkMap unified readability: scoped to resist the site's generic theme overrides. */
+.hero,.result{background:#17324d!important;color:#f8fafc!important}
+.result{border:1px solid #41627f!important}
+.result .tile,.result .h2h,.result .leverage,.result .langbox,.result .card,
+.result .lev,.result .sortb,.result .lang,.result .scen-tile,.result .edub,
+.result .human,.result .funnelbox,.result .stackbox,.result .out,.result .cutbox,
+.result .tournbox,.result .vt,.result .chart,.result .assump,.result .exp-tile{
+  background:#27445f!important;border-color:#41627f!important;color:#f2f7fb!important
+}
+.tm-wrap .result .verdict p,
+.tm-wrap .result .t-l,.tm-wrap .result .t-s,
+.tm-wrap .result .chart-h span,.tm-wrap .result .legend span,
+.tm-wrap .result .h2h-top b,.tm-wrap .result .h2h-top b i,
+.tm-wrap .result .st-sub,.tm-wrap .result .st-meta,
+.tm-wrap .result .exp-l,.tm-wrap .result .exp-s,
+.tm-wrap .result .fun-lab,.tm-wrap .result .fun-note,
+.tm-wrap .result .stack-key span,.tm-wrap .result .out-p,.tm-wrap .result .out-note,
+.tm-wrap .result .cut-row span,.tm-wrap .result .trn-l i,
+.tm-wrap .result .human,.tm-wrap .result .assump,
+.tm-wrap .result .fld-l,.tm-wrap .result .fld-h,.tm-wrap .result .mini,
+.tm-wrap .result .nr-l,.tm-wrap .result .oneIn{
+  color:#dce8f3!important
+}
+.tm-wrap .result .v-tag,.tm-wrap .result .t-v,.tm-wrap .result .chart-h b{
+  color:#fff!important
+}
+.result .bar,.result .fun-track,.result .stack,.result .h2h-track{background:#36546f!important}
+.tm-wrap .result input[type="number"],.tm-wrap .result input[type="text"]{
+  background:#f8fbff!important;border:1px solid #bfd4e6!important;color:#17324d!important
+}
+
+/* Search controls use the same integrated blue treatment across every calculator. */
+.tm-wrap .search{
+  background:#27445f!important;border:1px solid #5b7891!important;color:#dce8f3!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05)
+}
+.tm-wrap .search input,.tm-wrap .search input:focus{
+  background:transparent!important;border:0!important;color:#f8fafc!important;box-shadow:none!important
+}
+.tm-wrap .search input::placeholder{color:#c1d2df!important;opacity:1}
+.tm-wrap .search svg{color:#dce8f3!important}
+
+/* All methodology sections follow the Exam Compass vertical reading order. */
+.meth{
+  margin-top:24px!important;background:#f8fbff!important;border:1px solid #bfd4e6!important;
+  border-radius:16px!important;box-shadow:0 14px 34px rgba(23,50,77,.08)!important;
+  color:#334e68!important;padding:26px 28px!important;display:flex!important;
+  flex-direction:column!important;align-items:stretch!important;gap:0!important
+}
+.meth-h,.meth>p,.meth>.sign{
+  width:100%!important;max-width:none!important;margin-left:0!important;margin-right:0!important;text-align:left!important
+}
+.meth-h{color:#17324d!important;font-size:16px!important;margin:0 0 14px!important;padding:0!important}
+.tm-wrap .meth>p{color:#334e68!important;font-size:13.5px!important;line-height:1.75!important}
+.tm-wrap .meth>p b{color:#0b5c45!important}
+.tm-wrap .meth>p em{color:#36546f!important}
+.meth>p:not(.disc){margin-top:0!important;margin-bottom:14px!important}
+.meth>.disc{
+  color:#536b80!important;background:#eaf2f8!important;border-left:3px solid #4a7fb5!important;
+  border-radius:8px!important;padding:12px 14px!important;margin:0 0 12px!important;font-size:11.5px!important
+}
+.meth>.sign{
+  color:#334e68!important;border-top:1px solid #bfd4e6!important;padding-top:12px!important;
+  margin-top:0!important;margin-bottom:0!important
+}
+
+@media(min-width:1000px){
+  .layout{align-items:start;min-height:0}
+  .layout>.controls,.layout>.result{
+    position:sticky;top:88px;height:calc(100dvh - 112px);min-height:480px;max-height:none;
+    overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-y:auto;
+    scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:rgba(52,199,154,.55) transparent
+  }
+  .layout>.controls::-webkit-scrollbar,.layout>.result::-webkit-scrollbar{width:5px}
+  .layout>.controls::-webkit-scrollbar-thumb,.layout>.result::-webkit-scrollbar-thumb{
+    background:rgba(52,199,154,.45);border-radius:999px
+  }
+}
 `;

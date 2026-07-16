@@ -160,4 +160,28 @@ const CSS = `
 .tm-foot{margin-top:26px;border-top:1px solid var(--line);padding-top:18px}
 .tm-foot-row{display:flex;flex-wrap:wrap;gap:18px;font-size:12.5px;font-weight:600;color:var(--teal)}
 .tm-disc{font-size:11.5px;color:var(--tx-mut);line-height:1.6;margin-top:12px;max-width:90ch}
-`;
+
+/* Unified ThinkMap hub and edition-tab readability. */
+body .tm-wrap{background:#f5f1e8!important;color:#17324d!important}
+body .tm-wrap .tm-hero h1{color:#0f172a!important}
+body .tm-wrap .tm-lede,body .tm-wrap .tm-disc{color:#334155!important}
+body .tm-wrap .tm-lede b{color:#0f172a!important}
+body .tm-wrap .tm-ethic{
+  background:#e7f4ef!important;border-color:#9bcbb9!important;color:#23483d!important
+}
+body .tm-wrap .tm-ethic b{color:#0b5c45!important}
+body .tm-wrap .tm-grid .tm-card{
+  background:#f8fbff!important;border:1px solid #bfd4e6!important;color:#17324d!important;
+  box-shadow:0 12px 28px -22px rgba(23,50,77,.28)!important
+}
+body .tm-wrap .tm-grid .tm-card h3{color:#17324d!important}
+body .tm-wrap .tm-grid .tm-card .tm-blurb{color:#334e68!important}
+body .tm-wrap .tm-grid .tm-card .tm-ask{color:var(--c)!important}
+body .tm-wrap .tm-grid .tm-card .tm-btn{
+  background:#17324d!important;border-color:#17324d!important;color:#fff!important
+}
+body .tm-wrap .tm-grid .tm-card .tm-btn:hover{
+  background:#0b5c45!important;border-color:#0b5c45!important;color:#fff!important
+}
+body .tm-wrap .tm-grid .tm-card .tm-guide{color:#3f5e77!important}
+body .tm-wrap .tm-grid .tm-card .tm-guide:hover{color:#0b5c45!important}`;

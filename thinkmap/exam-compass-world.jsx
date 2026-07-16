@@ -292,6 +292,7 @@ function Slider({label,hint,val,onChange}){
       <span className={"sk-v v-"+tag}>{val}</span>
     </span>
     <input className="range" type="range" min={0} max={10} step={1} value={val}
+      aria-label={label} aria-valuetext={`${val} out of 10`}
       onChange={e=>onChange(parseInt(e.target.value))} style={{"--p":pc+"%"}}/>
   </label>);
 }
@@ -537,13 +538,13 @@ export default function App(){
               <span className="t-v amber">{port.near.length}</span><span className="t-s">unlock with a single boost</span></div>
           </div>
 
-          {port.myStrong.length>0&&<div className="leverage">
+          <div className="leverage">
             <span className="lev-l">Your leverage subjects — ranked by how many exams they open:</span>
             <div className="lev-row">
-              {port.myStrong.slice(0,5).map(s=>(
-                <span className="lev" key={s.key}><b>{s.label}</b><i>{s.doors}</i></span>))}
+              {port.myStrong.length>0?port.myStrong.slice(0,5).map(s=>(
+                <span className="lev" key={s.key}><b>{s.label}</b><i>{s.doors}</i></span>)):<span className="lev-empty">Rate at least one subject 6 or above to reveal your highest-leverage subjects.</span>}
             </div>
-          </div>}
+          </div>
 
           <div className="listhead">
             <span className="lh-count">{list.length} exam{list.length!==1?"s":""}{field!=="all"||level!=="all"||nature!=="all"?" · filtered":""}</span>
@@ -726,4 +727,124 @@ const CSS=`
 .disc{color:#7e8896;font-size:11px}
 .sign{display:flex;align-items:center;gap:8px;font-size:11px;color:#7e8896;margin-top:6px;border-top:1px solid #1e2530;padding-top:12px}
 .sign .dot{box-shadow:0 0 0 3px rgba(232,146,42,.15)}
+
+/* ThinkMap usability: high-contrast panels and independent, visually quiet scrolling */
+.hero,.result,.meth{background:#17324d;color:#f8fafc}
+.hero .hero-l,.hero .hero-note,.hero .loc-note,.hero .stg i,
+.result .verdict p,.result .t-l,.result .t-s,.result .c-id i,.result .c-nat-s,
+.result .c-fw,.result .sub-l,.result .sub-w,.result .c-to,.result .c-detail,
+.result .c-note,.result .c-meta,.result .lang-p,.result .lang i,.result .lang-bd,
+.result .disc,.result .sign,.result .assump,.result .human,
+.result .st-sub,.result .st-meta,.result .h2h-top b,
+.meth,.meth .disc,.meth .sign{color:#dce8f3}
+.result .c-meta b,.hero .stg b{color:#f8fafc}
+.result .tile,.result .h2h,.result .leverage,.result .langbox,.result .card,
+.result .lev,.result .sortb,.result .search,.result .c-chip,.result .lang,
+.result .scen-tile,.result .edub,.result .human,.result .funnelbox,
+.result .stackbox,.result .out,.result .cutbox,.result .tournbox,
+.result .vt,.result .chart,.result .assump{
+  background:#27445f;border-color:#41627f;color:#f2f7fb
+}
+.result .bar,.result .fun-track,.result .stack{background:#36546f}
+.result .search input{color:#f8fafc}
+/* Keep the search field integrated with the blue results panel in every site theme. */
+.tm-wrap .result .search{
+  background:#27445f!important;border:1px solid #5b7891!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05)
+}
+.tm-wrap .result .search input,
+.tm-wrap .result .search input:focus{
+  background:transparent!important;border:0!important;color:#f8fafc!important;box-shadow:none!important
+}
+.tm-wrap .result .search input::placeholder{color:#c1d2df!important;opacity:1}
+.tm-wrap .result .search svg{color:#dce8f3!important}
+.result .lev-l{color:#f0f6fb;font-size:11.5px;font-weight:600;line-height:1.5}
+.result .leverage{overflow:visible}
+.result .lev-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.result .lev{
+  width:100%;min-width:0;justify-content:space-between;background:#f8fbff;border:1px solid #bfd4e6;
+  border-radius:10px;padding:8px 8px 8px 11px;box-shadow:0 3px 10px rgba(10,40,64,.16)
+}
+.result .lev b{color:#17324d!important;font-size:11.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.result .lev i{color:#fff;background:#0b5c45;font-weight:700;min-width:28px;text-align:center;padding:2px 7px}
+.result .lev-empty{display:block;color:#dce8f3;font-size:11.5px;line-height:1.55;padding:3px 0}
+.result .lh-count,.result .sortrow,.result .empty{color:#dce8f3}
+.result .sortb{color:#f1f6fa;border-color:#5b7891}
+.result .search input::placeholder{color:#c1d2df}
+.result .search svg,.result .c-chev{color:#c1d2df}
+.result .c-chip,.result .c-chip.alt{color:#edf5fa;border-color:#5b7891}
+.result .lang-lg{color:#8eeacb}
+/* Exam cards stay light and readable regardless of the site-wide theme's generic .card overrides. */
+.result .card{background:#f8fbff!important;border:1px solid #bfd4e6!important;color:#17324d!important}
+.result .card .card-h{color:#17324d!important}
+.result .card .c-id b{color:#17324d!important}
+.result .card .c-id i,
+.result .card .c-fw,
+.result .card .c-nat-s,
+.result .card .sub-l,
+.result .card .sub-w,
+.result .card .c-to,
+.result .card .c-detail,
+.result .card .c-note,
+.result .card .c-meta{color:#536b80!important}
+.result .card .c-chip,.result .card .c-chip.alt{
+  background:#e8f1f7!important;border-color:#bfd4e6!important;color:#294b67!important
+}
+.result .card .c-pct{color:#176c9b!important}
+.result .card .c-chev{color:#536b80!important}
+.result .card .c-nat{color:#17324d!important}
+.result .card .c-body{color:#334e68!important}
+.result .card .bar{background:#d8e5ef!important}
+.result .card .more{color:#0b5c45!important;font-weight:700}
+.result .card .c-meta b{color:#17324d!important}
+.result .card .c-block{background:#fff0ed!important;color:#923c2e!important;border-color:#efb8ae!important}
+.result .card .c-unlock{background:#fff7e8!important;color:#714511!important;border-color:#e9c892!important}
+.result .card .c-unlock b{color:#5b3407!important}
+@media(min-width:1000px){
+  .layout{align-items:start;min-height:0}
+  .layout>.controls{
+    position:sticky;top:88px;height:calc(100dvh - 112px);min-height:480px;max-height:none;
+    overflow:hidden;display:grid;grid-template-rows:minmax(0,1fr) minmax(190px,auto);gap:12px
+  }
+  .layout>.controls>.panel{min-height:0;margin:0;overflow-y:auto;overflow-x:hidden}
+  .layout>.controls>.panel:last-child{max-height:46dvh}
+  .layout>.result{
+    position:sticky;top:88px;height:calc(100dvh - 112px);min-height:480px;max-height:none;
+    overflow-y:auto;overflow-x:hidden
+  }
+  .layout>.controls>.panel,.layout>.result{
+    -webkit-overflow-scrolling:touch;overscroll-behavior-y:auto;scroll-behavior:smooth;
+    scrollbar-width:thin;scrollbar-color:rgba(52,199,154,.55) transparent
+  }
+  .layout>.controls>.panel::-webkit-scrollbar,.layout>.result::-webkit-scrollbar{width:5px}
+  .layout>.controls>.panel::-webkit-scrollbar-thumb,.layout>.result::-webkit-scrollbar-thumb{
+    background:rgba(52,199,154,.45);border-radius:999px
+  }
+}
+
+/* Exam Compass methodology is a readable explanatory card, not a dark result panel. */
+.meth{
+  margin-top:24px;background:#f8fbff;border:1px solid #bfd4e6;border-radius:16px;
+  box-shadow:0 14px 34px rgba(23,50,77,.08);color:#334e68;padding:26px 28px
+}
+.meth-h{color:#17324d;font-size:16px;margin-bottom:14px}
+.meth p{color:#334e68;font-size:13px;line-height:1.75;max-width:none}
+.meth p b{color:#0b5c45}
+.meth p em{color:#36546f}
+.meth .disc{
+  color:#536b80;background:#eaf2f8;border-left:3px solid #4a7fb5;border-radius:8px;
+  padding:12px 14px;font-size:11.5px
+}
+.meth .sign{color:#334e68;border-top:1px solid #bfd4e6;padding-top:12px}
+.meth{display:flex!important;flex-direction:column;align-items:stretch;gap:0}
+.meth-h,.meth>p,.meth>.sign{
+  width:100%;max-width:none;margin-left:0;margin-right:0;text-align:left
+}
+.meth-h{margin-top:0;margin-bottom:14px;padding:0}
+.tm-wrap .meth>p{color:#334e68!important;font-size:13.5px;line-height:1.75}
+.tm-wrap .meth>p b{color:#0b5c45!important}
+.tm-wrap .meth>p em{color:#36546f!important}
+.meth>p:not(.disc){margin-top:0;margin-bottom:14px}
+.meth>.disc{margin-top:0;margin-bottom:12px}
+.meth>.sign{margin-top:0;margin-bottom:0}
 `;
