@@ -2,6 +2,10 @@
    CAREERS PAGE STYLING
    ═══════════════════════════════════════════════ */
 
+#page-careers {
+  padding-top: 100px; /* Offset for sticky nav since hero is deleted */
+}
+
 /* ============ HERO ============ */
 .careers-hero {
   padding: 160px 48px 80px;
