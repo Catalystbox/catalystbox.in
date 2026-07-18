@@ -1,7 +1,7 @@
 /* ── FEATURE TOGGLES ── */
 var CONFIG = {
   enableSolutions: false, // Set to true to activate the Solutions page
-  enableCareers: false,   // Set to true to activate the Careers page
+  enableCareers: true,    // Set to true to activate the Careers page
   enablePricing: false    // Set to true to activate the Pricing page
 };
 

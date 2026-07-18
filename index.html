@@ -70,7 +70,7 @@ function gtag_report_conversion(url) {
     <li><button onclick="window.open('https://reportcard.catalystbox.in/', '_blank')" id="nav-reportcard">Reportcard</button></li>
     <li><button onclick="showPage('thinkmap')" id="nav-thinkmap">ThinkMap</button></li>
     <li><button onclick="showPage('about')" id="nav-about">About</button></li>
-    <li style="display: none;"><button onclick="showPage('careers')" id="nav-careers">Careers</button></li>
+    <li><button onclick="showPage('careers')" id="nav-careers">Careers</button></li>
     <li><button onclick="toggleTheme()" id="theme-btn" style="padding:8px 12px; font-size:1.1rem; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center;">🌙</button></li>
     <li><button onclick="openContactForm()" id="nav-contact" class="nav-cta">Contact Us</button></li>
   </ul>
@@ -3020,28 +3020,44 @@ function gtag_report_conversion(url) {
         <div class="careers-section-tag">01 — Jobs</div>
         <h2>Full-time roles</h2>
         <p class="careers-section-desc">
-          We're not hiring full-time positions yet. As CatalystBox onboards its first pilot schools and grows beyond
-          a solo operation, we'll post roles here first.
+          Join us in building India's first anonymous, AI-powered education intelligence platform. As CatalystBox onboards its first pilot schools and scales, we're expanding our core team.
         </p>
       </div>
-      <div class="careers-section-count">0 OPEN</div>
+      <div class="careers-section-count">1 OPEN</div>
     </div>
 
-    <div class="careers-jobs-empty">
-      <div class="careers-jobs-empty-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="7" width="20" height="14" rx="2"/>
-          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-        </svg>
-      </div>
-      <div>
-        <h3>No full-time openings right now</h3>
-        <p>
-          Interested in joining when we're ready? Send a short note to
-          <a href="mailto:hello@catalystbox.in">hello@catalystbox.in</a> with what you'd like to work on. We'll keep
-          you in the loop.
-        </p>
-      </div>
+    <div class="careers-roles">
+      <article class="careers-role-card">
+        <div class="careers-role-main">
+          <div class="careers-role-tags">
+            <span class="careers-tag careers-tag-team">Engineering</span>
+            <span class="careers-tag careers-tag-mode">Remote (India)</span>
+            <span class="careers-tag careers-tag-type">Full-time</span>
+          </div>
+          <h3 class="careers-role-title">Founding Engineer (Full-Stack)</h3>
+          <p class="careers-role-desc">
+            We are looking for a Founding Full-Stack Engineer to lead the technical development and scaling of CatalystBox. You will work directly with the founder to design, build, and ship key features across our dashboard, QR-based feedback pipeline, and AI-powered sentiment engine. If you love shipping clean production code quickly and want to shape the technical foundation of a national education intelligence platform, this is for you.
+          </p>
+          <div class="careers-role-bullets">
+            <div class="careers-role-bullet">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Stack: React, Vite, Supabase, Vercel & Gemini API
+            </div>
+            <div class="careers-role-bullet">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Competitive salary + equity share
+            </div>
+            <div class="careers-role-bullet">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              100% Remote, flexible working hours
+            </div>
+          </div>
+        </div>
+        <a class="careers-role-cta" href="mailto:hello@catalystbox.in?subject=Application:%20Founding%20Engineer%20(Full-Stack)" target="_blank" rel="noopener">
+          Apply
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
     </div>
   </section>
 
