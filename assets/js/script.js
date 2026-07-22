@@ -316,7 +316,8 @@ function initParallax() {
 
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   
-  let path = window.location.pathname.replace(/^\/+|\/+$/g, '');
+  let initialPath = window.__THINKMAP_REFRESH_ROUTE__ || window.location.pathname;
+  let path = initialPath.replace(/^\/+|\/+$/g, '');
   let targetId = path || 'home';
   if (targetId === 'research') targetId = 'cgeb';
   
