@@ -1,5 +1,5 @@
 import React from "react";
-import { GraduationCap, TrendingUp, Trophy, Compass, ArrowRight, BookOpen, Sparkles } from "lucide-react";
+import { GraduationCap, TrendingUp, Trophy, Compass, ArrowRight, BookOpen, Sparkles, Brain } from "lucide-react";
 
 /* ═══════════════════════════════════════════════════════════════════
    THINKMAP — decision-tools hub for catalystbox.in
@@ -55,6 +55,16 @@ const TOOLS = [
     ],
     guide: "/thinkmap/guides/exam-compass",
   },
+  {
+    key: "mind",
+    name: "Mind Mirror",
+    color: "#b5578a", tint: "rgba(181,87,138,.10)", line: "#b5578a",
+    Icon: Brain,
+    ask: "How do I see my own mind - and how well do I know it?",
+    blurb: "Reflect across eighteen facets of thinking and see the shape of your self-image. It is not an intelligence test - it is a private mirror, with an honest check on how confidently you know yourself.",
+    editions: [{ label: "Open the mirror", href: "/thinkmap/mind-mirror" }],
+    guide: "/thinkmap/guides/mind-mirror",
+  },
 ];
 
 function ToolCard({ t }) {
@@ -89,10 +99,10 @@ export default function ThinkMap() {
         <span className="tm-eyebrow">ThinkMap · Decision Tools</span>
         <h1>Think it through.</h1>
         <p className="tm-lede">
-          Some of life's most expensive decisions get made on gut feeling and a napkin — which degree, which
-          business, which sport, which exam. <b>ThinkMap is a set of free, honest calculators for exactly those
-          moments.</b> Each one lays out the real trade-offs, prices them without spin, and hands the decision
-          back to you.
+          Some of life's most important choices begin with an uncertain question: which degree, which business,
+          which sport, which exam, or how clearly you understand yourself. <b>ThinkMap is a set of free, honest
+          tools for thinking those moments through.</b> Each one makes hidden trade-offs or patterns visible,
+          without taking the decision out of your hands.
         </p>
         <div className="tm-ethic">
           <Sparkles size={15} />
@@ -111,8 +121,9 @@ export default function ThinkMap() {
           <span>✓ Works on any phone, no login</span>
         </div>
         <p className="tm-disc">
-          Every figure in these tools is an illustrative, editable starting point — not a forecast, a promise, or
-          financial, career, or admissions advice. They exist to help you think, not to tell you what to do.
+          Every figure or reflection here is an illustrative starting point, not a forecast, diagnosis, promise,
+          or financial, career, admissions, or psychological advice. These tools exist to help you think, not to
+          tell you what to do.
         </p>
       </footer>
     </div>

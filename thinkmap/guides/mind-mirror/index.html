@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How to use Mind Mirror · CatalystBox</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap');
+:root{
+  --ink:#0a0d14;--ink-3:#11161f;--teal:#0B5C45;--teal-line:#34c79a;--teal-tint:#e7efe9;
+  --amber:#E8922A;--clay:#c2691f;--amber-tint:#f8ead6;--blue:#4a7fb5;--blue-tint:#e8eff8;--violet:#8a6dc0;
+  --rose:#b5578a;--rose-tint:#f6e7f0;
+  --parch:#f5f1e8;--paper:#fbfaf6;--line:#e4dccb;--tx:#0a0d14;--tx-soft:#3a4250;--tx-mut:#6b7280;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--parch);color:var(--tx);font-family:'DM Sans',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+.page{max-width:780px;margin:0 auto;padding:30px 20px 60px}
+h1,h2,h3{font-family:'Syne',sans-serif;letter-spacing:-0.02em;line-height:1.08}
+em{font-style:italic;color:var(--clay);font-weight:600}
+
+.brand{display:inline-flex;align-items:center;gap:7px;font-family:'Syne';font-weight:700;font-size:13px;letter-spacing:.04em;color:var(--teal);text-transform:uppercase;margin-bottom:18px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 3px rgba(232,146,42,.18)}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--clay)}
+h1{font-size:clamp(30px,6vw,48px);font-weight:800;color:var(--ink);margin:8px 0 12px}
+.lede{font-size:16px;color:var(--tx-soft);max-width:64ch}
+.lede b{color:var(--ink)}
+
+.idea{background:var(--ink);color:#e8ebef;border-radius:18px;padding:24px;margin:30px 0;position:relative;overflow:hidden;box-shadow:0 24px 50px -30px rgba(10,13,20,.6)}
+.idea::before{content:'';position:absolute;top:-50px;right:-30px;width:220px;height:220px;background:radial-gradient(circle,rgba(52,199,154,.14),transparent 70%)}
+.idea h2{font-size:20px;color:#fff;margin-bottom:6px;position:relative}
+.idea .sub{font-size:13px;color:#9aa3ad;position:relative;margin-bottom:18px}
+.idea-points{display:flex;flex-direction:column;gap:14px;position:relative}
+.ip{display:flex;gap:12px;align-items:flex-start}
+.ip .n{flex:none;font-family:'DM Mono';font-size:12px;color:#6b7682;width:16px;padding-top:1px}
+.ip b{font-family:'Syne';font-weight:700;font-size:14px;color:#fff;display:block;margin-bottom:2px}
+.ip span{font-size:12.5px;color:#9aa3ad;line-height:1.5}
+.arrow{text-align:center;color:#4a525e;font-size:15px;position:relative;margin:2px 0}
+
+.rule-pill{display:flex;align-items:flex-start;gap:9px;border-radius:14px;padding:14px 16px;margin:22px 0}
+.rule-pill.amber{background:var(--amber-tint);border:1px solid #f0c890}
+.rule-pill.teal{background:var(--teal-tint);border:1px solid #a9d3c2}
+.rule-pill .ic{flex:none;font-size:15px;margin-top:1px}
+.rule-pill span{font-size:13.5px;color:var(--tx-soft);line-height:1.5}
+.rule-pill.amber b{color:var(--clay)}
+.rule-pill.teal b{color:var(--teal)}
+
+.sec{margin:34px 0}
+.sec > h2{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--clay);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+p{font-size:15px;color:var(--tx-soft);margin-bottom:12px}
+p strong{color:var(--ink);font-weight:600}
+
+/* is / isnt */
+.isnt{display:grid;grid-template-columns:1fr;gap:12px;margin:20px 0}
+@media(min-width:560px){.isnt{grid-template-columns:1fr 1fr}}
+.col{border-radius:14px;padding:16px 18px}
+.col.is{background:var(--teal-tint);border:1px solid #a9d3c2}
+.col.no{background:var(--paper);border:1px solid var(--line)}
+.col h3{font-size:14px;margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.col.is h3{color:var(--teal)}
+.col.no h3{color:var(--tx-mut)}
+.col ul{list-style:none}
+.col li{font-size:13px;padding:5px 0;padding-left:18px;position:relative;line-height:1.45;color:var(--tx-soft)}
+.col.is li::before{content:'✓';position:absolute;left:0;color:var(--teal);font-weight:700}
+.col.no li::before{content:'✕';position:absolute;left:0;color:var(--clay);font-weight:700}
+
+/* scale */
+.scale{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:16px 0}
+.scale-row{display:grid;grid-template-columns:44px 150px 1fr;gap:12px;align-items:center;padding:11px 16px}
+.scale-row:not(:last-child){border-bottom:1px solid var(--line)}
+.scale-n{font-family:'DM Mono';font-size:15px;color:var(--teal);font-weight:500;text-align:center}
+.scale-ab{font-weight:700;font-size:13px;color:var(--ink);display:flex;align-items:center;gap:8px}
+.scale-ab i{font-style:normal;font-size:10px;font-weight:700;color:#fff;background:var(--teal);border-radius:5px;padding:2px 7px;min-width:26px;text-align:center}
+.scale-d{font-size:12.5px;color:var(--tx-mut)}
+@media(max-width:520px){.scale-row{grid-template-columns:36px 1fr;row-gap:2px}.scale-d{grid-column:2}}
+
+/* clusters */
+.clusters{display:grid;grid-template-columns:1fr;gap:10px;margin:16px 0}
+@media(min-width:560px){.clusters{grid-template-columns:1fr 1fr}}
+.cl{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:13px 15px;border-left:4px solid var(--cc)}
+.cl b{font-family:'Syne';font-weight:700;font-size:13px;color:var(--ink);display:block;margin-bottom:3px}
+.cl span{font-size:11.5px;color:var(--tx-mut);line-height:1.45}
+
+.need{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.need ul{list-style:none}
+.need li{display:flex;gap:11px;align-items:flex-start;padding:8px 0;font-size:14px;color:var(--tx-soft)}
+.need li:not(:last-child){border-bottom:1px solid var(--line)}
+.tick{flex:none;width:20px;height:20px;border-radius:6px;background:var(--teal-tint);color:var(--teal);display:grid;place-items:center;font-size:12px;font-weight:700;margin-top:1px}
+.need li b{color:var(--ink);font-weight:600}
+
+.step{display:grid;grid-template-columns:46px 1fr;gap:16px;margin-bottom:26px}
+.step-n{font-family:'Syne';font-weight:800;font-size:18px;color:#fff;background:var(--teal);width:40px;height:40px;border-radius:11px;display:grid;place-items:center}
+.step-b h3{font-size:16px;color:var(--ink);margin-bottom:5px}
+.step-b p{font-size:14px;margin-bottom:8px}
+
+.gloss{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:8px 20px}
+.term{padding:14px 0}
+.term:not(:last-child){border-bottom:1px solid var(--line)}
+.term b{font-family:'Syne';font-weight:700;font-size:14px;color:var(--ink)}
+.term p{font-size:13px;margin:4px 0 0}
+
+.try{background:linear-gradient(135deg,#0d1710,#0a0d14);border-radius:16px;padding:22px;margin:26px 0;color:#e8ebef;position:relative;overflow:hidden}
+.try::before{content:'';position:absolute;bottom:-40px;left:-20px;width:200px;height:200px;background:radial-gradient(circle,rgba(232,146,42,.12),transparent 70%)}
+.try h3{color:#fff;font-size:17px;margin-bottom:10px;position:relative}
+.try ol{margin:0 0 0 18px;position:relative}
+.try li{font-size:13.5px;color:#c8cfd6;margin-bottom:7px;line-height:1.5}
+.try li b{color:var(--teal-line);font-weight:600}
+
+.foot{margin-top:40px;padding-top:20px;border-top:1px solid var(--line)}
+.sign{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--tx-mut);font-style:italic}
+.disc{font-size:11.5px;color:var(--tx-mut);line-height:1.6;margin-top:14px}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="brand"><span class="dot"></span> CatalystBox</div>
+  <div class="eyebrow">A guide to the tool</div>
+  <h1>How to use Mind Mirror</h1>
+  <p class="lede">Mind Mirror is the quiet one in the ThinkMap set. It doesn't price a decision — it holds up a mirror. You answer a series of honest statements about how you think, and it shows you the pattern back: <b>how you see your own mind across eighteen kinds of thinking, and — the part most tools skip — how well you actually seem to know yourself.</b> It is not an IQ test, and that's the point.</p>
+
+  <div class="idea">
+    <h2>The one honest idea behind Mind Mirror</h2>
+    <p class="sub">It measures your self-perception — not your ability. And that's exactly why it's useful.</p>
+    <div class="idea-points">
+      <div class="ip"><span class="n">1</span><div><b>It reflects how you see yourself.</b><span>Nothing you fill in about yourself can measure your intelligence — self-report can only reveal your self-image. So Mind Mirror is honest about what it is: a clear, structured picture of how you perceive your own thinking, not a verdict on how capable you are.</span></div></div>
+      <div class="arrow">↓</div>
+      <div class="ip"><span class="n">2</span><div><b>It maps eighteen facets, in five clusters.</b><span>From logical reasoning to emotional perception to physical coordination, your answers roll up into a radar and five readable groups — so you see the shape of your self-image, not just a single number.</span></div></div>
+      <div class="arrow">↓</div>
+      <div class="ip"><span class="n">3</span><div><b>It asks how well you know yourself.</b><span>Two calibration questions gauge how confidently you judge your own mind — and pair that against your humility. This self-awareness reading is the real gold: the gap between how sure you are and how much you actually know is where growth lives.</span></div></div>
+    </div>
+  </div>
+
+  <div class="rule-pill teal">
+    <span class="ic">🪞</span>
+    <span>Read your results as a <b>mirror, not a scoreboard.</b> No number here measures your worth or decides anything about you. It's a starting point for honest reflection. <b>No agenda in the output. All agency in the decision.</b></span>
+  </div>
+
+  <!-- WHAT IT IS / ISN'T -->
+  <div class="sec">
+    <h2>What it is, and what it isn't</h2>
+    <p>This distinction matters more for Mind Mirror than for any other tool in the set, so it's worth being blunt about it.</p>
+    <div class="isnt">
+      <div class="col is">
+        <h3>✦ It is</h3>
+        <ul>
+          <li>A structured way to reflect on how you see your own thinking</li>
+          <li>A snapshot of your self-image on the day you take it</li>
+          <li>A conversation starter — with yourself, or with people who know you</li>
+          <li>A gentle check on how well you know your own mind</li>
+        </ul>
+      </div>
+      <div class="col no">
+        <h3>It isn't</h3>
+        <ul>
+          <li>An IQ test or a measure of actual ability</li>
+          <li>A psychological assessment or a diagnosis</li>
+          <li>A verdict on your intelligence, potential, or worth</li>
+          <li>Something to decide anything real about a person</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--tx-mut)">If you need an objective read on a specific ability, that calls for a validated instrument administered by a qualified professional. Mind Mirror is for reflection — nothing more, and nothing less.</p>
+  </div>
+
+  <!-- THE SCALE -->
+  <div class="sec">
+    <h2>The scale — what SD, D, N, A, SA mean</h2>
+    <p>Every statement is answered on a five-point agreement scale. Each button shows a number and a short code; here's the full meaning of each:</p>
+    <div class="scale">
+      <div class="scale-row"><span class="scale-n">1</span><span class="scale-ab"><i>SD</i> Strongly Disagree</span><span class="scale-d">Not like me at all — this rarely or never describes how I think or act.</span></div>
+      <div class="scale-row"><span class="scale-n">2</span><span class="scale-ab"><i>D</i> Disagree</span><span class="scale-d">Mostly not like me — this describes me only occasionally.</span></div>
+      <div class="scale-row"><span class="scale-n">3</span><span class="scale-ab"><i>N</i> Neutral</span><span class="scale-d">In between, unsure, or it depends on the situation.</span></div>
+      <div class="scale-row"><span class="scale-n">4</span><span class="scale-ab"><i>A</i> Agree</span><span class="scale-d">Mostly like me — this describes me fairly often.</span></div>
+      <div class="scale-row"><span class="scale-n">5</span><span class="scale-ab"><i>SA</i> Strongly Agree</span><span class="scale-d">Very much like me — this consistently describes how I think or act.</span></div>
+    </div>
+    <p style="font-size:13px;color:var(--tx-mut)">Answer for how you <em>actually</em> are, not how you'd like to be — the mirror is only as honest as you are. One statement is reverse-worded on purpose (about underrating yourself), so read each one carefully rather than pattern-tapping.</p>
+  </div>
+
+  <!-- CLUSTERS -->
+  <div class="sec">
+    <h2>The five clusters, eighteen facets</h2>
+    <p>The eighteen facets group into five clusters, so your results are readable at a glance and in depth if you want it.</p>
+    <div class="clusters">
+      <div class="cl" style="--cc:#0B5C45"><b>Analytical &amp; Fluid</b><span>Logical reasoning, spatial thinking, working memory, processing speed.</span></div>
+      <div class="cl" style="--cc:#4a7fb5"><b>Knowledge &amp; Communication</b><span>Verbal ability, long-term recall, digital and technological fluency.</span></div>
+      <div class="cl" style="--cc:#E8922A"><b>Social &amp; Emotional</b><span>Reading people, self-awareness, perceiving emotion in others.</span></div>
+      <div class="cl" style="--cc:#8a6dc0"><b>Creative, Strategic &amp; Reflective</b><span>Divergent ideas, strategic foresight, meaning-making, and humility.</span></div>
+      <div class="cl" style="--cc:#c2691f"><b>Applied &amp; Sensory</b><span>Practical execution, physical coordination, naturalistic and musical sense.</span></div>
+    </div>
+    <p style="font-size:13px;color:var(--tx-mut)">These clusters draw loosely on popular ideas about many kinds of intelligence — a useful lens for reflection, though contested as truly separate "intelligences," which is exactly why nothing here is framed as measured ability.</p>
+  </div>
+
+  <!-- WHAT YOU NEED -->
+  <div class="sec">
+    <h2>Before you start</h2>
+    <div class="need">
+      <ul>
+        <li><span class="tick">✓</span><div><b>Ten quiet minutes and an honest mood.</b> There are seventy-four short statements. Snap judgements are usually truer than agonised ones.</div></li>
+        <li><span class="tick">✓</span><div><b>A resolve to answer for your real self.</b> Rating yourself as you wish you were just fogs the mirror.</div></li>
+        <li><span class="tick">✓</span><div><b>No preparation, no stakes.</b> Nothing is saved, nothing is scored against you, and you can retake it any time.</div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- STEPS -->
+  <div class="sec">
+    <h2>Walking through it</h2>
+    <div class="step">
+      <div class="step-n">1</div>
+      <div class="step-b"><h3>Answer honestly, cluster by cluster</h3>
+      <p>The statements are grouped by facet and cluster, with the scale key always visible at the top. Tap the button that best fits how you actually think and act. The progress bar tracks all seventy-four.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div class="step-b"><h3>Complete the calibration questions</h3>
+      <p>The last two — set apart in amber — don't feed your facet scores. They gauge how confident you are in reading your own mind, which powers the self-awareness reading.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <div class="step-b"><h3>Read the radar and the clusters</h3>
+      <p>Your profile appears as an eighteen-point radar, then as five cluster bars you can expand to see every facet. Look at the overall <em>shape</em> first — where it reaches out, where it draws in.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-n">4</div>
+      <div class="step-b"><h3>Sit with the four readings</h3>
+      <p>Where you see yourself strongest, where you're least sure, the shape of your self-image (spiky and specialised, or even and all-round), and — the important one — how well you seem to know your own mind.</p></div>
+    </div>
+  </div>
+
+  <!-- CALIBRATION -->
+  <div class="sec">
+    <h2>The self-awareness reading, explained</h2>
+    <p>People are famously bad at rating themselves. Beginners often overestimate; genuine experts often underestimate. Psychologists call the first half of this the <strong>Dunning–Kruger effect</strong>. Mind Mirror can't tell you your true ability — but it can notice the <em>relationship</em> between how confident you are in your self-judgement and how much humility you report. When high confidence meets low humility, it gently flags it; when confidence and humility sit together, it says so. The most self-aware people tend to hold even their confident self-assessments loosely.</p>
+  </div>
+
+  <!-- GLOSSARY -->
+  <div class="sec">
+    <h2>The words on the screen, in plain terms</h2>
+    <div class="gloss">
+      <div class="term"><b>Facet</b><p>One of the eighteen kinds of thinking you rate yourself on, each from four statements.</p></div>
+      <div class="term"><b>Cluster</b><p>A group of related facets — five in total — that make the overall picture easier to read.</p></div>
+      <div class="term"><b>The shape of your self-image</b><p>How spread out your ratings are. A spiky shape means you see yourself as specialised; an even one, as an all-rounder.</p></div>
+      <div class="term"><b>Self-awareness reading</b><p>How confidently you judge your own mind, weighed against your humility — a check on how well you know yourself, not a score of ability.</p></div>
+    </div>
+  </div>
+
+  <!-- TRY -->
+  <div class="try">
+    <h3>A good way to use it</h3>
+    <ol>
+      <li><b>Answer it quickly and honestly once.</b> Don't overthink any single statement — first instinct is usually the truest.</li>
+      <li><b>Look at the shape before the numbers.</b> Spiky or even? That alone says something about how you see yourself.</li>
+      <li><b>Read the self-awareness line twice.</b> It's the most useful sentence in the whole tool.</li>
+      <li><b>Ask someone who knows you well</b> to guess your radar — the gap between their view and yours is where the real insight is.</li>
+      <li><b>Retake it in six months.</b> Watch what's shifted. The mirror is most revealing over time.</li>
+    </ol>
+  </div>
+
+  <div class="foot">
+    <div class="sign"><span class="dot"></span> No agenda in the output. All agency in the decision.</div>
+    <p class="disc">Mind Mirror is a structured self-reflection tool, not a measure of intelligence, a psychological assessment, a diagnosis, or an IQ estimate. Every result reflects self-perception on the day you answer — shaped by mood, culture, context, and the well-documented gap between how people rate themselves and how they actually perform. It is not a judgement of anyone's capability or worth and should never be used to decide anything about a person. For an objective picture of a specific ability, seek a validated instrument administered by a qualified professional. Use this only as a starting point for honest self-reflection.</p>
+  </div>
+
+</div>
+</body>
+</html>

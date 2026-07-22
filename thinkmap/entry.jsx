@@ -7,6 +7,7 @@ import PodiumIndia from "./podium-india-v2.jsx";
 import PodiumGlobal from "./podium-global-v2.jsx";
 import ExamCompassIndia from "./exam-compass-india.jsx";
 import ExamCompassWorld from "./exam-compass-world.jsx";
+import MindMirror from "./mind-mirror.jsx";
 
 function ThinkMapApp() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -66,6 +67,8 @@ function ThinkMapApp() {
     return <div className="tm-wrap"><ExamCompassIndia /></div>;
   } else if (path === "thinkmap/exam-compass-world") {
     return <div className="tm-wrap"><ExamCompassWorld /></div>;
+  } else if (path === "thinkmap/mind-mirror") {
+    return <div className="tm-wrap"><MindMirror /></div>;
   } else {
     return <ThinkMap />;
   }

@@ -795,16 +795,10 @@ body:not(.light-mode) .tm-wrap .wrap {
   color: var(--tx) !important;
 }
 
-/* Deskop Grid layouts for the landing page cards (better utilization of screen width) */
+/* Desktop grid layout for the ThinkMap hub, balanced for five tools. */
 @media (min-width: 1024px) {
-  body:not(.light-mode) .tm-wrap .tm-grid {
+  body .tm-wrap .tm-grid {
     grid-template-columns: repeat(3, 1fr) !important;
-  }
-}
-
-@media (min-width: 1440px) {
-  body:not(.light-mode) .tm-wrap .tm-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
   }
 }
 
