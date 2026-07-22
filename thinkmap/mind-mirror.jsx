@@ -375,9 +375,11 @@ export default function App() {
               <span className="grp-dot" style={{ background: "#E8922A" }} />Knowing yourself — a quick calibration
             </div>
             <p className="cal-note">These two don't feed your facet scores. They gauge how confident you are in your own self-read — the heart of the mirror.</p>
-            {QUESTIONS.filter(q => q.d === "meta").map(q => (
-              <Likert key={q.id} q={q} val={answers[q.id]} onPick={pick} missing={showMiss && !answers[q.id]} />
-            ))}
+            <div className="cal-questions">
+              {QUESTIONS.filter(q => q.d === "meta").map(q => (
+                <Likert key={q.id} q={q} val={answers[q.id]} onPick={pick} missing={showMiss && !answers[q.id]} />
+              ))}
+            </div>
           </div>
 
           <div className="foot-actions">
@@ -437,6 +439,8 @@ const CSS = `
 .grp-facet-h{font-family:'Syne';font-weight:700;font-size:12.5px;color:var(--clay);margin:12px 0 8px;text-transform:uppercase;letter-spacing:.04em}
 .grp-facet-h em{display:block;font-style:normal;font-weight:400;font-size:11px;letter-spacing:0;text-transform:none;color:var(--tx-mut);margin-top:2px}
 .cal-note{font-size:12px;color:var(--tx-mut);padding:12px 16px 4px;line-height:1.5}
+.cal-questions{padding:4px 16px 14px}
+.cal-questions .q:first-child{border-top:0}
 
 .q{padding:9px 0;border-top:1px dashed #ece5d6}
 .grp-facet .q:first-of-type{border-top:0}
@@ -506,4 +510,26 @@ const CSS = `
 .disc{color:#7e8896;font-size:11px}
 .sign{display:flex;align-items:center;gap:8px;font-size:11px;color:#7e8896;margin-top:6px;border-top:1px solid #1e2530;padding-top:12px}
 .sign .dot{box-shadow:0 0 0 3px rgba(232,146,42,.15)}
+/* Match the methodology panels used across the other ThinkMap calculators. */
+.meth{
+  margin-top:24px!important;background:#f8fbff!important;border:1px solid #bfd4e6!important;
+  border-radius:16px!important;box-shadow:0 14px 34px rgba(23,50,77,.08)!important;
+  color:#334e68!important;padding:26px 28px!important;display:flex!important;
+  flex-direction:column!important;align-items:stretch!important;gap:0!important
+}
+.meth-h,.meth>p,.meth>.sign{
+  width:100%!important;max-width:none!important;margin-left:0!important;margin-right:0!important;text-align:left!important
+}
+.meth-h{color:#17324d!important;font-size:16px!important;margin:0 0 14px!important;padding:0!important}
+.tm-wrap .meth>p{color:#334e68!important;font-size:13.5px!important;line-height:1.75!important}
+.tm-wrap .meth>p b{color:#0b5c45!important}
+.meth>p:not(.disc){margin-top:0!important;margin-bottom:14px!important}
+.meth>.disc{
+  color:#536b80!important;background:#eaf2f8!important;border-left:3px solid #4a7fb5!important;
+  border-radius:8px!important;padding:12px 14px!important;margin:0 0 12px!important;font-size:11.5px!important
+}
+.meth>.sign{
+  color:#334e68!important;border-top:1px solid #bfd4e6!important;padding-top:12px!important;
+  margin-top:0!important;margin-bottom:0!important
+}
 `;
