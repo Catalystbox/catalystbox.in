@@ -802,6 +802,26 @@ body:not(.light-mode) .tm-wrap .wrap {
   }
 }
 
+/* Shared calculator navigation back to the ThinkMap hub. */
+.tm-tool-nav{
+  width:100%;max-width:1400px;margin:0 auto 16px
+}
+.tm-back-link{
+  display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border:1px solid #bfd4e6;
+  border-radius:10px;background:#f8fbff;color:#17324d;font-family:'Syne',sans-serif;
+  font-size:12.5px;font-weight:700;text-decoration:none;box-shadow:0 8px 22px -18px rgba(23,50,77,.5);
+  transition:background .15s,border-color .15s,color .15s,transform .15s
+}
+.tm-back-link:hover{
+  background:#e7f4ef;border-color:#9bcbb9;color:#0b5c45;transform:translateX(-2px)
+}
+.tm-back-link span{font-size:16px;line-height:1}
+body:not(.light-mode) .tm-back-link{
+  background:#1c2033;border-color:rgba(255,255,255,.12);color:#f8fafc
+}
+body:not(.light-mode) .tm-back-link:hover{
+  background:rgba(26,173,167,.12);border-color:#1aada7;color:#34c79a
+}
 /* Specific component overrides for dark mode */
 body:not(.light-mode) .tm-wrap .tm-card,
 body:not(.light-mode) .tm-wrap .card,

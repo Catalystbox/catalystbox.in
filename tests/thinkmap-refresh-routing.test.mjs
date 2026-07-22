@@ -79,3 +79,13 @@ test("the main router consumes the restored route and 404 supports future tools"
   );
   assert.match(notFound, /__THINKMAP_REFRESH_REDIRECTING__/);
 });
+test("returning through the site navbar resets ThinkMap and every tool has a hub link", () => {
+  const router = fs.readFileSync(path.join(root, "assets/js/script.js"), "utf8");
+  const entry = fs.readFileSync(path.join(root, "thinkmap/entry.jsx"), "utf8");
+
+  assert.match(router, /CustomEvent\('thinkmap:navigate'/);
+  assert.match(router, /detail: \{ path: '\/' \+ id\.replace/);
+  assert.match(entry, /addEventListener\("thinkmap:navigate", handleShellNavigation\)/);
+  assert.match(entry, /className="tm-back-link" href="\/thinkmap"/);
+  assert.equal((entry.match(/<ToolPage>/g) || []).length, 7);
+});

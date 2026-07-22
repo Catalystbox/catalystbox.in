@@ -152,6 +152,11 @@ function showPage(id, pushHistory) {
     }
   }
 
+  if (isThinkMap) {
+    window.dispatchEvent(new CustomEvent('thinkmap:navigate', {
+      detail: { path: '/' + id.replace(/^\/+/, '') }
+    }));
+  }
   setTimeout(() => {
     document.querySelectorAll('#page-' + pageElementId + ' .fade-up').forEach(el => el.classList.remove('visible'));
     setTimeout(() => observeFadeUps(), 60);

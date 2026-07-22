@@ -9,16 +9,37 @@ import ExamCompassIndia from "./exam-compass-india.jsx";
 import ExamCompassWorld from "./exam-compass-world.jsx";
 import MindMirror from "./mind-mirror.jsx";
 
+function ToolPage({ children }) {
+  return (
+    <div className="tm-wrap">
+      <div className="tm-tool-nav">
+        <a className="tm-back-link" href="/thinkmap" aria-label="Back to all ThinkMap tools">
+          <span aria-hidden="true">←</span> Back to ThinkMap
+        </a>
+      </div>
+      {children}
+    </div>
+  );
+}
+
 function ThinkMapApp() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
-  // Sync internal state with browser back/forward buttons
+  // Sync internal state with browser history and the main CatalystBox shell.
   useEffect(() => {
     const handlePopState = () => {
       setCurrentPath(window.location.pathname);
     };
+    const handleShellNavigation = (event) => {
+      setCurrentPath(event.detail?.path || window.location.pathname);
+    };
+
     window.addEventListener("popstate", handlePopState);
-    return () => window.removeEventListener("popstate", handlePopState);
+    window.addEventListener("thinkmap:navigate", handleShellNavigation);
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+      window.removeEventListener("thinkmap:navigate", handleShellNavigation);
+    };
   }, []);
 
   // Intercept local links inside the ThinkMap app to perform client-side SPA routing
@@ -56,19 +77,19 @@ function ThinkMapApp() {
 
   // Client-side router logic
   if (path === "thinkmap/education-roi") {
-    return <div className="tm-wrap"><EducationRoi /></div>;
+    return <ToolPage><EducationRoi /></ToolPage>;
   } else if (path === "thinkmap/margin") {
-    return <div className="tm-wrap"><Margin /></div>;
+    return <ToolPage><Margin /></ToolPage>;
   } else if (path === "thinkmap/podium-india") {
-    return <div className="tm-wrap"><PodiumIndia /></div>;
+    return <ToolPage><PodiumIndia /></ToolPage>;
   } else if (path === "thinkmap/podium-global") {
-    return <div className="tm-wrap"><PodiumGlobal /></div>;
+    return <ToolPage><PodiumGlobal /></ToolPage>;
   } else if (path === "thinkmap/exam-compass-india") {
-    return <div className="tm-wrap"><ExamCompassIndia /></div>;
+    return <ToolPage><ExamCompassIndia /></ToolPage>;
   } else if (path === "thinkmap/exam-compass-world") {
-    return <div className="tm-wrap"><ExamCompassWorld /></div>;
+    return <ToolPage><ExamCompassWorld /></ToolPage>;
   } else if (path === "thinkmap/mind-mirror") {
-    return <div className="tm-wrap"><MindMirror /></div>;
+    return <ToolPage><MindMirror /></ToolPage>;
   } else {
     return <ThinkMap />;
   }
