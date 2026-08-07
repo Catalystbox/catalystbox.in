@@ -82,7 +82,113 @@ function gtag_report_conversion(url) {
 ═══════════════════════════════════════════ -->
 <div class="page active" id="page-home">
 
-  <!-- Hero -->
+  <!-- Hero (Full Screen Loop Visual) -->
+  <section id="loop-hero">
+    <div class="loop-hero-bg"></div>
+    <div class="loop-hero-grid"></div>
+    
+    <div class="loop-diagram-wrapper-fullscreen">
+      <!-- Ambient glowing gradients -->
+      <div class="loop-glow"></div>
+      
+      <svg class="loop-svg-fullscreen" viewBox="0 0 1000 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <!-- Glowing filters for nodes -->
+          <filter id="glow-orange-lg" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="8" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+          <filter id="glow-teal-lg" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="8" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+
+          <!-- Edge gradients -->
+          <linearGradient id="edge-declare-match-lg" x1="500" y1="220" x2="800" y2="580" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#E8A020" />
+            <stop offset="100%" stop-color="#0D7F7A" />
+          </linearGradient>
+        </defs>
+
+        <!-- Triangle paths -->
+        <!-- Left: Verify to Declare (Dashed green line) -->
+        <path id="path-left" d="M 200 580 L 500 220" stroke="#0D7F7A" stroke-width="4" stroke-dasharray="10 8" />
+        
+        <!-- Right: Declare to Match (Solid gradient line) -->
+        <path id="path-right" d="M 500 220 L 800 580" stroke="url(#edge-declare-match-lg)" stroke-width="5" stroke-linecap="round" />
+        
+        <!-- Bottom: Match to Verify (Transparent solid green line) -->
+        <path id="path-bottom" d="M 800 580 L 200 580" stroke="#0D7F7A" stroke-opacity="0.15" stroke-width="12" stroke-linecap="round" />
+        
+        <!-- Animated dots along paths -->
+        <!-- Yellow dot on left side (Verify -> Declare) -->
+        <circle r="9" fill="#E8A020" filter="url(#glow-orange-lg)">
+          <animateMotion dur="5s" repeatCount="indefinite">
+            <mpath href="#path-left" />
+          </animateMotion>
+        </circle>
+        
+        <!-- Green dot on bottom side (Match -> Verify) -->
+        <circle r="8" fill="#0D7F7A" filter="url(#glow-teal-lg)">
+          <animateMotion dur="6s" repeatCount="indefinite">
+            <mpath href="#path-bottom" />
+          </animateMotion>
+        </circle>
+
+        <!-- Glowing halos on active nodes -->
+        <circle cx="500" cy="220" r="32" fill="#E8A020" fill-opacity="0.08" class="pulse-glow" />
+        <circle cx="800" cy="580" r="32" fill="#0D7F7A" fill-opacity="0.08" class="pulse-glow" />
+        <circle cx="200" cy="580" r="32" fill="#0D7F7A" fill-opacity="0.08" class="pulse-glow" />
+
+        <!-- Vertex Nodes (Concentric circles matching the user image) -->
+        <!-- Top node: Declare -->
+        <g class="diagram-node">
+          <circle cx="500" cy="220" r="18" fill="#E8A020" />
+          <circle cx="500" cy="220" r="12" fill="#FFF" />
+          <circle cx="500" cy="220" r="6" fill="#E8A020" />
+        </g>
+
+        <!-- Bottom Right node: Match -->
+        <g class="diagram-node">
+          <circle cx="800" cy="580" r="18" fill="#E8A020" />
+          <circle cx="800" cy="580" r="12" fill="#FFF" />
+          <circle cx="800" cy="580" r="6" fill="#0D7F7A" />
+        </g>
+
+        <!-- Bottom Left node: Verify -->
+        <g class="diagram-node">
+          <circle cx="200" cy="580" r="18" fill="#E8A020" />
+          <circle cx="200" cy="580" r="12" fill="#FFF" />
+          <circle cx="200" cy="580" r="6" fill="#0D7F7A" />
+        </g>
+      </svg>
+      
+      <!-- Node Texts HTML overlays -->
+      <div class="node-label node-declare" style="top: 27.5%; left: 50%; transform: translate(-50%, -140%);">
+        <span class="node-title">Declare</span>
+        <span class="node-subtitle">THE NEED ENTERS</span>
+      </div>
+      
+      <div class="node-label node-match" style="top: 72.5%; left: 80%; transform: translate(25px, 20px);">
+        <span class="node-title">Match</span>
+        <span class="node-subtitle">ROUTED TO VETTED HELP</span>
+      </div>
+      
+      <div class="node-label node-verify" style="top: 72.5%; left: 20%; transform: translate(-105%, 20px);">
+        <span class="node-title">Verify</span>
+        <span class="node-subtitle">OUTCOME MEASURED</span>
+      </div>
+
+      <!-- Center Label -->
+      <div class="center-label" style="top: 57.5%; left: 50%; transform: translate(-50%, -50%);">
+        <span class="center-eyebrow">THE LOOP</span>
+        <span class="center-title">Compounds</span>
+        <span class="center-subtitle">match by match</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero (Original Title, Description, Stats) -->
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
