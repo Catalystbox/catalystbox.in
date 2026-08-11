@@ -279,26 +279,34 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 .sign{display:flex;align-items:center;gap:8px;font-size:11px;color:#7e8896;margin-top:6px;border-top:1px solid #1e2530;padding-top:12px}
 .sign .dot{box-shadow:0 0 0 3px rgba(232,146,42,.15)}
 
-/* ThinkMap unified readability: high-contrast dark theme */
-.hero,.result{background:#111d2a!important;color:#ffffff!important}
+/* ThinkMap unified readability: ultra-high-contrast dark theme */
+.hero,.result{background:#0e1722!important;color:#ffffff!important}
 .result{border:1px solid #334e68!important}
 .result .tile,.result .h2h,.result .leverage,.result .langbox,.result .card,
 .result .lev,.result .sortb,.result .lang,.result .scen-tile,.result .edub,
 .result .human,.result .funnelbox,.result .stackbox,.result .out,.result .cutbox,
 .result .tournbox,.result .vt,.result .chart,.result .exp-tile{
-  background:#1a2b3c!important;border-color:#334e68!important;color:#f8fafc!important
+  background:#182838!important;border-color:#334e68!important;color:#ffffff!important
 }
 .tm-wrap .result .verdict p,
-.tm-wrap .result .t-l,.tm-wrap .result .t-s,
+.tm-wrap .result .t-s,
 .tm-wrap .result .chart-h span,.tm-wrap .result .legend span,
-.tm-wrap .result .h2h-top b,.tm-wrap .result .h2h-top b i,
 .tm-wrap .result .st-sub,.tm-wrap .result .st-meta,
 .tm-wrap .result .exp-l,.tm-wrap .result .exp-s,
 .tm-wrap .result .fun-lab,.tm-wrap .result .fun-note,
 .tm-wrap .result .stack-key span,.tm-wrap .result .out-p,
-.tm-wrap .result .human,.tm-wrap .result .fld-l,.tm-wrap .result .fld-h,.tm-wrap .result .mini,
+.tm-wrap .result .fld-l,.tm-wrap .result .fld-h,.tm-wrap .result .mini,
 .tm-wrap .result .nr-l,.tm-wrap .result .oneIn{
   color:#cbd5e1!important
+}
+.tm-wrap .result .t-l,
+.tm-wrap .result .h2h-top b,
+.tm-wrap .result .edub-h,
+.tm-wrap .result .chart-h b{
+  color:#7dd3fc!important;font-weight:700!important
+}
+.tm-wrap .result .h2h-top b i{
+  color:#f1f5f9!important;font-weight:600!important;font-style:normal!important
 }
 .tm-wrap .result .out-note,
 .tm-wrap .result .cut-row span,
@@ -307,21 +315,37 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 .tm-wrap .result .c-nat-s,
 .tm-wrap .result .c-detail,
 .tm-wrap .result .c-note,
-.tm-wrap .result .c-to{
-  color:#e2e8f0!important;font-weight:400!important
+.tm-wrap .result .c-to,
+.tm-wrap .result .edub-fields label{
+  color:#f1f5f9!important;font-weight:400!important
+}
+.tm-wrap .result .echip{
+  background:#26374a!important;border:1px solid #4a6885!important;color:#f1f5f9!important;font-weight:600!important
+}
+.tm-wrap .result .echip.on{
+  background:#c99df0!important;border-color:#c99df0!important;color:#0a0d14!important;font-weight:700!important
 }
 .tm-wrap .result .cut-row b{
   color:#fbbf24!important
 }
-.tm-wrap .result .v-tag,.tm-wrap .result .t-v,.tm-wrap .result .chart-h b,.tm-wrap .result .out-top b{
+.tm-wrap .result .v-tag,.tm-wrap .result .t-v,.tm-wrap .result .out-top b,.tm-wrap .result .st-label{
   color:#ffffff!important
 }
+.tm-wrap .result .human{
+  color:#f1f5f9!important;background:#182838!important;border-color:#334e68!important
+}
+.tm-wrap .result .human b{
+  color:#34d399!important;font-weight:700!important
+}
+.tm-wrap .result .human b.warn{
+  color:#fbbf24!important;font-weight:700!important
+}
 .tm-wrap .result .assump{
-  background:#162534!important;border:1px solid #334e68!important;color:#e2e8f0!important;padding:8px 12px!important;border-radius:8px!important
+  background:#13202e!important;border:1px solid #334e68!important;color:#cbd5e1!important;padding:8px 12px!important;border-radius:8px!important
 }
 .result .bar,.result .fun-track,.result .stack,.result .h2h-track{background:#2a3f55!important}
-.tm-wrap .result input[type="number"],.tm-wrap .result input[type="text"]{
-  background:#ffffff!important;border:1px solid #cbd5e1!important;color:#0f172a!important
+.tm-wrap .result input[type="number"],.tm-wrap .result input[type="text"],.tm-wrap .result .edub-fields input{
+  background:#ffffff!important;border:1px solid #cbd5e1!important;color:#0f172a!important;font-weight:700!important
 }
 
 /* Search controls use the same integrated blue treatment across every calculator. */
@@ -579,26 +603,34 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 .sign{display:flex;align-items:center;gap:8px;font-size:11px;color:#7e8896;margin-top:6px;border-top:1px solid #1e2530;padding-top:12px}
 .sign .dot{box-shadow:0 0 0 3px rgba(232,146,42,.15)}
 
-/* ThinkMap unified readability: high-contrast dark theme */
-.hero,.result{background:#111d2a!important;color:#ffffff!important}
+/* ThinkMap unified readability: ultra-high-contrast dark theme */
+.hero,.result{background:#0e1722!important;color:#ffffff!important}
 .result{border:1px solid #334e68!important}
 .result .tile,.result .h2h,.result .leverage,.result .langbox,.result .card,
 .result .lev,.result .sortb,.result .lang,.result .scen-tile,.result .edub,
 .result .human,.result .funnelbox,.result .stackbox,.result .out,.result .cutbox,
 .result .tournbox,.result .vt,.result .chart,.result .exp-tile{
-  background:#1a2b3c!important;border-color:#334e68!important;color:#f8fafc!important
+  background:#182838!important;border-color:#334e68!important;color:#ffffff!important
 }
 .tm-wrap .result .verdict p,
-.tm-wrap .result .t-l,.tm-wrap .result .t-s,
+.tm-wrap .result .t-s,
 .tm-wrap .result .chart-h span,.tm-wrap .result .legend span,
-.tm-wrap .result .h2h-top b,.tm-wrap .result .h2h-top b i,
 .tm-wrap .result .st-sub,.tm-wrap .result .st-meta,
 .tm-wrap .result .exp-l,.tm-wrap .result .exp-s,
 .tm-wrap .result .fun-lab,.tm-wrap .result .fun-note,
 .tm-wrap .result .stack-key span,.tm-wrap .result .out-p,
-.tm-wrap .result .human,.tm-wrap .result .fld-l,.tm-wrap .result .fld-h,.tm-wrap .result .mini,
+.tm-wrap .result .fld-l,.tm-wrap .result .fld-h,.tm-wrap .result .mini,
 .tm-wrap .result .nr-l,.tm-wrap .result .oneIn{
   color:#cbd5e1!important
+}
+.tm-wrap .result .t-l,
+.tm-wrap .result .h2h-top b,
+.tm-wrap .result .edub-h,
+.tm-wrap .result .chart-h b{
+  color:#7dd3fc!important;font-weight:700!important
+}
+.tm-wrap .result .h2h-top b i{
+  color:#f1f5f9!important;font-weight:600!important;font-style:normal!important
 }
 .tm-wrap .result .out-note,
 .tm-wrap .result .cut-row span,
@@ -607,21 +639,37 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 .tm-wrap .result .c-nat-s,
 .tm-wrap .result .c-detail,
 .tm-wrap .result .c-note,
-.tm-wrap .result .c-to{
-  color:#e2e8f0!important;font-weight:400!important
+.tm-wrap .result .c-to,
+.tm-wrap .result .edub-fields label{
+  color:#f1f5f9!important;font-weight:400!important
+}
+.tm-wrap .result .echip{
+  background:#26374a!important;border:1px solid #4a6885!important;color:#f1f5f9!important;font-weight:600!important
+}
+.tm-wrap .result .echip.on{
+  background:#c99df0!important;border-color:#c99df0!important;color:#0a0d14!important;font-weight:700!important
 }
 .tm-wrap .result .cut-row b{
   color:#fbbf24!important
 }
-.tm-wrap .result .v-tag,.tm-wrap .result .t-v,.tm-wrap .result .chart-h b,.tm-wrap .result .out-top b{
+.tm-wrap .result .v-tag,.tm-wrap .result .t-v,.tm-wrap .result .out-top b,.tm-wrap .result .st-label{
   color:#ffffff!important
 }
+.tm-wrap .result .human{
+  color:#f1f5f9!important;background:#182838!important;border-color:#334e68!important
+}
+.tm-wrap .result .human b{
+  color:#34d399!important;font-weight:700!important
+}
+.tm-wrap .result .human b.warn{
+  color:#fbbf24!important;font-weight:700!important
+}
 .tm-wrap .result .assump{
-  background:#162534!important;border:1px solid #334e68!important;color:#e2e8f0!important;padding:8px 12px!important;border-radius:8px!important
+  background:#13202e!important;border:1px solid #334e68!important;color:#cbd5e1!important;padding:8px 12px!important;border-radius:8px!important
 }
 .result .bar,.result .fun-track,.result .stack,.result .h2h-track{background:#2a3f55!important}
-.tm-wrap .result input[type="number"],.tm-wrap .result input[type="text"]{
-  background:#ffffff!important;border:1px solid #cbd5e1!important;color:#0f172a!important
+.tm-wrap .result input[type="number"],.tm-wrap .result input[type="text"],.tm-wrap .result .edub-fields input{
+  background:#ffffff!important;border:1px solid #cbd5e1!important;color:#0f172a!important;font-weight:700!important
 }
 
 /* Search controls use the same integrated blue treatment across every calculator. */
@@ -873,26 +921,34 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 .sign{display:flex;align-items:center;gap:8px;font-size:11px;color:#7e8896;margin-top:6px;border-top:1px solid #1e2530;padding-top:12px}
 .sign .dot{box-shadow:0 0 0 3px rgba(232,146,42,.15)}
 
-/* ThinkMap unified readability: high-contrast dark theme */
-.hero,.result{background:#111d2a!important;color:#ffffff!important}
+/* ThinkMap unified readability: ultra-high-contrast dark theme */
+.hero,.result{background:#0e1722!important;color:#ffffff!important}
 .result{border:1px solid #334e68!important}
 .result .tile,.result .h2h,.result .leverage,.result .langbox,.result .card,
 .result .lev,.result .sortb,.result .lang,.result .scen-tile,.result .edub,
 .result .human,.result .funnelbox,.result .stackbox,.result .out,.result .cutbox,
 .result .tournbox,.result .vt,.result .chart,.result .exp-tile{
-  background:#1a2b3c!important;border-color:#334e68!important;color:#f8fafc!important
+  background:#182838!important;border-color:#334e68!important;color:#ffffff!important
 }
 .tm-wrap .result .verdict p,
-.tm-wrap .result .t-l,.tm-wrap .result .t-s,
+.tm-wrap .result .t-s,
 .tm-wrap .result .chart-h span,.tm-wrap .result .legend span,
-.tm-wrap .result .h2h-top b,.tm-wrap .result .h2h-top b i,
 .tm-wrap .result .st-sub,.tm-wrap .result .st-meta,
 .tm-wrap .result .exp-l,.tm-wrap .result .exp-s,
 .tm-wrap .result .fun-lab,.tm-wrap .result .fun-note,
 .tm-wrap .result .stack-key span,.tm-wrap .result .out-p,
-.tm-wrap .result .human,.tm-wrap .result .fld-l,.tm-wrap .result .fld-h,.tm-wrap .result .mini,
+.tm-wrap .result .fld-l,.tm-wrap .result .fld-h,.tm-wrap .result .mini,
 .tm-wrap .result .nr-l,.tm-wrap .result .oneIn{
   color:#cbd5e1!important
+}
+.tm-wrap .result .t-l,
+.tm-wrap .result .h2h-top b,
+.tm-wrap .result .edub-h,
+.tm-wrap .result .chart-h b{
+  color:#7dd3fc!important;font-weight:700!important
+}
+.tm-wrap .result .h2h-top b i{
+  color:#f1f5f9!important;font-weight:600!important;font-style:normal!important
 }
 .tm-wrap .result .out-note,
 .tm-wrap .result .cut-row span,
@@ -901,21 +957,37 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 .tm-wrap .result .c-nat-s,
 .tm-wrap .result .c-detail,
 .tm-wrap .result .c-note,
-.tm-wrap .result .c-to{
-  color:#e2e8f0!important;font-weight:400!important
+.tm-wrap .result .c-to,
+.tm-wrap .result .edub-fields label{
+  color:#f1f5f9!important;font-weight:400!important
+}
+.tm-wrap .result .echip{
+  background:#26374a!important;border:1px solid #4a6885!important;color:#f1f5f9!important;font-weight:600!important
+}
+.tm-wrap .result .echip.on{
+  background:#c99df0!important;border-color:#c99df0!important;color:#0a0d14!important;font-weight:700!important
 }
 .tm-wrap .result .cut-row b{
   color:#fbbf24!important
 }
-.tm-wrap .result .v-tag,.tm-wrap .result .t-v,.tm-wrap .result .chart-h b,.tm-wrap .result .out-top b{
+.tm-wrap .result .v-tag,.tm-wrap .result .t-v,.tm-wrap .result .out-top b,.tm-wrap .result .st-label{
   color:#ffffff!important
 }
+.tm-wrap .result .human{
+  color:#f1f5f9!important;background:#182838!important;border-color:#334e68!important
+}
+.tm-wrap .result .human b{
+  color:#34d399!important;font-weight:700!important
+}
+.tm-wrap .result .human b.warn{
+  color:#fbbf24!important;font-weight:700!important
+}
 .tm-wrap .result .assump{
-  background:#162534!important;border:1px solid #334e68!important;color:#e2e8f0!important;padding:8px 12px!important;border-radius:8px!important
+  background:#13202e!important;border:1px solid #334e68!important;color:#cbd5e1!important;padding:8px 12px!important;border-radius:8px!important
 }
 .result .bar,.result .fun-track,.result .stack,.result .h2h-track{background:#2a3f55!important}
-.tm-wrap .result input[type="number"],.tm-wrap .result input[type="text"]{
-  background:#ffffff!important;border:1px solid #cbd5e1!important;color:#0f172a!important
+.tm-wrap .result input[type="number"],.tm-wrap .result input[type="text"],.tm-wrap .result .edub-fields input{
+  background:#ffffff!important;border:1px solid #cbd5e1!important;color:#0f172a!important;font-weight:700!important
 }
 
 /* Search controls use the same integrated blue treatment across every calculator. */
@@ -1174,26 +1246,34 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 .sign{display:flex;align-items:center;gap:8px;font-size:11px;color:#7e8896;margin-top:6px;border-top:1px solid #1e2530;padding-top:12px}
 .sign .dot{box-shadow:0 0 0 3px rgba(232,146,42,.15)}
 
-/* ThinkMap unified readability: high-contrast dark theme */
-.hero,.result{background:#111d2a!important;color:#ffffff!important}
+/* ThinkMap unified readability: ultra-high-contrast dark theme */
+.hero,.result{background:#0e1722!important;color:#ffffff!important}
 .result{border:1px solid #334e68!important}
 .result .tile,.result .h2h,.result .leverage,.result .langbox,.result .card,
 .result .lev,.result .sortb,.result .lang,.result .scen-tile,.result .edub,
 .result .human,.result .funnelbox,.result .stackbox,.result .out,.result .cutbox,
 .result .tournbox,.result .vt,.result .chart,.result .exp-tile{
-  background:#1a2b3c!important;border-color:#334e68!important;color:#f8fafc!important
+  background:#182838!important;border-color:#334e68!important;color:#ffffff!important
 }
 .tm-wrap .result .verdict p,
-.tm-wrap .result .t-l,.tm-wrap .result .t-s,
+.tm-wrap .result .t-s,
 .tm-wrap .result .chart-h span,.tm-wrap .result .legend span,
-.tm-wrap .result .h2h-top b,.tm-wrap .result .h2h-top b i,
 .tm-wrap .result .st-sub,.tm-wrap .result .st-meta,
 .tm-wrap .result .exp-l,.tm-wrap .result .exp-s,
 .tm-wrap .result .fun-lab,.tm-wrap .result .fun-note,
 .tm-wrap .result .stack-key span,.tm-wrap .result .out-p,
-.tm-wrap .result .human,.tm-wrap .result .fld-l,.tm-wrap .result .fld-h,.tm-wrap .result .mini,
+.tm-wrap .result .fld-l,.tm-wrap .result .fld-h,.tm-wrap .result .mini,
 .tm-wrap .result .nr-l,.tm-wrap .result .oneIn{
   color:#cbd5e1!important
+}
+.tm-wrap .result .t-l,
+.tm-wrap .result .h2h-top b,
+.tm-wrap .result .edub-h,
+.tm-wrap .result .chart-h b{
+  color:#7dd3fc!important;font-weight:700!important
+}
+.tm-wrap .result .h2h-top b i{
+  color:#f1f5f9!important;font-weight:600!important;font-style:normal!important
 }
 .tm-wrap .result .out-note,
 .tm-wrap .result .cut-row span,
@@ -1202,21 +1282,37 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 .tm-wrap .result .c-nat-s,
 .tm-wrap .result .c-detail,
 .tm-wrap .result .c-note,
-.tm-wrap .result .c-to{
-  color:#e2e8f0!important;font-weight:400!important
+.tm-wrap .result .c-to,
+.tm-wrap .result .edub-fields label{
+  color:#f1f5f9!important;font-weight:400!important
+}
+.tm-wrap .result .echip{
+  background:#26374a!important;border:1px solid #4a6885!important;color:#f1f5f9!important;font-weight:600!important
+}
+.tm-wrap .result .echip.on{
+  background:#c99df0!important;border-color:#c99df0!important;color:#0a0d14!important;font-weight:700!important
 }
 .tm-wrap .result .cut-row b{
   color:#fbbf24!important
 }
-.tm-wrap .result .v-tag,.tm-wrap .result .t-v,.tm-wrap .result .chart-h b,.tm-wrap .result .out-top b{
+.tm-wrap .result .v-tag,.tm-wrap .result .t-v,.tm-wrap .result .out-top b,.tm-wrap .result .st-label{
   color:#ffffff!important
 }
+.tm-wrap .result .human{
+  color:#f1f5f9!important;background:#182838!important;border-color:#334e68!important
+}
+.tm-wrap .result .human b{
+  color:#34d399!important;font-weight:700!important
+}
+.tm-wrap .result .human b.warn{
+  color:#fbbf24!important;font-weight:700!important
+}
 .tm-wrap .result .assump{
-  background:#162534!important;border:1px solid #334e68!important;color:#e2e8f0!important;padding:8px 12px!important;border-radius:8px!important
+  background:#13202e!important;border:1px solid #334e68!important;color:#cbd5e1!important;padding:8px 12px!important;border-radius:8px!important
 }
 .result .bar,.result .fun-track,.result .stack,.result .h2h-track{background:#2a3f55!important}
-.tm-wrap .result input[type="number"],.tm-wrap .result input[type="text"]{
-  background:#ffffff!important;border:1px solid #cbd5e1!important;color:#0f172a!important
+.tm-wrap .result input[type="number"],.tm-wrap .result input[type="text"],.tm-wrap .result .edub-fields input{
+  background:#ffffff!important;border:1px solid #cbd5e1!important;color:#0f172a!important;font-weight:700!important
 }
 
 /* Search controls use the same integrated blue treatment across every calculator. */
