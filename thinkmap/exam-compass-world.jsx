@@ -729,24 +729,24 @@ const CSS=`
 .sign .dot{box-shadow:0 0 0 3px rgba(232,146,42,.15)}
 
 /* ThinkMap usability: high-contrast panels and independent, visually quiet scrolling */
-.hero,.result,.meth{background:#17324d;color:#f8fafc}
+.hero,.result,.meth{background:#111d2a;color:#ffffff}
 .hero .hero-l,.hero .hero-note,.hero .loc-note,.hero .stg i,
 .result .verdict p,.result .t-l,.result .t-s,.result .c-id i,.result .c-nat-s,
 .result .c-fw,.result .sub-l,.result .sub-w,.result .c-to,.result .c-detail,
 .result .c-note,.result .c-meta,.result .lang-p,.result .lang i,.result .lang-bd,
 .result .disc,.result .sign,.result .assump,.result .human,
 .result .st-sub,.result .st-meta,.result .h2h-top b,
-.meth,.meth .disc,.meth .sign{color:#dce8f3}
-.result .c-meta b,.hero .stg b{color:#f8fafc}
+.meth,.meth .disc,.meth .sign{color:#e2e8f0}
+.result .c-meta b,.hero .stg b{color:#ffffff}
 .result .tile,.result .h2h,.result .leverage,.result .langbox,.result .card,
 .result .lev,.result .sortb,.result .search,.result .c-chip,.result .lang,
 .result .scen-tile,.result .edub,.result .human,.result .funnelbox,
 .result .stackbox,.result .out,.result .cutbox,.result .tournbox,
 .result .vt,.result .chart,.result .assump{
-  background:#27445f;border-color:#41627f;color:#f2f7fb
+  background:#1a2b3c;border-color:#334e68;color:#f8fafc
 }
-.result .bar,.result .fun-track,.result .stack{background:#36546f}
-.result .search input{color:#f8fafc}
+.result .bar,.result .fun-track,.result .stack{background:#2a3f55}
+.result .search input{color:#ffffff}
 /* Keep the search field integrated with the blue results panel in every site theme. */
 .tm-wrap .result .search{
   background:#27445f!important;border:1px solid #5b7891!important;

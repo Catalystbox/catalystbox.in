@@ -353,15 +353,15 @@ function simulate(sport,P,g){
       note:"Peak prize money, a marquee contract, and the biggest endorsement income in the sport."},
     pro:{label:"Professional living",icon:"🏅",color:"#7eb8f7",stream:streamPro,
       note:"A real playing career — solid prize + salary, modest but real endorsements."},
-    q24:{label:"Quota job at 24 (national)",icon:"🛡️",color:"#E8922A",stream:streamQ24,
+    q24:{label:"Quota job at 24 (national)",icon:"🛡️",color:"#fbbf24",stream:streamQ24,
       note:"National record converts to a secure post; a small following still earns on the side."},
-    coach24:{label:"Coaching pivot at 24",icon:"📣",color:"#b08de0",stream:streamCoach,
+    coach24:{label:"Coaching pivot at 24",icon:"📣",color:"#c084fc",stream:streamCoach,
       note:"No pro living, but national exposure feeds coaching and a modest personal brand."},
-    q18:{label:"Quota job at 20 (state)",icon:"🛡️",color:"#f0a04b",stream:streamQ18,
+    q18:{label:"Quota job at 20 (state)",icon:"🛡️",color:"#fdba74",stream:streamQ18,
       note:"State-level record → government post. The salary is the income; fame is negligible."},
-    wash18:{label:"Washed out at 18 — no net",icon:"⚠️",color:"#f0604b",stream:streamWash,
+    wash18:{label:"Washed out at 18 — no net",icon:"⚠️",color:"#ff8775",stream:streamWash,
       note:"Academics sacrificed for a path that closed early; the fallback job starts late and pays less."},
-    hobby:{label:"Back to studies at 14",icon:"📚",color:"#8a94a0",stream:streamHobby,
+    hobby:{label:"Back to studies at 14",icon:"📚",color:"#cbd5e1",stream:streamHobby,
       note:"Sport stays a hobby; the ordinary path resumes. Early coaching is the only cost."},
   };
 
@@ -1108,14 +1108,14 @@ const CSS=`
 .sign{display:flex;align-items:center;gap:8px;font-size:11px;color:#7e8896;margin-top:6px;border-top:1px solid #1e2530;padding-top:12px}
 .sign .dot{box-shadow:0 0 0 3px rgba(232,146,42,.15)}
 
-/* ThinkMap unified readability: scoped to resist the site's generic theme overrides. */
-.hero,.result{background:#17324d!important;color:#f8fafc!important}
-.result{border:1px solid #41627f!important}
+/* ThinkMap unified readability: high-contrast dark theme */
+.hero,.result{background:#111d2a!important;color:#ffffff!important}
+.result{border:1px solid #334e68!important}
 .result .tile,.result .h2h,.result .leverage,.result .langbox,.result .card,
 .result .lev,.result .sortb,.result .lang,.result .scen-tile,.result .edub,
 .result .human,.result .funnelbox,.result .stackbox,.result .out,.result .cutbox,
-.result .tournbox,.result .vt,.result .chart,.result .assump,.result .exp-tile{
-  background:#27445f!important;border-color:#41627f!important;color:#f2f7fb!important
+.result .tournbox,.result .vt,.result .chart,.result .exp-tile{
+  background:#1a2b3c!important;border-color:#334e68!important;color:#f8fafc!important
 }
 .tm-wrap .result .verdict p,
 .tm-wrap .result .t-l,.tm-wrap .result .t-s,
@@ -1124,19 +1124,33 @@ const CSS=`
 .tm-wrap .result .st-sub,.tm-wrap .result .st-meta,
 .tm-wrap .result .exp-l,.tm-wrap .result .exp-s,
 .tm-wrap .result .fun-lab,.tm-wrap .result .fun-note,
-.tm-wrap .result .stack-key span,.tm-wrap .result .out-p,.tm-wrap .result .out-note,
-.tm-wrap .result .cut-row span,.tm-wrap .result .trn-l i,
-.tm-wrap .result .human,.tm-wrap .result .assump,
-.tm-wrap .result .fld-l,.tm-wrap .result .fld-h,.tm-wrap .result .mini,
+.tm-wrap .result .stack-key span,.tm-wrap .result .out-p,
+.tm-wrap .result .human,.tm-wrap .result .fld-l,.tm-wrap .result .fld-h,.tm-wrap .result .mini,
 .tm-wrap .result .nr-l,.tm-wrap .result .oneIn{
-  color:#dce8f3!important
+  color:#cbd5e1!important
 }
-.tm-wrap .result .v-tag,.tm-wrap .result .t-v,.tm-wrap .result .chart-h b{
-  color:#fff!important
+.tm-wrap .result .out-note,
+.tm-wrap .result .cut-row span,
+.tm-wrap .result .trn-l i,
+.tm-wrap .result .trn-m,
+.tm-wrap .result .c-nat-s,
+.tm-wrap .result .c-detail,
+.tm-wrap .result .c-note,
+.tm-wrap .result .c-to{
+  color:#e2e8f0!important;font-weight:400!important
 }
-.result .bar,.result .fun-track,.result .stack,.result .h2h-track{background:#36546f!important}
+.tm-wrap .result .cut-row b{
+  color:#fbbf24!important
+}
+.tm-wrap .result .v-tag,.tm-wrap .result .t-v,.tm-wrap .result .chart-h b,.tm-wrap .result .out-top b{
+  color:#ffffff!important
+}
+.tm-wrap .result .assump{
+  background:#162534!important;border:1px solid #334e68!important;color:#e2e8f0!important;padding:8px 12px!important;border-radius:8px!important
+}
+.result .bar,.result .fun-track,.result .stack,.result .h2h-track{background:#2a3f55!important}
 .tm-wrap .result input[type="number"],.tm-wrap .result input[type="text"]{
-  background:#f8fbff!important;border:1px solid #bfd4e6!important;color:#17324d!important
+  background:#ffffff!important;border:1px solid #cbd5e1!important;color:#0f172a!important
 }
 
 /* Search controls use the same integrated blue treatment across every calculator. */
