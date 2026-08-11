@@ -979,8 +979,8 @@ const CSS=`
 .slotdot{width:7px;height:7px;border-radius:50%;display:inline-block}
 
 .layout{display:grid;grid-template-columns:1fr;gap:16px}
-@media(min-width:1000px){.layout{grid-template-columns:1fr 1.22fr;align-items:start}.result{position:sticky;top:14px}}
-.controls{display:flex;flex-direction:column;gap:11px}
+@media(min-width:1000px){.layout{grid-template-columns:1fr 1.22fr;align-items:start}}
+.controls{display:flex;flex-direction:column;gap:11px;padding-bottom:40px}
 .seg{display:flex;align-items:center;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:8px 10px}
 .seg-l{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tx-mut);flex:none}
 .seg-b{flex:1;font-family:'Syne';font-weight:700;font-size:11px;padding:7px 8px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--tx-soft);cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -1193,13 +1193,17 @@ const CSS=`
 
 @media(min-width:1000px){
   .layout{align-items:start;min-height:0}
-  .layout>.controls,.layout>.result{
-    position:sticky;top:88px;height:calc(100dvh - 112px);min-height:480px;max-height:none;
-    overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-y:auto;
-    scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:rgba(52,199,154,.55) transparent
+  .layout>.controls{
+    position:static;height:auto;max-height:none;overflow:visible;padding-bottom:60px!important
   }
-  .layout>.controls::-webkit-scrollbar,.layout>.result::-webkit-scrollbar{width:5px}
-  .layout>.controls::-webkit-scrollbar-thumb,.layout>.result::-webkit-scrollbar-thumb{
+  .layout>.result{
+    position:sticky;top:88px;max-height:calc(100dvh - 104px);min-height:480px;
+    overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;
+    scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:rgba(52,199,154,.55) transparent;
+    padding-bottom:48px!important
+  }
+  .layout>.result::-webkit-scrollbar{width:5px}
+  .layout>.result::-webkit-scrollbar-thumb{
     background:rgba(52,199,154,.45);border-radius:999px
   }
 }

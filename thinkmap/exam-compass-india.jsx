@@ -640,7 +640,7 @@ const CSS=`
 .lede b{font-weight:700;color:var(--ink)}
 
 .layout{display:grid;grid-template-columns:1fr;gap:16px}
-@media(min-width:1000px){.layout{grid-template-columns:.86fr 1.14fr;align-items:start}.controls{position:sticky;top:14px}}
+@media(min-width:1000px){.layout{grid-template-columns:.86fr 1.14fr;align-items:start}}
 .controls{display:flex;flex-direction:column;gap:12px}
 .panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .panel-h{display:flex;align-items:center;gap:8px;padding:13px 15px;font-family:'Syne';font-weight:700;font-size:14px;color:var(--ink);border-bottom:1px solid var(--line)}
@@ -841,17 +841,17 @@ const CSS=`
 @media(min-width:1000px){
   .layout{align-items:start;min-height:0}
   .layout>.controls{
-    position:sticky;top:88px;height:calc(100dvh - 112px);min-height:480px;max-height:none;
+    position:sticky;top:88px;max-height:calc(100dvh - 104px);min-height:480px;
     overflow:hidden;display:grid;grid-template-rows:minmax(0,1fr) minmax(190px,auto);gap:12px
   }
-  .layout>.controls>.panel{min-height:0;margin:0;overflow-y:auto;overflow-x:hidden}
+  .layout>.controls>.panel{min-height:0;margin:0;overflow-y:auto;overflow-x:hidden;padding-bottom:24px!important}
   .layout>.controls>.panel:last-child{max-height:46dvh}
   .layout>.result{
-    position:sticky;top:88px;height:calc(100dvh - 112px);min-height:480px;max-height:none;
-    overflow-y:auto;overflow-x:hidden
+    position:sticky;top:88px;max-height:calc(100dvh - 104px);min-height:480px;
+    overflow-y:auto;overflow-x:hidden;padding-bottom:48px!important
   }
   .layout>.controls>.panel,.layout>.result{
-    -webkit-overflow-scrolling:touch;overscroll-behavior-y:auto;scroll-behavior:smooth;
+    -webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;scroll-behavior:smooth;
     scrollbar-width:thin;scrollbar-color:rgba(52,199,154,.55) transparent
   }
   .layout>.controls>.panel::-webkit-scrollbar,.layout>.result::-webkit-scrollbar{width:5px}

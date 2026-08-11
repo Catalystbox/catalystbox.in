@@ -918,7 +918,7 @@ const CSS=`
 .scen-mini{display:flex;gap:10px;font-family:'DM Mono';font-size:11.5px;flex-wrap:wrap}
 
 .layout{display:grid;grid-template-columns:1fr;gap:16px}
-@media(min-width:980px){.layout{grid-template-columns:1fr 1fr;align-items:start}.result{position:sticky;top:14px}}
+@media(min-width:980px){.layout{grid-template-columns:1fr 1fr;align-items:start}}
 
 .result{background:var(--ink);border-radius:18px;padding:20px;color:#e8ebef;position:relative;overflow:hidden;box-shadow:0 24px 50px -28px rgba(10,13,20,.7)}
 .result::before{content:'';position:absolute;top:-60px;right:-40px;width:240px;height:240px;background:radial-gradient(circle,rgba(52,199,154,.13),transparent 70%);pointer-events:none}
@@ -1109,13 +1109,17 @@ const CSS=`
 
 @media(min-width:1000px){
   .layout{align-items:start;min-height:0}
-  .layout>.controls,.layout>.result{
-    position:sticky;top:88px;height:calc(100dvh - 112px);min-height:480px;max-height:none;
-    overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-y:auto;
-    scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:rgba(52,199,154,.55) transparent
+  .layout>.controls{
+    position:static;height:auto;max-height:none;overflow:visible;padding-bottom:60px!important
   }
-  .layout>.controls::-webkit-scrollbar,.layout>.result::-webkit-scrollbar{width:5px}
-  .layout>.controls::-webkit-scrollbar-thumb,.layout>.result::-webkit-scrollbar-thumb{
+  .layout>.result{
+    position:sticky;top:88px;max-height:calc(100dvh - 104px);min-height:480px;
+    overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;
+    scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:rgba(52,199,154,.55) transparent;
+    padding-bottom:48px!important
+  }
+  .layout>.result::-webkit-scrollbar{width:5px}
+  .layout>.result::-webkit-scrollbar-thumb{
     background:rgba(52,199,154,.45);border-radius:999px
   }
 }
