@@ -625,17 +625,17 @@ export default function App(){
 
 /* ═══════════════════════════════════════════════════════════════════ */
 const CSS=`
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 .tm-wrap{--ink:#0a0d14;--ink-3:#11161f;--teal:#0B5C45;--teal-line:#34c79a;--teal-tint:#e7efe9;--amber:#E8922A;--clay:#c2691f;--amber-tint:#f8ead6;--blue:#4a7fb5;--blue-tint:#e8eff8;--parch:#f5f1e8;--paper:#fbfaf6;--line:#e4dccb;--tx:#0a0d14;--tx-soft:#3a4250;--tx-mut:#6b7280;}
 *{box-sizing:border-box;margin:0;padding:0}
-.wrap{background:var(--parch);color:var(--tx);font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;padding:22px 16px 40px;max-width:1200px;margin:0 auto}
-.wrap h1{font-family:'Syne',sans-serif;letter-spacing:-0.02em}
+.wrap{background:var(--parch);color:var(--tx);font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;padding:22px 16px 40px;max-width:1200px;margin:0 auto}
+.wrap h1{font-family:'Inter',sans-serif;letter-spacing:-0.02em}
 .top{margin-bottom:16px}
-.brand{display:inline-flex;align-items:center;gap:7px;font-family:'Syne';font-weight:700;font-size:13px;letter-spacing:.04em;color:var(--teal);text-transform:uppercase;margin-bottom:12px}
+.brand{display:inline-flex;align-items:center;gap:7px;font-family:'Inter',sans-serif;font-weight:700;font-size:13px;letter-spacing:.04em;color:var(--teal);text-transform:uppercase;margin-bottom:12px}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);display:inline-block;box-shadow:0 0 0 3px rgba(232,146,42,.18)}
 .eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);display:block}
 .top h1{font-size:clamp(40px,8.5vw,70px);font-weight:800;line-height:.95;color:var(--ink);margin:6px 0 2px}
-.sub{font-family:'Syne';font-weight:700;font-size:clamp(14px,2.6vw,19px);color:var(--teal);margin-bottom:10px}
+.sub{font-family:'Inter',sans-serif;font-weight:700;font-size:clamp(14px,2.6vw,19px);color:var(--teal);margin-bottom:10px}
 .lede{max-width:76ch;color:var(--tx-soft);font-size:15px}
 .lede b{font-weight:700;color:var(--ink)}
 

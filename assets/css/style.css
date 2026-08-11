@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 /* ═══════════════════════════════════════════════
    GLOBAL TOKENS & RESET
 ═══════════════════════════════════════════════ */
@@ -5,16 +7,19 @@
   --ink: #0B0E17; --amber: #E8A020; --amber-dim: #C47F10;
   --teal: #0D7F7A; --teal-light: #1AADA7; --slate: #1C2033;
   --muted: #7A7E92; --border: rgba(255,255,255,0.08);
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: var(--ink);
   color: #E8E6DF;
   overflow-x: hidden;
   font-size: 16px;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ═══════════════════════════════════════════════
@@ -29,7 +34,7 @@ nav {
   border-bottom: 1px solid var(--border);
 }
 .nav-logo {
-  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.15rem;
+  font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.15rem;
   letter-spacing: -0.02em; color: #fff; cursor: pointer;
   display: flex; align-items: center; gap: 10px; text-decoration: none;
 }
@@ -62,7 +67,7 @@ nav {
 .nav-links { display: flex; gap: 8px; list-style: none; align-items: center; }
 .nav-links button {
   background: none; border: none; cursor: pointer; padding: 8px 16px;
-  border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 0.875rem;
+  border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.875rem;
   color: var(--muted); transition: color 0.2s, background 0.2s;
 }
 .nav-links button:hover { color: #fff; }
@@ -89,20 +94,20 @@ html { scroll-padding-top: 100px; }
 section { padding: 96px 48px; position: relative; z-index: 1; }
 
 .eyebrow {
-  font-family: 'DM Mono', monospace; font-size: 0.68rem;
+  font-family: 'Inter', sans-serif; font-size: 0.68rem;
   letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber);
   margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
 }
 .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--amber); display: block; }
 
 h1 {
-  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-family: 'Inter', sans-serif; font-weight: 800;
   font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.08;
   letter-spacing: -0.03em; color: #fff; margin-bottom: 20px;
 }
 h1 span, h1 em { color: var(--teal-light); font-style: normal; }
 h2 {
-  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-family: 'Inter', sans-serif; font-weight: 800;
   font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.1;
   letter-spacing: -0.03em; color: #fff; margin-bottom: 14px;
 }
@@ -116,13 +121,13 @@ h2 em { color: var(--teal-light); font-style: normal; }
 .pain-item span { display: block; }
 
 .btn-primary {
-  background: var(--amber); color: var(--ink); font-family: 'DM Sans', sans-serif;
+  background: var(--amber); color: var(--ink); font-family: 'Inter', sans-serif;
   font-weight: 600; font-size: 0.9rem; padding: 13px 26px; border-radius: 8px;
   border: none; cursor: pointer; text-decoration: none;
   display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;
 }
 .btn-ghost {
-  background: transparent; color: #fff; font-family: 'DM Sans', sans-serif;
+  background: transparent; color: #fff; font-family: 'Inter', sans-serif;
   font-weight: 500; font-size: 0.9rem; padding: 13px 26px; border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.15); cursor: pointer; text-decoration: none;
   display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;
@@ -1300,3 +1305,17 @@ body:not(.light-mode) .center-title {
     font-size: 0.75rem;
   }
 }
+
+/* ═══════════════════════════════════════════════
+   GLOBAL TYPOGRAPHY OVERRIDE (MATCHING MARKETPLACE)
+═══════════════════════════════════════════════ */
+body, button, input, select, textarea, h1, h2, h3, h4, h5, h6,
+.nav-logo, .brand, .eyebrow, .doc-h1, .doc-section-label, .mono,
+.hero-stat-num, .stat-num, .index-score, .pillar h4, .founder-body h3,
+.gov-card h4, .comp-alt-card h4, .faq-sidebar h3, .faq-section-title,
+.faq-cta-inner h3, .partner-strip strong, .form-title, .data-table th,
+.ac-role, .ret-type, .plain-card h3, .doc-section h2, .doc-section h3,
+.p-card-title, .right-card h4 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+

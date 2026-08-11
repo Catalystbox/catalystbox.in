@@ -131,16 +131,16 @@ export default function ThinkMap() {
 }
 
 const CSS = `
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 .tm-wrap{--ink:#0a0d14;--teal:#0B5C45;--teal-line:#34c79a;--teal-tint:#e7efe9;--amber:#E8922A;--clay:#c2691f;--amber-tint:#f8ead6;--parch:#f5f1e8;--paper:#fbfaf6;--line:#e4dccb;--tx:#0a0d14;--tx-soft:#3a4250;--tx-mut:#6b7280;
-  background:var(--parch);color:var(--tx);font-family:'DM Sans',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;max-width:1080px;margin:0 auto;padding:34px 20px 60px}
+  background:var(--parch);color:var(--tx);font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;max-width:1080px;margin:0 auto;padding:34px 20px 60px}
 .tm-wrap *{box-sizing:border-box;margin:0;padding:0}
-.tm-wrap h1,.tm-wrap h3{font-family:'Syne',sans-serif;letter-spacing:-0.02em;line-height:1.05}
+.tm-wrap h1,.tm-wrap h3{font-family:'Inter',sans-serif;letter-spacing:-0.02em;line-height:1.05}
 .tm-wrap a{text-decoration:none}
 .tm-wrap b{font-weight:700}
 
 .tm-hero{margin-bottom:26px}
-.tm-brand{display:inline-flex;align-items:center;gap:7px;font-family:'Syne';font-weight:700;font-size:13px;letter-spacing:.04em;color:var(--teal);text-transform:uppercase;margin-bottom:14px}
+.tm-brand{display:inline-flex;align-items:center;gap:7px;font-family:'Inter',sans-serif;font-weight:700;font-size:13px;letter-spacing:.04em;color:var(--teal);text-transform:uppercase;margin-bottom:14px}
 .tm-dot{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 3px rgba(232,146,42,.18)}
 .tm-eyebrow{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--clay)}
 .tm-hero h1{font-size:clamp(42px,9vw,76px);font-weight:800;color:var(--ink);margin:6px 0 12px}
@@ -158,10 +158,10 @@ const CSS = `
 .tm-card-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .tm-ic{width:44px;height:44px;flex:none;display:grid;place-items:center;border-radius:12px;background:var(--tint);color:var(--c)}
 .tm-card-top h3{font-size:22px;font-weight:800;color:var(--ink)}
-.tm-ask{font-family:'Syne';font-weight:600;font-size:15px;color:var(--c);margin-bottom:9px;line-height:1.3}
+.tm-ask{font-family:'Inter',sans-serif;font-weight:600;font-size:15px;color:var(--c);margin-bottom:9px;line-height:1.3}
 .tm-blurb{font-size:13.5px;color:var(--tx-soft);line-height:1.55;margin-bottom:18px;flex:1}
 .tm-actions{display:flex;flex-wrap:wrap;align-items:center;gap:9px}
-.tm-btn{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;font-family:'Syne';color:#fff;background:var(--ink);border:1px solid var(--ink);border-radius:10px;padding:9px 15px;transition:.14s}
+.tm-btn{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;font-family:'Inter',sans-serif;color:#fff;background:var(--ink);border:1px solid var(--ink);border-radius:10px;padding:9px 15px;transition:.14s}
 .tm-btn:hover{background:var(--c);border-color:var(--c)}
 .tm-btn svg{transition:transform .14s}
 .tm-btn:hover svg{transform:translateX(2px)}

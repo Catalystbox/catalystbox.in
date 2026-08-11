@@ -50,7 +50,7 @@
   color: var(--teal-light);
   border-radius: 999px;
   font-size: 0.72rem;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -101,7 +101,7 @@
 }
 
 .careers-meta-label {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -110,7 +110,7 @@
 }
 
 .careers-meta-value {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
   color: #fff;
@@ -143,7 +143,7 @@
 .careers-title-group { max-width: 60ch; }
 
 .careers-section-tag {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -164,7 +164,7 @@
 }
 
 .careers-section-count {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
   color: var(--muted);
@@ -200,7 +200,7 @@
 .careers-jobs-empty-icon svg { width: 28px; height: 28px; }
 
 .careers-jobs-empty h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: #fff;
@@ -261,7 +261,7 @@
 }
 
 .careers-tag {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -289,7 +289,7 @@
 }
 
 .careers-role-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.4rem;
   font-weight: 800;
   color: #fff;
@@ -396,7 +396,7 @@
 
 .careers-why-item h4 {
   color: #fff;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
   margin-bottom: 12px;

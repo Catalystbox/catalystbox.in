@@ -18,7 +18,7 @@
   background: rgba(13,127,122,0.12);
   border: 1px solid rgba(13,127,122,0.3);
   color: var(--teal-light);
-  font-family: 'DM Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.7rem; font-weight: 600; letter-spacing: .06em;
   text-transform: uppercase;
   padding: 5px 14px; border-radius: 20px;
@@ -51,7 +51,7 @@
   background: var(--amber); border-radius: 2px;
 }
 .pricing-section-label span {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.75rem; font-weight: 700;
   letter-spacing: .1em; text-transform: uppercase;
   color: var(--amber);
@@ -81,12 +81,12 @@
   background: rgba(13,127,122,0.15);
   border: 1px solid rgba(13,127,122,0.3);
   color: var(--teal-light);
-  font-family: 'DM Mono', monospace; font-weight: 800; font-size: 0.95rem;
+  font-family: 'Inter', sans-serif; font-weight: 800; font-size: 0.95rem;
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 14px;
 }
 .model-card h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px;
 }
 .model-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
@@ -121,7 +121,7 @@
 .board-card.govt::before  { background: var(--teal-light); }
 .board-tag {
   display: inline-block;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.7rem; font-weight: 600;
   padding: 3px 10px; border-radius: 20px;
   margin-bottom: 16px;
@@ -131,11 +131,11 @@
 .board-card.state .board-tag { background: rgba(16,185,129,0.15); color: #34D399; border: 1px solid rgba(16,185,129,0.3); }
 .board-card.govt  .board-tag { background: rgba(26,173,167,0.15); color: var(--teal-light); border: 1px solid rgba(26,173,167,0.3); }
 .board-price {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2.2rem; font-weight: 800;
   color: #fff; margin-bottom: 4px;
 }
-.board-price sub { font-size: 0.85rem; font-weight: 400; color: var(--muted); vertical-align: baseline; font-family: 'DM Sans', sans-serif; }
+.board-price sub { font-size: 0.85rem; font-weight: 400; color: var(--muted); vertical-align: baseline; font-family: 'Inter', sans-serif; }
 .board-desc { font-size: 0.85rem; color: var(--muted); margin-bottom: 16px; line-height: 1.6; }
 .board-schools { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
 .board-schools strong { color: var(--muted); font-weight: 600; }
@@ -170,13 +170,13 @@
   position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
   background: #8B5CF6;
   color: #fff;
-  font-size: 0.7rem; font-weight: 600; font-family: 'DM Mono', monospace;
+  font-size: 0.7rem; font-weight: 600; font-family: 'Inter', sans-serif;
   padding: 3px 14px; border-radius: 20px;
   white-space: nowrap;
 }
 .tier-badge {
   display: inline-block;
-  font-size: 0.7rem; font-weight: 600; font-family: 'DM Mono', monospace;
+  font-size: 0.7rem; font-weight: 600; font-family: 'Inter', sans-serif;
   padding: 3px 10px; border-radius: 20px;
   margin-bottom: 14px;
 }
@@ -184,13 +184,13 @@
 .tier-badge.gold { background: rgba(232,160,32,0.15); color: var(--amber); }
 .tier-badge.plat { background: rgba(139,92,246,0.15); color: #C4B5FD; }
 .tier-badge.diam { background: rgba(26,173,167,0.15); color: var(--teal-light); }
-.tier-name { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 4px; }
+.tier-name { font-family: 'Inter', sans-serif; font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 4px; }
 .tier-price {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2rem; font-weight: 800;
   color: #fff; margin: 14px 0 4px;
 }
-.tier-price sub { font-size: 0.8rem; font-weight: 400; color: var(--muted); vertical-align: baseline; font-family: 'DM Sans', sans-serif;}
+.tier-price sub { font-size: 0.8rem; font-weight: 400; color: var(--muted); vertical-align: baseline; font-family: 'Inter', sans-serif;}
 .tier-mo { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
 .tier-desc {
   font-size: 0.85rem; color: var(--muted);
@@ -217,7 +217,7 @@
   border-radius: 8px; border: 1px solid rgba(255,255,255,0.15);
   background: transparent;
   color: #fff;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.85rem; font-weight: 500;
   cursor: pointer; text-align: center;
   text-decoration: none;
@@ -237,7 +237,7 @@
 }
 .feat-table th {
   text-align: left; padding: 12px 16px;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.7rem; font-weight: 600;
   letter-spacing: .06em; text-transform: uppercase;
   color: rgba(255,255,255,0.4);
@@ -255,7 +255,7 @@
 .feat-table .group-row td {
   background: rgba(255,255,255,0.03);
   color: rgba(255,255,255,0.4);
-  font-family: 'DM Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.7rem; font-weight: 600;
   letter-spacing: .06em; text-transform: uppercase;
   padding: 8px 16px;
@@ -302,7 +302,7 @@
 .goal-card.g-diam::before { background: linear-gradient(90deg, var(--teal-light), transparent); }
 
 .goal-tier-name {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.5rem; font-weight: 800; color: #fff;
   margin-bottom: 8px;
 }
@@ -316,7 +316,7 @@
 }
 
 .goal-list-title {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
   letter-spacing: .08em; color: rgba(255,255,255,0.4);
   margin-bottom: 16px;

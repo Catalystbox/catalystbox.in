@@ -23,7 +23,7 @@
     var(--bg);
   background-attachment: fixed;
   color: var(--ink);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.55;
   min-height: 100vh;
   padding-top: 100px; /* Offset for sticky nav */
@@ -41,7 +41,7 @@
   margin: 0 auto;
 }
 #page-higher-education .sec-tag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -51,7 +51,7 @@
   display: block;
 }
 #page-higher-education .sec h2 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: clamp(32px, 4.5vw, 52px);
   line-height: 1.05;
@@ -78,7 +78,7 @@
   font-weight: 600;
   border-radius: 6px;
   transition: all 0.15s;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -124,7 +124,7 @@
   background: rgba(232,146,42,0.10);
   border: 1px solid rgba(232,146,42,0.30);
   border-radius: 100px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -144,7 +144,7 @@
   50% { opacity: 0.4; transform: scale(0.85); }
 }
 #page-higher-education .hero h1 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 800;
   font-size: clamp(40px, 6.5vw, 82px);
   line-height: 0.98;
@@ -200,7 +200,7 @@
   min-width: 280px;
 }
 #page-higher-education .status-banner .lbl {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -209,7 +209,7 @@
   margin-bottom: 4px;
 }
 #page-higher-education .status-banner h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 4px;
@@ -254,7 +254,7 @@
   opacity: 0.85;
 }
 #page-higher-education .stat-v {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 36px;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -267,14 +267,14 @@
   font-weight: 600;
 }
 #page-higher-education .stat-l {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 13px;
   color: var(--ink-dim);
   margin-top: 8px;
   font-weight: 500;
 }
 #page-higher-education .stat-cat {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 9px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -328,7 +328,7 @@
   border-color: var(--line-2);
 }
 #page-higher-education .problem-card h4 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 17px;
   font-weight: 700;
   margin-bottom: 8px;
@@ -347,7 +347,7 @@
   background: var(--bg-2);
   border-left: 3px solid var(--amber);
   border-radius: 0 12px 12px 0;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-weight: 500;
   font-style: italic;
@@ -380,7 +380,7 @@
   border: 1px solid var(--line);
 }
 #page-higher-education .stream-box .code {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 800;
   font-size: 24px;
   color: var(--amber);
@@ -388,7 +388,7 @@
   line-height: 1;
 }
 #page-higher-education .stream-box .name {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 12px;
   color: var(--ink);
   font-weight: 600;
@@ -396,7 +396,7 @@
   line-height: 1.3;
 }
 #page-higher-education .stream-box .wt {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 11px;
   color: var(--ink-faint);
   margin-top: 4px;
@@ -417,7 +417,7 @@
   color: rgba(255,255,255,0.65);
 }
 #page-higher-education .op {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 24px;
   color: var(--ink-faint);
@@ -483,7 +483,7 @@
   margin-bottom: 14px;
 }
 #page-higher-education .param-num {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 12px;
   color: var(--ink-faint);
   letter-spacing: 0.12em;
@@ -494,7 +494,7 @@
   opacity: 0.85;
 }
 #page-higher-education .param-card h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 19px;
   font-weight: 700;
   margin-bottom: 10px;
@@ -524,7 +524,7 @@
   letter-spacing: 0.03em;
 }
 #page-higher-education .param-weight {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 800;
   font-size: 32px;
   color: var(--amber);
@@ -570,14 +570,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 800;
   color: #fff;
   font-size: 14px;
   letter-spacing: -0.02em;
 }
 #page-higher-education .dash-id h4 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -596,7 +596,7 @@
   background: rgba(15,166,122,0.14);
   border: 1px solid rgba(15,166,122,0.30);
   border-radius: 100px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 10px;
   letter-spacing: 0.14em;
   color: var(--teal-glow);
@@ -624,7 +624,7 @@
   #page-higher-education .dash-cheb { grid-template-columns: 1fr; }
 }
 #page-higher-education .dash-cheb-score {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 72px;
   font-weight: 800;
   color: var(--amber);
@@ -632,13 +632,13 @@
   line-height: 1;
 }
 #page-higher-education .dash-cheb-score small {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   color: var(--ink-faint);
   font-weight: 400;
 }
 #page-higher-education .dash-cheb-info .lbl {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -646,7 +646,7 @@
   font-weight: 600;
 }
 #page-higher-education .dash-cheb-info h5 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-weight: 700;
   margin-top: 6px;
@@ -683,7 +683,7 @@
   margin-bottom: 6px;
 }
 #page-higher-education .dash-card-v {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 26px;
   font-weight: 700;
   line-height: 1;
@@ -732,13 +732,13 @@
   margin-top: 6px;
 }
 #page-higher-education .dash-comp-cell .v {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 22px;
   font-weight: 700;
   color: #fff;
 }
 #page-higher-education .dash-comp-cell .d {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 13px;
   color: var(--teal-glow);
   font-weight: 600;
@@ -746,7 +746,7 @@
 
 #page-higher-education .dash-syn {
   margin-top: 20px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -781,7 +781,7 @@
   border-color: var(--line-2);
 }
 #page-higher-education .step-num {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 32px;
   font-weight: 800;
   color: rgba(232,146,42,0.20);
@@ -790,7 +790,7 @@
   margin-bottom: 14px;
 }
 #page-higher-education .step h4 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
@@ -829,7 +829,7 @@
   margin-bottom: 14px;
 }
 #page-higher-education .who-card h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 21px;
   font-weight: 700;
   margin-bottom: 10px;
@@ -837,7 +837,7 @@
   color: #fff;
 }
 #page-higher-education .who-card .sub {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 10px;
   color: var(--amber);
   letter-spacing: 0.14em;
@@ -911,7 +911,7 @@
   width: 100%;
 }
 #page-higher-education .phase-tag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 10px;
   letter-spacing: 0.15em;
   color: var(--amber);
@@ -920,7 +920,7 @@
   margin-bottom: 8px;
 }
 #page-higher-education .phase h4 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 17px;
   font-weight: 700;
   margin-bottom: 10px;
@@ -935,7 +935,7 @@
   flex: 1;
 }
 #page-higher-education .phase-meta {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 10px;
   letter-spacing: 0.1em;
   color: var(--ink-faint);
@@ -970,7 +970,7 @@
   border-radius: 12px;
 }
 #page-higher-education .why-point-num {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 28px;
   font-weight: 800;
   color: var(--amber);
@@ -980,7 +980,7 @@
   min-width: 36px;
 }
 #page-higher-education .why-point h4 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 5px;
@@ -1025,7 +1025,7 @@
   #page-higher-education .interest-grid { grid-template-columns: 1fr; }
 }
 #page-higher-education .interest-left h2 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(28px, 3.5vw, 42px);
   font-weight: 700;
   line-height: 1.05;
@@ -1060,7 +1060,7 @@
 #page-higher-education .interest-perk strong {
   display: block;
   color: var(--ink);
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 13px;
   margin-bottom: 3px;
@@ -1077,7 +1077,7 @@
 }
 #page-higher-education .form-row label {
   display: block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 10px;
   letter-spacing: 0.14em;
   color: var(--ink-faint);
@@ -1130,7 +1130,7 @@
   position: absolute;
   top: 14px;
   right: 18px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 9px;
   letter-spacing: 0.16em;
   color: var(--amber);
