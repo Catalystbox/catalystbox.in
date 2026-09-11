@@ -7,7 +7,15 @@
   <title>Page not found - CatalystBox</title>
   <script src="/assets/js/thinkmap-refresh.js"></script>
   <script>
-    if (!window.__THINKMAP_REFRESH_REDIRECTING__) window.location.replace('/');
+    if (!window.__THINKMAP_REFRESH_REDIRECTING__) {
+      try {
+        var path = window.location.pathname.replace(/\/index\.html$/i, '').replace(/\/+$/, '') || '/';
+        if (path && path !== '/') {
+          sessionStorage.setItem('redirectRoute', path);
+        }
+      } catch (e) {}
+      window.location.replace('/' + (window.location.search || ''));
+    }
   </script>
 </head>
 <body>

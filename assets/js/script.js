@@ -398,7 +398,12 @@ function initParallax() {
 
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   
-  let initialPath = window.__THINKMAP_REFRESH_ROUTE__ || window.location.pathname;
+  let redirectRoute = null;
+  try {
+    redirectRoute = sessionStorage.getItem('redirectRoute');
+    if (redirectRoute) sessionStorage.removeItem('redirectRoute');
+  } catch (e) {}
+  let initialPath = redirectRoute || (window.__THINKMAP_REFRESH_ROUTE__ || window.location.pathname);
   let resolved = resolveRoute(initialPath);
 
   // Route fallback if page is disabled
