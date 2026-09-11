@@ -87,38 +87,121 @@ var CONTACT_FORM_URL  = "https://docs.google.com/forms/d/e/1FAIpQLSdV6QmpIYF7dPe
 function openPartnerForm() { window.open(PARTNER_FORM_URL, '_blank'); }
 function openContactForm()  { window.open(CONTACT_FORM_URL, '_blank'); }
 
+/* ── ROUTE CONFIGURATION & ALIASES ── */
+var ROUTE_MAP = {
+  '': { pageId: 'home', route: '', navId: 'nav-home' },
+  'home': { pageId: 'home', route: '', navId: 'nav-home' },
+  'school': { pageId: 'cgeb', route: 'school', navId: 'nav-school' },
+  'cgeb': { pageId: 'cgeb', route: 'school', navId: 'nav-school' },
+  'research': { pageId: 'cgeb', route: 'school', navId: 'nav-school' },
+  'partnership': { pageId: 'partnership', route: 'partnership', navId: 'nav-partnership' },
+  'partner': { pageId: 'partnership', route: 'partnership', navId: 'nav-partnership' },
+  'partnerships': { pageId: 'partnership', route: 'partnership', navId: 'nav-partnership' },
+  'pricing': { pageId: 'pricing', route: 'pricing', navId: 'nav-pricing' },
+  'higher-education': { pageId: 'higher-education', route: 'higher-education', navId: 'nav-higher-education' },
+  'higher-ed': { pageId: 'higher-education', route: 'higher-education', navId: 'nav-higher-education' },
+  'highereducation': { pageId: 'higher-education', route: 'higher-education', navId: 'nav-higher-education' },
+  'colleges': { pageId: 'higher-education', route: 'higher-education', navId: 'nav-higher-education' },
+  'about': { pageId: 'about', route: 'about', navId: 'nav-about' },
+  'solutions': { pageId: 'solutions', route: 'solutions', navId: 'nav-solutions' },
+  'careers': { pageId: 'careers', route: 'careers', navId: 'nav-careers' },
+  'contact': { pageId: 'contact', route: 'contact', navId: 'nav-contact' },
+  'contact-us': { pageId: 'contact', route: 'contact', navId: 'nav-contact' },
+  'privacy': { pageId: 'privacy', route: 'privacy', navId: null },
+  'privacy-policy': { pageId: 'privacy', route: 'privacy', navId: null },
+  'governance': { pageId: 'governance', route: 'governance', navId: null },
+  'data-governance': { pageId: 'governance', route: 'governance', navId: null },
+  'faq': { pageId: 'about', route: 'faq', navId: 'nav-about', scrollTo: 'about-faqs' },
+  'faqs': { pageId: 'about', route: 'faq', navId: 'nav-about', scrollTo: 'about-faqs' }
+};
+
+function resolveRoute(target) {
+  var key = (target || '').replace(/^\/+|\/+$/g, '').toLowerCase();
+
+  // Handle thinkmap routes and sub-tools
+  if (key === 'thinkmap' || key.startsWith('thinkmap/')) {
+    return {
+      key: key,
+      pageId: 'thinkmap',
+      route: key,
+      navId: 'nav-thinkmap',
+      isThinkMap: true
+    };
+  }
+
+  // Look up in route map
+  if (Object.prototype.hasOwnProperty.call(ROUTE_MAP, key)) {
+    var match = ROUTE_MAP[key];
+    return {
+      key: key,
+      pageId: match.pageId,
+      route: match.route,
+      navId: match.navId,
+      scrollTo: match.scrollTo,
+      isThinkMap: false
+    };
+  }
+
+  // Check if a DOM page element exists for this key
+  if (document.getElementById('page-' + key)) {
+    return {
+      key: key,
+      pageId: key,
+      route: key,
+      navId: 'nav-' + key,
+      isThinkMap: false
+    };
+  }
+
+  // Fallback to home
+  return {
+    key: '',
+    pageId: 'home',
+    route: '',
+    navId: 'nav-home',
+    isThinkMap: false
+  };
+}
+
 /* ── PAGE SWITCHING ── */
 function showPage(id, pushHistory) {
   if (pushHistory === undefined) pushHistory = true;
 
+  var resolved = resolveRoute(id);
+
   // Intercept and redirect if page is disabled
-  if (id === 'solutions' && !CONFIG.enableSolutions) {
+  if (resolved.pageId === 'solutions' && !CONFIG.enableSolutions) {
     showPage('home', pushHistory);
     return;
   }
-  if (id === 'careers' && !CONFIG.enableCareers) {
+  if (resolved.pageId === 'careers' && !CONFIG.enableCareers) {
     showPage('home', pushHistory);
     return;
   }
-  if (id === 'pricing' && !CONFIG.enablePricing) {
+  if (resolved.pageId === 'pricing' && !CONFIG.enablePricing) {
     showPage('home', pushHistory);
     return;
   }
-  if (id === 'faq') {
-    showPage('about', pushHistory);
+
+  // Handle scroll-to targets (e.g. FAQs on about page)
+  if (resolved.scrollTo) {
+    showPage(resolved.pageId, pushHistory);
+    if (pushHistory) {
+      try {
+        window.history.replaceState({ page: resolved.route }, '', '/' + resolved.route);
+      } catch (e) {
+        console.warn("History API failed:", e);
+      }
+    }
     setTimeout(() => {
-      const el = document.getElementById('about-faqs');
+      const el = document.getElementById(resolved.scrollTo);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }, 100);
     return;
   }
 
-  // Handle thinkmap sub-routing container matching
-  let pageElementId = id;
-  let isThinkMap = id === 'thinkmap' || id.startsWith('thinkmap/');
-  if (isThinkMap) {
-    pageElementId = 'thinkmap';
-  }
+  let pageElementId = resolved.pageId;
+  let isThinkMap = resolved.isThinkMap;
 
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
@@ -128,8 +211,11 @@ function showPage(id, pushHistory) {
     targetPageEl.classList.add('active');
   }
 
-  // Highlight active nav button
-  var navBtn = document.getElementById(isThinkMap ? 'nav-thinkmap' : 'nav-' + id);
+  // Highlight active nav button (support nav-school and nav-cgeb interchangeably)
+  var navBtn = resolved.navId ? document.getElementById(resolved.navId) : null;
+  if (!navBtn && pageElementId === 'cgeb') {
+    navBtn = document.getElementById('nav-school') || document.getElementById('nav-cgeb');
+  }
   if (navBtn) {
     navBtn.classList.add('active');
   }
@@ -142,11 +228,9 @@ function showPage(id, pushHistory) {
   window.scrollTo({ top: 0, behavior: 'instant' });
   
   if (pushHistory) {
-    let route = id;
-    if (id === 'cgeb') route = 'research';
-    if (id === 'home') route = '';
+    let route = resolved.route;
     try {
-      window.history.pushState({ page: isThinkMap ? 'thinkmap' : id }, '', '/' + route);
+      window.history.pushState({ page: isThinkMap ? 'thinkmap' : (route || 'home') }, '', '/' + route);
     } catch (e) {
       console.warn("History API failed:", e);
     }
@@ -161,20 +245,13 @@ function showPage(id, pushHistory) {
     document.querySelectorAll('#page-' + pageElementId + ' .fade-up').forEach(el => el.classList.remove('visible'));
     setTimeout(() => observeFadeUps(), 60);
   }, 10);
-  if (id === 'home') triggerBars();
+  if (pageElementId === 'home') triggerBars();
 }
 
 window.addEventListener('popstate', function(e) {
-  if (e.state && e.state.page) {
-    if (e.state.page === 'thinkmap') {
-      let path = window.location.pathname.replace(/^\/+|\/+$/g, '');
-      showPage(path, false);
-    } else {
-      showPage(e.state.page, false);
-    }
-  } else {
-    showPage('home', false);
-  }
+  var target = (e.state && e.state.page) ? e.state.page : window.location.pathname.replace(/^\/+|\/+$/g, '');
+  if (!target) target = 'home';
+  showPage(target, false);
 });
 
 /* ── FADE UP OBSERVER ── */
@@ -322,53 +399,36 @@ function initParallax() {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   
   let initialPath = window.__THINKMAP_REFRESH_ROUTE__ || window.location.pathname;
-  let path = initialPath.replace(/^\/+|\/+$/g, '');
-  let targetId = path || 'home';
-  if (targetId === 'research') targetId = 'cgeb';
-  
+  let resolved = resolveRoute(initialPath);
+
   // Route fallback if page is disabled
-  if (targetId === 'solutions' && !CONFIG.enableSolutions) {
-    targetId = 'home';
+  if (resolved.pageId === 'solutions' && !CONFIG.enableSolutions) {
+    resolved = resolveRoute('home');
   }
-  if (targetId === 'careers' && !CONFIG.enableCareers) {
-    targetId = 'home';
+  if (resolved.pageId === 'careers' && !CONFIG.enableCareers) {
+    resolved = resolveRoute('home');
   }
-  if (targetId === 'pricing' && !CONFIG.enablePricing) {
-    targetId = 'home';
-  }
-  
-  let shouldScrollToFaq = false;
-  if (targetId === 'faq') {
-    targetId = 'about';
-    shouldScrollToFaq = true;
+  if (resolved.pageId === 'pricing' && !CONFIG.enablePricing) {
+    resolved = resolveRoute('home');
   }
 
-  // Handle thinkmap routes on load
-  let isThinkMap = targetId === 'thinkmap' || targetId.startsWith('thinkmap/');
-  let resolvedTargetId = isThinkMap ? 'thinkmap' : targetId;
-
-  var initialPage = document.getElementById('page-' + resolvedTargetId);
+  var initialPage = document.getElementById('page-' + resolved.pageId);
   if (!initialPage) {
-    targetId = 'home';
-    resolvedTargetId = 'home';
-    isThinkMap = false;
+    resolved = resolveRoute('home');
   }
   
-  let route = targetId;
-  if (targetId === 'cgeb') route = 'research';
-  if (targetId === 'home') route = '';
-  if (isThinkMap) route = path; // preserve subpath
+  let route = resolved.route;
   
   try {
-    window.history.replaceState({ page: isThinkMap ? 'thinkmap' : resolvedTargetId }, '', '/' + route);
+    window.history.replaceState({ page: resolved.isThinkMap ? 'thinkmap' : (route || 'home') }, '', '/' + route);
   } catch (e) {
     console.warn("History API replace failed:", e);
   }
 
-  showPage(isThinkMap ? path : resolvedTargetId, false);
-  if (shouldScrollToFaq) {
+  showPage(resolved.isThinkMap ? resolved.key : resolved.pageId, false);
+  if (resolved.scrollTo) {
     setTimeout(() => {
-      const el = document.getElementById('about-faqs');
+      const el = document.getElementById(resolved.scrollTo);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }, 200);
   }
