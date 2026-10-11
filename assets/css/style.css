@@ -285,14 +285,16 @@ body.light-mode .cta-divider { background: rgba(0,0,0,0.1); }
 .fab:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(232, 160, 32, 0.5); }
 .fab-icon { font-size: 1.2rem; }
 .fab-wa {
-  position: fixed; bottom: 32px; left: 32px; z-index: 999;
-  background: #25D366; color: #fff;
+  position: fixed; bottom: calc(24px + env(safe-area-inset-bottom)); left: max(16px, env(safe-area-inset-left)); z-index: 190;
+  background: #0B3B8C; color: #fff;
   width: 54px; height: 54px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 8px 24px rgba(11, 59, 140, 0.3);
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.fab-wa:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(37, 211, 102, 0.45); }
+.fab-wa:hover { background: #092E6E; transform: translateY(-4px); }
+.fab-wa:focus-visible { outline: 3px solid #fff; outline-offset: 3px; box-shadow: 0 0 0 6px #0B3B8C; }
+@media print { .fab-wa { display: none; } }
 .fab-wa svg { width: 28px; height: 28px; fill: currentColor; }
 
 /* ═══════════════════════════════════════════════
