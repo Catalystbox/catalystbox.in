@@ -1,7 +1,21 @@
 {
   "outputDirectory": ".",
   "rewrites": [
-    { "source": "/thinkmap/guides/:name", "destination": "/thinkmap/guides/:name/index.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/about",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/about/",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/thinkmap/guides/:name",
+      "destination": "/thinkmap/guides/:name/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
