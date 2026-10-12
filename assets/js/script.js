@@ -200,6 +200,8 @@ function showPage(id, pushHistory) {
     return;
   }
 
+  if (typeof updateRouteMetadata === 'function') updateRouteMetadata(resolved.route);
+
   let pageElementId = resolved.pageId;
   let isThinkMap = resolved.isThinkMap;
 
