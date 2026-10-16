@@ -77,7 +77,10 @@ function applyPageVisibilityConfig() {
 /* ── MOBILE MENU ── */
 function toggleMobileMenu() {
   const navLinks = document.querySelector('.nav-links');
-  if (navLinks) navLinks.classList.toggle('active');
+  if (navLinks) {
+    navLinks.classList.toggle('active');
+    document.querySelector('.mobile-menu-btn')?.setAttribute('aria-expanded', String(navLinks.classList.contains('active')));
+  }
 }
 
 /* ── FORM URLS ── */
@@ -226,6 +229,7 @@ function showPage(id, pushHistory) {
   const navLinks = document.querySelector('.nav-links');
   if (navLinks && navLinks.classList.contains('active')) {
     navLinks.classList.remove('active');
+    document.querySelector('.mobile-menu-btn')?.setAttribute('aria-expanded', 'false');
   }
 
   window.scrollTo({ top: 0, behavior: 'instant' });
