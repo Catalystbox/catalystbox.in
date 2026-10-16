@@ -138,6 +138,13 @@ test("navigating to legacy /research canonicalizes URL to /school and displays S
   assert.equal(env.getLastReplaced()?.url, "/school");
 });
 
+test("the published legacy methodology URL reaches School instead of silently returning home", () => {
+  const env = createMockEnvironment("/research/cgeb");
+  assert.equal(env.getActivePage(), "page-cgeb");
+  assert.equal(env.getActiveNav(), "nav-school");
+  assert.equal(env.getLastReplaced()?.url, "/school");
+});
+
 test("navigating to legacy /cgeb canonicalizes URL to /school and displays School tab", () => {
   const env = createMockEnvironment("/cgeb");
   assert.equal(env.getActivePage(), "page-cgeb");

@@ -1085,7 +1085,7 @@ body.light-mode .tm-wrap .tm-ethic {
    FULL-SCREEN HERO & LOOP DIAGRAM
    ═══════════════════════════════════════════════ */
 #loop-hero {
-  height: 100vh;
+  height: auto;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -1093,7 +1093,7 @@ body.light-mode .tm-wrap .tm-ethic {
   position: relative;
   overflow: hidden;
   background: var(--ink);
-  padding: 0;
+  padding: 96px 16px 44px;
 }
 .loop-hero-bg {
   position: absolute;
@@ -1107,18 +1107,20 @@ body.light-mode .tm-wrap .tm-ethic {
 .loop-diagram-wrapper-fullscreen {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 5 / 4;
   max-width: 1000px;
-  max-height: 800px;
+  max-height: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 0;
   box-sizing: border-box;
 }
 
 .loop-svg-fullscreen {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 1;
   width: 100%;
   height: 100%;
@@ -1202,13 +1204,17 @@ body.light-mode .node-title {
 }
 
 .node-match {
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
+  transform: translate(-50%, 16px) !important;
+  max-width: 38%;
 }
 
 .node-verify {
-  align-items: flex-end;
-  text-align: right;
+  align-items: center;
+  text-align: center;
+  transform: translate(-50%, 16px) !important;
+  max-width: 38%;
 }
 
 /* Center Label */
@@ -1257,7 +1263,7 @@ body:not(.light-mode) .center-title {
 @media (max-width: 991px) {
   .loop-diagram-wrapper-fullscreen {
     max-width: 800px;
-    max-height: 640px;
+    max-height: none;
   }
   .node-title {
     font-size: 1.8rem;
@@ -1276,8 +1282,8 @@ body:not(.light-mode) .center-title {
 @media (max-width: 768px) {
   .loop-diagram-wrapper-fullscreen {
     max-width: 100%;
-    max-height: 100%;
-    padding: 20px;
+    max-height: none;
+    padding: 0;
   }
   .node-title {
     font-size: 1.4rem;
@@ -1319,5 +1325,31 @@ body, button, input, select, textarea, h1, h2, h3, h4, h5, h6,
 .ac-role, .ret-type, .plain-card h3, .doc-section h2, .doc-section h3,
 .p-card-title, .right-card h4 {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* Descriptive cards and policy prose must remain readable at narrow widths. */
+#hero .stat-num { font-size: clamp(1rem, 2.1vw, 1.55rem); line-height: 1.25; }
+#hero .stat-card > div:nth-child(2) { min-width: 0; }
+#hero .stat-label { overflow-wrap: anywhere; }
+#page-privacy > section > .container,
+#page-governance > section > .container { max-width: 860px; }
+#page-privacy .doc-hero,
+#page-governance .doc-hero { align-items: flex-start; }
+#page-privacy .doc-intro,
+#page-governance .doc-intro { max-width: 680px; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+#page-privacy a, #page-governance a, #page-pricing section a { color: var(--teal-light); text-decoration: underline; }
+@media (max-width: 480px) {
+  #loop-hero { padding-top: 88px; padding-bottom: 32px; }
+  .node-subtitle { font-size: 0.5rem; letter-spacing: 0.02em; }
+  #hero .hero-content > div { min-width: 0; }
+  #hero h1 { font-size: clamp(2rem, 8.5vw, 2.8rem); overflow-wrap: anywhere; }
+  #hero .hero-actions { flex-wrap: wrap; }
+  #home-higher-ed > div > div { min-width: 0 !important; }
+}
+@media (max-width: 768px) {
+  #page-home .flow-steps { grid-template-columns: 1fr; gap: 2rem; }
+  #page-home .flow-steps::before { display: none; }
+  #home-higher-ed .container > div[style*="display: grid"] { grid-template-columns: minmax(0, 1fr) !important; gap: 24px !important; }
+  #home-higher-ed .container > div > div { min-width: 0; }
 }
 
