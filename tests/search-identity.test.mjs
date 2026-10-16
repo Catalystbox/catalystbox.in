@@ -19,7 +19,8 @@ test('brand identity includes the wider offering in visible and machine-readable
     assert.ok(org.description.includes(product));
     assert.ok(about.includes(product));
   }
-  assert.match(html, /<h1>CatalystBox:/);
+  assert.match(html, /<h1>See the signals\./);
+  assert.match(html, /aria-label="CatalystBox home"/);
   assert.match(html, /<meta name="description"/);
   assert.match(html, /href="\/about\/"/);
   assert.match(about, /<link rel="canonical" href="https:\/\/www\.catalystbox\.in\/about\/"/);
