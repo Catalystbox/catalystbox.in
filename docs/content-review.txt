@@ -1,0 +1,56 @@
+CatalystBox public website content review - 16 October 2026
+
+Scope
+Main public website only. No changes to Reportcard/Marketplace applications,
+database, collection settings, service permissions or consent enforcement.
+The clean checkout was updated from c40e112 to the prior live release 9910bb2
+before this work began. Hosting is GitHub Pages, main branch, repository root.
+
+Corrections
+- Replace absolute privacy assertions with distinctions between feedback,
+  accounts, enquiries, technical processing and aggregate publication.
+- Retain the existing no-advertising/individual-targeting commitment and the
+  30-day notice requirement for material changes reducing protections.
+- Remove conflicting OPC/nonprofit descriptions, tax/charitable credentials,
+  advisory-board claims and the unverified Startup India badge.
+- Replace hidden pricing promises with scoped proposals; government or board
+  funding and free access require approval and written terms.
+- Remove unsourced market counters. Higher Education statistics identify
+  AISHE 2021-22, institution categories and the distinction from adoption.
+- Acknowledge existing evaluation systems and PISA school-experience measures.
+- Use Student Experience Index, Teacher Experience Index, Parent Trust Index
+  consistently. Sample: 85*.45 + 78*.30 + 72*.25 = 79.65.
+- Treat methodology, thresholds, validation and international comparisons as
+  proposed designs requiring evidence; directory coverage is not adoption.
+- Route legacy /research/cgeb to canonical /school.
+- Keep loop diagram labels inside narrow viewports and stack mobile flow steps.
+- Add route-specific privacy and governance metadata.
+
+Sources used for public corrections
+OECD, PISA 2022 Results Volume II, Construction of indices:
+https://www.oecd.org/en/publications/pisa-2022-results-volume-ii_a97db61c-en/full-report/component-15.html
+Ministry of Education, Quality and Innovation Report (Shaala Siddhi):
+https://www.education.gov.in/sites/upload_files/mhrd/files/Quality-and-Innovation-Report.pdf
+Ministry of Education, AISHE Final Report 2021-22:
+https://www.education.gov.in/aishe-report-2021-22
+Government National CSR Exchange, implementing-agency FAQ:
+https://www.csrxchange.gov.in/Frontend/faq
+MeitY, Data Protection Framework:
+https://www.meity.gov.in/data-protection-framework
+
+Evidence boundaries and maintenance
+No claim that revised copy certifies backend privacy or statutory compliance.
+Legal entity, registration/recognition certificates, funding approvals and
+advisory membership need documentary evidence before publishing those claims.
+Product-specific data processing must be assessed in that service's release.
+ThinkMap scenarios and datasets were not revalidated by this content release.
+Use named years/categories for statistics, qualify availability at the point
+of the claim, and check all duplicate descriptions before adding credentials.
+
+Verification
+npm.cmd test (routing, content, search identity, ThinkMap and WhatsApp checks).
+npm.cmd run build; git diff --check.
+Browser: local and canonical public site; mobile and desktop; legacy route,
+Privacy, Governance, School, About and Higher Education content and layout.
+Exact release commit, deployment, backup checksums and results are recorded
+in the private recovery package outside the public website repository.

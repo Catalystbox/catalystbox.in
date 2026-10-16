@@ -94,6 +94,7 @@ var ROUTE_MAP = {
   'school': { pageId: 'cgeb', route: 'school', navId: 'nav-school' },
   'cgeb': { pageId: 'cgeb', route: 'school', navId: 'nav-school' },
   'research': { pageId: 'cgeb', route: 'school', navId: 'nav-school' },
+  'research/cgeb': { pageId: 'cgeb', route: 'school', navId: 'nav-school' },
   'partnership': { pageId: 'partnership', route: 'partnership', navId: 'nav-partnership' },
   'partner': { pageId: 'partnership', route: 'partnership', navId: 'nav-partnership' },
   'partnerships': { pageId: 'partnership', route: 'partnership', navId: 'nav-partnership' },
