@@ -196,4 +196,21 @@ body.ui-refresh .cb-home .cb-collaborate h2 { color:#f4f3dc; }
   .cb-tool-tabs button { min-height:44px; }
 }
 @media(max-width:360px) { .cb-hero h1 { font-size:38px; } }
+/* Let mobile grid tracks shrink to the viewport instead of clipping their copy. */
+@media(max-width:700px) {
+  .cb-listen-grid { grid-template-columns:minmax(0,1fr); }
+  .cb-listen-grid > * { min-width:0; }
+  .cb-score-header { flex-wrap:wrap; gap:8px; }
+  #page-higher-education .status-banner .txt { min-width:0; flex-basis:100%; overflow-wrap:anywhere; }
+  #page-higher-education .stat-strip { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  #page-higher-education .stat { min-width:0; padding:28px 14px 18px; overflow-wrap:anywhere; }
+  #page-higher-education .stat-v { font-size:24px; }
+  body.ui-refresh #thinkmap-root .tm-wrap { padding:80px 16px 40px !important; }
+  #thinkmap-root .setup { grid-template-columns:minmax(0,1fr); }
+  #thinkmap-root .pcard,#thinkmap-root .pstat > span { min-width:0; }
+  #thinkmap-root .pstat { flex-wrap:wrap; }
+  #thinkmap-root .layout { grid-template-columns:minmax(0,1fr); }
+  #thinkmap-root .layout > *,#thinkmap-root .verdict > div { min-width:0; }
+  #thinkmap-root .view-tog,#thinkmap-root .chart-h,#thinkmap-root .chart-btns,#thinkmap-root .seg { flex-wrap:wrap; }
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cb-heading-star{animation:none}body.ui-refresh *,body.ui-refresh *:before,body.ui-refresh *:after{transition:none !important;animation:none !important}}
