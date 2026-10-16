@@ -1,0 +1,26 @@
+name: Website checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - name: Verify published ThinkMap bundle matches its source
+        run: git diff --exit-code -- assets/js/thinkmap.bundle.js
+      - run: node --check assets/js/refresh.js
+      - run: node --check assets/js/script.js

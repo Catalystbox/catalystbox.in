@@ -1,4 +1,4 @@
-/* Small, accessible interactions for the local visual refresh. */
+/* Small, accessible interactions for the visual refresh. */
 (function () {
   const loopDetails = {
     declare: 'A useful connection starts with understanding what matters: the need, the context, and the outcome you are working towards.',

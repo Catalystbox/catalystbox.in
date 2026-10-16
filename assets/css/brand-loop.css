@@ -106,3 +106,9 @@ body.ui-refresh .cb-home .cb-loop-copy h2 { font-size:38px; line-height:1.12; ma
   .cb-loop-traveller { display:none; }
   .cb-loop-steps button,.cb-loop-halo,.cb-loop-label strong { transition:none; }
 }
+
+/* Two-tone brand lockup, adapted from the supplied wordmark for light surfaces. */
+.cb-wordmark { display:inline-block; white-space:nowrap; font-family:Manrope,Arial,sans-serif; font-weight:800; letter-spacing:-.055em; line-height:1.1; }
+.cb-wordmark-catalyst { color:#123f88; }
+.cb-wordmark-box { color:#3188d7; }
+.cb-footer-brand > .cb-wordmark { font-family:Manrope,Arial,sans-serif; font-size:inherit; }
