@@ -53,6 +53,8 @@ function gtag_report_conversion(url) {
 <link rel="stylesheet" href="/assets/css/careers.css?v=1.1" />
 <link rel="stylesheet" href="/assets/css/higher-education.css?v=1.1" />
 <link rel="stylesheet" href="/assets/css/refresh.css?v=local-ui-1" />
+<link rel="stylesheet" href="/assets/css/brand-loop.css?v=local-logo-loop-1" />
+<link rel="icon" type="image/png" href="/assets/images/catalystbox-logo.png" />
 </head>
 <body class="light-mode ui-refresh">
 <a class="cb-skip-link" href="#main-content">Skip to content</a>
@@ -60,7 +62,7 @@ function gtag_report_conversion(url) {
 <!-- ═══ NAV ═══ -->
 <nav>
   <a class="nav-logo" href="/" onclick="showPage('home');return false;" aria-label="CatalystBox home">
-    <div id="nav-qr"></div>
+    <img class="cb-brand-logo" src="/assets/images/catalystbox-logo.png" alt="" width="40" height="40" decoding="async">
     CatalystBox
   </a>
   <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Menu" aria-expanded="false" aria-controls="cb-main-menu">
@@ -144,6 +146,44 @@ function gtag_report_conversion(url) {
       </div>
     </section>
 
+    <section class="cb-loop-section cb-wrap" id="catalystbox-loop" aria-labelledby="cb-loop-heading">
+      <div class="cb-loop-panel" data-loop-active="declare">
+        <div class="cb-loop-copy">
+          <div class="cb-eyebrow">The CatalystBox approach</div>
+          <h2 id="cb-loop-heading">Good connections.<br><em class="cb-serif">Better next steps.</em></h2>
+          <p>Start with a clear need. Make a relevant connection. Learn from the outcome—and bring that perspective to the next decision.</p>
+          <div class="cb-loop-steps" role="group" aria-label="Explore the CatalystBox loop">
+            <button type="button" data-loop-step="declare" aria-pressed="true" aria-controls="cb-loop-detail"><span class="cb-loop-step-number">01</span><span><strong>Declare</strong><small>Put the need into words.</small></span><span class="cb-loop-step-arrow" aria-hidden="true">↗</span></button>
+            <button type="button" data-loop-step="match" aria-pressed="false" aria-controls="cb-loop-detail"><span class="cb-loop-step-number">02</span><span><strong>Match</strong><small>Find a relevant connection.</small></span><span class="cb-loop-step-arrow" aria-hidden="true">↗</span></button>
+            <button type="button" data-loop-step="verify" aria-pressed="false" aria-controls="cb-loop-detail"><span class="cb-loop-step-number">03</span><span><strong>Verify</strong><small>Review the outcome. Carry the learning forward.</small></span><span class="cb-loop-step-arrow" aria-hidden="true">↗</span></button>
+          </div>
+          <p class="cb-loop-detail" id="cb-loop-detail" aria-live="polite">A useful connection starts with understanding what matters: the need, the context, and the outcome you are working towards.</p>
+        </div>
+        <div class="cb-loop-graph" role="img" aria-label="A repeating triangle: Declare the need, Match with relevant help, Verify the outcome. The loop compounds, match by match.">
+          <svg class="cb-loop-svg" viewBox="0 0 800 460" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="cb-loop-edge" x1="400" y1="92" x2="660" y2="352" gradientUnits="userSpaceOnUse"><stop stop-color="#2c89ec"/><stop offset="1" stop-color="#365e46"/></linearGradient>
+              <radialGradient id="cb-loop-wash"><stop stop-color="#dfe9d6" stop-opacity=".85"/><stop offset="1" stop-color="#edf1e7" stop-opacity="0"/></radialGradient>
+              <path id="cb-loop-route" d="M400 92 660 352 140 352Z"/>
+            </defs>
+            <ellipse cx="400" cy="254" rx="330" ry="200" fill="url(#cb-loop-wash)"/>
+            <path d="M140 352 400 92" stroke="#6f8d7b" stroke-width="2" stroke-dasharray="5 8"/>
+            <path d="M400 92 660 352" stroke="url(#cb-loop-edge)" stroke-width="2.5"/>
+            <path d="M660 352H140" stroke="#b8cdbb" stroke-width="7" stroke-linecap="round"/>
+            <path d="m518 200 12 22-22-12M414 344l-14 8 14 8M264 219l13-7-4 15" stroke="#365e46" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle class="cb-loop-traveller" r="6" fill="#2c89ec"><animateMotion dur="12s" repeatCount="indefinite" calcMode="linear"><mpath href="#cb-loop-route"/></animateMotion></circle>
+            <g class="cb-loop-node cb-loop-node-declare"><circle class="cb-loop-halo" cx="400" cy="92" r="30" fill="#2c89ec"/><circle cx="400" cy="92" r="15" fill="#f8f7f1" stroke="#2c89ec" stroke-width="2"/><circle cx="400" cy="92" r="5.5" fill="#16438a"/></g>
+            <g class="cb-loop-node cb-loop-node-match"><circle class="cb-loop-halo" cx="660" cy="352" r="30" fill="#2c89ec"/><circle cx="660" cy="352" r="15" fill="#f8f7f1" stroke="#365e46" stroke-width="2"/><circle cx="660" cy="352" r="5.5" fill="#365e46"/></g>
+            <g class="cb-loop-node cb-loop-node-verify"><circle class="cb-loop-halo" cx="140" cy="352" r="30" fill="#2c89ec"/><circle cx="140" cy="352" r="15" fill="#f8f7f1" stroke="#365e46" stroke-width="2"/><circle cx="140" cy="352" r="5.5" fill="#365e46"/></g>
+          </svg>
+          <div class="cb-loop-label cb-loop-label-declare"><strong>Declare</strong><span>The need enters</span></div>
+          <div class="cb-loop-label cb-loop-label-match"><strong>Match</strong><span>Connect with relevant help</span></div>
+          <div class="cb-loop-label cb-loop-label-verify"><strong>Verify</strong><span>Review the outcome</span></div>
+          <div class="cb-loop-centre"><span>The loop</span><strong>Compounds</strong><em>match by match</em></div>
+        </div>
+      </div>
+    </section>
+
     <section class="cb-listen-section" id="school-framework"><div class="cb-wrap cb-listen-grid">
       <div class="cb-listen-copy"><div class="cb-eyebrow">02 / Better education begins with listening</div><h2>Small signals.<br> <em class="cb-serif">A fuller picture.</em></h2><p>Student, teacher and parent perspectives can help institutions see what needs attention—and where to go next.</p><p>Our proposed school feedback framework brings these voices together across five parameters. Published benchmarks depend on sufficient qualifying evidence.</p><button class="cb-button cb-button-green" onclick="showPage('school')">Explore the school framework <svg><use href="#cb-arrow"/></svg></button><a class="cb-inline-link" href="/higher-education" onclick="showPage('higher-education');return false;">Thinking about higher education? <span>↗</span></a></div>
       <div class="cb-score-card"><div class="cb-score-header"><span>THE CATALYSTBOX BENCHMARK</span><span class="cb-tag">Illustrative example</span></div><div class="cb-score-main"><div><span class="cb-score-label">Three perspectives.<br>One composite.</span><div class="index-score">79.65</div><span class="cb-score-scale">Sample score / 100</span></div><svg class="cb-score-orbit" viewBox="0 0 160 160" aria-hidden="true"><circle cx="80" cy="80" r="61" fill="none" stroke="#e8eee7" stroke-width="13"/><circle cx="80" cy="80" r="61" fill="none" stroke="#365e46" stroke-width="13" stroke-dasharray="305 384" stroke-linecap="round" transform="rotate(-90 80 80)"/><path d="m64 80 12 12 23-27" fill="none" stroke="#365e46" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="cb-score-rows"><div><span>Student Experience Index</span><strong>85</strong><i style="--bar:85%;--bar-color:#365e46"></i></div><div><span>Teacher Experience Index</span><strong>78</strong><i style="--bar:78%;--bar-color:#b594cb"></i></div><div><span>Parent Trust Index</span><strong>72</strong><i style="--bar:72%;--bar-color:#df997f"></i></div></div><p class="cb-score-caption">Sample inputs and weights: student 45%, teacher 30%, parent 25%. This is not a measured institutional score or ranking.</p></div>
@@ -159,7 +199,7 @@ function gtag_report_conversion(url) {
     <section class="cb-collaborate cb-wrap" id="collaborate"><div class="cb-collaborate-panel"><div><div class="cb-eyebrow">For the next chapter</div><h2>Good things start<br>with a <em class="cb-serif">conversation.</em></h2><p>A school with a question. A provider with an idea. A partner who sees the possibilities. Let’s find a useful way forward.</p><button class="cb-button cb-button-cream" onclick="showPage('partnership')">Let’s collaborate <svg><use href="#cb-arrow"/></svg></button></div><div class="cb-collaborate-art" aria-hidden="true"><span>✳</span><i>fresh eyes.<br>new possibilities.</i></div></div></section>
   </main>
 
-  <footer class="cb-footer"><div class="cb-wrap"><div class="cb-footer-main"><div><a href="/" onclick="showPage('home');return false;" class="cb-footer-brand">CatalystBox<span>✳</span></a><p>Education intelligence.<br>Human possibilities.</p><small>A product of Fresh Eye Foundation</small></div><div><h3>Explore</h3><a href="https://reportcard.catalystbox.in/" target="_blank" rel="noopener noreferrer">Reportcard ↗</a><a href="https://marketplace.catalystbox.in/" target="_blank" rel="noopener noreferrer">Marketplace ↗</a><a href="/thinkmap" onclick="showPage('thinkmap');return false;">ThinkMap</a></div><div><h3>Go deeper</h3><a href="/school" onclick="showPage('school');return false;">School framework</a><a href="/higher-education" onclick="showPage('higher-education');return false;">Higher education</a><a href="/about/">About CatalystBox</a></div><div><h3>Say hello</h3><a href="mailto:hello@catalystbox.in">hello@catalystbox.in</a><a href="tel:+919582441644">+91 95824 41644</a><button onclick="showPage('partnership')">Partner with us ↗</button></div></div><div class="cb-footer-bottom"><span>© 2026 CatalystBox</span><div><button onclick="showPage('privacy')">Privacy</button><button onclick="showPage('governance')">Data governance</button><a href="https://www.linkedin.com/company/catalystbox/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><span>Thoughtfully connected.</span></div></div></footer>
+  <footer class="cb-footer"><div class="cb-wrap"><div class="cb-footer-main"><div><a href="/" onclick="showPage('home');return false;" class="cb-footer-brand"><img class="cb-brand-logo" src="/assets/images/catalystbox-logo.png" alt="" width="40" height="40" decoding="async">CatalystBox</a><p>Education intelligence.<br>Human possibilities.</p><small>A product of Fresh Eye Foundation</small></div><div><h3>Explore</h3><a href="https://reportcard.catalystbox.in/" target="_blank" rel="noopener noreferrer">Reportcard ↗</a><a href="https://marketplace.catalystbox.in/" target="_blank" rel="noopener noreferrer">Marketplace ↗</a><a href="/thinkmap" onclick="showPage('thinkmap');return false;">ThinkMap</a></div><div><h3>Go deeper</h3><a href="/school" onclick="showPage('school');return false;">School framework</a><a href="/higher-education" onclick="showPage('higher-education');return false;">Higher education</a><a href="/about/">About CatalystBox</a></div><div><h3>Say hello</h3><a href="mailto:hello@catalystbox.in">hello@catalystbox.in</a><a href="tel:+919582441644">+91 95824 41644</a><button onclick="showPage('partnership')">Partner with us ↗</button></div></div><div class="cb-footer-bottom"><span>© 2026 CatalystBox</span><div><button onclick="showPage('privacy')">Privacy</button><button onclick="showPage('governance')">Data governance</button><a href="https://www.linkedin.com/company/catalystbox/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><span>Thoughtfully connected.</span></div></div></footer>
 </div>
 
 
@@ -188,7 +228,7 @@ function gtag_report_conversion(url) {
   </section>
 
   <footer>
-    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><div class="footer-qr"></div><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">Education Intelligence &amp; Improvement</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><img class="cb-brand-logo cb-brand-logo-footer" src="/assets/images/catalystbox-logo.png" alt="" width="40" height="40" decoding="async"><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">Education Intelligence &amp; Improvement</div></div></div>
 
     <div class="footer-right" style="text-align:center;"><div>Fresh Eye Foundation</div><div style="margin-top:4px;">© 2026 CatalystBox · All Rights Reserved | <button onclick="showPage('privacy')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Privacy Policy</button> · <button onclick="showPage('governance')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Data Governance</button></div></div>
   </footer>
@@ -217,7 +257,7 @@ function gtag_report_conversion(url) {
     <button class="btn-primary" onclick="showPage('contact')">Discuss a proposal →</button>
   </div></section>
   <footer>
-    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><div class="footer-qr"></div><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">Education Intelligence &amp; Improvement</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><img class="cb-brand-logo cb-brand-logo-footer" src="/assets/images/catalystbox-logo.png" alt="" width="40" height="40" decoding="async"><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">Education Intelligence &amp; Improvement</div></div></div>
 
     <div class="footer-right" style="text-align:center;"><div>Fresh Eye Foundation</div><div style="margin-top:4px;">© 2026 CatalystBox · All Rights Reserved | <button onclick="showPage('privacy')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Privacy Policy</button> · <button onclick="showPage('governance')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Data Governance</button></div></div>
   </footer>
@@ -447,7 +487,7 @@ function gtag_report_conversion(url) {
   </section>
 
   <footer>
-    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><div class="footer-qr"></div><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">Education Intelligence &amp; Improvement</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><img class="cb-brand-logo cb-brand-logo-footer" src="/assets/images/catalystbox-logo.png" alt="" width="40" height="40" decoding="async"><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">Education Intelligence &amp; Improvement</div></div></div>
 
     <div class="footer-right" style="text-align:center;"><div>Fresh Eye Foundation</div><div style="margin-top:4px;">© 2026 CatalystBox · All Rights Reserved | <button onclick="showPage('privacy')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Privacy Policy</button> · <button onclick="showPage('governance')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Data Governance</button></div></div>
   </footer>
@@ -539,7 +579,7 @@ function gtag_report_conversion(url) {
   </div>
 
   <footer>
-    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><div class="footer-qr"></div><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">Education Intelligence &amp; Improvement</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><img class="cb-brand-logo cb-brand-logo-footer" src="/assets/images/catalystbox-logo.png" alt="" width="40" height="40" decoding="async"><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">Education Intelligence &amp; Improvement</div></div></div>
 
     <div class="footer-right" style="text-align:center;"><div>Fresh Eye Foundation</div><div style="margin-top:4px;">© 2026 CatalystBox · All Rights Reserved | <button onclick="showPage('privacy')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Privacy Policy</button> · <button onclick="showPage('governance')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Data Governance</button></div></div>
   </footer>
@@ -577,7 +617,7 @@ function gtag_report_conversion(url) {
       <p><a href="/governance" onclick="showPage('governance');return false;">Read our Data Governance guidance →</a></p></div>
   </div></section>
   <footer>
-    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><div class="footer-qr"></div><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">Education Intelligence &amp; Improvement</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><img class="cb-brand-logo cb-brand-logo-footer" src="/assets/images/catalystbox-logo.png" alt="" width="40" height="40" decoding="async"><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">Education Intelligence &amp; Improvement</div></div></div>
 
     <div class="footer-right" style="text-align:center;"><div>Fresh Eye Foundation</div><div style="margin-top:4px;">© 2026 CatalystBox · All Rights Reserved | <button onclick="showPage('privacy')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Privacy Policy</button> · <button onclick="showPage('governance')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Data Governance</button></div></div>
   </footer>
@@ -599,7 +639,7 @@ function gtag_report_conversion(url) {
     <div class="doc-section"><h2>Accountability and review</h2><p>Contact <a href="mailto:hello@catalystbox.in">hello@catalystbox.in</a> for governance questions, evidence of organisational credentials, or the safeguards applicable to your institution. This page does not claim oversight by a constituted independent advisory board or blanket exemption from data protection law.</p><p>Changes reducing protections or altering data use require at least 30 days' public notice. See the <a href="/privacy" onclick="showPage('privacy');return false;">Privacy Policy</a> for participation and request details.</p></div>
   </div></section>
   <footer>
-    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><div class="footer-qr"></div><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">Education Intelligence &amp; Improvement</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><img class="cb-brand-logo cb-brand-logo-footer" src="/assets/images/catalystbox-logo.png" alt="" width="40" height="40" decoding="async"><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">Education Intelligence &amp; Improvement</div></div></div>
 
     <div class="footer-right" style="text-align:center;"><div>Fresh Eye Foundation</div><div style="margin-top:4px;">© 2026 CatalystBox · All Rights Reserved | <button onclick="showPage('privacy')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Privacy Policy</button> · <button onclick="showPage('governance')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Data Governance</button></div></div>
   </footer>
@@ -1334,7 +1374,7 @@ function gtag_report_conversion(url) {
 
   <!-- ══════════════════ FOOTER ══════════════════ -->
   <footer>
-    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><div class="footer-qr"></div><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">Education Intelligence &amp; Improvement</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><img class="cb-brand-logo cb-brand-logo-footer" src="/assets/images/catalystbox-logo.png" alt="" width="40" height="40" decoding="async"><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">Education Intelligence &amp; Improvement</div></div></div>
 
     <div class="footer-right" style="text-align:center;"><div>Fresh Eye Foundation</div><div style="margin-top:4px;">© 2026 CatalystBox · All Rights Reserved | <button onclick="showPage('privacy')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Privacy Policy</button> · <button onclick="showPage('governance')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Data Governance</button></div></div>
   </footer>
@@ -1772,7 +1812,7 @@ function gtag_report_conversion(url) {
   </section>
 
   <footer>
-    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><div class="footer-qr"></div><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">Education Intelligence &amp; Improvement</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;"><img class="cb-brand-logo cb-brand-logo-footer" src="/assets/images/catalystbox-logo.png" alt="" width="40" height="40" decoding="async"><div style="text-align:left;"><div class="footer-logo">CatalystBox</div><div class="footer-tag">Education Intelligence &amp; Improvement</div></div></div>
 
     <div class="footer-right" style="text-align:center;"><div>Fresh Eye Foundation</div><div style="margin-top:4px;">© 2026 CatalystBox · All Rights Reserved | <button onclick="showPage('privacy')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Privacy Policy</button> · <button onclick="showPage('governance')" style="background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;">Data Governance</button></div></div>
   </footer>
@@ -1992,7 +2032,7 @@ function gtag_report_conversion(url) {
   <!-- Footer -->
   <footer>
     <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;">
-      <div class="footer-qr"></div>
+      <img class="cb-brand-logo cb-brand-logo-footer" src="/assets/images/catalystbox-logo.png" alt="" width="40" height="40" decoding="async">
       <div style="text-align:left;">
         <div class="footer-logo">CatalystBox</div>
         <div class="footer-tag">Education Intelligence &amp; Improvement</div>
@@ -2568,7 +2608,7 @@ function gtag_report_conversion(url) {
 <!-- Footer -->
 <footer>
   <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;">
-    <div class="footer-qr"></div>
+    <img class="cb-brand-logo cb-brand-logo-footer" src="/assets/images/catalystbox-logo.png" alt="" width="40" height="40" decoding="async">
     <div style="text-align:left;">
       <div class="footer-logo">CatalystBox</div>
       <div class="footer-tag">Education Intelligence &amp; Improvement</div>
@@ -2588,14 +2628,14 @@ function gtag_report_conversion(url) {
 </div>
 
 <!-- ═══ SCRIPTS ═══ -->
-<script src="/assets/js/refresh.js" defer></script>
+<script src="/assets/js/refresh.js?v=local-logo-loop-1" defer></script>
 <script src="/assets/js/seo.js"></script>
 <script src="/assets/js/script.js?v=local-ui-2"></script>
 <script src="/assets/js/cgeb.js?v=1.1"></script>
 <script src="/assets/js/partnership.js?v=1.1"></script>
 <script src="/assets/js/thinkmap.bundle.js" defer></script>
 
-<!-- ═══ QR LOGO — replaces CB in nav + all footers ═══ -->
+<!-- ═══ QR CODE — retained only for the existing demonstration ═══ -->
 <script src="https://unpkg.com/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
 <script>
 (function() {
@@ -2609,15 +2649,6 @@ function gtag_report_conversion(url) {
   };
 
   function mountQRs() {
-    // Nav — 60px render, scaled to 34px via CSS
-    var navEl = document.getElementById('nav-qr');
-    if (navEl) {
-      new QRCodeStyling(Object.assign({}, QR_CFG, { width: 60, height: 60, margin: 2 })).append(navEl);
-    }
-    // All footers — same render size, CSS scales to 32px
-    document.querySelectorAll('.footer-qr').forEach(function(el) {
-      new QRCodeStyling(Object.assign({}, QR_CFG, { width: 60, height: 60, margin: 2 })).append(el);
-    });
     // Demo tab — 240px render
     var demoEl = document.getElementById('demo-qr-container');
     if (demoEl) {

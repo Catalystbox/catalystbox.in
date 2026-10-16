@@ -1,5 +1,18 @@
 /* Small, accessible interactions for the local visual refresh. */
 (function () {
+  const loopDetails = {
+    declare: 'A useful connection starts with understanding what matters: the need, the context, and the outcome you are working towards.',
+    match: 'Use that context to explore relevant providers and possibilities. A thoughtful match is about fit, not simply finding another option.',
+    verify: 'Review what happened against the original need. Carry useful learning into the next decision so each connection has a chance to improve the next.'
+  };
+  document.querySelectorAll('[data-loop-step]').forEach(button => {
+    button.addEventListener('click', () => {
+      const step = button.dataset.loopStep;
+      document.querySelectorAll('[data-loop-step]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      document.querySelector('.cb-loop-panel').dataset.loopActive = step;
+      document.getElementById('cb-loop-detail').textContent = loopDetails[step];
+    });
+  });
   const tools = {
     education: { title: 'An education investment.\nA little more perspective.', description: 'Weigh the cost of an education path against possible returns. Make your assumptions visible before you make your next move.', label: 'Try Education ROI', route: 'thinkmap/education-roi', note: 'See the trade-offs.' },
     margin: { title: 'Your business idea.\nMeet the bigger picture.', description: 'Compare a business or self-employment path with a job. Explore costs, assumptions and the trade-offs behind the choice.', label: 'Try Margin', route: 'thinkmap/margin', note: 'Explore both paths.' },
