@@ -212,5 +212,12 @@ body.ui-refresh .cb-home .cb-collaborate h2 { color:#f4f3dc; }
   #thinkmap-root .layout { grid-template-columns:minmax(0,1fr); }
   #thinkmap-root .layout > *,#thinkmap-root .verdict > div { min-width:0; }
   #thinkmap-root .view-tog,#thinkmap-root .chart-h,#thinkmap-root .chart-btns,#thinkmap-root .seg { flex-wrap:wrap; }
+  #page-about .founder-card { flex-direction:column; gap:24px; padding:24px; }
+  #page-about .founder-body { min-width:0; width:100%; overflow-wrap:anywhere; }
+  #page-about .founder-avatar { width:80px; height:80px; }
+  #page-about .dash-split { grid-template-columns:minmax(0,1fr); }
+  #page-about .dash-split > * { min-width:0; }
+  #page-about .dash-split-left { padding:24px !important; }
+  #page-about .dash-cta-title { font-size:28px !important; overflow-wrap:anywhere; }
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cb-heading-star{animation:none}body.ui-refresh *,body.ui-refresh *:before,body.ui-refresh *:after{transition:none !important;animation:none !important}}
