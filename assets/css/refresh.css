@@ -1,4 +1,4 @@
-/* CatalystBox local design preview: editorial clarity, warm paper, forest green. */
+/* CatalystBox visual design: editorial clarity, warm paper, forest green. */
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;650;700;750;800&display=swap');
 :root { --cb-paper:#f8f7f1; --cb-ink:#193b31; --cb-muted:#6a7167; --cb-line:#d9dfd2; --cb-mint:#e5eddd; --cb-coral:#ecc3b4; --cb-lilac:#ded7ee; --cb-green:#244e3e; }
 body.ui-refresh { background:var(--cb-paper); color:var(--cb-ink); }
@@ -26,6 +26,24 @@ body.ui-refresh :focus-visible { outline:3px solid #a86c3c; outline-offset:5px; 
 .cb-actions { display:flex; gap:28px; align-items:center; flex-wrap:wrap; }
 body.ui-refresh>nav { padding:20px 0; margin-inline:auto; width:calc(100% - 112px); max-width:1248px; height:88px; gap:24px; background:rgba(248,247,241,.95); backdrop-filter:blur(20px); border-bottom:1px solid var(--cb-line); }
 body.ui-refresh .nav-logo { color:var(--cb-ink); font-size:22px; letter-spacing:-1px; font-weight:800; gap:8px; }
+/* ThinkMap shares one opaque surface with its fixed, full-width header. */
+body.ui-refresh:has(#page-thinkmap.active)>nav {
+  width:100%; max-width:none; margin-inline:0;
+  padding-inline:max(56px,calc((100% - 1248px)/2));
+  background:var(--cb-paper); backdrop-filter:none; border-bottom:0;
+}
+body.ui-refresh.light-mode #page-thinkmap .tm-wrap,
+body.ui-refresh.light-mode #page-thinkmap .tm-wrap .wrap { background:var(--cb-paper) !important; }
+@media(max-width:1150px) {
+  body.ui-refresh:has(#page-thinkmap.active)>nav { padding-inline:36px; }
+}
+@media(max-width:1200px) {
+  body.ui-refresh:has(#page-thinkmap.active) .nav-links { left:36px; right:36px; }
+}
+@media(max-width:700px) {
+  body.ui-refresh:has(#page-thinkmap.active)>nav { padding-inline:20px; }
+  body.ui-refresh:has(#page-thinkmap.active) .nav-links { left:14px; right:14px; }
+}
 body.ui-refresh #nav-qr { width:32px; height:32px; }
 body.ui-refresh .nav-links { gap:5px; }
 body.ui-refresh .nav-links button { padding:9px 12px; color:#42594b; font-size:11px; font-weight:600; border-radius:5px; }
