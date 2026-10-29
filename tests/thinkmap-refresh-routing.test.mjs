@@ -27,13 +27,9 @@ function runRefresh(pathname, search = "") {
   };
 }
 
-test("direct ThinkMap refresh hands the route back to the main shell", () => {
-  assert.deepEqual(runRefresh("/thinkmap/mind-mirror/index.html"), {
-    replaced: "/?thinkmapRoute=%2Fthinkmap%2Fmind-mirror",
-    target: undefined,
-    redirecting: true,
-  });
-  assert.equal(runRefresh("/thinkmap").replaced, "/?thinkmapRoute=%2Fthinkmap");
+test("direct ThinkMap refresh stays on the canonical page", () => {
+  assert.equal(runRefresh("/thinkmap/mind-mirror/").replaced, null);
+  assert.equal(runRefresh("/thinkmap/").replaced, null);
 });
 
 test("the main shell restores the requested ThinkMap route before mounting", () => {
@@ -61,7 +57,7 @@ test("every physical ThinkMap app entry uses the shared refresh handoff", () => 
 
   for (const file of files) {
     const html = fs.readFileSync(path.join(root, file), "utf8");
-    assert.match(html, /\/assets\/js\/thinkmap-refresh\.js/, file);
+    assert.match(html, /\/assets\/js\/thinkmap\.bundle\.js/, file);
   }
 });
 
@@ -77,7 +73,8 @@ test("the main router consumes the restored route and 404 supports future tools"
     1,
     "the one-time refresh route must not override Back/Forward navigation",
   );
-  assert.match(notFound, /__THINKMAP_REFRESH_REDIRECTING__/);
+  assert.match(notFound, /hasOwnProperty\.call\(legacyRoutes, legacyPath\)/);
+  assert.match(notFound, /'\/research\/cgeb': '\/school\/'/);
 });
 test("returning through the site navbar resets ThinkMap and every tool has a hub link", () => {
   const router = fs.readFileSync(path.join(root, "assets/js/script.js"), "utf8");
@@ -86,6 +83,6 @@ test("returning through the site navbar resets ThinkMap and every tool has a hub
   assert.match(router, /CustomEvent\('thinkmap:navigate'/);
   assert.match(router, /detail: \{ path: '\/' \+ id\.replace/);
   assert.match(entry, /addEventListener\("thinkmap:navigate", handleShellNavigation\)/);
-  assert.match(entry, /className="tm-back-link" href="\/thinkmap"/);
+  assert.match(entry, /className="tm-back-link" href="\/thinkmap\/"/);
   assert.equal((entry.match(/<ToolPage>/g) || []).length, 7);
 });

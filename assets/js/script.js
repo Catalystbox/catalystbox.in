@@ -187,12 +187,17 @@ function showPage(id, pushHistory) {
     return;
   }
 
+  if (!document.getElementById('page-' + resolved.pageId)) {
+    window.location.assign('/' + resolved.route + (resolved.route ? '/' : ''));
+    return;
+  }
+
   // Handle scroll-to targets (e.g. FAQs on about page)
   if (resolved.scrollTo) {
     showPage(resolved.pageId, pushHistory);
     if (pushHistory) {
       try {
-        window.history.replaceState({ page: resolved.route }, '', '/' + resolved.route);
+        window.history.replaceState({ page: resolved.route }, '', '/' + resolved.route + (resolved.route ? '/' : ''));
       } catch (e) {
         console.warn("History API failed:", e);
       }
@@ -210,7 +215,7 @@ function showPage(id, pushHistory) {
   let isThinkMap = resolved.isThinkMap;
 
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.nav-links button, .nav-links a').forEach(b => b.classList.remove('active'));
   
   const targetPageEl = document.getElementById('page-' + pageElementId);
   if (targetPageEl) {
@@ -237,7 +242,7 @@ function showPage(id, pushHistory) {
   if (pushHistory) {
     let route = resolved.route;
     try {
-      window.history.pushState({ page: isThinkMap ? 'thinkmap' : (route || 'home') }, '', '/' + route);
+      window.history.pushState({ page: isThinkMap ? 'thinkmap' : (route || 'home') }, '', '/' + route + (route ? '/' : ''));
     } catch (e) {
       console.warn("History API failed:", e);
     }
@@ -245,7 +250,7 @@ function showPage(id, pushHistory) {
 
   if (isThinkMap) {
     window.dispatchEvent(new CustomEvent('thinkmap:navigate', {
-      detail: { path: '/' + id.replace(/^\/+/, '') }
+      detail: { path: '/' + id.replace(/^\/+|\/+$/g, '') + '/' }
     }));
   }
   setTimeout(() => {
@@ -256,7 +261,7 @@ function showPage(id, pushHistory) {
 }
 
 window.addEventListener('popstate', function(e) {
-  var target = (e.state && e.state.page) ? e.state.page : window.location.pathname.replace(/^\/+|\/+$/g, '');
+  var target = window.location.pathname.replace(/^\/+|\/+$/g, '');
   if (!target) target = 'home';
   showPage(target, false);
 });
@@ -432,7 +437,7 @@ function initParallax() {
   let route = resolved.route;
   
   try {
-    window.history.replaceState({ page: resolved.isThinkMap ? 'thinkmap' : (route || 'home') }, '', '/' + route);
+    window.history.replaceState({ page: resolved.isThinkMap ? 'thinkmap' : (route || 'home') }, '', '/' + route + (route ? '/' : '') + (window.location.search || '') + (window.location.hash || ''));
   } catch (e) {
     console.warn("History API replace failed:", e);
   }

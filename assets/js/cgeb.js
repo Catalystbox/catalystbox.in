@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Progress bar
   const progressBar = document.getElementById('progress-bar');
   window.addEventListener('scroll', () => {
-    if(!document.getElementById('page-cgeb').classList.contains('active')) return;
+    if(!document.getElementById('page-cgeb')?.classList.contains('active')) return;
     const total = document.body.scrollHeight - window.innerHeight;
     const pct = (window.scrollY / total) * 100;
     if(progressBar) progressBar.style.width = pct + '%';
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Show side nav after scrolling
   window.addEventListener('scroll', () => {
-    if(!document.getElementById('page-cgeb').classList.contains('active')) return;
+    if(!document.getElementById('page-cgeb')?.classList.contains('active')) return;
     if(sideNav) {
         if (window.scrollY > 200) sideNav.classList.add('visible');
         else sideNav.classList.remove('visible');

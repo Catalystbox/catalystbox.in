@@ -25,6 +25,8 @@ test('every ThinkMap chooser destination has a physical refresh entry for GitHub
   assert.equal(routes.length, 5);
   for (const route of routes) {
     const entry = fs.readFileSync(`${route}/index.html`, 'utf8');
-    assert.ok(entry.includes('/assets/js/thinkmap-refresh.js'), `${route}: missing refresh handoff`);
+    assert.ok(entry.includes('/assets/js/thinkmap.bundle.js'), `${route}: missing interactive bundle`);
+    assert.match(entry, /<h1[ >]/);
+    assert.ok(!entry.includes('/assets/js/thinkmap-refresh.js'), `${route}: must not bounce to the homepage`);
   }
 });

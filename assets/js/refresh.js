@@ -22,7 +22,7 @@
   };
   const drawing = document.querySelector('.cb-tool-art > svg');
   const drawings = {
-    education: drawing.innerHTML,
+    education: drawing?.innerHTML || '',
     margin: '<path d="M55 215V45m0 170h350" stroke="#193b31" opacity=".35"/><path d="M55 190c70-130 155 35 345-145" stroke="#193b31" stroke-width="4" fill="none"/><path d="M55 190c95 10 150-75 345-55" stroke="#f8f7f1" stroke-width="3" stroke-dasharray="5 7" fill="none"/><circle cx="400" cy="45" r="7" fill="#193b31"/><circle cx="400" cy="135" r="7" fill="#f8f7f1"/>',
     podium: '<path d="M65 220V180h100v-60h110v35h110v65" fill="#f8f7f1" stroke="#75816d"/><path d="M65 220h320" stroke="#193b31"/><circle cx="220" cy="70" r="32" fill="#e9c8ac" stroke="#193b31" stroke-width="1.5"/><path d="m220 50 6 13 14 2-10 10 2 14-12-7-12 7 2-14-10-10 14-2Z" fill="#193b31"/><path d="m198 42-10-25m54 25 10-25" stroke="#193b31" stroke-width="10"/>',
     exam: '<circle cx="230" cy="132" r="84" stroke="#193b31" opacity=".25"/><circle cx="230" cy="132" r="61" stroke="#193b31"/><path d="m261 88-18 57-44 32 18-58Z" fill="#193b31"/><path d="m261 88-44 31 26 26Z" fill="#f8f7f1"/><circle cx="230" cy="132" r="5" fill="#193b31"/><path d="M230 38V25m0 214v-13M136 132h-13m214 0h-13" stroke="#193b31"/>',
@@ -37,8 +37,8 @@
       document.getElementById('cb-tool-description').textContent = tool.description;
       const link = document.getElementById('cb-tool-link');
       link.firstChild.textContent = tool.label + ' ';
-      link.href = '/' + tool.route;
-      link.onclick = event => { event.preventDefault(); showPage(tool.route); };
+      link.href = '/' + tool.route + '/';
+      link.onclick = null;
       document.querySelector('.cb-tool-feature').dataset.toolActive = key;
       document.querySelector('.cb-chart-tag').textContent = tool.note;
       drawing.innerHTML = drawings[key];

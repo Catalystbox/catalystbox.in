@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.catalystbox.in/</loc></url>
-  <url><loc>https://www.catalystbox.in/about/</loc></url>
-  <url><loc>https://www.catalystbox.in/thinkmap/</loc></url>
-  <url><loc>https://www.catalystbox.in/thinkmap/education-roi/</loc></url>
-  <url><loc>https://www.catalystbox.in/thinkmap/margin/</loc></url>
-  <url><loc>https://www.catalystbox.in/thinkmap/podium-india/</loc></url>
-  <url><loc>https://www.catalystbox.in/thinkmap/podium-global/</loc></url>
-  <url><loc>https://www.catalystbox.in/thinkmap/exam-compass-india/</loc></url>
-  <url><loc>https://www.catalystbox.in/thinkmap/exam-compass-world/</loc></url>
-  <url><loc>https://www.catalystbox.in/thinkmap/mind-mirror/</loc></url>
+  <url><loc>https://www.catalystbox.in/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://www.catalystbox.in/about/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://www.catalystbox.in/school/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://www.catalystbox.in/higher-education/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://www.catalystbox.in/partnership/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://www.catalystbox.in/privacy/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://www.catalystbox.in/governance/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://www.catalystbox.in/contact/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://www.catalystbox.in/thinkmap/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://www.catalystbox.in/thinkmap/education-roi/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://www.catalystbox.in/thinkmap/margin/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://www.catalystbox.in/thinkmap/podium-india/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://www.catalystbox.in/thinkmap/podium-global/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://www.catalystbox.in/thinkmap/exam-compass-india/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://www.catalystbox.in/thinkmap/exam-compass-world/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://www.catalystbox.in/thinkmap/mind-mirror/</loc><lastmod>2026-10-29</lastmod></url>
 </urlset>

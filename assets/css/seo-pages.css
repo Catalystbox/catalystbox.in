@@ -1,0 +1,4 @@
+.nav-links a{font:inherit;color:inherit;text-decoration:none;cursor:pointer}.cb-tool-directory,.cb-related{display:flex;gap:16px;flex-wrap:wrap;padding-top:24px;padding-bottom:24px}.cb-static-intro{max-width:1120px;margin:auto;padding:24px}.cb-footer-bottom a{white-space:nowrap}.cb-static-page .page{display:block}.cb-static-page .fade-up,.cb-static-page .reveal{opacity:1;transform:none}
+
+body.ui-refresh .nav-links a{display:block;padding:9px 12px;color:#42594b;font-size:12px;font-weight:600;border-radius:5px}body.ui-refresh .nav-links a:hover,body.ui-refresh .nav-links a.active{background:#e8ece0;color:var(--cb-ink)}.cb-tool-directory a,.cb-related a{color:#17616b;font-size:14px}.cb-footer-bottom>div{flex-wrap:wrap}
+@media(max-width:1150px){body.ui-refresh .nav-links a{padding:9px 8px}}@media(max-width:900px){body.ui-refresh .nav-links a{width:100%;padding:12px 14px;font-size:13px}}

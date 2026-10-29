@@ -1,28 +1,14 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex">
-  <title>Page not found - CatalystBox</title>
-  <script src="/assets/js/thinkmap-refresh.js"></script>
-  <script>
-    if (!window.__THINKMAP_REFRESH_REDIRECTING__) {
-      try {
-        var path = window.location.pathname.replace(/\/index\.html$/i, '').replace(/\/+$/, '') || '/';
-        if (path && path !== '/') {
-          sessionStorage.setItem('redirectRoute', path);
-        }
-      } catch (e) {}
-      window.location.replace('/' + (window.location.search || ''));
-    }
-  </script>
-</head>
-<body>
-  <main>
-    <h1>Page not found</h1>
-    <p>The requested page does not exist.</p>
-    <p><a href="/">Return to CatalystBox</a></p>
-  </main>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Page not found | CatalystBox</title><script>
+// Preserve known bookmarks without turning arbitrary missing URLs into the home page.
+var legacyRoutes = {
+  '/home': '/', '/research': '/school/', '/research/cgeb': '/school/', '/cgeb': '/school/',
+  '/higher-ed': '/higher-education/', '/highereducation': '/higher-education/', '/colleges': '/higher-education/',
+  '/partner': '/partnership/', '/partnerships': '/partnership/',
+  '/privacy-policy': '/privacy/', '/data-governance': '/governance/', '/contact-us': '/contact/',
+  '/faq': '/about/', '/faqs': '/about/'
+};
+var legacyPath = location.pathname.replace(/\/+$/, '');
+if (Object.prototype.hasOwnProperty.call(legacyRoutes, legacyPath)) {
+  location.replace(legacyRoutes[legacyPath] + location.search + location.hash);
+}
+</script></head><body><main><h1>Page not found</h1><p><a href="/">Return to CatalystBox</a></p></main></body></html>

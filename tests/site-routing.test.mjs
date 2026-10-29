@@ -88,7 +88,7 @@ function createMockEnvironment(initialPath = "/") {
       if (selector === ".page") {
         return pageIds.map(id => elements.get(id));
       }
-      if (selector === ".nav-links button") {
+      if (selector === ".nav-links button, .nav-links a") {
         return navIds.map(id => elements.get(id));
       }
       if (selector.includes(".fade-up")) return [];
@@ -125,31 +125,31 @@ function createMockEnvironment(initialPath = "/") {
 }
 
 test("navigating to /school displays the School page (page-cgeb) with matching /school URL", () => {
-  const env = createMockEnvironment("/school");
+  const env = createMockEnvironment("/school/");
   assert.equal(env.getActivePage(), "page-cgeb");
   assert.equal(env.getActiveNav(), "nav-school");
-  assert.equal(env.getLastReplaced()?.url, "/school");
+  assert.equal(env.getLastReplaced()?.url, "/school/");
 });
 
 test("navigating to legacy /research canonicalizes URL to /school and displays School tab", () => {
   const env = createMockEnvironment("/research");
   assert.equal(env.getActivePage(), "page-cgeb");
   assert.equal(env.getActiveNav(), "nav-school");
-  assert.equal(env.getLastReplaced()?.url, "/school");
+  assert.equal(env.getLastReplaced()?.url, "/school/");
 });
 
 test("the published legacy methodology URL reaches School instead of silently returning home", () => {
   const env = createMockEnvironment("/research/cgeb");
   assert.equal(env.getActivePage(), "page-cgeb");
   assert.equal(env.getActiveNav(), "nav-school");
-  assert.equal(env.getLastReplaced()?.url, "/school");
+  assert.equal(env.getLastReplaced()?.url, "/school/");
 });
 
 test("navigating to legacy /cgeb canonicalizes URL to /school and displays School tab", () => {
   const env = createMockEnvironment("/cgeb");
   assert.equal(env.getActivePage(), "page-cgeb");
   assert.equal(env.getActiveNav(), "nav-school");
-  assert.equal(env.getLastReplaced()?.url, "/school");
+  assert.equal(env.getLastReplaced()?.url, "/school/");
 });
 
 test("showPage('school') pushes /school to browser history and activates nav-school", () => {
@@ -157,7 +157,7 @@ test("showPage('school') pushes /school to browser history and activates nav-sch
   env.context.showPage("school");
   assert.equal(env.getActivePage(), "page-cgeb");
   assert.equal(env.getActiveNav(), "nav-school");
-  assert.equal(env.getLastPushed()?.url, "/school");
+  assert.equal(env.getLastPushed()?.url, "/school/");
 });
 
 test("showPage('cgeb') seamlessly routes to /school", () => {
@@ -165,7 +165,7 @@ test("showPage('cgeb') seamlessly routes to /school", () => {
   env.context.showPage("cgeb");
   assert.equal(env.getActivePage(), "page-cgeb");
   assert.equal(env.getActiveNav(), "nav-school");
-  assert.equal(env.getLastPushed()?.url, "/school");
+  assert.equal(env.getLastPushed()?.url, "/school/");
 });
 
 test("navigating to / or /home displays Home page with / URL", () => {
@@ -179,24 +179,24 @@ test("navigating to /higher-ed or /higher-education displays Higher Ed page", ()
   const env1 = createMockEnvironment("/higher-ed");
   assert.equal(env1.getActivePage(), "page-higher-education");
   assert.equal(env1.getActiveNav(), "nav-higher-education");
-  assert.equal(env1.getLastReplaced()?.url, "/higher-education");
+  assert.equal(env1.getLastReplaced()?.url, "/higher-education/");
 
-  const env2 = createMockEnvironment("/higher-education");
+  const env2 = createMockEnvironment("/higher-education/");
   assert.equal(env2.getActivePage(), "page-higher-education");
   assert.equal(env2.getActiveNav(), "nav-higher-education");
-  assert.equal(env2.getLastReplaced()?.url, "/higher-education");
+  assert.equal(env2.getLastReplaced()?.url, "/higher-education/");
 });
 
 test("navigating to /partnership and /partner displays Partnership page", () => {
-  const env1 = createMockEnvironment("/partnership");
+  const env1 = createMockEnvironment("/partnership/");
   assert.equal(env1.getActivePage(), "page-partnership");
   assert.equal(env1.getActiveNav(), "nav-partnership");
-  assert.equal(env1.getLastReplaced()?.url, "/partnership");
+  assert.equal(env1.getLastReplaced()?.url, "/partnership/");
 
   const env2 = createMockEnvironment("/partner");
   assert.equal(env2.getActivePage(), "page-partnership");
   assert.equal(env2.getActiveNav(), "nav-partnership");
-  assert.equal(env2.getLastReplaced()?.url, "/partnership");
+  assert.equal(env2.getLastReplaced()?.url, "/partnership/");
 });
 
 test("navigating to /about, /contact, /privacy, /governance matches respective pages and URLs", () => {
@@ -207,12 +207,12 @@ test("navigating to /about, /contact, /privacy, /governance matches respective p
 });
 
 test("navigating to /thinkmap/margin preserves full ThinkMap sub-route", () => {
-  const env = createMockEnvironment("/thinkmap/margin");
+  const env = createMockEnvironment("/thinkmap/margin/");
   assert.equal(env.getActivePage(), "page-thinkmap");
   assert.equal(env.getActiveNav(), "nav-thinkmap");
-  assert.equal(env.getLastReplaced()?.url, "/thinkmap/margin");
+  assert.equal(env.getLastReplaced()?.url, "/thinkmap/margin/");
 });
 
-test("index.html navbar has School button with showPage('school') and id='nav-school'", () => {
-  assert.match(indexHtml, /<button\s+onclick="showPage\('school'\)"\s+id="nav-school">School<\/button>/);
+test("navbar exposes a crawlable School link", () => {
+  assert.ok(indexHtml.includes('<a href="/school/" id="nav-school">School</a>'));
 });

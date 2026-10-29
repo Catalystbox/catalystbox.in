@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild thinkmap/entry.jsx --bundle --minify --outfile=assets/js/thinkmap.bundle.js",
+    "build": "esbuild thinkmap/entry.jsx --bundle --minify --outfile=assets/js/thinkmap.bundle.js && node scripts/build-pages.mjs",
     "test": "node --test tests/*.test.mjs"
   },
   "repository": {

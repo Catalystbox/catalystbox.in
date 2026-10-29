@@ -16,8 +16,8 @@ const TOOLS = [
     Icon: GraduationCap,
     ask: "Is a degree, a coaching year, or a costly course actually worth it?",
     blurb: "Weighs the full cost of an education path — fees, years, and the earnings you give up — against what it realistically returns, across dream, base and worst-case scenarios.",
-    editions: [{ label: "Open the calculator", href: "/thinkmap/education-roi" }],
-    guide: "/thinkmap/guides/education-roi",
+    editions: [{ label: "Open the calculator", href: "/thinkmap/education-roi/" }],
+    guide: "/thinkmap/education-roi/#how-it-works",
   },
   {
     key: "margin",
@@ -26,8 +26,8 @@ const TOOLS = [
     Icon: TrendingUp,
     ask: "Should I start this business, or take the steady salary?",
     blurb: "Models a business or self-employment path — capital, costs, growth, and the honest chance it fails — against the job you'd otherwise hold, side by side.",
-    editions: [{ label: "Open the calculator", href: "/thinkmap/margin" }],
-    guide: "/thinkmap/guides/margin",
+    editions: [{ label: "Open the calculator", href: "/thinkmap/margin/" }],
+    guide: "/thinkmap/margin/#how-it-works",
   },
   {
     key: "podium",
@@ -37,10 +37,10 @@ const TOOLS = [
     ask: "Is a serious sporting career worth the fifteen-year bet?",
     blurb: "Maps an athlete's odds gate by gate, prices prize money, salary and fame as three separate streams, and weighs the whole picture against the ordinary path.",
     editions: [
-      { label: "India", href: "/thinkmap/podium-india" },
-      { label: "Global", href: "/thinkmap/podium-global" },
+      { label: "India", href: "/thinkmap/podium-india/" },
+      { label: "Global", href: "/thinkmap/podium-global/" },
     ],
-    guide: "/thinkmap/guides/podium",
+    guide: "/thinkmap/podium-india/#how-it-works",
   },
   {
     key: "exam",
@@ -50,10 +50,10 @@ const TOOLS = [
     ask: "Which exams actually fit the subjects I'm strong in?",
     blurb: "Rate your strengths and it ranks the exams you're best positioned to clear — then tells you what each one truly takes, because the same subjects can be a completely different fight.",
     editions: [
-      { label: "India", href: "/thinkmap/exam-compass-india" },
-      { label: "World", href: "/thinkmap/exam-compass-world" },
+      { label: "India", href: "/thinkmap/exam-compass-india/" },
+      { label: "World", href: "/thinkmap/exam-compass-world/" },
     ],
-    guide: "/thinkmap/guides/exam-compass",
+    guide: "/thinkmap/exam-compass-india/#how-it-works",
   },
   {
     key: "mind",
@@ -62,8 +62,8 @@ const TOOLS = [
     Icon: Brain,
     ask: "How do I see my own mind - and how well do I know it?",
     blurb: "Reflect across eighteen facets of thinking and see the shape of your self-image. It is not an intelligence test - it is a private mirror, with an honest check on how confidently you know yourself.",
-    editions: [{ label: "Open the mirror", href: "/thinkmap/mind-mirror" }],
-    guide: "/thinkmap/guides/mind-mirror",
+    editions: [{ label: "Open the mirror", href: "/thinkmap/mind-mirror/" }],
+    guide: "/thinkmap/mind-mirror/#how-it-works",
   },
 ];
 

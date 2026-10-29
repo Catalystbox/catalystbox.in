@@ -13,7 +13,7 @@ function ToolPage({ children }) {
   return (
     <div className="tm-wrap">
       <div className="tm-tool-nav">
-        <a className="tm-back-link" href="/thinkmap" aria-label="Back to all ThinkMap tools">
+        <a className="tm-back-link" href="/thinkmap/" aria-label="Back to all ThinkMap tools">
           <span aria-hidden="true">←</span> Back to ThinkMap
         </a>
       </div>
@@ -22,8 +22,8 @@ function ToolPage({ children }) {
   );
 }
 
-function ThinkMapApp() {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+export function ThinkMapApp({ initialPath } = {}) {
+  const [currentPath, setCurrentPath] = useState(initialPath || window.location.pathname);
 
   // Sync internal state with browser history and the main CatalystBox shell.
   useEffect(() => {
@@ -53,9 +53,11 @@ function ThinkMapApp() {
           if (url.pathname.includes("/guides/")) {
             return;
           }
+          if (!document.getElementById("page-home")) return;
           e.preventDefault();
           window.history.pushState({ page: "thinkmap" }, "", url.pathname);
           setCurrentPath(url.pathname);
+          window.updateRouteMetadata?.(url.pathname);
           window.scrollTo({ top: 0, behavior: "instant" });
         }
       }
@@ -96,8 +98,8 @@ function ThinkMapApp() {
 }
 
 // Mount React Root
-const rootEl = document.getElementById("thinkmap-root");
+const rootEl = typeof document === "undefined" ? null : document.getElementById("thinkmap-root");
 if (rootEl) {
-  const root = ReactDOM.createRoot(rootEl);
-  root.render(<ThinkMapApp />);
+  if (rootEl.hasChildNodes()) ReactDOM.hydrateRoot(rootEl, <ThinkMapApp />);
+  else ReactDOM.createRoot(rootEl).render(<ThinkMapApp />);
 }
